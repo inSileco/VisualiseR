@@ -1,0 +1,229 @@
+# Graphiques classiques
+
+Regardons tout d'abord quelques fonctions permettant de réaliser des graphiques parmi les plus communs dans la recherche scientifique. Sous R, de tels graphes sont réalisés avec des *High-level plotting functions*, c.-à.d. que l'appel à ces fonctions effacera le précédent contenu du périphérique graphique actif. Mais, nous verrons dans le dernier chapitre qu'il est possible de contourner cet obstacle. On opposera ces fonctions aux *Low-level plotting functions* qui elles, permettront d'ajouter des éléments à un graphique pré-existant. C'est l'objet du chapitre suivant.
+
+
+## Diagramme de dispersion
+
+Il s'agit d'un graphe classique permettant de représenter deux variables continues l'une en fonction de l'autre dans un nuage de points. Nous allons réutiliser pour cela la fonction `plot()`.
+Créons une variable contenant une série de valeurs allant de 1 à 20.
+
+```{r}
+(var1 <- seq(from = 1, to = 20, by = 1))
+```
+
+Remarque : les parenthèses permettent d’afficher dans la console le résultat de l’assignation. Générons une seconde variable avec 20 valeurs tirées aléatoirement selon une distribution normale de moyenne 0 et d'écart-type 1.
+
+```{r eval = T}
+(var2 <- rnorm(n = 20, mean = 0, sd = 1))
+```
+
+Représentons maintenant le nuage de points (*scatterplot*) formés des valeurs de **var1** et **var2**.
+
+```{r out.width = '.55\\linewidth'}
+plot(x = var1, y = var2)
+```
+
+Anticipons légèrement sur les chapitres suivants et intéressons-nous à l'argument `type` de la fonction `plot()`. Celui-ci permet de représenter les données de différentes manières : nuage de points, barres verticales, lignes, etc.
+{ll}
+
+**Valeur** & **Représentation**\\
+
+- \texttt{type = 'p'} & Points
+- \texttt{type = 'l'} & Lignes reliées
+- \texttt{type = 'c'} & Lignes non reliées
+- \texttt{type = 'b'} & Points et lignes non reliées
+- \texttt{type = 'o'} & Points et lignes reliées
+- \texttt{type = 'h'} & Barres verticales
+- \texttt{type = 's'} & Plateau puis pente
+- \texttt{type = 'S'} & Pente puis creux
+- \texttt{type = 'n'} & Aucun symbole
+
+Afin de bien comprendre les différences, partitionnons la fenêtre graphique en neuf régions distinctes (trois lignes et trois colonnes), chacune destinée à recevoir un plot spécifique avec une valeur différente pour l'argument `type`. Nous allons donc modifier le paramètre graphique `mfrow` de l'objet `par()`. Avec cet argument, les régions graphiques seront remplies en lignes.
+
+Nous allons également rajouter un titre à chaque graphique qui contient la valeur de l'argument `type`. L'argument `main` permet de rajouter un titre principal à un graphe qui se positionnera en haut du graphique.
+
+```{r eval = T}
+par(mfrow = c(3, 3))
+plot(var1, var2, type = "p", main = "Type = p")
+plot(var1, var2, type = "l", main = "Type = l")
+plot(var1, var2, type = "b", main = "Type = b")
+plot(var1, var2, type = "o", main = "Type = o")
+plot(var1, var2, type = "c", main = "Type = c")
+plot(var1, var2, type = "h", main = "Type = h")
+plot(var1, var2, type = "s", main = "Type = s")
+plot(var1, var2, type = "S", main = "Type = S")
+plot(var1, var2, type = "n", main = "Type = n")
+```
+
+La fonction `plot()` offre de nombreux autres arguments qu'il est possible de modifier. C'est en partie ce que nous verrons tout au long de ce document, puisque cet enseignement met essentiellement l'accent sur cette fonction.
+
+
+## Boîte à moustaches
+
+La boîte à moustaches est une représentation graphique très utile en statistiques, puisqu'elle permet de résumer les caractéristiques de position (médiane, 1\up{er} et 3\up{ème} quartiles, minimum et maximum) d'une variable quantitative. Sous R, la fonction utilisée sera `boxplot()`.
+```{r out.width = '.55\\linewidth'}
+boxplot(var1, var2)
+```
+Cette fonction s'applique sur des vecteurs, mais aussi sur des data frames. Elle possède de nombreux arguments. Par exemple, le tableau suivant liste les paramètres les plus courants.
+{ll}
+
+**Argument** & **Signification**:
+
+- \texttt{width} & Largeur des boîtes (valeurs à fournir)
+- \texttt{varwidth} & Largeur des boîtes (proportionnelle au n)
+- \texttt{outline} & Suppression des outliers
+- \texttt{horizontal} & Vertical ou horizontal
+- \texttt{add} & Rajout d'une boîte
+- \texttt{at} & Coordonnée en x de la nouvelle boîte
+
+L'argument `plot` mis à la valeur **FALSE** n'affiche pas de boîte à moustaches, mais retourne les différentes statistiques associées sous la console. Par exemple:
+
+```{r}
+boxplot(var2, plot = FALSE)
+```
+
+
+## Diagramme en bâtons
+
+Ce type de représentation est utile pour visualiser des données discrètes ou catégoriques. Chaque modalité de la variable catégorique (ou discrète) sera représentée par une barre verticale (ou horizontale) dont la longueur sera proportionnelle à son effectif (relatif ou absolu) parmi l'ensemble des modalités. Sous R, on réalise un tel graphique avec la fonction `barplot()`.
+Créons tout d'abord un vecteur contenant six modalités (chaînes de caractères).
+
+```{r}
+(nom <- c("Vert", "Jaune", "Rouge", "Blanc", "Bleu", "Noir"))
+```
+
+Maintenant, nous allons tirer aléatoirement 1000 valeurs (avec remise donc) dans ce vecteur afin que chaque couleur soit présente plusieurs fois.
+
+```{r}
+echn <- sample(x = nom, size = 1000, replace = T)
+echn[1:20]
+```
+
+Comptons combien de fois se retrouve chaque modalité dans cette variable.
+
+```{r}
+(var4 <- table(echn))
+```
+
+Visualisons cette nouvelle variable catégorique.
+
+```{r out.width = '.6\\linewidth'}
+barplot(var4)
+```
+
+Nous pouvons également représenter cette même variable sous forme relative. Calculons la fréquence de chaque modalité et produisons un nouveau graphe.
+
+```{r}
+(var5 <- var4/sum(var4))
+```
+
+Visuellement, rien ne changera, mis à part les valeurs portées sur l'axe des ordonnées. La fonction `barplot()` possède aussi de nombreux arguments. Nous vous invitons à consulter l'aide associée à cette fonction.
+```{r eval = F}
+help(barplot)
+```
+Il est possible de hachurer les rectangles plutôt que de leur associer une couleur. Pour ce faire, deux arguments doivent être spécifiés :
+- `density` : nombre de hachures par pouce;
+- `angle` : orientation des hachures dans le sens trigonométrique.
+Par exemple,
+```{r out.width = '.6\\linewidth'}
+barplot(var4, density = c(rep(5, 4), 40, 10), angle = c(0, 45, 90, 135))
+```
+
+## Histogramme
+
+L'histogramme permet de visualiser la répartition des valeurs d'une variable continue en créant des classes de valeurs. Il est très utile pour connaître la loi
+de distribution que suivent les valeurs (loi normale, loi de Poisson, etc.). Sous R, ce graphe se fera à l'aide de la fonction `hist()`.
+Générons 1000 valeurs aléatoires selon une loi gaussienne.
+
+```{r}
+var6 <- rnorm(n = 1000)
+var6[1:20]
+```
+
+```{r}
+hist(var6)
+```
+
+De la même manière que pour les boîtes à moustaches, l'argument `plot = FALSE` ne trace pas l'histogramme, mais affiche dans la console les statistiques associées.
+
+```{r}
+hist(var6, plot = FALSE)
+```
+
+L'argument `breaks` permet de modifier les classes de l'histogramme. Une façon simple de procéder consiste à donner le nombre de classes que l'on souhaite représenter.
+```{r out.width = '.6\\linewidth'}
+hist(var6, breaks = 30)
+```
+Nous aurions également pu indiquer les bornes de chaque classe désirée (par ex. des classes tous les 0.25). De même, plusieurs algorithmes ont été implémentés afin de déterminer un nombre de classes \og optimum \fg . Consultez l'aide de cette fonction pour en savoir plus.
+
+```{r eval = F}
+help(hist)
+```
+
+Finalement, mentionnons que les arguments `density` et `angle` sont aussi disponibles pour la fonction `hist()`. Adéquatement définis, ils permettront d'hachurer les rectangles.
+
+
+## Diagramme sectoriel
+
+Une alternative au diagramme en bâtons est le diagramme sectoriel (camembert). Regardons ce que ça donne avec les données précédentes (couleurs).
+
+```{r out.width = '.6\\linewidth'}
+pie(var4, col = c("white", "blue", "yellow", "black", "red", "green"))
+```
+
+```{r out.width = '.6\\linewidth'}
+pie(rep(1, 250), col = rainbow(250), border = NA, labels = "")
+```
+
+Dans les deux exemples précédents, nous avons défini des couleurs à l'aide de l'argument `col`. Dans le premier cas, nous avons indiqué le nom des couleurs : R implémente une palette de couleurs prédéfinies assez conséquente. Dans le second cas, nous avons utilisé la fonction `rainbow()` qui sélectionne un nombre donné de couleurs parmi les couleurs de l'arc-en-ciel. Nous y reviendrons dans le troisième chapitre.
+
+Pour terminer, exécutez le code suivant sous R.
+
+```{r eval = F}
+for (i in 1 : 250){
+if (i > 1){
+cols <- rainbow(250)[c(i:250, 1:(i-1))]
+pie(rep(1, 250), col = cols, border = NA, labels = "")
+}else{
+pie(rep(1, 250), col = rainbow(250), border = NA, labels = "")
+}
+}
+```
+
+Plutôt sympa, non ?
+
+
+## Fonctions mathématiques
+
+Pour terminer ce chapitre, introduisons une fonction qui pourrait vous être utile. Il s'agit de la fonction `curve()` qui permet de tracer le comportement d'une fonction mathématique bornée. Regardons un exemple avec des fonctions trigonométriques.
+
+```{r fig.width = 9,fig.height = 3, out.width = '1\\linewidth'}
+par(mfrow = c(1, 3), mgp = c(2, 1, 0))
+txt <- expression(f(x)==cos(x))
+curve(cos(x), from = -10, to = 10, main = "Cosinus", ylab = txt)
+txt <- expression(f(x)==sin(x))
+curve(sin(x), from = -10, to = 10, main = "Sinus", ylab = txt)
+txt <- expression(f(x)==tan(x))
+curve(tan(x), from = -10, to = 10, main = "Tangente", ylab = txt)
+```
+
+Ici, des éclaircissements s'imposent. Premièrement, nous avons modifié un autre paramètre graphique : `mgp`. Celui permet de contrôler le positionnement du nom des axes, des étiquettes des axes et des axes eux-mêmes. Ces positionnements sont relatifs à la région du plot. Nous y reviendrons plus loin.
+La fonction `expression()` permet quant à elle d'utiliser l'écriture mathématique dans des graphiques. Consultez l'aide de cette fonction ainsi que celle de la fonction `plotmath()` pour en savoir plus.
+
+
+```{r fig.width = 9,fig.height = 6, out.width = '1\\linewidth'}
+par(mfrow = c(2, 3), mgp = c(2, 1, 0))
+txt <- expression(f(x)==x)
+curve(x^1, from = -1, to = 1, main = "Identité", ylab = txt)
+txt <- expression(f(x)==x^2)
+curve(x^2, from = -1, to = 1, main = "Quadratique", ylab = txt)
+txt <- expression(f(x)==x^3)
+curve(x^3, from = -1, to = 1, main = "Cubique", ylab = txt)
+txt <- expression(f(x)==1/x)
+curve(1/x, from = -1, to = 1, main = "Inverse", ylab = txt)
+txt <- expression(f(x)==log(x))
+curve(log(x), from = 0.0001, to = 10, main = "Logarithme", ylab = txt)
+txt <- expression(f(x)==exp(x))
+curve(exp(x), from = 0.0001, to = 10, main = "Exponentielle", ylab = txt)
+```

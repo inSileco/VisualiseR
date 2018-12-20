@@ -1,0 +1,239 @@
+# Solutions des exercices
+
+Voici une solution pour réaliser les figures du précédent chapitre.
+
+## Partitionnement avancé
+
+```{r eval = FALSE, fig.show="hide"}
+###
+### CONFIGURATION DU PERIPHERIQUE
+###
+## Partitionnement de la fenetre graphique
+mat <- matrix(c(2, 4, 1, 3), byrow = T, ncol = 2)
+layout(mat, widths = c(6, 3), heights = c(3, 6))
+###
+### CONCEPTION DU SCATTERPLOT
+###
+## Empty plot
+par(mar = c(3, 3, 0, 0), family = "serif", col.axis = "darkgray")
+plot(0, type = "n", xlim = c(0, 40), ylim = c(0, 40), axes = F, ann = F)
+## Background
+rect(0, 0, 40, 40, col = "gray", border = par()$col.axis)
+for (i in c(10, 20, 30)){
+points(x = c(0, 40), y = c(i, i), col = "white", type = "l")
+points(x = c(i, i), y = c(0, 40), col = "white", type = "l")
+}
+for (i in c(5, 15, 25, 35)){
+points(c(0, 40), c(i, i), col = "white", type = "l", lty = 3)
+points(c(i, i), c(0, 40), col = "white", type = "l", lty = 3)
+}
+## Axes principaux
+axis(1, pos = 0, at = seq(0, 40, 10), labels = seq(0, 40, 10), font = 2, col = par()$col.axis)
+axis(2, pos = 0, at = seq(0, 40, 10), labels = seq(0, 40, 10), font = 2, col = par()$col.axis, las = 2)
+## Axes secondaires
+axis(side = 1, pos = 0, at = seq(5, 35, by = 10), labels = F, lwd = 0, tck = -0.01, lwd.ticks = 1, col.ticks = par()$col.axis)
+axis(side = 2, pos = 0, at = seq(5, 35, by = 10), labels = F, lwd = 0, tck = -0.01, lwd.ticks = 1, col.ticks = par()$col.axis)
+## Noms des axes
+mtext("x-axis", side = 1, line = 1.50, font = 2, col = par()$col.axis)
+mtext("y-axis", side = 2, line = 1.75, font = 2, col = par()$col.axis, las = 0)
+## Ajout des points
+subtab <- dat[dat[ , "z"] == "Group1", ]
+points(x = subtab[ , "x"], y = subtab[ , "y"], pch = 21, col = "#FFFFFF7D", bg = "#2B84B67D", cex = 1.5)
+subtab <- dat[dat[ , "z"] == "Group2", ]
+points(x = subtab[ , "x"], y = subtab[ , "y"], pch = 21, col = "#FFFFFF7D", bg = "#32A74F7D", cex = 1.5)
+subtab <- dat[dat[ , "z"] == "Group3", ]
+points(x = subtab[ , "x"], y = subtab[ , "y"], pch = 21, col = "#FFFFFF7D", bg = "#DC29337D", cex = 1.5)
+###
+### CONCEPTION DU GRAPHE DU HAUT
+###
+## Empty plot
+par(mar = c(0, 3, 2, 0), family = "serif", col.axis = "darkgray")
+plot(c(0, 40), c(0, .2), type = "n", axes = F, ann = F)
+## Background
+rect(0, 0, 40, .2, col = "gray", border = par()$col.axis)
+points(x = c(0, 40), y = c(.1, .1), col = "white", type = "l")
+for (i in c(10, 20, 30))
+points(x = c(i, i), y = c(0, .2), type = "l", col = "white")
+points(c(0, 40), c(.05, .05), type = "l", col = "white", lty = 3)
+points(c(0, 40), c(.15, .15), type = "l", col = "white", lty = 3)
+for (i in c(5, 15, 25, 35)){
+points(c(i, i), c(0, .2), type = "l", col = "white", lty = 3)
+}
+## Axe principal
+axis(2, pos = 0, at = seq(0, .2, .1), col = par()$col.axis, las = 2, labels = format(seq(0, .2, .1)), font = 2)
+## Axe secondaire
+axis(side = 2, pos = 0, at = seq(.05, .15, .1), labels = F, lwd = 0, tck = -0.01, lwd.ticks = 1, col.ticks = par()$col.axis)
+## Nom de l'axe y
+mtext("Density", side = 2, line = 1.75, font = 2, col = par()$col.axis, las = 0)
+## Density functions
+dens <- density(dat[dat[ , "z"] == "Group1", "x"])
+polygon(x = dens$x, y = dens$y, col = "#2B84B67D", border = "#FFFFFF7D")
+dens <- density(dat[dat[ , "z"] == "Group2", "x"])
+polygon(x = dens$x, y = dens$y, col = "#32A74F7D", border = "#FFFFFF7D")
+dens <- density(dat[dat[ , "z"] == "Group3", "x"])
+polygon(x = dens$x, y = dens$y, col = "#DC29337D", border = "#FFFFFF7D")
+## Correction
+lines(x = c(0, 40), y = c(0, 0), col = par()$col.axis)
+###
+### CONCEPTION DU GRAPHE DE DROITE
+###
+## Empty plot
+par(mar = c(3, .5, 0, .5), family = "serif", col.axis = "darkgray")
+plot(c(0, .3), c(0, 40), type = "n", axes = F, ann = F)
+## Background
+rect(0, 0, .3, 40, col = "gray", border = par()$col.axis)
+points(x = c(.1, .1), y = c(0, 40), col = "white", type = "l")
+points(x = c(.2, .2), y = c(0, 40), col = "white", type = "l")
+for (i in c(10, 20, 30))
+points(x = c(0, .3), y = c(i, i), type = "l", col = "white")
+for (i in seq(.05, .25, by = .1))
+points(y = c(0, 40), x = c(i, i), type = "l", col = "white", lty = 3)
+for (i in seq(5, 35, by = 10)){
+points(c(0, .3), c(i, i), type = "l", col = "white", lty = 3)
+}
+## Axe principal
+axis(1, pos = 0, at = seq(0, .3, .1), col = par()$col.axis, las = 1, labels = format(seq(0, .3, .1)), font = 2)
+## Axe secondaire
+axis(side = 1, pos = 0, at = seq(.05, .25, .1), labels = F, lwd = 0, tck = -0.01, lwd.ticks = 1, col.ticks = par()$col.axis)
+## Nom de l'axe
+mtext("Density", side = 1, line = 1.5, font = 2, col = par()$col.axis)
+## Density functions
+dens <- density(dat[dat[ , "z"] == "Group1", "y"])
+polygon(x = dens$y, y = dens$x, col = "#2B84B67D", border = "#FFFFFF7D")
+dens <- density(dat[dat[ , "z"] == "Group2", "y"])
+polygon(x = dens$y, y = dens$x, col = "#32A74F7D", border = "#FFFFFF7D")
+dens <- density(dat[dat[ , "z"] == "Group3", "y"])
+polygon(x = dens$y, y = dens$x, col = "#DC29337D", border = "#FFFFFF7D")
+## Correction
+lines(x = c(0, 0), y = c(0, 40), col = par()$col.axis)
+###
+### LEGENDE
+###
+## Empty plot
+par(mar = c(0, 0.5, 2, 0.5), family = "serif")
+plot(0, type = "n", ylim = c(0, 4), xlim = c(0, 4), axes = F, ann = F)
+## Background
+rect(0, 0, 4, 4, col = "gray", border = par()$col.axis)
+## Titre de la legende
+text(2, 3.5, labels = "Legend", col = "white", font = 2, cex = 1.25)
+lines(x = c(0.2, 3.8), y = c(3, 3), col = "white")
+## Texte de la legende
+text(1.6, 2.2, labels = "Group 1", pos = 4, col = "white", font = 2)
+text(1.6, 1.6, labels = "Group 2", pos = 4, col = "white", font = 2)
+text(1.6, 1.0, labels = "Group 3", pos = 4, col = "white", font = 2)
+## Ajout des symboles
+lines(x = c(1, 1.6), y = c(2.2, 2.2), col = "#2B84B67D", lwd = 2)
+lines(x = c(1, 1.6), y = c(1.6, 1.6), col = "#32A74F7D", lwd = 2)
+lines(x = c(1, 1.6), y = c(1.0, 1.0), col = "#DC29337D", lwd = 2)
+```
+
+
+
+## Superposition de graphes
+
+```{r eval = FALSE, fig.show="hide"}
+### CONCEPTION DE L'HISTOGRAMME
+## Empty plot
+par(mar = c(2.5, 2.5, 3, 3), family = "serif", xaxs = "i", yaxs = "i", col.axis = "darkgray", mgp = c(0, 0.6, 0))
+plot(c(0, 30), c(0, 40), type = "n", axes = F, ann = F)
+## Background
+rect(0, 0, 30, 40, col = "gray", border = par()$col.axis)
+for (i in c(10, 20)){
+lines(x = c(0, 30), y = c(i, i), col = "white")
+lines(x = c(i, i), y = c(0, 40), col = "white")
+}
+lines(x = c(0, 30), y = c(30, 30), col = "white")
+for (i in c(5, 15, 25)){
+lines(x = c(0, 30), y = c(i, i), col = "white", lty = 3)
+lines(x = c(i, i), y = c(0, 40), col = "white", lty = 3)
+}
+points(x = c(0, 30), y = c(35, 35), col = "white", type = "l", lty = 3)
+## Axes principaux
+axis(1, pos = 0, at = seq(0, 30, 10), labels = seq(0, 30, 10), font = 2, col = par()$col.axis)
+axis(2, pos = 0, at = seq(0, 40, 10), labels = seq(0, 40, 10), font = 2, col = par()$col.axis, las = 2)
+## Axes secondaires
+axis(side = 1, pos = 0, at = seq(5, 25, by = 10), labels = F, lwd = 0, tck = -0.01, lwd.ticks = 1, col.ticks = par()$col.axis)
+axis(side = 2, pos = 0, at = seq(5, 35, by = 10), labels = F, lwd = 0, tck = -0.01, lwd.ticks = 1, col.ticks = par()$col.axis)
+## Noms des axes
+mtext("Values", 1, line = 1.50, font = 2, col = par()$col.axis)
+mtext("Counts", 2, line = 1.50, font = 2, col = par()$col.axis, las = 0)
+## Ajout de l'histogramme
+x <- seq(2, 24, by = 2)
+hist(dat, add = T, border = "#0000007D", col = "#0000007D", breaks = x)
+### CONCEPTION DE LA FONCTION DE DENSITE
+## Empty plot
+par(mar = c(2.5, 2.5, 3, 3), family = "serif", col.axis = "#2B84B6DD", new = T)
+plot(c(0, 30), c(0, .2), type = "n", axes = F, ann = F)
+## Axes principaux
+axis(side = 4, pos = 30, at = seq(0, .2, .05), labels = format(seq(0, .2, .05)), col = par()$col.axis, font = 2, las = 2)
+axis(4, pos = 30, at = seq(0.025, .175, .05), labels = F, tck = -0.01, lwd = 0, lwd.ticks = 1, col.ticks = par()$col.axis)
+## Noms des axes
+mtext("Density", 4, line = 2, font = 2, col = par()$col.axis, las = 0)
+## Ajout de la courbe de densite
+den <- density(dat)
+polygon(den$x, den$y, col = "#2B84B67D", border = "#2B84B67D", lwd = 2)
+## Rajout d'un titre
+title("Graphe dans un graphe", col.main = "darkgray")
+```
+
+
+## Inclusion en médaillon
+
+```{r eval = FALSE, fig.show="hide"}
+### CONCEPTION DE L'HISTOGRAMME
+## Empty plot
+par(mar = c(2.5, 2.5, 3, 3), family = "serif", xaxs = "i", yaxs = "i", col.axis = "darkgray", mgp = c(0, 0.6, 0))
+plot(c(0, 30), c(0, 40), type = "n", axes = F, ann = F)
+## Background
+rect(0, 0, 30, 40, col = "gray", border = par()$col.axis)
+for (i in c(10, 20)){
+lines(x = c(0, 30), y = c(i, i), col = "white")
+lines(x = c(i, i), y = c(0, 40), col = "white")
+}
+lines(x = c(0, 30), y = c(30, 30), col = "white")
+for (i in c(5, 15, 25)){
+lines(x = c(0, 30), y = c(i, i), col = "white", lty = 3)
+lines(x = c(i, i), y = c(0, 40), col = "white", lty = 3)
+}
+points(x = c(0, 30), y = c(35, 35), col = "white", type = "l", lty = 3)
+## Axes principaux
+axis(1, pos = 0, at = seq(0, 30, 10), labels = seq(0, 30, 10), font = 2, col = par()$col.axis)
+axis(2, pos = 0, at = seq(0, 40, 10), labels = seq(0, 40, 10), font = 2, col = par()$col.axis, las = 2)
+## Axes secondaires
+axis(side = 1, pos = 0, at = seq(5, 25, by = 10), labels = F, lwd = 0, tck = -0.01, lwd.ticks = 1, col.ticks = par()$col.axis)
+axis(side = 2, pos = 0, at = seq(5, 35, by = 10), labels = F, lwd = 0, tck = -0.01, lwd.ticks = 1, col.ticks = par()$col.axis)
+## Noms des axes
+mtext("Values", 1, line = 1.50, font = 2, col = par()$col.axis)
+mtext("Counts", 2, line = 1.50, font = 2, col = par()$col.axis, las = 0)
+## Ajout de l'histogramme
+x <- seq(2, 24, by = 2)
+hist(dat, add = T, border = "#0000007D", col = "#0000007D", breaks = x)
+## Rajout d'un titre
+title("Graphe dans un graphe", col.main = "darkgray")
+### CONCEPTION DU MEDAILLON
+## Empty plot
+par(mar = c(2.5, 2.5, 3, 3), family = "serif", cex.axis = .75, new = T, col.axis = "#555555", fig = c(.5, 1, .5, 1), mgp = c(0, .5, 0))
+plot(c(0, 30), c(0, .2), type = "n", axes = F, ann = F)
+## Background
+rect(0, 0, 30, .2, col = par()$col.axis, border = par()$col.axis)
+for (i in seq(.05, .15, .05)){
+lines(x = c(0, 30), y = c(i, i), col = "#8E8E8E")
+}
+for (i in seq(10, 20, 10)){
+lines(x = c(i, i), y = c(0, .2), col = "#8E8E8E")
+}
+for (i in c(5, 15, 25)){
+lines(x = c(i, i), y = c(0, 40), col = "#8E8E8E", lty = 3)
+}
+for (i in seq(0.025, .175, .05)){
+lines(x = c(0, 30), y = c(i, i), col = "#8E8E8E", lty = 3)
+}
+box(col = par()$col.axis)
+## Axe principal
+axis(side = 2, pos = 0, at = seq(0, .15, .05), labels = format(seq(0, .15, .05)), col = par()$col.axis, font = 2, las = 2, tck = -0.03)
+## Axe secondaire
+axis(2, pos = 0, at = seq(0.025, .175, .05), labels = F, tck = -0.02, lwd = 0, lwd.ticks = 1, col.ticks = par()$col.axis)
+## Ajout de la courbe de densite
+den <- density(dat)
+polygon(den$x, den$y, col = "#2B84B67D", border = "#2B84B67D", lwd = 2)
+```

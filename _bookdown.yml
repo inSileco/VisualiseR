@@ -1,0 +1,6 @@
+book_filename: "visualiseR.Rmd"
+language:
+  ui:
+    chapter_name: "Chapitre"
+delete_merged_file: true
+edit: https://github.com/rstudio/bookdown-demo/edit/master/%s

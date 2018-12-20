@@ -1,0 +1,223 @@
+# A propos de R
+
+Dans ce chapitre, nous revenons sur la naissance et le développement de R:
+de S depuis les années 70 jusqu'à la fin des années 90. Nous décrivons
+ensuite l'émergence de R et la relation qu'il existe entre S et R.
+Nous finirons en revenant sur la remarquable progression de la communauté des
+utilisateurs de R. La description de l'émergence de R est du à la lecture de
+3 ressources :
+
+- Un article d'un des principaux contributeurs de Richard A. Becker @becker_brief_1994
+- Le chapitre 2 du dernier (et récent) livre de John M. Chambers, l'un des
+principaux contributeurs de S (et maintenant contributeur de R) @Chambers
+- R genesis disponible en ligne https://cran.r-project.org/doc/html/interface98-paper/paper_1.html
+
+
+
+
+## Naissance et développement de S
+
+
+### Le langage S
+
+Pour bien comprendre l'émergence de R, il est utile de commencer par un retour
+sur le contexte dans lequel le langage S a vu le jour et comprendre ce que R
+lui doit. Deux dimensions sont particulièrement intéressantes: d'un côté, la
+recherche d'un outil performant pour la recherche statistique
+(ce sont des chercheurs en statistiques qui sont à l'origine de S)
+et de l'autre, la quête du support technique adéquat dans un monde où
+l'informatique était en pleine effervescence.
+
+Commençons l'histoire en 1976, à Murray Hill dans le New-Jersey (Etats-Unis),
+au département de recherche en statistique informatique des laboratoires Bell[^noteS1],
+les calculs sont alors réalisés à l'aide d'une bibliothèque FORTRAN[^noteS2]
+SCS (_Statistical Computing Subroutines_). Cependant, pour résoudre des
+problèmes relativement simples (une régression linéaire par exemple), le temps
+passé à gérer les entrer et les sortis au programme était long en comparaison
+au temps de calcul pour réalisé les opérations intéressantes (la régression
+elle-même). Suite à ce constat, les chercheurs John Chambers, Richard Becker,
+Doug Dunn et Paul Tukey arrivèrent à l'idée de construire un environnement
+interactif et un nouveau langage afin de faciliter leur recherche[^noteS3].
+Ce nouveau programme informatique faciliterait l'utilisation des la bibliothèque
+SCS grâce à un ensemble d'objets et de fonctions manipulés à l'aide d'une
+syntaxe intuitive et permettrait une exploration visuelle des données à l'aide
+d'un outil graphique performant.
+
+<!-- Tukey Exploratory Data Analysis-->
+
+Suite aux efforts de ces chercheurs, la première version de S (version 1.0) vu le
+jour en janvier 1977 et fut diffusée au sein des laboratoires Bell. Ainsi se
+constitua la toute première communauté d'utilisateurs de S, une communauté
+certes restreinte aux chercheurs des laboratoires Bell, mais une communauté
+active capable de donner du retour sur ce nouvel outil. La première version de
+R reflète les avancements en statistique informatique fait depuis les
+années 50 et met en application les principes que John Chambers développe
+dans son livre de 1977 (qui n'est pas un livre sur S REF):
+
+  1. stockage, manipulation des données avant traitement (les trier par exemple)
+  2. utiliser des algorithms efficaces pour traiter les données
+  3. visualiser les données avec des bibliothèques adéquates
+
+L'objet de base était alors le vecteur (de nombres, de caractères ou bien de
+variables booléennes ce qui est valable avec R aujourd'hui). Une matrice
+était aussi un vecteur mais avec un vecteur auxiliaire `Dim` (ces vecteurs
+auxiliaires deviendront plus tard les attributs accessible avec la fonction
+`attributes` dans R). Cette version offrait également la possibilité de créer
+des structures dont les différentes composantes étaient appelées grâce à
+l'opérateur `$` (abondamment utilisé par tous les utilisateurs de R
+aujourd'hui de même que la fonction `str` pour avoir un aperçu de l'organisation
+d'un objet dans R). Ces données étant facilement manipulable via un opérateur
+d'accès aux différents éléments `[]` (subscripting operator) et permet,
+entre autre, de sous-échantillonner les éléments à partir d'une variable booléenne (ce que les utilisateurs de R font très souvent). Enfin Les graphiques étaient réalisés grâce à un ensemble de fonctions implémentées séparément dans une bibliothèque appelée GR-Z dont les fonctionnalités sont encore aujourd'hui présentes dans le package R `graphics`.
+
+
+<!-- KC : HERE I AM  09/08/2017-->
+
+
+L'année suivante, une seconde version fut produite (version 2.0) avec laquelle
+de souci de hiérarchisation des objets s'affirma avec l'apparition des objets
+de type `list`. En 1978, les progrès du langage de programmation C, développé dans le même bâtiment aux laboratoires Bell, donnèrent un nouvel élan au langage S. Ce langage sur lequel travaillait Dennis Ritchie depuis 1969 a été conçu pour être puissant et flexible et permettre ainsi de ré-implémenter le système d'exploitation UNIX. De fait, le langage avait une très grande portabilité, il était utilisable sur un très grand nombre d'ordinateurs d'architectures différentes, ce qui décida les créateurs du S (dont les bureaux étaient voisins de celui de Ritchie) d'opter pour une utilisation du langage C et du système UNIX.
+C'est ainsi qu'en octobre 1979, une version UNIX fut implémentée et devint la version de développement du langage S.
+
+La suite du développement du langage est liée aux retours des premiers utilisateurs de S.
+Ces derniers étaient assez limités dans les tâches qu'ils pouvaient accomplir avec S.
+Afin d'augmenter les possibilités offertes à l'utilisateur, une boucle `for` très flexible fut introduite, dont la syntaxe est propre à S (et aujourd'hui, à R) : `for (i in index) expression`.
+De même, une fonction `apply()` fut ajoutée pour répéter une opération donnée sur chaque colonne ou chaque ligne d'une matrice.
+Il apparut également une interface de langage pour créer des macros[^noteS4]. Toutes ces innovations sont contenues dans la version de 1984 décrite dans un livre surnommé le _Brown Book_[^noteS5] (_S: An Interactive Environment for Data Analysis and Graphics_ (1984))[ref]. L'année suivante, le livre _Extending the S system_[ref] décrit comment ajouter de nouvelles fonctions au langage S. C'est au même moment que le code source du langage S fut largement distribué sous licence commerciale et éducationnelle.
+
+
+### Le « new S »
+
+Durant la période 1984--1988, S fut profondément transformé. Alors qu'il était à l'origine dédié à la recherche en statistique, S avait, de fait, de grandes capacités pour manipuler des données, les analyser et les visualiser. Un projet mené par John Chambers fut dédié à l'exploitation de ces atouts pour produire un langage de programmation générale dédié au traitement des données (le _Quantitative Programming Environment_, QPE). En 1986, suite aux avancés du projet, il se posa la question de savoir comment articuler S et QPE. De cette interrogation naquit une troisième version du langage S décrite dans le _Blue Book_ (_The New S Language: A Programming Environment for Data Analysis and Graphics_ (1988))[ref]. Les changements apportés étaient d'une telle ampleur qu'il fallut changé le nom : S devint le new S. Beaucoup de fonctions furent réécrites en C. Ainsi, la part de FORTRAN diminua au profit de ce langage pour améliorer la portabilité du langage new S. A cela s'ajouta la fin de l'interface de langage au profit d'un ensemble très cohérent pour les fonctions. Toutes les fonctions devinrent des objets et les utilisateurs purent alors créer leurs propres fonctions avec la syntaxe que nous connaissons aujourd'hui dans R. Ces fonctions pouvaient avoir un nombre non prédéfini d'arguments et certains de ces arguments pouvaient être passés à d'autres fonctions grâce à l'argument `...` [cf]. Les fonctions écrites en C ou FORTRAN pouvaient être incorporées au new S grâce à des fonctions particulières qui existent toujours dans R: `.C()`, `.Fortran()`, etc. Les fonctions graphiques furent également retravaillées et le new S apporta de nouvelles fonctionnalités pour profiter des environnements graphiques, notamment le _X Window System_ (X11), apparu en 1984.
+
+En 1992, un nouveau livre, le _White Book_ (_Statistical Models in S_ (1992)[ref]), développa les nouvelles fonctionnalités du new S pour travailler sur les modèles statistiques. Il y introduisit les objets de classe `data.frame`, des matrices dont les colonnes peuvent contenir des objets de différentes natures (p. ex. numérique, texte, booléen, etc.). C'est un objet qui fait encore aujourd'hui la force de R. Avec les `data.frames` sont introduits les objets de classe `formula` (caractérisés par l'opérateur `~`) qui permettent de décrire des modèles complexes en très peu de lignes de code. Enfin, alors que les prémde S aices d'une programmation orientée objet[^noteS6] étaient déjà présents en 1988 (avec la fonction `print()`), celle-ci prend une place plus importante en 1992. Cette approche donne une cohérence et une certaine facilité d'utilisation au langage S et encore aujourd'hui au langage R : on peut ainsi afficher tous nos objets avec la fonction `print` dont l'affichage dépendra du type de l'objet (leur classe) sans se poser de question. Ce point technique est important pour comprendre comment R fonctionne en profondeur [cf]. Le développement d'une approche orientée objet plus formelle est aussi le point central du dernier livre sur S, le _Green Book Programming with Data: A guide to the S Language_ (1998) qui formalise les objets dit S4.
+
+La création du langage S a soulevé des enjeux techniques majeurs que les développeurs ont surmontés en piochant des idées tantôt dans d'autres langages (p. ex. l'opérateur d'assignement `<-` provient du langage Algol), tantôt en trouvant des solutions spécifiques à S (p. ex. la boucle `for` et l'argument `...` de certaines fonctions). Le résultat de la vingtaine d'années de développement de S a produit un langage puissant pour la recherche en statistique mais plus généralement pour l'ensemble des opérations du traitement de données. C'est pour ces travaux que John Chambers fut récompensé en 1998 par le prix ACM (_Association for Computing Machinery_). Au début des années 1990, deux ramifications se branchèrent à l'aventure S. D'un côté, une entreprise commerciale avec le langage S-PLUS qui propose de faire profiter des potentialités du S au monde de l'entreprise. L'aventure prit fin en 2009 alors que S-PLUS était dans les mains de la société américaine TIBCO qui a finalement opté pour le développement d'un outil basé sur R : TERR (_TIBCO Enterprise Runtime for R_). De l'autre côté, c'est un logiciel libre, R qui vit le jour.
+
+
+
+[^noteS1]: La lecture de la page Wikipédia dédiée au Laboratoires Bell permet de
+se faire une idée de l'importance des Laboratoires Bell en terme d'innovation,
+les laboratoires Google de l'époque! (REF https://fr.wikipedia.org/wiki/Laboratoires_Bell).
+
+[^noteS2]:FORmula TRANslator est un langage apparu en 1954 développé par
+John Backus chez IBM (REF https://fr.wikipedia.org/wiki/Fortran).
+
+[^noteS3]:_It was the realization that routine data analysis should not require writing Fortran programs that really got S going._ page... [ref] "Our primary goal was to bring interactive computing to bear on statistics and data analysis problems."
+
+[^noteS4]:Une macro est formée d'un identificateur et d'un morceau de code. Avant l'exécution du programme, toutes les occurrences de l'identificateur dans le code source seront remplacées par le morceau de code auquel elles sont associées.
+
+[^noteS5]:Les livres décrivant le langage S sont nommés par des noms de couleurs, en rapport avec la couleur de leur couverture: http://www.sumsar.net/blog/2014/11/tidbits-from-books-that-defined-s
+
+[^noteS6]:La programmation orientée objet définit des objets et des méthodes tout en permettant de faire un lien entre les deux. Par exemple, si des objets de classe _point_ et d'autres de classe _ligne_ sont définis, une méthode, c.-à-d. une fonction, _plot()_ peut ensuite être définie pour afficher ces deux objets dans un environnement graphique. La force de la programmation orientée objet sera de permettre un affichage adéquat : des points séparés à l'appel de la méthode _plot_ sur l'objet de classe _point_ (_plot(point)_) et des points reliés entre eux à l'appel de la méthode _plot_ sur l'objet de classe _ligne_ (_plot(ligne)_).
+
+
+
+
+
+### De S à R
+
+<!-- Un retour sur la naissance de R est disponible sur le site d'archives de R,
+le CRAN (_Comprehensive R Archive Network_)[^naisR1]. Le texte a été écrit
+par l'un des auteurs de R : Ross Ihaka. Nous en résumons ci-dessous les
+grandes lignes. KC mettre dans le chapeau du chapitre -->
+
+Au milieu des années 1990, au département de statistiques de l'université
+d'Auckland, Ross Ihaka et Robert Gentleman s'intéressent à la statistique
+informatique. De leur pratique émerge un constat similaire à celui qui a
+mené à S : le besoin d'un outil logiciel performant pour le domaine. Il y avait
+certes à ce moment les premières versions du langage S qui était facilement
+accessible aux milieux universitaires, mais il semble que ce n'était pas l'outil optimal pour les machines Macintosh sur lesquelles ils travaillaient. Les deux chercheurs se lancèrent alors dans le développement d'un nouvel outil influencé par S, le langage R. Ihaka disposa d'une des premières versions du new S mais aussi, d'un second langage : le Scheme[^naisR2]. Ce dernier présentait des points communs avec S, mais aussi un certain nombre de différences qui font que R n'est pas une stricte reproduction de S. En effet, Ihaka et Gentleman ont tiré parti de Scheme pour la gestion de la mémoire et de la portée des variables. De leur point de vue, ils s'agit d'un langage dont la forme est très similaire à S, mais sans ses inconvénients relatifs à la mémoire. Il faut ajouter à ces changements, des travaux sur l'interface graphique avec l'implémentation des couleurs, la texture des lignes, la possibilité d'introduire des formules mathématiques sur un graphique et la mise en page des graphiques. Ces deux derniers éléments sont le fait des travaux de thèse de Paul Murrel à qui la gestion des graphiques sous R doit beaucoup [^naisR3].
+
+En août 1993, les auteurs annoncent la mise à disposition de leur travail R sur la liste de diffusion S-news. Comme il a été fait pour S, R a mis en place le moyen de se nourrir des retours des utilisateurs. L'un d'entre eux, Martin Mächler de l'Eidgenössische Technische Hochschule Zürich (ETH Zürich), devint un acteur important du projet et incita les chercheurs de Nouvelle-Zélande à rendre leur logiciel libre. C'est ainsi que R fut mis à disposition de tous sous la licence publique générale GNU-GPL dès 1995, d'où son surnom de _GNU S_. En 1996, parut l'article _R: A Language for Data Analysis and Graphics_ qui met au grand jour l'existence de R. Ces deux événements combinés donnent une impulsion forte au langage R. De fait, ces dispositions allaient accroître le nombre d'utilisateur, et la distribution et la communication allaient en être profondément changées. En mars 1996, Mächler créa la première liste de diffusion spécifique à R : R-tester, qui fut divisée en trois l'année suivante : R-announcement, R-help et R-devel. Pour organiser le développement de R, il devint pressant d'avoir un système d'archivage dédié à R. Ce fut Kurt Hornik de l'université Technique de Vienne[^naisR4] qui s'en chargea et mis au point un système qui évoluera pour donner le CRAN actuel. Le nombre de retours sur R devint tel que Ihaka, Gentleman et Mächler ne suffisaient plus pour assurer convenablement le développement du langage. Ils décidèrent alors de partager cette tâche avec Doug Bates, Peter Dalgaard, Kurt Hornik, Friedrich Leisch, Thomas Lumley, Paul Murrell, Heiner Schwarte et Luke Tierney : l'équipe de développement _R-Core_[^naisR5] se formait.
+
+Une manière simple et efficace pour prendre conscience de l'évolution de R de 1997 à nos jours est de fouiller dans les archives du site internet du CRAN. Par exemple, dans le fichier _README_ de la version R.0.49, on peut lire qu'en avril 1997 une bonne partie des fonctions du _Blue book_ et du _White Book_ étaient déja implémentées. La reconnaissance formelle du groupe R-Core est présente dans la version R.0.60 de décembre 1997. L'implémentation d'une grande partie des fonctionnalités de S conduisit à la version 1.0.0 de R, le 29 févirer 2000. Pour l'anecdote, le premier CD-ROM fut donné à John Chambers qui avait rejoint l'équipe du R-Core en 1998. En janvier 2001, c'est la première version d'un journal dédié à R (alors appelé R news [cf]) qui fut publiée. En décembre 2001, avec la version 1.4, ce sont les objets S4 qui sont implémentés. Ces derniers étaient décrits dans le _Green Book_ [ref] et procurèrent à R un cadre beaucoup plus formel pour faire de la programmation orientée objet. En octobre 2004, la version 2.0 était distribuée, et introduit pour la première fois le _lazy loading_ (chargement paresseux) permettant d'améliorer les performances de R. Quand un package (extension) est chargé, il est rare que toutes ses fonctionnalités soient exploitées en même temps. Afin de ne pas charger l'ensemble du code, R crée des bases de données pour stocker et répertorier le code qui ne sera alors chargé qu'au premier appel de l'utilisateur. En avril 2013, la gestion des valeurs d'indexation des vecteurs supérieurs à 2^31^ pour les systèmes exploitant des processeurs à 64 bits augmenta les performances de R en termes de mémoire et nous amena aux versions 3.x.x. Depuis le 14 août 2015, la dernière version est la 3.2.2, surnommée _Fire Safety_. Pour les lecteurs qui cherchent à obtenir des détails techniques relatifs aux fonctionnements internes de R, il est à noter qu'une documentation couvrant ces aspects est disponible en ligne https://cran.r-project.org/doc/manuals/r-release/R-ints.html.
+
+
+<!-- Faire un tableau des releases de R -->
+
+|Version     | Date de publication| Notes                                     |
+|:-----------|:-------------------|:------------------------------------------|
+|R-0.49      | 23 avril 1997      | première version accessible sur le CRAN   |
+|R-1.0.0     | 29 février 2000    |                                           |
+|R-1.3.0     | 22 juin 2001       |                                           |
+|R-2.0.0     | 4 octobre 2004     |                                           |
+|R-3.0.0     | 3 avril 2013       |                                           |
+|R-3.5.1     | 3 juillet 2017     | version utilisée pour ce livre            |
+
+: Date de sortie sur le CRAN
+
+
+
+[^naisR1]:Voir la section associée et le site https://cran.r-project.org
+
+[^naisR2]:Scheme est apparu dans les années 1970 au Massachusetts Institute of Technology (MIT) grâce au travail de Guy Lewis Steel et Geral Jay Sussman. S et Scheme sont deux sources d'inspiration revendiquées au début de l'article _R: A Language for Data Analysis and Graphics_ de 1996.
+
+[^naisR3]:Il est notamment l'auteur de l'ouvrage _R graphics_[ref].
+
+[^naisR4]:https://stat.ethz.ch/mailman/listinfo
+
+[^naisR5]:Avec Friedrich Leisch, de la même institution, ils s'étaient rapprochés du projet en apportant des corrections à des bugs.
+
+[^naisR6]:Ils étaient 11 initialement, 16 en 2002 et 21 en août 2015.
+
+
+
+## R aujourd'hui
+
+### Les grands principes de R
+
+bouquin Chambers.
+
+### La communauté des utilisateurs de R
+
+### R et Rstudio
+
+
+### La documentation
+
+S'initier à un nouveau langage de programmation peut être assez déroutant au début. Heureusement, de nombreuses ressources sont disponibles sur Internet. La page d'accueil du projet R (https://www.r-project.org) en recense certaines. On y trouve notamment des explications, en anglais pour la plupart, pour comprendre ce qu'est R, des liens pour se documenter et connaître les prochains événements autour de R, dont les conférences internationales _Use R!_[^resR1]. Ces liens dirigent en majorité vers le CRAN (https://www.cran.r-project.org) qui est en fait une collection de sites miroirs dont les contenus sont synchronisés avec le site du CRAN maintenu par Kurt Hortnik à la Wirtschaftsuniversität à Vienne. En 2002, il existait 12 sites miroirs, et en 2015, on en dénombre plus de 100 qui se répartissent les téléchargements de R et de ses packages, ainsi que l'archivage des différentes versions.
+
+Au lien _Contributed_ de la section _Documentation_ du CRAN, sont entreposés des manuels d'utilisation de R rédigés par des utilisateurs de R sous différentes langues. En français, on y trouve notamment le manuel _R pour les débutants_ d'Emmanuel Paradis, mais aussi un _Aide mémoire R_ rédigé par Mayeul Kauffmann [ref]. Deux autres sources d'informations sont à mentionner bien qu'exclusivement rédigées en anglais.
+La première est _The R journal_ (intitulé _R news_ de 2001 à 2009) que nous avons mentionnés plus haut. Cette revue bisannuelle détaille les modifications apportées aux nouvelles versions de R parues depuis le numéro précédent. Les changements sur le CRAN y sont aussi indiqués avec la liste des nouveaux packages. On y trouve également des articles qui font, le plus souvent, la présentation d'un nouveau package.
+La deuxième source est constituée par l'ensemble des listes de diffusion relatives à R. En 1997, il y avait trois listes de diffusion : _R-announcement_ pour annoncer les nouveautés de R, _R-help_ dédiée à l’entraide entre utilisateurs R et _R-devel_ pour les développeurs. Depuis, ont été ajoutées les listes _R-package-devel_, pour les développeurs de packages et _R-packages_ pour annoncer la sortie de nouveaux packages. À côté de ces listes principales, on trouve également pas moins de 22 autres listes de diffusion couvrant les différentes utilisations de R : les listes _R-SIG_ (_Special Interest Group_) qui traitent aussi bien du traitement des données spatiales que de l'écologie ou encore de la finance (https://www.r-project.org/mail.html).
+
+Les utilisateurs anglophones ont facilement accès à une masse considérable d'informations grâce à différents ouvrages, notamment ceux regroupés dans la collection _Use R!_, publiée par le groupe éditorial Springer et éditée par R. Gentleman, K. Hornik Kurt et G. Parmigiani. Des ouvrages dédiés à R sont aussi disponibles en français, mais en nombre plus restreint. Gaël Millot a ainsi écrit un ouvrage très complet (plus de 800 pages dans la troisième édition), *Comprendre et réaliser les tests statistiques à l'aide de R* édité chez de Boeck. Springer a édité durant un temps des ouvrages dans la série _Pratique R_. Il existe aussi trois ouvrages qui abordent la statistique avec R aux Presses Universitaires de Rennes, ou encore _R et espace_ édité chez Framabook. Une fois les bases acquises avec R, les utilisateurs peuvent avoir recours à la documentation disponible sur des forums tel que celui maintenu par le Centre de coopération internationale en recherche agronomique pour le développement (CIRAD) http://forums.cirad.fr/logiciel-R/index.php. Notons qu'il y a aussi de très bon blogs en anglais http://www.r-bloggers.com, http://www.r-statistics.com, http://blog.rstudio.org, http://blog.revolutionanalytics.com, etc.
+
+
+[^resR1]: Il s'agit d'un rassemblement des utilisateurs de R. La première conférence a eu lieu à Vienne en 2004 et les conférences se tiennent chaque année dans différents pays depuis 2006.
+
+
+
+### Les packages
+
+R est un système modulaire : aux outils de base peuvent venir se greffer des fonctionnalités additionnelles selon les besoins de l'utilisateur. Un package (ou librairie) est un ensemble de fonctionnalités regroupées sous une même thématique que l'on ajoute à R. R est alors un cadre sur lequel peuvent être montés de nombreux packages. Parmi ces packages, certains sont installés par défaut avec R. Par ex., pour la version 3.2.2, vingt-huit packages accompagnent l'installation de R, dont 13 ont la priorité « base » (p. ex. le package `graphics`) et offrent à l'utilisateur les fonctionnalités primaires de R, et 15 sont recommandés (dont le package `nlme` qui permet de faire des modèles mixtes). Au gré de son usage, on peut ajouter des fonctionnalités supplémentaires pour étendre les possibilités offertes par R. Tous les packages présentent la même architecture : ils sont accompagnés d'une documentation complète, d'exemples concrets, et de nombreuses autres informations.
+
+En général, un package regroupe un ensemble de fonctions réunies sous une même thématique. Par ex., on trouvera des packages pour faire des modèles mixtes, de la géostatistique, des graphiques, etc. Les packages _jpeg_ et _png_ proposés par Simon Urbanek sont chacun composé de deux fonctions permettant d'importer et d'exporter des fichiers au format jpeg et png.
+Le package _plotrix_, maintenu par Jim Lemon, dans sa version 3.5-12, est une collection d'environ 150 fonctions qui étendent les fonctionnalités graphiques du package _graphics_.
+Dans un autre genre, le package _ggplot2_, maintenu par Hadley Wickham, est une implémentation de _La Grammaire des Graphiques_ développée par Leland Wilkinson. Ce package est d'une certaine manière plus qu'une simple collection de fonctions, il développe des outils et des méthodes qui changent drastiquement l'approche que l'on a du graphique.
+
+Combien de packages existe-t-il actuellement ? Dans le numéro de décembre 2009 du _The R journal_[^fox], John Fox relate la croissance exponentielle du nombre de packages R. Nous nous sommes inspirés de cet article pour actualiser cette évolution du nombre de packages archivés sur le CRAN jusqu'en 2015 pour réaliser la figure.
+<!-- @fig:nbpkgs. -->
+
+<!-- ![Somme cumulée des packages archivés sur le CRAN](chap2/fig/figpackg.pdf){width=95%}
+ KC mettre aussi nombre de référence dans les puclication scientific avec Web of science-->
+
+
+
+D'une centaine de package au début des années 2000, on arrive à plus de 7000 en août 2015. Comme le souligne Kurt Hortnik en 2009[ref], cette abondance de packages pose un certain nombre de questions relatives à la facilité de trouver la fonctionnalité désirée, la redondance des fonctions et la qualité du code. Un package soumis au CRAN est en fait soumis à un ensemble de tests qui s'assurent que les fonctions peuvent être exécutées et que les exemples fonctionnent. Il n'y a pas de vérification sur la redondance des fonctions vis à vis des autres packages ou encore sur la qualité du code. Selon Kurt Hortnik, en dépit des défis posés par le nombre croissant de packages développés, une politique plus contraignante n'est pas souhaitable, et quand bien même celle-ci serait mise en place, elle n'affecterait pas tant la courbe de croissance. A son avis, il faudrait repenser les relations entre les packages afin de diminuer la similarité entre les packages au profit d'interdépendances. Cela dit, pour rassurer les utilisateurs de R, la qualité de nombreux packages a été évaluée par des journaux spécialisés comme le _Journal of Statistical Software_. De même, les retours de la part de la communauté des utilisateurs de R est, comme en témoigne son histoire, un facteur essentiel. Ainsi, les faiblesses de tel ou tel package peuvent vite être détectées et la coopération entre utilisateurs est facilité grâce à des outils comme _Github_, *Bitbucket* ou encore l'outil R dédié [*R-Forge*](https://r-forge.r-project.org).
+
+
+### Les interfaces utilisateurs
+
+R est un langage de programmation qui pourrait bien demeurer en l'état d'abstraction, confiné dans des livres qui en décrivent le fonctionnement. Cependant, il existe bel et bien une réalisation opérationnelle de R qui fait de lui un outil numérique à part entière, un logiciel statistique dédié au traitement et à l'analyse de données. Travailler avec R, c'est finalement utiliser le langage R avec le logiciel R. Concrètement, le processus est relativement simple : écrire du code dans le langage R qui sont ensuite exécutées par le logiciel R.
+
+Pour réaliser ces étapes, il existe plusieurs cadres de travail possibles. Quand R est téléchargé sur le CRAN, pour Windows et Mac OS X, il est fournit avec une interface utilisateur dédié à chacun de ces systèmes d'exploitation. Ces interfaces permettent d'avoir une console graphique ainsi qu'une interface pour écrire les lignes de commandes que l'on exécute ensuite. Il est aussi possible d'utiliser R dans un terminal sous Linux, Mac OS X et Windows. Dans ce cas, l'utilisateur dispose d'une interface pour communiquer avec R sans aucune autre facilité. Ainsi, l'utilisateur devra se munir d'un outil de son choix pour écrire les commandes R qu'il souhaite enregistrer et utiliser de manière différée. Un tel outil est un bon éditeur de code, il en existe énormément, un éditeur récent, performant, multiplate-forme et gratuit est [Atom](https://atom.io).
+
+De l'utilité des scripts...
+
+Utiliser une interface de type console avec un éditeur de code reste une solution pour des habitués de la programmation. Pour les utilisateurs débutants, un environnement performant et moins austère est [RStudio](https://www.rstudio.com). C'est un environnement intégré de développement R open-source, multiplate-forme et gratuit pour la version _Desktop_ qui permet de visualiser facilement la console où le code est exécuté, l'éditeur de lignes de code, les figures réalisées, la liste des packages chargés, la documentation, etc. Cette solution est vraiment à recommander lorsqu'on débute avec R et même pour la suite. Noter que RStudio est aussi une entreprise qui propose d'autres services qui ont trait à R. Par exemple, RStudio propose des formations par des experts qui sont auteurs de packages très populaires de R, par exemple Hadley Wickham auteur du package _ggplot2_.
+
+
+
+[^fox]:Disponible à cette adresse : http://journal.r-project.org/archive/2009-2/

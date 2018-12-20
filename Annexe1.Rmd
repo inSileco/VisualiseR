@@ -1,0 +1,379 @@
+# Annexe I: courte introduction à R {-}
+<!-- KC: SOIT ON LE LAISSE EN ANNEXE SOIT ON EN FAIT UN CHAPITRE MAIS MON
+SENTIMENT EST QU'ON DEVRAIT ENCOURAGER LE LECTEUR A LIRE AUTRE CHOSE -->
+
+Le langage R est performant pour manipuler, analyser et visualiser des données.
+Utiliser R, c'est utiliser une syntaxe précise pour écrire des requêtes. Ces
+requêtes induisent, au niveau des unités de calculs de l'ordinateur, la série
+d'opérations nécessaire pour réaliser les tâches associées aux requêtes soumises.
+Pour mener une analyse de données avec R, il faut être capable de formuler
+correctement les requêtes et donc maîtriser la syntaxe de ce langage. Aussi,
+pour améliorer ces compétences il faut enrichir son vocabulaire (en augmentant
+ses connaissance des fonctions et packages disponibles) et creuser la question
+du fonctionnement de R (et se confronter à des questions plus techniques).
+
+
+L'objectif de cette annexe est de familiariser le lecteur néophyte avec
+la syntaxe de R en utilisant des exemples de lignes de commande que nous
+commentons. Nous discutons brièvement de quelques principes fondamentaux
+du langage et nous couvrons un vocabulaire très limité (nous mentionnons un
+nombre restreint de fonctions et d'opérateurs). Cette annexe a été conçu pour
+rendre l'ouvrage autonome. Cependant, cette annexe ne peut constituer à elle
+seule une introduction au langage R. C'est pourquoi, nous vous recommandons
+vivement de consulter les trois premiers chapitres de _R et espace_
+(REF+ouvrage disponible sur le site de Framabook https://framabook.org/r-et-espace/),
+et le manuel _R pour les débutants_ d'Emmanuel Paradis (REF+disponible sur le CRAN https://cran.r-project.org/doc/contrib/Paradis-rdebuts_fr.pdf).
+
+
+
+```{r rm, echo=FALSE}
+rm(list=ls())
+```
+
+
+## Première commande {-}
+
+
+```{r add1}
+var1 <- 1 + 1
+```
+
+Avant de lister les opérations les plus courantes, arrêtons-nous sur cette
+première ligne de commande pour mieux la comprendre. La première ligne est une
+assignation, nous demandons à R de réaliser l'opération `1+1` et de stocker le
+résultat dans une variable, dont le nom est `var1`. Lorsque la commande est
+soumise (ce qui correspond à utiliser la touche entrée dans une console R), un
+certain nombre d'opération ont été réalisées par l'ordinateur, afin que les
+`1` soient correctement interprétés comme des nombres devant être additionnés
+(opérateur `+` qui va engender une addition au niveau des unités de calculs)
+et finalement le résultat de cette opération va être associé à la variable
+`var1` (opérateur `<-`)[^assign]. Un espace dans la mémoire vive de l'ordinateur
+a été alloué pour y inclure la variable (incluant son nom et sa valeur) et la
+variable est disponible dans la session de R.
+
+
+[^assign]: R propose trois opérateurs d'assignation: `<-`, `=` (`var1 = 1 + 1`)
+et `->` (`1 + 1 -> var1`) nous utilisons toujours le premier dans cette ouvrage.
+
+Il est important de noter dès maintenant que les noms donnés aux variables sont
+soumis à deux contraintes. Premièrement, un nom de variable doit systématiquement
+commencer par une lettre latine (minuscule ou majuscule) ou un point (".").
+Deuxièmement, le reste du nom peut-être formé par des lettres latines (minuscules
+ou majuscules), des chiffres, des points (".") et des tirets-bas ("\_"). Pour
+ne pas se perdre dans les noms de vos variables, il est préférable de rester
+concis et aussi explicite que possible. Notez que si un nom de variable est
+utilisé dans la console alors que la variable n'a pas été définie, un message
+d'erreur est retourné.
+
+```{r error, error=TRUE}
+var0
+```
+
+Si nous rappelons maintenant l'objet `var1`, il est correctement afficher :
+
+```{r var1}
+var1
+```
+
+Notons au passage que cette ligne est en réalité équivalent à `print(var1)`,
+`print()` étant une fonction (voir le paraphe dédié REF) qui permet d'afficher les objets de R. Parfois,
+l'utilisateur peut désirer créer une variable et l'afficher immédiatement (ce
+que nous faisons à plusieurs reprises dans l'ouvrage). Pour ce faire, la ligne
+de code peut être passer `print()` :
+
+```{r printvar2}
+print(var2 <- 35+48)
+```
+
+Pour une économie de cinq lettres, l'utilisateur peut simplement utiliser les
+parenthèses:
+
+```{r printvar2-2}
+(var2 <- 35+48)
+```
+
+Pour voir l'ensemble des variables utilisé dans la session, utiliser la commande
+`ls()` :
+
+```{r printvar2-3}
+ls()
+```
+
+Jusqu'ici, nous avons utilisé deux variables: `var1` et `var2` qui sont donc
+affichées.
+
+
+## Pour R, tout est objet {-}
+
+<!-- En informatique, un objet est  ontient des informations et des mécanismes -->
+
+<!-- les variables sont donc des ensemble de caractères contraint qui sont
+ auxquels sont associés des objets -->
+La portion structurée de mémoire vers lequel renvoie un nom de variable est un
+objet. Pour R, tout est objet, depuis les nombres jusqu'aux fonctions. Pour faire simple, nous pouvons diviser les objets et deux grandes catégories. D'un côté, nous avons les objets de base (p. ex. les vecteurs), de l'autre côté, il y a les objets composés (de type S3 ou S4). Pour se donner une image, les premiers sont les briques élémentaires de R avec lesquelles les seconds (S3 ou S4) sont bâties. Comme nous l'avons énoncé plus haut, les objets S4 étant les plus formels que les S3. Cette distinction technique permet de bien comprendre comment R fonctionne et de mieux comprendre certains messages d'erreur. Nous assignons maintenant différents objets de base à différentes variables tout en excluant les fonctions dont nous parlons plus bas :
+
+```{r}
+var3 <- "cool"
+var4 <- TRUE
+var5 <- NA
+var6 <- 1L
+var7 <- var1
+```
+
+
+
+votre session de R, la variable
+
+R a été capable de comprendre et d'indexer en mémoire ces différents objets. Ce dernier point enlève une épine du pied de l'utilisateur de R[^lang1]. Nous pouvons savoir comment R a interprété ces objets avec la fonction \texttt{typeof()}[^lang2].
+
+```{r typeof, results='hold'}
+typeof(var3)
+typeof(var4)
+typeof(var5)
+typeof(var6)
+typeof(var7)
+```
+
+Ces objets sont en fait des vecteurs de différents types et de taille 1. Un vecteur est constitué d'un ou plusieurs éléments de même nature. Il sont construits avec la fonction \texttt{c()}. La taille des vecteurs peut être retournée avec \texttt{length()}. Noter que dans la suite, on ajoute des parenthèses à une ligne donnée pour pouvoir afficher le résulat de l'assignation :
+
+```{r lenght, results='hold'}
+(var7 <- c(2,4,9))
+typeof(var7)
+length(var7)
+(var8 <- c("aa","ab","ac","ad"))
+typeof(var8)
+length(var8)
+```
+
+Un ensemble d'objet de même nature peut être contenu dans un tableau doublement indexé, c'est ce qu'on appelle une matrice. Les matrices peuvent être créées à l'aide de la fonction \texttt{matrix()}. Les tableaux peuvent même être indexés dans un nombre quelconque de dimensions grâce aux objets "array" créés avec la fonction  \texttt{array()}. Pour appeler une des valeurs de ces tableaux, on utilise les crochets, comme nous le montrons ci-dessous :
+
+```{r mat, results='hold'}
+var9 <- matrix(data=c(3,4,5,6,8,9), ncol=2, nrow=3)
+var9[1,2]
+var9[1,]
+var10 <- array(2,c(2,2,3))
+var10[1,2,2]
+```
+
+Un dernier objet permet de rassembler des objets de nature différentes, il s'agit des listes, pour accéder à l'un de ces objets, on utilise le double crochet et si on souhaite accéder à un objet en particulier dans la liste, on ajoute un crochet.
+
+```{r list, results='hold'}
+(var11 <- list(var7,var2,var8))
+typeof(var11)
+var11[[2]]
+var11[[3]][2]
+```
+
+Nous avons vu les objets de bases les plus importants. Parmi les objets les plus utilisés de R, il y a les "dataframe". Il s'agit d'objets de type S3, construits avec l'utilisation de la fonction \texttt{data.frame()}.
+
+```{r dataframe, results='hold'}
+(var12 <- data.frame(var7,Format=c("A1","A2",
+  "A3")))
+```
+
+Ces objets sont finalement des tableaux dont les colonnes sont des vecteurs. C'est un format très pratique pour travailler sur les données. L'utilisation du \texttt{\$} vous pernet d'accéder à l'un de ces vecteurs, en utilisant le nom de la colonne :
+
+```{r dataframe2, results='hold'}
+var12$var7
+```
+
+Vous pouvez également utiliser les crochets pour accéder aux différents éléments, comme dans une matrice. Un dernier détail pur savoir s'il s'agit d'un objet S3 ou S4 on utilise la fonction \texttt{is.object()}, si elle retourne "TRUE", alors il s'agit d'un objet S3 ou S4. Nous l'utilisons sur notre "matrix" et notre "data.frame".
+
+```{r dataframe3, results='hold'}
+is.object(var9)
+is.object(var12)
+```
+
+Pour ces objets conposites, une notion imprtante est la classe de l'objet c'est-à-dire l'espèce à laquelle cet objet appartient. Pour le savoir, il suffit d'utiliser la fonction \texttt{class()}.
+
+```{r class, results='hold'}
+class(var12)
+```
+
+C'est grâce à la classe que R reconnait les objets composés. En fait, il est très facile de créer un objet S3 personnalisé dans R grâce à la fonction  \texttt{structure()} :
+
+```{r structure, results='hold', tidy=FALSE}
+(
+  var13 <- structure(
+  list(
+    donnees=var12 , auteur="KCNC"
+    ),
+  class="monobjet")
+)
+```
+
+
+
+### Conditions {-}
+
+Lorsqu'on utilise un langage de programmation, on a souvent besoin de comparer des valeurs. Pour cela, on utilise des tests logiques. Il s'agit de comparaisons entre deux objets dont le résultat est soit "TRUE" (vrai) soit "FALSE" (faux).
+
+```{r test1, results="hide"}
+var1==85
+var1<50
+var1>50
+var1!=45
+```
+
+Avec R, les tests sont élargis à différents type d'objet. Par exemple, les cpmparaisons peuvent aussi se faire sur les lettres, c'est alors une question d'ordre alphabétique :
+
+```{r test2}
+"a">"b"
+"bestiaire"<"bestiole"
+```
+
+Pour créer des tests logiques un peu plus élaborés et utilisant, on utilise \texttt{\&} (le "et" logique) et  \texttt{|} (le "ou" logique).
+
+```{r test3, results="hide"}
+var1>50 & var1%%5==0
+var1>50 | var1%%3
+```
+
+Avec ces tests logiques, on peut construire des conditons, c'est-à-dire des structure logiques qui permettent de réaliser une opération différente selon le résultat des test.
+
+```{r ifelse}
+if (var1 %% 9 == 0) {
+  print("var1 est un multiple de 9.")
+} else if (var1 %% 3 == 0) {
+  print("var1 est un multiple de 3.")
+} else {
+  print("var1 n'est pas multiple et 3.")
+}
+```
+
+Selon la valeur de "var1", l'un des trois messages est affiché.
+Si c'est la première ou la seconde option qui est choisie, les suivantes ne seront pas explorées. La dernière condition (\texttt{else} seuls) signifie que si les options précédentes n'ont pas été retenues, on utilise celle-ci.
+La fonction \texttt{print()} permet d'afficher un objet, ici ce sont des chaînes de caractères que l'on affcihe dans la console.
+
+
+
+### Boucles
+
+Lorsqu'on fait des analyses, il se peut qu'on répète plusieurs fois les mêmes opérations mais pour des données différentes, par exemple pour les différentes colonnes d'un tableux. Dans ce cas, nous utilisons des boucles. Il existe les boucles \texttt{for} et les boucles \texttt{while}. Les boucles \texttt{for} consiste en une itération de commande sur un ensemble de valeurs pré-déterminée.
+
+
+```{r, for1}
+for (i in 1:3) print(i)
+```
+
+L'opérateur \texttt{:} est très utile, \texttt{a:b} crée un ensemble de valeur de 1 en 1 depuis "a" jusqu'à "b". La variable "i" va prendre les valeurs 1,2 et 3 que l'on affiche avec la fonction \texttt{print()}. Il est possible de répéter un ensemble d'opérations qui doivent alors être placées entre accolades.
+Comme nous l'avons mentionné plus tôt, R dispose d'une structure très flexible de boucle \texttt{for} : une itération sur les valeurs d'un vecteur donnée.
+
+```{r, for2}
+vec <- c(2,8,10)
+for (j in vec) {
+  s <- j^2
+  print(s)
+}
+```
+
+Au contraire des boules \texttt{for}, les boucles \texttt{while} répètent des instructions pour un ensemble de valeur qui n'est pas pré-déterminé. Les instructions sont répétées indéfniment (donc méfiance avec ces boucles) tant qu'une condition n'est pas respectée.
+
+```{r}
+d <- 3
+i <- 0
+while (i<d) {
+  s <- i^2
+  print(s)
+  i <- i+1
+}
+```
+
+La manipulation et visualisation des données nécessite rarement l'utilisation des boucles \texttt{while}, les boucles \texttt{for} sont quant à elles fréquemment utilisées.
+
+
+
+### Les fonctions {-}
+
+De manière générale, en informatique, une fonction est un ensemble de lignes de code dédié à la réalisation d'une tâche spécifique concrétisée par le renvoie d'une valeur (un objet dans R). Nous avons jusqu'ici déjà utiliser différentes fonctions. Le lecteur attentif a certainement remarqué que les fonctions de R présentent toutes une structure commune: elles commençent par une suite de caractères (son nom) suivie de parenthèses à l'intérieur desquelles se trouvent éventuellement un ou plusieurs arguments. Les arguments sont des objets transmis à la fonction qui seront soient ceux manipuler soit précise comment la tâche doit être effectuées. Par exemple, quand nous avons utilisé la ligne :
+
+```{r, func1}
+var9 <- matrix(
+  data=c(3,4,5,6,8,9),
+  ncol=2,
+  nrow=3
+  )
+```
+
+l'argument "data" sera l'ensemble des valeurs est à utiliser pour remplir la matrice, "ncol" est le nombre de colonne et "nrow", le nombre de ligne de la matrice.  De manière générale, la forme caractéristique de l'appel d'une fonction est :
+
+> nomfomction(arg1=obj1, arg2=obj2, arg3=obj3)
+
+Une fonction retourne un objet, et cet objet peut être donnée à une variable.
+Dans R, c'est un objet qui est retourné que nous pouvons passer à une variable :
+
+> var14 <- nomfomction(arg1=obj1, arg2=obj2, arg3=obj3)
+
+Parmi les arguments il existe des argument "par défaut". Pour ces arguments, il existe un objet prédéfinie qui défini comment la tâche sera réalisée si l'utilisateur ne précise rien. Ainsi, nous n'avons pas défini l'argument "byrow" dont la valeur par défaut est "FALSE", c'est pourquoi la matrice est remplie colonne par colonne. Pour changer se comportement nous précisons changeons cela :
+
+```{r func2}
+(
+  var15 <- matrix(
+    data=c(3,4,5,6,8,9),
+    ncol=2,
+    nrow=3,
+    byrow=TRUE)
+)
+```
+
+Dans R, les fonctions sont aussi des objets de type particulier, il existe deux catégories de fonctions :
+
+```{r typeof2, results='hold'}
+typeof(typeof)
+typeof(sum)
+```
+
+Pour R, une fonction est un bel et bien un objet dont le contenu est finalement du code. Quand une fonction est appelée sans parenthèse, c'est sont codes qui est renvoyé. De plus, pour une fonction dans un package R, des indications supplémentaires sont retournées entre \texttt{<>}, pour savoir où cette fonction est localisée.
+
+```{r typeof3, results='hold'}
+typeof
+```
+
+Cette remarque vous facilitera la compréhension des messages d'erreur : lorsque R parle d'un objet de type "closure" il parle d'une fonction. R est un langage ou votre efficacité repose très fortement sur votre vocabulaire. Pour engranger rapidement un grand nombre de fonctions, la compilation de fonctions proposées par sur le site du CRAN est très utile. Toutes fonctions de R sont assorties d'une documentation qui vous explique, en anglais, comment l'uitliser. Pour y accéder, l'utilisateur a deux possibilités, précéder par un \texttt{?} le nom de la fonction ou utiliser la fonction \texttt{help()}, cette dernière permet des recherche plus détaillée.
+
+
+```{r, eval=FALSE}
+?matrix
+help(matrix)
+```
+
+Les fonctions de R sont très flexible. Avec les arguments par défaut qui permettent de ne pas utiliser l'ensemble des arguments, il y a aussi l'argument sous forme de "..." qui permet de passer des arguments supplémentaires. Ces arguments sont utilisésconne argument de fonctions utilisée à l'intérieur d'une fonction donnée. C'est une utilisation très fréquent dans R.
+
+En utilisant R, on est facilement amené à créer nos propres fonctions, c'est-à-dire des objets de type "closure". Dans l'exemple ci-dessous, nous créons la fonction \texttt{affine()} qui a trois arguments. Le premier n'a pas de valeur par défaut, l'utilsateur est obligé de le spécifier, pour les deux autres, nous avons ajouté des valeurs par défaut, l'utilisateur à le choix de les changer
+
+
+```{r, eval=FALSE}
+  affine <- function(x,a=1,b=0){
+    y <- a*x+b
+    return(y)
+  }
+```
+
+Dans une fonction, il n'est pas nécessaire d'écrire tous les noms d'arguments utilisés, nous pouvons simplement indiquer les valeurs. Dans ce cas, l'ordre des valeurs doit être l'ordre des arguments.
+
+
+```{r, eval=FALSE}
+affine(4,2,3)
+```
+
+L'exemple suivant montre comment profiter des arguments supplémentaires, "...". Nous créons la fonction \texttt{affinen()} qui retourne la valeur de la fonction affine à la puissance n. Nous pourions ré-écrire l'ensemble des paramètre de la fonction affine mais nous pouvons aussi utiliser les "...", de la sorte :
+
+
+```{r, eval=FALSE}
+  affinen <- function(..., pow=2){
+    y <- affine(...)
+    return(y^pow)
+  }
+  affine(x=4,a=2,b=3,pow=3)
+```
+
+Les oublis de l'orthographe exact d'une fonction sont fréquents. Pour chercher efficacement les noms de fonctions par motifs, il existe la fonction \texttt{apropos()} :
+
+```{r, eval=FALSE}
+apropos("plo")
+```
+
+
+[^lang1]:C'est un moment difficile à passer quand on utilise des langages de plus bas niveau comme le langage C, sur lequel R repose.
+
+[^lang2]:Il est possible d'utiliser la fonction \texttt{mode()} qui est simplement un alias de cette fonction.

@@ -1,0 +1,137 @@
+# Périphériques et exportation
+
+Dans ce chapitre, nous allons apprendre à exporter un graphique en lignes de commande. Ceci est vital pour toute procédure d'automatisation. Imaginez que vous deviez produire des centaines de graphiques. Il ne vous viendrait pas à l'esprit (du moins nous l'espérons) de devoir cliquer pour sauvegarder un à un chacun de vos graphes. Mais, avant de parler de cette étape d'exportation, nous devons développer la notion de périphérique graphique.
+
+
+## Types de périphériques
+
+Qu'est-ce-qu'un périphérique graphique ? Nous avons déjà mentionné dans l'introduction, que lorsqu'on appelle une *High-level plotting function* (e.g. la fonction `plot()`), ceci a pour conséquence d'ouvrir une fenêtre graphique dans laquelle sera affichée l'information visuelle souhaitée. Et bien, cette fenêtre est un périphérique graphique. Cependant, c'est un périphérique un peu particulier sous R : on parle de **périphérique graphique interactif**, dans le sens où l'on voit le résultat de la commande à l'écran (le graphe). Mais, sachez que la plupart des périphériques de sortie disponibles dans R sont ce qu'on va appeler des **périphériques d'exportation**. Et lors de leur sollicitation, l'utilisateur ne verra aucun graphique s'afficher à l'écran. Nous y reviendrons à la fin de ce chapitre.
+Le type de périphérique graphique interactif que vous allez utiliser dépend de votre système d'exploitation. Sous Windows, le moteur graphique de base est X11, alors que sous les machines Unix, c'est le système QUARTZ qui prévaut (bien que le moteur X11 puisse être installé et qu'il soit le moteur par défaut sélectionné lorsque R est utilisé dans le SHELL). Sous Mac OSX, QUARTZ est appelé AQUA.
+
+
+```{r}
+## Système d'exploitation
+.Platform$OS.type
+## Moteur graphique
+.Platform$GUI
+```
+
+Pour ouvrir un nouveau périphérique graphique, il faudra utiliser la commande `x11()` (sous Windows) ou `quartz()` (sous Unix). Voici quelques caractéristiques de ce périphérique graphique.
+
+
+```{r eval=-1}
+x11.options()
+quartz.options()
+```
+
+
+Ces options sont modifiables. Ainsi, on peut redimensionner une fenêtre graphique à l'ouverture (c'est ce que fait la fonction `pickcolor()` lorsqu'elle affiche la palette de couleurs). Voici comment faire.
+
+
+```{r eval = FALSE}
+x11(width = 12, height = 7)
+quartz(width = 12, height = 7)
+```
+
+Maintenant, une astuce pour ceux qui développent leurs propres fonctions graphiques sous R. Si vous développez des fonctions ou des packages qui seront distribués et donc potentiellement utilisés sur n'importe quel système d'exploitation, vous pouvez utiliser la commande suivante pour ouvrir un nouveau périphérique graphique. Celle-ci s'adapte à n'importe quel OS : Windows et Unix (Mac OSX et Linux).
+
+
+```{r eval = FALSE}
+switch(.Platform$OS.type, unix = {quartz()}, windows = {x11()})
+```
+
+Nous avons vu que l'appel aux *High-level plotting functions* avait pour conséquence d'ouvrir un nouveau périphérique graphique. C'est vrai si aucun périphérique n'est ouvert. Par contre, si un périphérique graphique est déjà ouvert et actif, son contenu sera remplacé par le nouveau plot, mais les paramètres graphiques spécifiés pour ce périphérique seront eux conservés (sauf s'ils sont modifiés à la volée). En revanche, dès l'ouverture d'un nouveau périphérique graphique, les valeurs des paramètres graphiques sont réinitialisés. En d'autres termes, toute modification directe dans le `par()` est propre à une fenêtre graphique.
+La commande suivante permet de fermer tous les périphériques graphiques ouverts (même les périphériques d'exportation, cachés à l'utilisateur). Alors attention !!!
+
+```{r eval = FALSE}
+graphics.off()
+```
+
+## Les fonctions `dev.x()`
+
+Cette famille de fonctions permet de manipuler les périphériques graphiques ouverts. Bien que peu utilisées (à l'exception de `dev.off()`), il nous a semblé important de les mentionner ici. Le tableau ci-dessous liste les fonctions principales.
+
+
+
+|**Fonction** | **Action**                                      |
+|:------------|:------------------------------------------------|
+|`dev.list()` | Affiche la liste des périphériques ouverts      |
+|`dev.cur()`  | Affiche le périphérique actif                   |
+|`dev.prev()` | Affiche le périphérique précédent               |
+|`dev.next()` | Affiche le périphérique suivant                 |
+|`dev.set(n)` | Sélectionne le périphérique n                   |
+|`dev.off()`  | Ferme le périphérique actif                     |
+|`dev.copy()` | Copie le contenu d'un périphérique dans un autre|
+
+
+La commande `graphics.off()` sera préférée à `dev.off()` dans le cas où de nombreux périphériques graphiques sont ouverts.
+
+
+## Exportation d'un graphe
+
+Pour exporter un graphe, c.-à-d. l'enregistrer sur le disque dur, trois possibilités existent. La première, c'est en cliquant. Vous savez sûrement déjà comment faire. La seconde consiste à copier le contenu d'un périphérique graphique AQUA ou X11 dans un périphérique de sortie (e.g. **PDF**, **PNG**, **TIFF**, **Postscript**, etc.).
+Avant de voir comment procéder, regardez les périphériques de sortie disponible sur votre système d'exploitation.
+
+```{r warning=F}
+capabilities()
+```
+
+Les formats **PDF**, **SVG** et **Postscript** ne sont pas présents dans cette liste. En fait, ils sont regroupés sous le type **CAIRO**.
+Regardons comment exporter un graphe en **PDF** avec la fonction `dev.copy()`.
+
+```{r eval = FALSE}
+## Production du graphe en mode interactif
+x <- rnorm(50)
+y <- rnorm(50)
+plot(x, y, pch = 15, main = "My plot")
+abline(reg = lm(y ~ x), col  ="red")
+## Exportation
+dev.copy(device = pdf)
+dev.off()
+```
+
+Quelques remarques sur ce qu'on vient de faire. Premièrement, pour que l'exportation s'effectue, il faut fermer la connexion au périphérique de sortie (ici le périphérique **PDF**) avec la commande `dev.off()`. On vient de créer un fichier **PDF**. Les dimensions de ce fichier sont les mêmes que celles du périphérique graphique sous R. De plus, le fichier est exporté dans le répertoire courant et R choisit un nom par défaut. Bien évidemment, nous pouvons spécifier un nom au fichier exporté.
+
+```{r eval = FALSE}
+plot(x, y, pch = 15, main = "My plot")
+abline(reg = lm(y ~ x), col  ="red")
+dev.copy(device = pdf, "MyPlot.pdf")
+dev.off()
+```
+
+Remarque : les fonctions `dev.print()` et `dev.copy2pdf()` permettent de faire la même chose. Cependant, dans le cas de la première, si aucun nom n'est spécifié, le périphérique sera envoyé à l'imprimante par défaut à laquelle votre ordinateur est connecté. Donc, attention si vous l'utilisez.
+Enfin, la troisième façon d'exporter un graphe est d'avoir recours aux *File-based devices*. Derrière ce nom se cachent en fait des périphériques connus de tous : **PDF**, **PNG**, **TIFF**, **Postscript**, etc. Contrairement à la fonction `dev.copy()`, avec ce genre de fonctions, on ouvre le périphérique graphique de sortie avant de faire le graphe. Ceci présente un certain inconvénient : c'est qu'on ne voit pas le résultat s'afficher dans le GUI de R après l'exécution de chaque ligne de code. Ce n'est qu'une fois la connexion au périphérique de sortie coupée qu'on pourra voir le résultat en **PDF** par ex.
+Voici quelques exemples.
+
+```{r eval = FALSE}
+## Exportation en PNG.
+png("MyPlot2.png")
+plot(x, y, pch = 15, main = "My plot 2")
+abline(lm(y ~ x))
+dev.off()
+```
+
+```{r eval = FALSE}
+# Exportation en PDF.
+pdf("MyPlot2.pdf")
+plot(x, y, pch = 15, main = "My plot 2")
+abline(lm(y ~ x))
+dev.off()
+```
+
+Bien évidemment, ces périphériques de sortie possèdent des options qu'on peut modifier selon nos propres besoins. Voici les options pour le périphérique **PDF**.
+
+```{r}
+pdf.options()
+```
+
+Ainsi, on peut redimensionner le fichier exporté et en modifier la résolution. Cependant, vous verrez qu'il peut être parfois difficile d'ajuster la résolution. Et bien souvent, vous devrez aussi jouer dans le `par()`, notamment au niveau des marges.
+
+```{r eval = FALSE}
+pdf("MyPlot2ter.pdf", width = 12, height = 6, pointsize = 16)
+plot(x, y, pch = 15, main = "My plot 2")
+abline(lm(y ~ x))
+dev.off()
+```
+
+Consultez les rubriques d'aide des fonctions `pdf()` et `png()` pour en savoir plus.
