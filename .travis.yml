@@ -10,8 +10,7 @@ script:
 
 notifications:
   slack:
-    rooms:
-      - insileco:mW3I0g2NVINDRm0FllfekcHT#visuali
+    rooms: mW3I0g2NVINDRm0FllfekcHT
 
 deploy:
   provider: pages

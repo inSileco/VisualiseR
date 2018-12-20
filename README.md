@@ -2,6 +2,9 @@
 
 Visualiser vos données avec R.
 
+[![Build Status](https://travis-ci.org/inSileco/VisualiseR.svg?branch=devel)](https://travis-ci.org/inSileco/VisualiseR)
+
+
 
 ## Installation
 
