@@ -8,7 +8,7 @@ before_script:
 script:
   - ./_build.sh
 
- notifications:
+notifications:
   slack:
     rooms:
       - insileco:mW3I0g2NVINDRm0FllfekcHT#visuali
