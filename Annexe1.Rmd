@@ -124,7 +124,7 @@ var7 <- var1
 
 votre session de R, la variable
 
-R a été capable de comprendre et d'indexer en mémoire ces différents objets. Ce dernier point enlève une épine du pied de l'utilisateur de R[^lang1]. Nous pouvons savoir comment R a interprété ces objets avec la fonction \texttt{typeof()}[^lang2].
+R a été capable de comprendre et d'indexer en mémoire ces différents objets. Ce dernier point enlève une épine du pied de l'utilisateur de R[^lang1]. Nous pouvons savoir comment R a interprété ces objets avec la fonction `typeof()`[^lang2].
 
 ```{r typeof, results='hold'}
 typeof(var3)
@@ -134,7 +134,7 @@ typeof(var6)
 typeof(var7)
 ```
 
-Ces objets sont en fait des vecteurs de différents types et de taille 1. Un vecteur est constitué d'un ou plusieurs éléments de même nature. Il sont construits avec la fonction \texttt{c()}. La taille des vecteurs peut être retournée avec \texttt{length()}. Noter que dans la suite, on ajoute des parenthèses à une ligne donnée pour pouvoir afficher le résulat de l'assignation :
+Ces objets sont en fait des vecteurs de différents types et de taille 1. Un vecteur est constitué d'un ou plusieurs éléments de même nature. Il sont construits avec la fonction `c()`. La taille des vecteurs peut être retournée avec `length()`. Noter que dans la suite, on ajoute des parenthèses à une ligne donnée pour pouvoir afficher le résulat de l'assignation :
 
 ```{r lenght, results='hold'}
 (var7 <- c(2,4,9))
@@ -145,7 +145,7 @@ typeof(var8)
 length(var8)
 ```
 
-Un ensemble d'objet de même nature peut être contenu dans un tableau doublement indexé, c'est ce qu'on appelle une matrice. Les matrices peuvent être créées à l'aide de la fonction \texttt{matrix()}. Les tableaux peuvent même être indexés dans un nombre quelconque de dimensions grâce aux objets "array" créés avec la fonction  \texttt{array()}. Pour appeler une des valeurs de ces tableaux, on utilise les crochets, comme nous le montrons ci-dessous :
+Un ensemble d'objet de même nature peut être contenu dans un tableau doublement indexé, c'est ce qu'on appelle une matrice. Les matrices peuvent être créées à l'aide de la fonction `matrix()`. Les tableaux peuvent même être indexés dans un nombre quelconque de dimensions grâce aux objets "array" créés avec la fonction  `array()`. Pour appeler une des valeurs de ces tableaux, on utilise les crochets, comme nous le montrons ci-dessous :
 
 ```{r mat, results='hold'}
 var9 <- matrix(data=c(3,4,5,6,8,9), ncol=2, nrow=3)
@@ -184,13 +184,13 @@ is.object(var9)
 is.object(var12)
 ```
 
-Pour ces objets conposites, une notion imprtante est la classe de l'objet c'est-à-dire l'espèce à laquelle cet objet appartient. Pour le savoir, il suffit d'utiliser la fonction \texttt{class()}.
+Pour ces objets conposites, une notion imprtante est la classe de l'objet c'est-à-dire l'espèce à laquelle cet objet appartient. Pour le savoir, il suffit d'utiliser la fonction `class()`.
 
 ```{r class, results='hold'}
 class(var12)
 ```
 
-C'est grâce à la classe que R reconnait les objets composés. En fait, il est très facile de créer un objet S3 personnalisé dans R grâce à la fonction  \texttt{structure()} :
+C'est grâce à la classe que R reconnait les objets composés. En fait, il est très facile de créer un objet S3 personnalisé dans R grâce à la fonction  `structure()` :
 
 ```{r structure, results='hold', tidy=FALSE}
 (
@@ -242,22 +242,22 @@ if (var1 %% 9 == 0) {
 ```
 
 Selon la valeur de "var1", l'un des trois messages est affiché.
-Si c'est la première ou la seconde option qui est choisie, les suivantes ne seront pas explorées. La dernière condition (\texttt{else} seuls) signifie que si les options précédentes n'ont pas été retenues, on utilise celle-ci.
-La fonction \texttt{print()} permet d'afficher un objet, ici ce sont des chaînes de caractères que l'on affcihe dans la console.
+Si c'est la première ou la seconde option qui est choisie, les suivantes ne seront pas explorées. La dernière condition (`else` seuls) signifie que si les options précédentes n'ont pas été retenues, on utilise celle-ci.
+La fonction `print()` permet d'afficher un objet, ici ce sont des chaînes de caractères que l'on affcihe dans la console.
 
 
 
-### Boucles
+### Boucles {-}
 
-Lorsqu'on fait des analyses, il se peut qu'on répète plusieurs fois les mêmes opérations mais pour des données différentes, par exemple pour les différentes colonnes d'un tableux. Dans ce cas, nous utilisons des boucles. Il existe les boucles \texttt{for} et les boucles \texttt{while}. Les boucles \texttt{for} consiste en une itération de commande sur un ensemble de valeurs pré-déterminée.
+Lorsqu'on fait des analyses, il se peut qu'on répète plusieurs fois les mêmes opérations mais pour des données différentes, par exemple pour les différentes colonnes d'un tableux. Dans ce cas, nous utilisons des boucles. Il existe les boucles `for` et les boucles `while`. Les boucles `for` consiste en une itération de commande sur un ensemble de valeurs pré-déterminée.
 
 
 ```{r, for1}
 for (i in 1:3) print(i)
 ```
 
-L'opérateur \texttt{:} est très utile, \texttt{a:b} crée un ensemble de valeur de 1 en 1 depuis "a" jusqu'à "b". La variable "i" va prendre les valeurs 1,2 et 3 que l'on affiche avec la fonction \texttt{print()}. Il est possible de répéter un ensemble d'opérations qui doivent alors être placées entre accolades.
-Comme nous l'avons mentionné plus tôt, R dispose d'une structure très flexible de boucle \texttt{for} : une itération sur les valeurs d'un vecteur donnée.
+L'opérateur \texttt{:} est très utile, \texttt{a:b} crée un ensemble de valeur de 1 en 1 depuis "a" jusqu'à "b". La variable "i" va prendre les valeurs 1,2 et 3 que l'on affiche avec la fonction `print()`. Il est possible de répéter un ensemble d'opérations qui doivent alors être placées entre accolades.
+Comme nous l'avons mentionné plus tôt, R dispose d'une structure très flexible de boucle `for` : une itération sur les valeurs d'un vecteur donnée.
 
 ```{r, for2}
 vec <- c(2,8,10)
@@ -267,7 +267,7 @@ for (j in vec) {
 }
 ```
 
-Au contraire des boules \texttt{for}, les boucles \texttt{while} répètent des instructions pour un ensemble de valeur qui n'est pas pré-déterminé. Les instructions sont répétées indéfniment (donc méfiance avec ces boucles) tant qu'une condition n'est pas respectée.
+Au contraire des boules `for`, les boucles `while` répètent des instructions pour un ensemble de valeur qui n'est pas pré-déterminé. Les instructions sont répétées indéfniment (donc méfiance avec ces boucles) tant qu'une condition n'est pas respectée.
 
 ```{r}
 d <- 3
@@ -279,7 +279,7 @@ while (i<d) {
 }
 ```
 
-La manipulation et visualisation des données nécessite rarement l'utilisation des boucles \texttt{while}, les boucles \texttt{for} sont quant à elles fréquemment utilisées.
+La manipulation et visualisation des données nécessite rarement l'utilisation des boucles `while`, les boucles `for` sont quant à elles fréquemment utilisées.
 
 
 
@@ -329,7 +329,7 @@ Pour R, une fonction est un bel et bien un objet dont le contenu est finalement 
 typeof
 ```
 
-Cette remarque vous facilitera la compréhension des messages d'erreur : lorsque R parle d'un objet de type "closure" il parle d'une fonction. R est un langage ou votre efficacité repose très fortement sur votre vocabulaire. Pour engranger rapidement un grand nombre de fonctions, la compilation de fonctions proposées par sur le site du CRAN est très utile. Toutes fonctions de R sont assorties d'une documentation qui vous explique, en anglais, comment l'uitliser. Pour y accéder, l'utilisateur a deux possibilités, précéder par un \texttt{?} le nom de la fonction ou utiliser la fonction \texttt{help()}, cette dernière permet des recherche plus détaillée.
+Cette remarque vous facilitera la compréhension des messages d'erreur : lorsque R parle d'un objet de type "closure" il parle d'une fonction. R est un langage ou votre efficacité repose très fortement sur votre vocabulaire. Pour engranger rapidement un grand nombre de fonctions, la compilation de fonctions proposées par sur le site du CRAN est très utile. Toutes fonctions de R sont assorties d'une documentation qui vous explique, en anglais, comment l'uitliser. Pour y accéder, l'utilisateur a deux possibilités, précéder par un \texttt{?} le nom de la fonction ou utiliser la fonction `help()`, cette dernière permet des recherche plus détaillée.
 
 
 ```{r, eval=FALSE}
@@ -339,7 +339,7 @@ help(matrix)
 
 Les fonctions de R sont très flexible. Avec les arguments par défaut qui permettent de ne pas utiliser l'ensemble des arguments, il y a aussi l'argument sous forme de "..." qui permet de passer des arguments supplémentaires. Ces arguments sont utilisésconne argument de fonctions utilisée à l'intérieur d'une fonction donnée. C'est une utilisation très fréquent dans R.
 
-En utilisant R, on est facilement amené à créer nos propres fonctions, c'est-à-dire des objets de type "closure". Dans l'exemple ci-dessous, nous créons la fonction \texttt{affine()} qui a trois arguments. Le premier n'a pas de valeur par défaut, l'utilsateur est obligé de le spécifier, pour les deux autres, nous avons ajouté des valeurs par défaut, l'utilisateur à le choix de les changer
+En utilisant R, on est facilement amené à créer nos propres fonctions, c'est-à-dire des objets de type "closure". Dans l'exemple ci-dessous, nous créons la fonction `affine()` qui a trois arguments. Le premier n'a pas de valeur par défaut, l'utilsateur est obligé de le spécifier, pour les deux autres, nous avons ajouté des valeurs par défaut, l'utilisateur à le choix de les changer
 
 
 ```{r, eval=FALSE}
@@ -356,7 +356,7 @@ Dans une fonction, il n'est pas nécessaire d'écrire tous les noms d'arguments 
 affine(4,2,3)
 ```
 
-L'exemple suivant montre comment profiter des arguments supplémentaires, "...". Nous créons la fonction \texttt{affinen()} qui retourne la valeur de la fonction affine à la puissance n. Nous pourions ré-écrire l'ensemble des paramètre de la fonction affine mais nous pouvons aussi utiliser les "...", de la sorte :
+L'exemple suivant montre comment profiter des arguments supplémentaires, "...". Nous créons la fonction `affinen()` qui retourne la valeur de la fonction affine à la puissance n. Nous pourions ré-écrire l'ensemble des paramètre de la fonction affine mais nous pouvons aussi utiliser les "...", de la sorte :
 
 
 ```{r, eval=FALSE}
@@ -367,7 +367,7 @@ L'exemple suivant montre comment profiter des arguments supplémentaires, "...".
   affine(x=4,a=2,b=3,pow=3)
 ```
 
-Les oublis de l'orthographe exact d'une fonction sont fréquents. Pour chercher efficacement les noms de fonctions par motifs, il existe la fonction \texttt{apropos()} :
+Les oublis de l'orthographe exact d'une fonction sont fréquents. Pour chercher efficacement les noms de fonctions par motifs, il existe la fonction `apropos()` :
 
 ```{r, eval=FALSE}
 apropos("plo")
@@ -376,4 +376,4 @@ apropos("plo")
 
 [^lang1]:C'est un moment difficile à passer quand on utilise des langages de plus bas niveau comme le langage C, sur lequel R repose.
 
-[^lang2]:Il est possible d'utiliser la fonction \texttt{mode()} qui est simplement un alias de cette fonction.
+[^lang2]:Il est possible d'utiliser la fonction `mode()` qui est simplement un alias de cette fonction.

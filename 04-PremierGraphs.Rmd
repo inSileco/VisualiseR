@@ -70,12 +70,12 @@ Cette fonction s'applique sur des vecteurs, mais aussi sur des data frames. Elle
 
 **Argument** & **Signification**:
 
-- \texttt{width} & Largeur des boîtes (valeurs à fournir)
-- \texttt{varwidth} & Largeur des boîtes (proportionnelle au n)
-- \texttt{outline} & Suppression des outliers
-- \texttt{horizontal} & Vertical ou horizontal
-- \texttt{add} & Rajout d'une boîte
-- \texttt{at} & Coordonnée en x de la nouvelle boîte
+- `width` & Largeur des boîtes (valeurs à fournir)
+- `varwidth` & Largeur des boîtes (proportionnelle au n)
+- `outline` & Suppression des outliers
+- `horizontal` & Vertical ou horizontal
+- `add` & Rajout d'une boîte
+- `at` & Coordonnée en x de la nouvelle boîte
 
 L'argument `plot` mis à la valeur **FALSE** n'affiche pas de boîte à moustaches, mais retourne les différentes statistiques associées sous la console. Par exemple:
 
