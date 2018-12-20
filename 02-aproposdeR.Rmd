@@ -158,7 +158,7 @@ Une manière simple et efficace pour prendre conscience de l'évolution de R de 
 
 [^naisR5]:Avec Friedrich Leisch, de la même institution, ils s'étaient rapprochés du projet en apportant des corrections à des bugs.
 
-[^naisR6]:Ils étaient 11 initialement, 16 en 2002 et 21 en août 2015.
+<!-- [^naisR6]:Ils étaient 11 initialement, 16 en 2002 et 21 en août 2015. -->
 
 
 
@@ -166,7 +166,13 @@ Une manière simple et efficace pour prendre conscience de l'évolution de R de 
 
 ### Les grands principes de R
 
-bouquin Chambers [@chambers_extending_2016].
+Le dernier de John Chambers [@chambers_extending_2016] insistent beaucoup your les trois principes fondamentaux de R pour aller plus loin dans
+la compréhension des mécanismes d’extension de R:
+
+1. **objet**: tout ce qui existe dans R est un objet;
+2. **function**: tout ce qui se passe dans R est un appelle à une fonction;
+3. **interface**: les interfaces avec les autres software sont une partie de R.
+
 
 ### La communauté des utilisateurs de R
 

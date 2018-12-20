@@ -12,6 +12,7 @@ github-repo: inSileco/StatsMaths
 description: "Utiliser R pour faire des graphiques."
 ---
 
+
 # Bienvenu {-}
 
 ## Qu'est-ce que ce livre ? {-}
@@ -33,15 +34,13 @@ Cet ouvrage est sous licence
 Le logiciel R est un environnement de statistiques *open-source* librement distribué sous les termes de la licence publique générale GNU (GPL2). Très puissant pour réaliser n'importe quel type d'analyses statistiques, il s'avère aussi extrêmement performant dans la visualisation des données.
 D'ailleurs, dès son apparition au milieu des années quatre-vingt-dix, R était déjà muni d'un module permettant de produire des graphiques.
 
-
 Utiliser le logiciel R pour produire des graphiques de haute qualité présente un certain nombre d'avantages. Premièrement, chaque composant du graphique peut être modifié, ce qui offre beaucoup de souplesse à l'utilisateur. Deuxièmement, il permet de réaliser l'ensemble du flux de travail (importation de données, manipulation de données, analyses statistiques, représentation graphique et exportation) sur un même support logiciel. Ce qui nous épargne l'apprentissage de différents outils à usage unique. Enfin, son utilisation va trouver toute sa justification lorsqu'une chaîne de traitements devra être répétée un grand nombre de fois (automatisation des tâches).
 
-
-Au cours des dernières années, de nombreux packages ont été développés pour faciliter la production de graphiques sous R. Parmi eux, citons le package `lattice` implémenté par Deepayan Sarkar. Ce package s'intéresse spécifiquement à la visualisation de données multivariées. Plus récemment, le package \texttt{ggplot2} développé par Hadley Wickham a énormément gagné en popularité dans les laboratoires de recherches. Il repose sur la grammaire des graphiques (\textit{The Grammar of Graphics}), ouvrage de référence écrit par Leland Wilkinson.
-
+Au cours des dernières années, de nombreux packages ont été développés pour faciliter la production de graphiques sous R. Parmi eux, citons le package `lattice` implémenté par Deepayan Sarkar. Ce package s'intéresse spécifiquement à la visualisation de données multivariées. Plus récemment, le package `ggplot2` développé par Hadley Wickham a énormément gagné en popularité dans les laboratoires de recherches. Il repose sur la grammaire des graphiques (*The Grammar of Graphics*), ouvrage de référence écrit par Leland Wilkinson.
 
 
-Bien que ces packages soient très intéressants, ils présentent l'inconvénient de dépendre d'un certain nombre de packages additionnels. De plus, leur prise en main peut s'avérer difficile puisqu'ils implémentent souvent des méthodes spécifiques, qui dans le cas de \texttt{ggplot2} peut s'apparenter à un sous-langage R à part entière. L'idée ici n'est pas de dénigrer de tels outils, qui s'avèrent être tout de même puissants et complets. Non, notre objectif est de fournir les clés nécessaires pour produire de graphiques de haute qualité ne nécessitant aucune retouche supplémentaire via des logiciels comme \textit{The Gimp}, \textit{Adobe Illustrator} ou encore \textit{Adobe Photoshop}. En d'autres termes, vous apprendrez à réaliser des graphiques prêts à être soumis à une revue scientifique.
+
+Bien que ces packages soient très intéressants, ils présentent l'inconvénient de dépendre d'un certain nombre de packages additionnels. De plus, leur prise en main peut s'avérer difficile puisqu'ils implémentent souvent des méthodes spécifiques, qui dans le cas de `ggplot2` peut s'apparenter à un sous-langage R à part entière. L'idée ici n'est pas de dénigrer de tels outils, qui s'avèrent être tout de même puissants et complets. Non, notre objectif est de fournir les clés nécessaires pour produire de graphiques de haute qualité ne nécessitant aucune retouche supplémentaire via des logiciels comme \textit{GNU Image Manipulation Program (GIMP)}, *Adobe Illustrator* ou encore *Adobe Photoshop*. En d'autres termes, vous apprendrez à réaliser des graphiques prêts à être soumis à une revue scientifique.
 
 
 
@@ -59,6 +58,8 @@ Nicolas Casajus, Kevin Cazelles
 
 
 ## Remerciements {-}
+
+A ajouter. 
 
 
 
