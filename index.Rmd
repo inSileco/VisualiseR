@@ -31,6 +31,25 @@ Ce site internet est déployé par [Travis CI](https://travis-ci.org/)
 [![Build Status](https://travis-ci.org/inSileco/VisualiseR.svg?branch=devel)](https://travis-ci.org/inSileco/VisualiseR)
 
 
+## Future & Collaboration {-}
+
+La première version de ce livre est centré sur faire des graphiques avec
+les fonctionnalités de base de R mais le paysage R a bien changé au cours
+des dernières années et beaucoup de packages sont devenus très
+populaires notamment `ggplot2`. Nous souhaitons augmenter cette version et introduire ces paquets.
+
+
+Pour d'autres tours d'horizons des capacités graphiques que R offrent,
+le lecteur pourra se reporter à la lecture de différents ouvrages:
+
+- *Data Visualization* par Kieran Healy https://socviz.co/
+- *Fundamentals of Data Visualization* par Claus O. Wilke https://serialmentor.com/dataviz/
+- *R Graphics Cookbook: Practical Recipes for Visualizing Data* par Winston Chang  http://shop.oreilly.com/product/0636920023135.do
+- *ggplot2: Elegant Graphics for Data Analysis* par Hadley Wickham
+https://www.springer.com/us/book/9780387981413
+
+<!-- Ajouter comment collaborer -->
+
 
 ## Avant propos {-}
 

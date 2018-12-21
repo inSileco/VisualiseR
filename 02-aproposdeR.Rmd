@@ -1,98 +1,68 @@
 # A propos de R
 
-Dans ce chapitre, nous revenons sur la naissance et le développement de R:
+
+Étant donné l’engouement autour de R depuis les 10 dernières années, on oublie
+que le début de l'histoire remonte au années 70. Dans ce chapitre, nous revenons sur la naissance et le développement de R:
 de S depuis les années 70 jusqu'à la fin des années 90. Nous décrivons
 ensuite l'émergence de R et la relation qu'il existe entre S et R.
-Nous finirons en revenant sur la remarquable progression de la communauté des
-utilisateurs de R. La description de l'émergence de R est du à la lecture de
-3 ressources :
+Dans la deuxième partie de ce chapitre, nous dressons un portait de R en 2019.
+
+
+
+## De S à R - 40 ans d'histoire
+
+La description ci-dessus est une synthèse des trois documents suivants:
 
 - Un article d'un des principaux contributeurs de Richard A. Becker [@becker_brief_1994]
 - Le chapitre 2 du dernier livre de John M. Chambers, l'un des
 principaux contributeurs de S et maintenant contributeur de R [@chambers_extending_2016]
-- R genesis disponible en ligne https://cran.r-project.org/doc/html/interface98-paper/paper_1.html
+- Le document *R genesis* par Ross Ihaka, l'un des auteurs de R disponible en ligne https://cran.r-project.org/doc/html/interface98-paper/paper_1.html
 
-
-
-
-## Naissance et développement de S
 
 
 ### Le langage S
 
-Pour bien comprendre l'émergence de R, il est utile de commencer par un retour
-sur le contexte dans lequel le langage S a vu le jour et comprendre ce que R
-lui doit. Deux dimensions sont particulièrement intéressantes: d'un côté, la
-recherche d'un outil performant pour la recherche statistique
-(ce sont des chercheurs en statistiques qui sont à l'origine de S)
-et de l'autre, la quête du support technique adéquat dans un monde où
-l'informatique était en pleine effervescence.
+Pour bien comprendre l'émergence de R, nous revenons sur le contexte dans lequel le langage S a vu le jour et comprendre ce que R lui doit. S est le produit du travail de chercheurs qui étaient en quête d'un outil performant pour la recherche en statistique dans un monde où l'informatique était en pleine effervescence.
 
-Commençons l'histoire en 1976, à Murray Hill dans le New-Jersey (Etats-Unis),
-au département de recherche en statistique informatique des laboratoires Bell[^noteS1],
-les calculs sont alors réalisés à l'aide d'une bibliothèque FORTRAN[^noteS2]
-SCS (_Statistical Computing Subroutines_). Cependant, pour résoudre des
-problèmes relativement simples (une régression linéaire par exemple), le temps
-passé à gérer les entrer et les sortis au programme était long en comparaison
-au temps de calcul pour réalisé les opérations intéressantes (la régression
-elle-même). Suite à ce constat, les chercheurs John Chambers, Richard Becker,
-Doug Dunn et Paul Tukey arrivèrent à l'idée de construire un environnement
-interactif et un nouveau langage afin de faciliter leur recherche[^noteS3].
-Ce nouveau programme informatique faciliterait l'utilisation des la bibliothèque
-SCS grâce à un ensemble d'objets et de fonctions manipulés à l'aide d'une
-syntaxe intuitive et permettrait une exploration visuelle des données à l'aide
+Le résumé que nous faisons de cette émergence débute en 1976, à Murray Hill dans le New-Jersey (Etats-Unis), au département de recherche en statistique informatique des laboratoires Bell[^noteS1], les calculs sont alors réalisés à l'aide d'une bibliothèque FORTRAN[^noteS2] SCS (_Statistical Computing Subroutines_). Un des problèmes posés par cet outil était le temps passé à gérer les entrées et les sortis au programme qui était long même pour des calculs simples (une régression linéaire par exemple). Suite à ce constat, les chercheurs John Chambers, Richard Becker, Doug Dunn et Paul Tukey, décidèrent de construire un environnement interactif et un nouveau langage afin de faciliter leur recherche[^noteS3]. Ce nouveau programme informatique faciliterait l'utilisation des la bibliothèque SCS grâce à un ensemble d'objets et de fonctions manipulés à l'aide d'une syntaxe intuitive et permettrait une exploration visuelle des données à l'aide
 d'un outil graphique performant.
 
 <!-- Tukey Exploratory Data Analysis-->
 
-Suite aux efforts de ces chercheurs, la première version de S (version 1.0) vu le
-jour en janvier 1977 et fut diffusée au sein des laboratoires Bell. Ainsi se
-constitua la toute première communauté d'utilisateurs de S, une communauté
-certes restreinte aux chercheurs des laboratoires Bell, mais une communauté
-active capable de donner du retour sur ce nouvel outil. La première version de
-R reflète les avancements en statistique informatique fait depuis les
-années 50 et met en application les principes que John Chambers développe
-dans son livre de 1977 (qui n'est pas un livre sur S REF):
+Suite aux efforts de ces chercheurs, la première version de S (version 1.0) vu le jour en janvier 1977 et fut diffusée au sein des laboratoires Bell. Ainsi se
+constitua la toute première communauté d'utilisateurs de S, celles des chercheurs des laboratoires Bell: une communauté restreinte mais très active. La première version de S reflète les avancements en statistique informatique fait depuis les années 50 et met en application les principes que John Chambers développe en 1977 [@chambers_computational_1977] :
 
-  1. stockage, manipulation des données avant traitement (les trier par exemple)
-  2. utiliser des algorithms efficaces pour traiter les données
-  3. visualiser les données avec des bibliothèques adéquates
+  1. stockage, manipulation des données avant traitement (les trier par exemple);
+  2. utiliser des algorithms efficaces pour traiter les données;
+  3. visualiser les données avec des bibliothèques adéquates.
 
-L'objet de base était alors le vecteur (de nombres, de caractères ou bien de
-variables booléennes ce qui est valable avec R aujourd'hui). Une matrice
+L'objet de base de S était alors le vecteur (de nombres, de caractères ou bien de variables booléennes), ce qui reste valable avec R aujourd'hui. Une matrice
 était aussi un vecteur mais avec un vecteur auxiliaire `Dim` (ces vecteurs
 auxiliaires deviendront plus tard les attributs accessible avec la fonction
 `attributes` dans R). Cette version offrait également la possibilité de créer
 des structures dont les différentes composantes étaient appelées grâce à
 l'opérateur `$` (abondamment utilisé par tous les utilisateurs de R
-aujourd'hui de même que la fonction `str` pour avoir un aperçu de l'organisation
-d'un objet dans R). Ces données étant facilement manipulable via un opérateur
-d'accès aux différents éléments `[]` (subscripting operator) et permet,
-entre autre, de sous-échantillonner les éléments à partir d'une variable booléenne (ce que les utilisateurs de R font très souvent). Enfin Les graphiques étaient réalisés grâce à un ensemble de fonctions implémentées séparément dans une bibliothèque appelée GR-Z dont les fonctionnalités sont encore aujourd'hui présentes dans le package R `graphics`.
+aujourd'hui, /de même que la fonction `str` pour avoir un aperçu de l'organisation d'un objet dans R). Ces données étant facilement manipulable via un opérateur d'accès aux différents éléments `[]` (subscripting operator) et permet, entre autre, de sous-échantillonner les éléments à partir d'une variable booléenne (ce que les utilisateurs de R font très souvent). Enfin, les graphiques, sujet de ce livre, étaient réalisés grâce à un ensemble de fonctions implémentées dans une bibliothèque distincte appelée GR-Z dont les fonctionnalités sont encore aujourd'hui présentes dans le package R `graphics`.
 
 
-<!-- KC : HERE I AM  09/08/2017-->
-
-
-L'année suivante, une seconde version fut produite (version 2.0) avec laquelle
-de souci de hiérarchisation des objets s'affirma avec l'apparition des objets
-de type `list`. En 1978, les progrès du langage de programmation C, développé dans le même bâtiment aux laboratoires Bell, donnèrent un nouvel élan au langage S. Ce langage sur lequel travaillait Dennis Ritchie depuis 1969 a été conçu pour être puissant et flexible et permettre ainsi de ré-implémenter le système d'exploitation UNIX. De fait, le langage avait une très grande portabilité, il était utilisable sur un très grand nombre d'ordinateurs d'architectures différentes, ce qui décida les créateurs du S (dont les bureaux étaient voisins de celui de Ritchie) d'opter pour une utilisation du langage C et du système UNIX.
-C'est ainsi qu'en octobre 1979, une version UNIX fut implémentée et devint la version de développement du langage S.
+L'année suivante, la version 2.0 introduisit notamment les objets de type `list` pour inclure une collection d'autre objets, amenant ainsi un nouveau type de relation entre les objets. En 1978, les progrès du langage de programmation C, développé dans le même bâtiment aux laboratoires Bell, donnèrent un nouvel élan au langage S. Ce langage développé par Dennis Ritchie et Ken Thompson depuis 1969 a été conçu pour être puissant, flexible et
+portable, c'est notamment le langage dans lequel est écrit le kernel Linux qui
+est un peu partout aujourd'hui[^noteC]. La portabilité de C, c'est-à-dire le fait qu'il soit utilisable sur un très grand nombre d'ordinateurs d'architectures différentes, décida les créateurs du S (dont les bureaux étaient voisins de celui de Ritchie) d'opter pour une utilisation du langage C et du système UNIX. C'est ainsi qu'en octobre 1979, une version UNIX fut implémentée et devint la version de développement du langage S. R est lui
+même écrit en C.
 
 La suite du développement du langage est liée aux retours des premiers utilisateurs de S.
 Ces derniers étaient assez limités dans les tâches qu'ils pouvaient accomplir avec S.
-Afin d'augmenter les possibilités offertes à l'utilisateur, une boucle `for` très flexible fut introduite, dont la syntaxe est propre à S (et aujourd'hui, à R) : `for (i in index) expression`.
-De même, une fonction `apply()` fut ajoutée pour répéter une opération donnée sur chaque colonne ou chaque ligne d'une matrice.
-Il apparut également une interface de langage pour créer des macros[^noteS4]. Toutes ces innovations sont contenues dans la version de 1984 décrite dans un livre surnommé le _Brown Book_[^noteS5] (_S: An Interactive Environment for Data Analysis and Graphics_ (1984))[ref]. L'année suivante, le livre _Extending the S system_[ref] décrit comment ajouter de nouvelles fonctions au langage S. C'est au même moment que le code source du langage S fut largement distribué sous licence commerciale et éducationnelle.
+Afin d'augmenter les possibilités offertes à l'utilisateur, une boucle `for` très flexible fut introduite, dont la syntaxe a été conservé par R : `for (i in index) expression`.
+De même, une fonction `apply()` fut ajoutée pour répéter une opération donnée sur chaque colonne ou chaque ligne d'une matrice. Il apparut également une interface de langage pour créer des macros[^noteS4]. Toutes ces innovations sont contenues dans la version de 1984 décrite dans un livre surnommé le _Brown Book_[^noteS5]: _S: An Interactive Environment for Data Analysis and Graphics_ [@becker_s_1984]. L'année suivante, le livre _Extending the S system_ [@becker_extending_1985] décrit comment ajouter de nouvelles fonctions au langage S. C'est au même moment que le code source du langage S fut largement distribué sous licence commerciale et éducationnelle.
 
 
 ### Le « new S »
 
-Durant la période 1984--1988, S fut profondément transformé. Alors qu'il était à l'origine dédié à la recherche en statistique, S avait, de fait, de grandes capacités pour manipuler des données, les analyser et les visualiser. Un projet mené par John Chambers fut dédié à l'exploitation de ces atouts pour produire un langage de programmation générale dédié au traitement des données (le _Quantitative Programming Environment_, QPE). En 1986, suite aux avancés du projet, il se posa la question de savoir comment articuler S et QPE. De cette interrogation naquit une troisième version du langage S décrite dans le _Blue Book_ (_The New S Language: A Programming Environment for Data Analysis and Graphics_ (1988))[ref]. Les changements apportés étaient d'une telle ampleur qu'il fallut changé le nom : S devint le new S. Beaucoup de fonctions furent réécrites en C. Ainsi, la part de FORTRAN diminua au profit de ce langage pour améliorer la portabilité du langage new S. A cela s'ajouta la fin de l'interface de langage au profit d'un ensemble très cohérent pour les fonctions. Toutes les fonctions devinrent des objets et les utilisateurs purent alors créer leurs propres fonctions avec la syntaxe que nous connaissons aujourd'hui dans R. Ces fonctions pouvaient avoir un nombre non prédéfini d'arguments et certains de ces arguments pouvaient être passés à d'autres fonctions grâce à l'argument `...` [cf]. Les fonctions écrites en C ou FORTRAN pouvaient être incorporées au new S grâce à des fonctions particulières qui existent toujours dans R: `.C()`, `.Fortran()`, etc. Les fonctions graphiques furent également retravaillées et le new S apporta de nouvelles fonctionnalités pour profiter des environnements graphiques, notamment le _X Window System_ (X11), apparu en 1984.
+Durant la période 1984--1988, S fut profondément transformé. Alors qu'il était à l'origine dédié à la recherche en statistique, S avait, de fait, de grandes capacités pour manipuler des données, les analyser et les visualiser. Un projet mené par John Chambers fut dédié à l'exploitation de ces atouts pour produire un langage de programmation générale dédié au traitement des données (le _Quantitative Programming Environment_, QPE). En 1986, suite aux avancés du projet, il se posa la question de savoir comment articuler S et QPE. De cette interrogation naquit une troisième version du langage S décrite dans le _Blue Book_: _The New S Language: A Programming Environment for Data Analysis and Graphics_ [@becker_new_1988]. Les changements apportés étaient d'une telle ampleur qu'il fallut changé le nom : S devint le new S. Beaucoup de fonctions furent réécrites en C. Ainsi, la part de FORTRAN diminua au profit de C pour améliorer la portabilité du new S. A cela s'ajouta la fin de l'interface de langage au profit d'un ensemble très cohérent pour les fonctions. Toutes les fonctions devinrent des objets et les utilisateurs purent alors créer leurs propres fonctions avec la syntaxe que nous connaissons aujourd'hui dans R. Ces fonctions pouvaient avoir un nombre non prédéfini d'arguments et certains de ces arguments pouvaient être passés à d'autres fonctions grâce à l'argument `...`. Les fonctions écrites en C ou FORTRAN pouvaient être incorporées au new S grâce à des fonctions particulières qui existent toujours dans R: `.C()`, `.Fortran()`, etc. Les fonctions graphiques furent également retravaillées et le new S apporta de nouvelles fonctionnalités pour profiter des environnements graphiques, notamment le _X Window System_ (X11), apparu en 1984.
 
-En 1992, un nouveau livre, le _White Book_ (_Statistical Models in S_ (1992)[ref]), développa les nouvelles fonctionnalités du new S pour travailler sur les modèles statistiques. Il y introduisit les objets de classe `data.frame`, des matrices dont les colonnes peuvent contenir des objets de différentes natures (p. ex. numérique, texte, booléen, etc.). C'est un objet qui fait encore aujourd'hui la force de R. Avec les `data.frames` sont introduits les objets de classe `formula` (caractérisés par l'opérateur `~`) qui permettent de décrire des modèles complexes en très peu de lignes de code. Enfin, alors que les prémde S aices d'une programmation orientée objet[^noteS6] étaient déjà présents en 1988 (avec la fonction `print()`), celle-ci prend une place plus importante en 1992. Cette approche donne une cohérence et une certaine facilité d'utilisation au langage S et encore aujourd'hui au langage R : on peut ainsi afficher tous nos objets avec la fonction `print` dont l'affichage dépendra du type de l'objet (leur classe) sans se poser de question. Ce point technique est important pour comprendre comment R fonctionne en profondeur [cf]. Le développement d'une approche orientée objet plus formelle est aussi le point central du dernier livre sur S, le _Green Book Programming with Data: A guide to the S Language_ (1998) qui formalise les objets dit S4.
+En 1992, un nouveau livre, le _White Book_: _Statistical Models in S_ [@chambers_statistical_1993], développa les nouvelles fonctionnalités du new S pour travailler sur les modèles statistiques. Les objets de classe `data.frame` furent introduit : des matrices dont les colonnes peuvent contenir des objets de différentes natures (p. ex. numérique, texte, booléen, etc.). C'est un objet qui, à notre sense, est vraiment pertinent pour les statistics et sont utilisation est une des forces de R. Avec les `data.frames` sont introduits les objets de classe `formula` (caractérisés par l'opérateur `~`) qui permettent de décrire des modèles complexes en très peu de lignes de code. Enfin, la programmation orientée objet[^noteS6] prend une place plus importante (il y en avait des prémices en 1988 avec la notamment la fonction `print()`). Cette approche donne une cohérence et une certaine facilité d'utilisation au langage S et encore aujourd'hui au langage R : on peut ainsi afficher tous nos objets avec la fonction `print()` dont l'affichage dépendra du type de l'objet (leur classe) sans se poser de question. Le développement d'une approche orientée objet plus formelle est aussi le point central du dernier livre sur S, le *Green Book*: *Programming with Data: A guide to the S Language* qui formalise les objets dit S4 [@chambers_programming_1998].
 
-La création du langage S a soulevé des enjeux techniques majeurs que les développeurs ont surmontés en piochant des idées tantôt dans d'autres langages (p. ex. l'opérateur d'assignement `<-` provient du langage Algol), tantôt en trouvant des solutions spécifiques à S (p. ex. la boucle `for` et l'argument `...` de certaines fonctions). Le résultat de la vingtaine d'années de développement de S a produit un langage puissant pour la recherche en statistique mais plus généralement pour l'ensemble des opérations du traitement de données. C'est pour ces travaux que John Chambers fut récompensé en 1998 par le prix ACM (_Association for Computing Machinery_). Au début des années 1990, deux ramifications se branchèrent à l'aventure S. D'un côté, une entreprise commerciale avec le langage S-PLUS qui propose de faire profiter des potentialités du S au monde de l'entreprise. L'aventure prit fin en 2009 alors que S-PLUS était dans les mains de la société américaine TIBCO qui a finalement opté pour le développement d'un outil basé sur R : TERR (_TIBCO Enterprise Runtime for R_). De l'autre côté, c'est un logiciel libre, R qui vit le jour.
+La création du langage S a soulevé des enjeux techniques majeurs que les développeurs ont surmontés en piochant des idées tantôt dans d'autres langages (p. ex. l'opérateur assignment `<-` provient du langage Algol), tantôt en trouvant des solutions spécifiques à S (p. ex.  l'argument `...` de certaines fonctions). Le résultat de la vingtaine d'années de développement de S a produit un langage puissant pour la recherche en statistique mais plus généralement pour l'ensemble des opérations du traitement de données. C'est pour ces travaux que John Chambers fut récompensé en 1998 par le prix ACM (_Association for Computing Machinery_). Au début des années 1990, deux ramifications se branchèrent à l'aventure S. D'un côté, une entreprise commerciale avec le langage S-PLUS qui propose de faire profiter des potentialités du S au monde de l'entreprise. L'aventure prit fin en 2009 alors que S-PLUS était dans les mains de la société américaine TIBCO qui a finalement opté pour le développement d'un outil basé sur R : TERR (_TIBCO Enterprise Runtime for R_). De l'autre côté, c'est un logiciel libre, R qui vit le jour.
 
 
 
@@ -111,16 +81,15 @@ John Backus chez IBM (REF https://fr.wikipedia.org/wiki/Fortran).
 
 [^noteS6]:La programmation orientée objet définit des objets et des méthodes tout en permettant de faire un lien entre les deux. Par exemple, si des objets de classe _point_ et d'autres de classe _ligne_ sont définis, une méthode, c.-à-d. une fonction, _plot()_ peut ensuite être définie pour afficher ces deux objets dans un environnement graphique. La force de la programmation orientée objet sera de permettre un affichage adéquat : des points séparés à l'appel de la méthode _plot_ sur l'objet de classe _point_ (_plot(point)_) et des points reliés entre eux à l'appel de la méthode _plot_ sur l'objet de classe _ligne_ (_plot(ligne)_).
 
+[^noteC]: L'article de Wikipedia est un bon point de départ pour s'informer sur l'histoire de C: https://fr.wikipedia.org/wiki/C_(langage) consulté le 21 Décembre 2018.
 
 
 
+
+<!-- XXX ICI 21/12/2018 -->
 
 ### De S à R
 
-<!-- Un retour sur la naissance de R est disponible sur le site d'archives de R,
-le CRAN (_Comprehensive R Archive Network_)[^naisR1]. Le texte a été écrit
-par l'un des auteurs de R : Ross Ihaka. Nous en résumons ci-dessous les
-grandes lignes. KC mettre dans le chapeau du chapitre -->
 
 Au milieu des années 1990, au département de statistiques de l'université
 d'Auckland, Ross Ihaka et Robert Gentleman s'intéressent à la statistique
