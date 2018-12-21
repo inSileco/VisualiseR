@@ -1,4 +1,16 @@
 # Annexe I: courte introduction à R {-}
+
+### Les grands principes de R
+
+Le dernier livre de John Chambers [@chambers_extending_2016] insistent beaucoup
+sur les trois principes fondamentaux de R pour aller plus loin dans
+la compréhension des mécanismes d’extension de R:
+
+1. **objet**: tout ce qui existe dans R est un objet;
+2. **function**: tout ce qui se passe dans R est un appelle à une fonction;
+3. **interface**: les interfaces avec les autres software sont une partie de R.
+
+
 <!-- KC: SOIT ON LE LAISSE EN ANNEXE SOIT ON EN FAIT UN CHAPITRE MAIS MON
 SENTIMENT EST QU'ON DEVRAIT ENCOURAGER LE LECTEUR A LIRE AUTRE CHOSE -->
 

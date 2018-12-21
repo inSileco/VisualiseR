@@ -86,42 +86,44 @@ John Backus chez IBM (REF https://fr.wikipedia.org/wiki/Fortran).
 
 
 
-<!-- XXX ICI 21/12/2018 -->
+
+
+
 
 ### De S à R
 
-
 Au milieu des années 1990, au département de statistiques de l'université
-d'Auckland, Ross Ihaka et Robert Gentleman s'intéressent à la statistique
-informatique. De leur pratique émerge un constat similaire à celui qui a
-mené à S : le besoin d'un outil logiciel performant pour le domaine. Il y avait
-certes à ce moment les premières versions du langage S qui était facilement
-accessible aux milieux universitaires, mais il semble que ce n'était pas l'outil optimal pour les machines Macintosh sur lesquelles ils travaillaient. Les deux chercheurs se lancèrent alors dans le développement d'un nouvel outil influencé par S, le langage R. Ihaka disposa d'une des premières versions du new S mais aussi, d'un second langage : le Scheme[^naisR2]. Ce dernier présentait des points communs avec S, mais aussi un certain nombre de différences qui font que R n'est pas une stricte reproduction de S. En effet, Ihaka et Gentleman ont tiré parti de Scheme pour la gestion de la mémoire et de la portée des variables. De leur point de vue, ils s'agit d'un langage dont la forme est très similaire à S, mais sans ses inconvénients relatifs à la mémoire. Il faut ajouter à ces changements, des travaux sur l'interface graphique avec l'implémentation des couleurs, la texture des lignes, la possibilité d'introduire des formules mathématiques sur un graphique et la mise en page des graphiques. Ces deux derniers éléments sont le fait des travaux de thèse de Paul Murrel à qui la gestion des graphiques sous R doit beaucoup [^naisR3].
+d'Auckland, Ross Ihaka et Robert Gentleman font à un constat similaire à celui
+des chercheurs des Bell Labs firent des années plus tôt : le besoin d'un outil logiciel performant pour le domaine. Bien que les premières versions du langage S étaient facilement accessible aux milieux universitaires, l'outil n'était pas libre et difficile à mettre en place sur les machines Macintosh avec lesquelles ces chercheurs travaillaient. Les deux chercheurs se lancèrent alors dans le développement d'un nouvel outil inspirés par le new S mais aussi le Scheme[^noteR2] comme ils expliquent dans leur article de 1996 [@ihaka_r_1996]. Ainsi naquit le langage R, fortement influencé par le new S mais avec un soupçonné de quelque principe de Scheme, notamment pour la gestion de la mémoire et de la portée des variables. Il faut ajouter à ces changements, des travaux sur l'interface graphique avec l'implémentation des couleurs, la texture des lignes, la possibilité d'introduire des formules mathématiques sur un graphique et la mise en page des graphiques. Ces deux derniers éléments sont le fait des travaux de thèse de Paul Murrel qui a travaillé sur la gestion des graphiques sous R[^naisR3].
 
-En août 1993, les auteurs annoncent la mise à disposition de leur travail R sur la liste de diffusion S-news. Comme il a été fait pour S, R a mis en place le moyen de se nourrir des retours des utilisateurs. L'un d'entre eux, Martin Mächler de l'Eidgenössische Technische Hochschule Zürich (ETH Zürich), devint un acteur important du projet et incita les chercheurs de Nouvelle-Zélande à rendre leur logiciel libre. C'est ainsi que R fut mis à disposition de tous sous la licence publique générale GNU-GPL dès 1995, d'où son surnom de _GNU S_. En 1996, parut l'article _R: A Language for Data Analysis and Graphics_ qui met au grand jour l'existence de R. Ces deux événements combinés donnent une impulsion forte au langage R. De fait, ces dispositions allaient accroître le nombre d'utilisateur, et la distribution et la communication allaient en être profondément changées. En mars 1996, Mächler créa la première liste de diffusion spécifique à R : R-tester, qui fut divisée en trois l'année suivante : R-announcement, R-help et R-devel. Pour organiser le développement de R, il devint pressant d'avoir un système d'archivage dédié à R. Ce fut Kurt Hornik de l'université Technique de Vienne[^naisR4] qui s'en chargea et mis au point un système qui évoluera pour donner le CRAN actuel. Le nombre de retours sur R devint tel que Ihaka, Gentleman et Mächler ne suffisaient plus pour assurer convenablement le développement du langage. Ils décidèrent alors de partager cette tâche avec Doug Bates, Peter Dalgaard, Kurt Hornik, Friedrich Leisch, Thomas Lumley, Paul Murrell, Heiner Schwarte et Luke Tierney : l'équipe de développement _R-Core_[^naisR5] se formait.
+En août 1993, les auteurs annoncent la mise à disposition de leur travail R sur la liste de diffusion S-news. Comme il a été fait pour S, R a mis en place le moyen de s'enrichir  des retours des utilisateurs. L'un d'entre eux, Martin Mächler de l'Eidgenössische Technische Hochschule Zürich (ETH Zürich), devint un acteur important du projet et incita les chercheurs de Nouvelle-Zélande à rendre leur logiciel libre. C'est ainsi que R fut mis à disposition de tous sous la licence publique générale GNU-GPL dès 1995, d'où son surnom de _GNU S_. L'article de 1996 _R: A Language for Data Analysis and Graphics_ qui met au grand jour l'existence de R [@ihaka_r_1996]. Ces deux événements combinés donnent une impulsion forte au langage R. De fait, ces dispositions allaient accroître le nombre d'utilisateur, et la distribution et la communication allaient en être profondément changées. En mars 1996, Mächler créa la première liste de diffusion spécifique à R : R-tester, qui fut divisée en trois l'année suivante : R-announcement, R-help et R-devel. Pour organiser le développement de R, il devint pressant d'avoir un système d'archivage dédié à R. Ce fut Kurt Hornik de l'université Technique de Vienne[^naisR4] qui s'en chargea et mis au point un système qui évoluera pour donner le CRAN actuel. Le nombre de retours sur R devint tel que Ihaka, Gentleman et Mächler ne suffisaient plus pour assurer convenablement le développement du langage. Ils décidèrent alors de partager cette tâche avec Doug Bates, Peter Dalgaard, Kurt Hornik, Friedrich Leisch, Thomas Lumley, Paul Murrell, Heiner Schwarte et Luke Tierney : l'équipe de développement _R-Core_[^naisR5] se formait.
 
-Une manière simple et efficace pour prendre conscience de l'évolution de R de 1997 à nos jours est de fouiller dans les archives du site internet du CRAN. Par exemple, dans le fichier _README_ de la version R.0.49, on peut lire qu'en avril 1997 une bonne partie des fonctions du _Blue book_ et du _White Book_ étaient déja implémentées. La reconnaissance formelle du groupe R-Core est présente dans la version R.0.60 de décembre 1997. L'implémentation d'une grande partie des fonctionnalités de S conduisit à la version 1.0.0 de R, le 29 févirer 2000. Pour l'anecdote, le premier CD-ROM fut donné à John Chambers qui avait rejoint l'équipe du R-Core en 1998. En janvier 2001, c'est la première version d'un journal dédié à R (alors appelé R news [cf]) qui fut publiée. En décembre 2001, avec la version 1.4, ce sont les objets S4 qui sont implémentés. Ces derniers étaient décrits dans le _Green Book_ [ref] et procurèrent à R un cadre beaucoup plus formel pour faire de la programmation orientée objet. En octobre 2004, la version 2.0 était distribuée, et introduit pour la première fois le _lazy loading_ (chargement paresseux) permettant d'améliorer les performances de R. Quand un package (extension) est chargé, il est rare que toutes ses fonctionnalités soient exploitées en même temps. Afin de ne pas charger l'ensemble du code, R crée des bases de données pour stocker et répertorier le code qui ne sera alors chargé qu'au premier appel de l'utilisateur. En avril 2013, la gestion des valeurs d'indexation des vecteurs supérieurs à 2^31^ pour les systèmes exploitant des processeurs à 64 bits augmenta les performances de R en termes de mémoire et nous amena aux versions 3.x.x. Depuis le 14 août 2015, la dernière version est la 3.2.2, surnommée _Fire Safety_. Pour les lecteurs qui cherchent à obtenir des détails techniques relatifs aux fonctionnements internes de R, il est à noter qu'une documentation couvrant ces aspects est disponible en ligne https://cran.r-project.org/doc/manuals/r-release/R-ints.html.
+Une manière simple et efficace pour prendre conscience de l'évolution de R de 1997 à nos jours est de fouiller dans les archives du site internet du CRAN. Par exemple, dans le fichier _README_ de la version R.0.49, on peut lire qu'en avril 1997 une bonne partie des fonctions du _Blue book_ [@becker_new_1988] et du _White Book_ [@chambers_statistical_1993] étaient déjà implémentées. La reconnaissance formelle du groupe R-Core est présente dans la version R.0.60 de décembre 1997. L'implémentation d'une grande partie des fonctionnalités de S conduisit à la version 1.0.0 de R, le 29 février 2000. Pour l'anecdote, le premier CD-ROM fut donné à John Chambers qui avait rejoint l'équipe du R-Core en 1998. En janvier 2001, c'est la première version d'un journal dédié à R (alors appelé R news) qui fut publiée (voir https://www.r-project.org/doc/Rnews/Rnews_2001-1.pdf, consulté le 12 décembre 2018). En décembre 2001, avec la version 1.4, ce sont les objets S4 qui sont implémentés. Ces derniers étaient décrits dans le _Green Book_ [@chambers_programming_1998] et procurèrent à R un cadre beaucoup plus formel pour faire de la programmation orientée objet. En octobre 2004, la version 2.0 était distribuée, et introduit pour la première fois le *lazy loading* (chargement paresseux) permettant d'améliorer les performances de R: lorsqu'un package (extension) est chargé, il est rare que toutes ses fonctionnalités soient exploitées en même temps, R crée des bases de données pour stocker et répertorier le code qui ne sera alors chargé qu'au premier appel de l'utilisateur. En avril 2013, la gestion des valeurs d'indexation des vecteurs supérieurs à 2^31^ pour les systèmes exploitant des processeurs à 64 bits augmenta les performances de R en termes de mémoire et nous amena aux versions 3.x.x. Pour les lecteurs qui cherchent à obtenir des détails techniques relatifs aux fonctionnements internes de R, il est à noter qu'une documentation couvrant ces aspects est disponible en ligne https://cran.r-project.org/doc/manuals/r-release/R-ints.html (consulté le 21 décembre 2018). De plus, l’ensemble des changements associés aux différentes versions de R depuis Juin 2009 sont rapportés dans les différent numéros du *R Journal* dont les numéros sont visibles en ligne à l'adresse suivante https://journal.r-project.org/ (consulté le 21 décembre 2018)
+et il est possible de remonté jusqu'en 2001 en consultant les différents
+numéros de *R News* disponible à https://journal.r-project.org/archive/r-news.html
+(consulté le 21 décembre 2018).
 
 
 
-|Version     | Date de publication| Notes                                     |
-|:-----------|:-------------------|:------------------------------------------|
-|R-0.49      | 23 avril 1997      | première version accessible sur le CRAN   |
-|R-1.0.0     | 29 février 2000    |                                           |
-|R-1.3.0     | 22 juin 2001       |                                           |
-|R-2.0.0     | 4 octobre 2004     |                                           |
-|R-3.0.0     | 3 avril 2013       |                                           |
-|R-3.5.1     | 3 juillet 2017     | version utilisée pour ce livre            |
+|Version     | Date de publication| Notes                                      |
+|:-----------|:-------------------|:-------------------------------------------|
+|R-0.49      | 23 avril 1997      | première version accessible sur le CRAN    |
+|R-1.0.0     | 29 février 2000    | pour l'année millénaire et donc bissextile |
+|R-1.2.1     | 22 juin 2001       | premier volume de R news                   |
+|R-2.0.0     | 4 octobre 2004     | introduit le *lazy loading*                |
+|R-3.0.0     | 3 avril 2013       | optimization pour les processeurs à 64 bits|
+|R-3.5.0     | 23 avril 2018      | tous les packages sont                     |
+|R-3.5.2     | 20 décembre 2018   | version utilisée pour ce livre             |
 
-: Date de sortie sur le CRAN
+: Date de sortie des différentes version sur le CRAN (voir https://cran.r-project.org/ pour une list complète).
 
 
 
 [^naisR1]:Voir la section associée et le site https://cran.r-project.org
 
-[^naisR2]:Scheme est apparu dans les années 1970 au Massachusetts Institute of Technology (MIT) grâce au travail de Guy Lewis Steel et Geral Jay Sussman. S et Scheme sont deux sources d'inspiration revendiquées au début de l'article _R: A Language for Data Analysis and Graphics_ de 1996.
-
 [^naisR3]:Il est notamment l'auteur de l'ouvrage _R graphics_[ref].
+
+[^naisR2]:Scheme est apparu dans les années 1970 au Massachusetts Institute of Technology (MIT) grâce au travail de Guy Lewis Steel et Geral Jay Sussman.
 
 [^naisR4]:https://stat.ethz.ch/mailman/listinfo
 
@@ -133,22 +135,32 @@ Une manière simple et efficace pour prendre conscience de l'évolution de R de 
 
 ## R aujourd'hui
 
-### Les grands principes de R
+<!-- XXX ICI 21/12/2018 -->
 
-Le dernier de John Chambers [@chambers_extending_2016] insistent beaucoup your les trois principes fondamentaux de R pour aller plus loin dans
-la compréhension des mécanismes d’extension de R:
+### Mais au final R, c'est quoi au juste?
 
-1. **objet**: tout ce qui existe dans R est un objet;
-2. **function**: tout ce qui se passe dans R est un appelle à une fonction;
-3. **interface**: les interfaces avec les autres software sont une partie de R.
-
-
-### La communauté des utilisateurs de R
-
-### R et Rstudio
+Un langage de programmation
+Un ensemble de fichiers `.c` compilé en un executable.
+Pas l'IDE, l'IDE est en plus.
 
 
-### La documentation
+### Un ensemble d'acteurs
+
+Comme expliqué
+Les versions sont disponibles
+Le CRAN est aussi une source privilégiée mais non exclusif pour trouver
+des extensions (package)
+
+- La fondation R
+- RStudio
+- R ROpenSci
+- Les developers
+- La communauté des utilisateurs de R
+
+
+
+
+### Trouver de la documentation pour R
 
 S'initier à un nouveau langage de programmation peut être assez déroutant au début. Heureusement, de nombreuses ressources sont disponibles sur Internet. La page d'accueil du projet R (https://www.r-project.org) en recense certaines. On y trouve notamment des explications, en anglais pour la plupart, pour comprendre ce qu'est R, des liens pour se documenter et connaître les prochains événements autour de R, dont les conférences internationales _Use R!_[^resR1]. Ces liens dirigent en majorité vers le CRAN (https://www.cran.r-project.org) qui est en fait une collection de sites miroirs dont les contenus sont synchronisés avec le site du CRAN maintenu par Kurt Hortnik à la Wirtschaftsuniversität à Vienne. En 2002, il existait 12 sites miroirs, et en 2015, on en dénombre plus de 100 qui se répartissent les téléchargements de R et de ses packages, ainsi que l'archivage des différentes versions.
 
@@ -190,7 +202,7 @@ Pour réaliser ces étapes, il existe plusieurs cadres de travail possibles. Qua
 
 De l'utilité des scripts...
 
-Utiliser une interface de type console avec un éditeur de code reste une solution pour des habitués de la programmation. Pour les utilisateurs débutants, un environnement performant et moins austère est [RStudio](https://www.rstudio.com). C'est un environnement intégré de développement R open-source, multiplate-forme et gratuit pour la version _Desktop_ qui permet de visualiser facilement la console où le code est exécuté, l'éditeur de lignes de code, les figures réalisées, la liste des packages chargés, la documentation, etc. Cette solution est vraiment à recommander lorsqu'on débute avec R et même pour la suite. Noter que RStudio est aussi une entreprise qui propose d'autres services qui ont trait à R. Par exemple, RStudio propose des formations par des experts qui sont auteurs de packages très populaires de R, par exemple Hadley Wickham auteur du package _ggplot2_.
+Utiliser une interface de type console avec un éditeur de code reste une solution pour des habitués de la programmation. Pour les utilisateurs débutants, un environnement performant et moins austère est [RStudio](https://www.rstudio.com). C'est un environnement intégré de développement R open-source, multiplate-forme et gratuit pour la version _Desktop_ qui permet de visualiser facilement la console où le code est exécuté, l'éditeur de lignes de code, les figures réalisées, la liste des packages chargés, la documentation, etc. Cette solution est vraiment à recommander lorsqu'on débute avec R et même pour la suite. Noter que RStudio est aussi une entreprise qui propose d'autres services qui ont trait à R. Par exemple, RStudio propose des form[^naisR2]:Scheme est apparu dans les années 1970 au Massachusetts Institute of Technology (MIT) grâce au travail de Guy Lewis Steel et Geral Jay Sussmanations par des experts qui sont auteurs de packages très populaires de R, par exemple Hadley Wickham auteur du package _ggplot2_.
 
 
 
