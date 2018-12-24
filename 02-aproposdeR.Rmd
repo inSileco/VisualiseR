@@ -24,7 +24,7 @@ principaux contributeurs de S et maintenant contributeur de R [@chambers_extendi
 
 Pour bien comprendre l'émergence de R, nous revenons sur le contexte dans lequel le langage S a vu le jour et comprendre ce que R lui doit. S est le produit du travail de chercheurs qui étaient en quête d'un outil performant pour la recherche en statistique dans un monde où l'informatique était en pleine effervescence.
 
-Le résumé que nous faisons de cette émergence débute en 1976, à Murray Hill dans le New-Jersey (Etats-Unis), au département de recherche en statistique informatique des laboratoires Bell[^noteS1], les calculs sont alors réalisés à l'aide d'une bibliothèque FORTRAN[^noteS2] SCS (_Statistical Computing Subroutines_). Un des problèmes posés par cet outil était le temps passé à gérer les entrées et les sortis au programme qui était long même pour des calculs simples (une régression linéaire par exemple). Suite à ce constat, les chercheurs John Chambers, Richard Becker, Doug Dunn et Paul Tukey, décidèrent de construire un environnement interactif et un nouveau langage afin de faciliter leur recherche[^noteS3]. Ce nouveau programme informatique faciliterait l'utilisation des la bibliothèque SCS grâce à un ensemble d'objets et de fonctions manipulés à l'aide d'une syntaxe intuitive et permettrait une exploration visuelle des données à l'aide
+Le résumé que nous faisons de cette émergence débute en 1976, à Murray Hill dans le New-Jersey (États-Unis), au département de recherche en statistique informatique des laboratoires Bell[^noteS1], les calculs sont alors réalisés à l'aide d'une bibliothèque FORTRAN[^noteS2] SCS (_Statistical Computing Subroutines_). Un des problèmes posés par cet outil était le temps passé à gérer les entrées et les sortis au programme qui était long même pour des calculs simples (une régression linéaire par exemple). Suite à ce constat, les chercheurs John Chambers, Richard Becker, Doug Dunn et Paul Tukey, décidèrent de construire un environnement interactif et un nouveau langage afin de faciliter leur recherche[^noteS3]. Ce nouveau programme informatique faciliterait l'utilisation des la bibliothèque SCS grâce à un ensemble d'objets et de fonctions manipulés à l'aide d'une syntaxe intuitive et permettrait une exploration visuelle des données à l'aide
 d'un outil graphique performant.
 
 <!-- Tukey Exploratory Data Analysis-->
@@ -133,15 +133,16 @@ numéros de *R News* disponible à https://journal.r-project.org/archive/r-news.
 
 
 
+
+
 ## R aujourd'hui
 
-<!-- XXX ICI 21/12/2018 -->
 
 ### Mais R c'est quoi au juste?
 
-Les premières phrases de l'article consacré à R sur Wikipedia définissent R ainsi:
+Les premières phrases de l'article en français consacré à R sur Wikipedia définissent R ainsi:
 
-> R est un langage de programmation et un logiciel libre destiné aux statistiques et à la science des données soutenu par la R Foundation for Statistical Computing. R fait partie de la liste des paquets GNU3 et est écrit en C (langage), Fortran et R. [^noteR7]
+> R est un langage de programmation et un logiciel libre destiné aux statistiques et à la science des données soutenu par la R Foundation for Statistical Computing. R fait partie de la liste des paquets GNU3 et est écrit en C (langage), Fortran et R.[^noteR7]
 
 [^noteR7]: https://fr.wikipedia.org/wiki/R_(langage) consulté le 22 décembre 2018.
 
@@ -155,7 +156,7 @@ graphiques. Il peut être compilé et exécuté sur un grand nombre de plateform
 [^noteR8]: https://fr.wikipedia.org/wiki/R_(langage) consulté le 22 décembre 2018.
 
 R est donc un logiciel particulier: il permet d'écrire du code (*en* R) et exécuter du code (*dans* R) pour faire des statistiques et des graphiques.
-R est un langage interprété
+R est un langage dit interprété
 
 ![Langage interprété (voir http://www.france-ioi.org/algo/course.php?idChapter=561&idCourse=2368)](http://data.france-ioi.org/Course/general_interpreted_vs_compiled/schema_interpreted_FR.png)
 
@@ -163,33 +164,44 @@ par opposition à un langage compilé comme C (le langage dans lequel R est écr
 
 ![Langage compilé (voir http://www.france-ioi.org/algo/course.php?idChapter=561&idCourse=2368)](http://data.france-ioi.org/Course/general_interpreted_vs_compiled/schema_compiled_FR.png)
 
-Concrètement R est un ensemble de fichiers. Dans la version 3.5.2, il y entre 559 fichiers `.c`, 289 fichiers `.po` (pour la traduction en différente langues), 196 fichiers `.h` (headers utilisé avec C), 86 fichiers `.f` (FORTRAN) et 2346 fichiers `.R`. À l'installation de R, tous ces fichiers sont
+Concrètement R est un ensemble de fichiers. Dans la version 3.5.2, il y, entre autre, 559 fichiers `.c`, 289 fichiers `.po` (pour la traduction en différente langues), 196 fichiers `.h` (headers utilisé avec C), 86 fichiers `.f` (FORTRAN) et 2346 fichiers `.R`. À l'installation de R, tous ces fichiers sont
 compilés de sorte que vous pouvez utiliser R dans un terminal.
 
 ![](img/chap2/screenshotR.png)
 
-Un terminal avec R est rarement suffisant pour un développement efficace. C'est pourquoi on utilise une interface de développement, R propose une telle interface mais la plus populaire de nos jours est celle de RStudio, nous y reviendrons.
+Un terminal avec R permet d'utiliser toutes les fonctionnalités de R mais n'est suffisant pour programmer de manière efficace. C'est pourquoi on utilise une interface de développement, R propose une telle interface mais la plus populaire de nos jours est RStudio[^noteRStudio], nous y reviendrons.
 
-
+[^noteRStudio]: https://www.rstudio.com/products/rstudio/download/ consulté le 24 décembre 2018.
 
 
 ### Un ensemble d'acteurs
 
-Il y a aujourd'hui une myriade d'acteurs et de sites Internet qui gravitent autour de R de sorte qu'il est parfois un peu difficile de s'y retrouver et ce comprendre qui fait quoi. Ce qui suit est une tentative de mettre un peu d'ordre dans toutes ces informations.
+Il y a aujourd'hui une myriade d'acteurs qui gravitent autour de R de sorte qu'il est difficile de s'y retrouver et de comprendre qui fait quoi. Ce qui suit est une tentative de mettre un peu d'ordre dans toutes ces informations.
 
 
-#### Le projet R
+#### La R fondation et la *R Development Core Team*
 
-Le plus simple pour essayer de se repérer est d'aller sur la page du projet R: https://www.r-project.org/ (consulté le 23 décembre 2018) mais aussi de taper
-`contributors()` dans une console R (comme le suggère le message d’accueil).
+Le plus simple pour se repérer est de consulter sur la page du projet R: https://www.r-project.org/ (consulté le 23 décembre 2018). Sur cette page, on trouve notamment un lien vers la Fondation R[^noteProj]. Il s'agit d'une organization a but non lucratif qui a été créé par les membres de la *R Development Core Team* pour pérenniser le développement de R et c'est finalement une distinction. Les membres de la fondation sont des personnes reconnus pour les efforts dans le développement de R, c'est une distinction honorifique. Quand aux membres de la *R Development Core Team*, ce sont les développeurs qui ont un accès d'écriture au code source de R. Ce sont les premiers membres listés quand vous tapez `contributors()` dans une console R. Ils fixent les bogues dans les fonctionnalités de base de R[^noteR9] et rendent disponibles les nouvelles versions de R sur le CRAN.
 
-Sur la page internet du projet R, on trouvera une référence à la Fondation R
-https://www.r-project.org/foundation/ (consulté le 23 décembre 2018) et été créé par les membres de la *R Development Core Team* pour pérenniser le développement de R. Les membres de la fondations sont des personnes reconnus pour les efforts non-monétaires qu'ils ont mis pour améliorer R. Quand aux membres de la *R Development Core Team*, ce sont des un groupe de développeurs qui ont un accès d'écriture au code source de R (et les premiers contributeurs listés dans `contributors()`). Ils fixent les bogues dans les fonctionnalités de base de R[^noteR9] et rendent disponibles les nouvelles version de R sur le CRAN.
+[^noteProj]: https://www.r-project.org/foundation/ consulté le 23 décembre 2018
 
 
 #### Le CRAN
 
-Le *Comprehensive R Archive Network* (CRAN) est le site Internet où sont archivées les différents versions de R ainsi que les packages qui ont été soumis au CRAN et qui ont été acceptés. C'est aussi une source privilégiée de resource avec de nombre manuels et ouvrage disponible (voir les sections *Manuals* et *Contributed* sur https://cran.r-project.org/). Le CRAN est maintenu par une équipe de volontaires, la "CRAN team", qui mettent à jour le site et s'occupent des soumission des packages. En fait le CRAN est une collection de sites miroirs dont les contenus sont synchronisés avec le site du CRAN maintenu à la Wirtschaftsuniversität à Vienne. En 2002, il existait 12 sites miroirs, et en 2018, on en dénombre plus de 100 qui se répartissent les téléchargements de R et de ses packages, ainsi que l'archivage des différentes versions.
+Toujours sur la page du projet R, il y a un lien vers le CRAN (*Comprehensive R Archive Network*) qui est le site Internet où sont archivées les différentes versions de R ainsi que les packages qui ont été soumis au CRAN et qui ont été acceptés. C'est également une source privilégiée de resources avec de nombreux manuels et ouvrages pour se familiariser avec R (voir les sections *Manuals* et *Contributed* sur https://cran.r-project.org/). Le CRAN est maintenu par une équipe de volontaires, la "CRAN team", qui met à jour le site et s'occupent des soumissions des packages. Pour être plus exact, le CRAN est une collection de sites miroirs dont les contenus sont synchronisés avec le site du CRAN maintenu à la Wirtschaftsuniversität à Vienne. En 2002, il existait 12 sites miroirs, et en
+décembre 2018, 164 sites miroirs se répartissent les téléchargements de R et de ses packages, ainsi que l'archivage des différentes versions. Comment avoir accès à ces chiffres? Avec R bien sur:
+
+```R
+# lit le code source de la page qui référence les miroirs
+mir <- readLines("https://cran.r-project.org/mirrors.html")
+# compte le nombre de ligne qui contiennent des liens internet avec
+# http dans le lien (il y a d'autres liens sur la page mais sans http)
+sum(
+  unlist(
+    lapply(mir, grepl, pattern = "<a href=\"http")
+  )
+)
+```
 
 
 [^noteR9]: Que les utilisateurs peuvent https://bugs.r-project.org/bugzilla3/
@@ -197,19 +209,37 @@ Le *Comprehensive R Archive Network* (CRAN) est le site Internet où sont archiv
 [^noteR10]: En 2002, il existait 12 sites miroirs; en 2018, on en dénombre plus de 100 qui se répartissent les téléchargements de R et de ses packages, ainsi que l'archivage des différentes versions.
 
 
-#### R consortium
+#### Le consortium R
 
-Il s'agit d'un projet supporté la la Linux fondation https://www.linuxfoundation.org/projects/ (consulté le 22 décembre 2018)
-qui a pour but de supporté le développement de R, ils travaillent de concert avec la R fondation et est supporté notament financer des projets.
-Pour voir les soutiens financiers rendez vous sur cette page https://www.r-consortium.org/members
+Une autre entité qui a vu le jour récemment est le consortium R :
+https://www.r-consortium.org/ (consulté le 24 décembre 2018). Comme indiqué
+par le site Internet dédié
 
-#### R Studio
+> The central mission of the R Consortium is to work with and provide support to the R Foundation and to the key organizations developing, maintaining, distributing and using R software through the identification, development and implementation of infrastructure projects.
 
-Vraisemblablement l'un des acteurs les plus connus. C'est une entreprise
-fondé par JJ Allaire qui compte en décembre 2018 près d'une centaine de
-https://www.rstudio.com/about/. R Studio est connu pour son interface de
-et aussi pour la qualité des packages R qu'elles développent avec une équipe de développeurs parmi les plus actifs.
+> La mission centrale du consortium R est de collaborer avec la Fondation R et les
+organisation majeures qui développent, maintiennent, distribuent et utilisent
+le logiciel R à travers l'identification,. le development et l’implémentation
+de projet infrastructure.
 
+Ce projet est l'un des projets Open Source supporté par la Fondation Linux:  https://www.linuxfoundation.org/projects/ (consulté le 22 décembre 2018). Pour
+voir les soutiens financiers du consortium R rendez vous sur cette page https://www.r-consortium.org/members.
+
+
+
+#### RStudio
+
+Il s'agit d'un acteur très connus au point qu'il y a une parfois une confusion
+entre R et RStudio. RStudio, Inc.[^noteRStudio] une entreprise fondé par Joseph J. Allaire qui développe un environment de développement[^noteRStudio2] pour R propose des services aux entreprises basés sur R (voir la section *Products* sur leur site Internet).
+En décembre 2018 près d'une centaine de salariés https://www.rstudio.com/about/ dont de nombreux programmeurs parmi les plus actifs au sein de la communauté des utilisateurs de R (Hadley Wickham et Yihui Xie par exemple). RStudio est connu pour son interface de développement du même nom et pour la qualité des packages R que les salariés de RStudio développements. C'est un modèle économique classique dans le monde de l’opensource[^noteRStudio3]: une entreprise propose des services autour d'un logiciel qu'elle contribue activement a améliorer et dont elle fait une promotion active (étant donné que c'est la qualité du logiciel qui va déterminer son nombre de clients). Dans le cas de RStudio est énorme car les packages qu'elles contribuent à développer son parmi les plus utilisés[^noteRStudio4].
+
+[^noteRStudio]: https://www.rstudio.com/ consulté le 24 décembre 2018.
+[^noteRStudio2]: https://fr.wikipedia.org/wiki/Environnement_de_d%C3%A9veloppement consulté le 24 décembre 2018.
+[^noteRStudio3]: https://medium.com/france/business-model-de-l-open-source-a2d8e53181f7 consulté le 24 décembre 2018
+[^noteRStudio4]: voir le compte GitHub de RStudio https://github.com/rstudio (consulté le 24 décembre 2018)
+
+
+<!-- Ici le 24 décembre -->
 
 #### R OpenSci
 
