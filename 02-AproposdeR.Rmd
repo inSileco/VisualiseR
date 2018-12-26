@@ -267,33 +267,68 @@ La myriade des utilisateurs de R est sans aucun doute l'un des acteurs les plus 
 3. s'auto-organize à travers des communautés locales d'utilisateurs;
 4. s'auto-supporte: les utilisateurs répondent rapidement aux questions d'autres utilisateurs.
 
-Tout le monde peut écrire des packages ou partager son expérience avec R et de fait, beaucoup d'utilisateurs le font. Il existe un grand nombre de bloggers qui produisent une multitude de posts sur différents aspects de R[^noteCom]. C'est une resource riche et diversifiée, il existe une plateforme très utile qui rassemble de nombreux posts issu de blog plus ou moins populaire[^noteCom1]: R-bloggers[^noteCom2]. La communauté des utilisateurs de R est en croissance, il n'y pas, à notre connaissance, de manière directe de mesurer le nombre exacte d'utilisateurs de R mais il y a de nombreux indices comme le nombre de groupe d'utilisateurs de R comme le montre la couverture du dernier livre de John Chambers qui compare le nombre de groupe d'utlisateurs de R entre 2010 et 2015.
+Tout le monde peut écrire des packages ou partager son expérience avec R et de fait, beaucoup d'utilisateurs le font. Il existe un grand nombre de bloggers qui produisent une multitude de posts sur différents aspects de R[^noteCom]. C'est une resource riche et diversifiée, il existe une plateforme très utile qui rassemble de nombreux posts issu de blog plus ou moins populaire[^noteCom1]: R-bloggers[^noteCom2]. La communauté des utilisateurs de R est en croissance, il n'y pas, à notre connaissance, de manière directe de mesurer le nombre exacte d'utilisateurs de R mais il y a de nombreux indices comme le nombre de groupe d'utilisateurs de R comme le montre la couverture du dernier livre de John Chambers qui compare le nombre de groupe d’utilisateurs de R entre 2010 et 2015.
 
 ![Couverture de *Extending R* [@chambers_extending_2016]. Pour une liste qui recense ces communautés, voir https://jumpingrivers.github.io/meetingsR/index.html (consulté le 26 décembre 2018)](https://images.tandf.co.uk/common/jackets/amazon/978149877/9781498775717.jpg)
 
-On peut aussi regarder le nombre de packages qui dépassait 10,000 en 2016 (voir https://blog.revolutionanalytics.com/2017/01/cran-10000.html consulté le 26 décembre 2018). Un autre indice plus proche de nous. Nous sommes des écologistes et dans notre discipline, R est un incontestablement figure parmi les logiciel les plus utiliser et la demande en formation est constante.
+On peut aussi regarder la croissance du nombre de packages qui dépassait 10,000 en 2016 (voir https://blog.revolutionanalytics.com/2017/01/cran-10000.html consulté le 26 décembre 2018). L'explosion du nombre de packages R hébergés sur GitHub[^noteCom3] (près de
+45000 à la fin décembre 2018 d'après https://rdrr.io/). Un autre indice est la popularité de R sur la plateforme d'échange *stack overflow* ou les utilisateurs posent des questions auxquels répondent rapidement d'autres utilisateurs. C'est d’ailleurs sur ces deux derniers
+indices que le site internet évaluent la popularité des langage de programmation
+et en janvier 2018, R était classé 12^ème^.
+
+![Le résultat du sondage redmonk en janvier 2018, voir https://redmonk.com/sogrady/2018/03/07/language-rankings-1-18/ consulté le 26 décembre 2018.](http://sogrady-media.redmonk.com/sogrady/files/2018/03/lang.rank_.118.png)
+
+Un dernier indice de l'accroissement de la popularité de R chez les écologistes que nous
+sommes est la forte demande en formation de nos collègues. R figure incontestablement parmi les logiciels les plus utilisés pour la statistics et la science des données de manière générale et actuellement et de plus en plus d'écologue s'y forme à des niveaux de de plus en plus avancés.
 
 
 [^noteCom]: Nous avons notre propre blog qui traite souvent de R https://insileco.github.io/.
 [^noteCom1]: https://blog.feedspot.com/r_programming_blogs/ pour une classification subjective.
 [^noteCom2]: https://www.r-bloggers.com/ consulté le 26 décembre 2018.
-
+[^noteCom3]: un site Internet qui peut être décrit comme une forge logiciel basée sur le logiciel `git` qui rend la programmation collaborative particulièrement efficace.
 
 
 <!-- ICI 26/12/2018 -->
 
-### Trouver de la documentation pour R
+### Une documentation abondante
 
-S'initier à un nouveau langage de programmation peut être assez déroutant au début. Heureusement, de nombreuses ressources sont disponibles sur Internet. La page d'accueil du projet R (https://www.r-project.org) en recense certaines. On y trouve notamment des explications, en anglais pour la plupart, pour comprendre ce qu'est R, des liens pour se documenter et connaître les prochains événements autour de R, dont les conférences internationales _Use R!_[^resR1].
+Tous les acteurs décrits précédemment produisent une masse de resources: pour débuter avec R, réaliser des tâches spécifiques avec R (au moyen de packages dédiés) mais aussi
+pour programmer efficacement avec R et développer ses propres packages.
 
-Au lien _Contributed_ de la section _Documentation_ du CRAN, sont entreposés des manuels d'utilisation de R rédigés par des utilisateurs de R sous différentes langues. En français, on y trouve notamment le manuel _R pour les débutants_ d'Emmanuel Paradis, mais aussi un _Aide mémoire R_ rédigé par Mayeul Kauffmann [ref]. Deux autres sources d'informations sont à mentionner bien qu'exclusivement rédigées en anglais.
+Pour débuter avec R, un moyen simple est de consulter les resources pour apprendre et se perfectionner avec R sont abondantes. Sur la page Internet du projet R (https://www.r-project.org), on trouve les sections *Manuals*, *Books* et *The R Journal* qui offrent un grand nombre de resources et sur le CRAN il y a également la section *Contributed* avec des introductions a R dans différentes langues (cette page n'est malheureusement plus mis à jour). Pour ce qui est du français, on y trouve notamment le manuel _R pour les débutants_ d'Emmanuel Paradis, mais aussi un _Aide mémoire R_ rédigé par Mayeul Kauffmann [ref]. Deux autres sources d'informations sont à mentionner bien qu'exclusivement rédigées en anglais.
+
+
+Certain acteurs propose des formation
+https://www.datacamp.com/courses/free-introduction-to-r
+
+https://openclassrooms.com/fr/courses/1393696-effectuez-vos-etudes-statistiques-avec-r
+
+en fraçais
+
+
+RStudio offre un grand nimbre de resrouces avec des documentations très bien
+faites pour leur packages (par exemple...) et de nombreux ouvrages
+d'ailleurs l'un des devlopeurs de RStudio a travaillé sur bookdown sur lesquels
+plusieurs livres accessibles en ligne et d'une très grande qualité (XXX).
+
+Au lien _Contributed_ de la section _Documentation_ du CRAN, sont entreposés des manuels d'utilisation de R rédigés par des utilisateurs de R sous différentes langues.
 La première est _The R journal_ (intitulé _R news_ de 2001 à 2009) que nous avons mentionnés plus haut. Cette revue bisannuelle détaille les modifications apportées aux nouvelles versions de R parues depuis le numéro précédent. Les changements sur le CRAN y sont aussi indiqués avec la liste des nouveaux packages. On y trouve également des articles qui font, le plus souvent, la présentation d'un nouveau package.
+
+manière à
+
+
+voir https://insileco.github.io/wiki/usefulr/
+
+
+
+  différents niveau. Dand des explications, en anglais pour la plupart, pour comprendre ce qu'est R, des liens pour se documenter et connaître les prochains événements autour de R, dont les conférences internationales _Use R!_[^resR1].
+
+
 La deuxième source est constituée par l'ensemble des listes de diffusion relatives à R. En 1997, il y avait trois listes de diffusion : _R-announcement_ pour annoncer les nouveautés de R, _R-help_ dédiée à l’entraide entre utilisateurs R et _R-devel_ pour les développeurs. Depuis, ont été ajoutées les listes _R-package-devel_, pour les développeurs de packages et _R-packages_ pour annoncer la sortie de nouveaux packages. À côté de ces listes principales, on trouve également pas moins de 22 autres listes de diffusion couvrant les différentes utilisations de R : les listes _R-SIG_ (_Special Interest Group_) qui traitent aussi bien du traitement des données spatiales que de l'écologie ou encore de la finance (https://www.r-project.org/mail.html).
 
 Les utilisateurs anglophones ont facilement accès à une masse considérable d'informations grâce à différents ouvrages, notamment ceux regroupés dans la collection _Use R!_, publiée par le groupe éditorial Springer et éditée par R. Gentleman, K. Hornik Kurt et G. Parmigiani. Des ouvrages dédiés à R sont aussi disponibles en français, mais en nombre plus restreint. Gaël Millot a ainsi écrit un ouvrage très complet (plus de 800 pages dans la troisième édition), *Comprendre et réaliser les tests statistiques à l'aide de R* édité chez de Boeck. Springer a édité durant un temps des ouvrages dans la série _Pratique R_. Il existe aussi trois ouvrages qui abordent la statistique avec R aux Presses Universitaires de Rennes, ou encore _R et espace_ édité chez Framabook. Une fois les bases acquises avec R, les utilisateurs peuvent avoir recours à la documentation disponible sur des forums tel que celui maintenu par le Centre de coopération internationale en recherche agronomique pour le développement (CIRAD) http://forums.cirad.fr/logiciel-R/index.php. Notons qu'il y a aussi de très bon blogs en anglais http://www.r-bloggers.com, http://www.r-statistics.com, http://blog.rstudio.org, http://blog.revolutionanalytics.com, etc.
 
-Des acteurs
-https://www.datacamp.com/courses/free-introduction-to-r
+
 
 https://insileco.github.io/wiki/usefulr/
 
