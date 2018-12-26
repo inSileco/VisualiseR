@@ -118,9 +118,6 @@ numéros de *R News* disponible à https://journal.r-project.org/archive/r-news.
 : Date de sortie des différentes version sur le CRAN (voir https://cran.r-project.org/ pour une list complète).
 
 
-
-[^naisR1]:Voir la section associée et le site https://cran.r-project.org
-
 [^naisR3]:Il est notamment l'auteur de l'ouvrage _R graphics_[ref].
 
 [^naisR2]:Scheme est apparu dans les années 1970 au Massachusetts Institute of Technology (MIT) grâce au travail de Guy Lewis Steel et Geral Jay Sussman.
@@ -169,9 +166,9 @@ compilés de sorte que vous pouvez utiliser R dans un terminal.
 
 ![](img/chap2/screenshotR.png)
 
-Un terminal avec R permet d'utiliser toutes les fonctionnalités de R mais n'est suffisant pour programmer de manière efficace. C'est pourquoi on utilise une interface de développement, R propose une telle interface mais la plus populaire de nos jours est RStudio[^noteRStudio], nous y reviendrons.
+Un terminal avec R permet d'utiliser toutes les fonctionnalités de R mais n'est suffisant pour programmer de manière efficace. C'est pourquoi on utilise une interface de développement, R propose une telle interface mais la plus populaire de nos jours est RStudio[^noteRStud], nous y reviendrons.
 
-[^noteRStudio]: https://www.rstudio.com/products/rstudio/download/ consulté le 24 décembre 2018.
+[^noteRStud]: https://www.rstudio.com/products/rstudio/download/ consulté le 24 décembre 2018.
 
 
 ### Un ensemble d'acteurs
@@ -203,10 +200,8 @@ sum(
 )
 ```
 
+[^noteR9]: Que les utilisateurs peuvent rapportés sur bugzilla https://bugs.r-project.org/bugzilla3/.
 
-[^noteR9]: Que les utilisateurs peuvent https://bugs.r-project.org/bugzilla3/
-
-[^noteR10]: En 2002, il existait 12 sites miroirs; en 2018, on en dénombre plus de 100 qui se répartissent les téléchargements de R et de ses packages, ainsi que l'archivage des différentes versions.
 
 
 #### Le consortium R
@@ -230,8 +225,7 @@ voir les soutiens financiers du consortium R rendez vous sur cette page https://
 #### RStudio
 
 Il s'agit d'un acteur très connus au point qu'il y a une parfois une confusion
-entre R et RStudio. RStudio, Inc.[^noteRStudio] une entreprise fondé par Joseph J. Allaire qui développe un environment de développement[^noteRStudio2] pour R propose des services aux entreprises basés sur R (voir la section *Products* sur leur site Internet).
-En décembre 2018 près d'une centaine de salariés https://www.rstudio.com/about/ dont de nombreux programmeurs parmi les plus actifs au sein de la communauté des utilisateurs de R (Hadley Wickham et Yihui Xie par exemple). RStudio est connu pour son interface de développement du même nom et pour la qualité des packages R que les salariés de RStudio développements. C'est un modèle économique classique dans le monde de l’opensource[^noteRStudio3]: une entreprise propose des services autour d'un logiciel qu'elle contribue activement a améliorer et dont elle fait une promotion active (étant donné que c'est la qualité du logiciel qui va déterminer son nombre de clients). Dans le cas de RStudio est énorme car les packages qu'elles contribuent à développer son parmi les plus utilisés[^noteRStudio4].
+entre R et RStudio. RStudio, Inc.[^noteRStudio] une entreprise fondé par Joseph J. Allaire qui développe un environment de développement[^noteRStudio2] pour R propose des services aux entreprises basés sur R (voir la section *Products* sur leur site Internet). En décembre 2018, RStudio comptait près d'une centaine de salariés https://www.rstudio.com/about/ dont de nombreux programmeurs parmi les plus actifs au sein de la communauté des utilisateurs de R (Hadley Wickham et Yihui Xie par exemple). RStudio est connu pour son interface de développement du même nom et pour la qualité des packages R que les salariés de RStudio développements. C'est un modèle économique classique dans le monde de l’opensource[^noteRStudio3]: une entreprise propose des services autour d'un logiciel qu'elle contribue activement a améliorer et dont elle fait une promotion active (étant donné que c'est la qualité du logiciel qui va déterminer son nombre de clients). Dans le cas de RStudio est énorme car les packages qu'elles contribuent à développer son parmi les plus utilisés[^noteRStudio4].
 
 [^noteRStudio]: https://www.rstudio.com/ consulté le 24 décembre 2018.
 [^noteRStudio2]: https://fr.wikipedia.org/wiki/Environnement_de_d%C3%A9veloppement consulté le 24 décembre 2018.
@@ -241,22 +235,52 @@ En décembre 2018 près d'une centaine de salariés https://www.rstudio.com/abou
 
 <!-- Ici le 24 décembre -->
 
-#### R OpenSci
+#### rOpenSci
 
-Supporté par NUMFOCUS https://numfocus.org/ https://ropensci.org/about/
+Comme indiqué sur le site Internet de rOpenSci[^noterOpen]
 
-Des acteurs
-https://www.datacamp.com/courses/free-introduction-to-r
+> rOpenSci fosters a culture that values open and reproducible research using shared data and reusable software.
+
+> rOpenSci encourage une culture qui promeut la recherche ouverte et reproductible qui utilise des données partagées et des logiciels réutilisables.
+
+
+Pour cela l'équipe de rOpenSci crée et révise des packages[^noterOpen2] qui facilitent la recherche reproductible. Cela peut être des outils comme `drake`[^noterOpen2a] qui permet d'améliorer l'efficacité et la reproductibilité de son flux de travail ou encore des outils comme `taxize`[^noterOpen2b] qui parcourt différentes bases de données disponible sut Internet pour aller chercher les information taxonomiques demandées par l'utilisateur. rOpenSci anime également un blog[^noterOpen3] sur lequel on trouve des posts présentant les différents packages révisés par rOpenSci et aussi des tutoriels pour apprendre à réaliser certaines manipulation de données avec R. Enfin, rOpenSci anime une communauté[^noterOpen4] dynamique
+et propose des *community calls* qui sont des présentations sur certains aspects de R.
+
+
+
+[^noterOpen]: https://ropensci.org/about/ consulté le 26 décembre 2018 ou on apprend aussi que que rOpenSci est sponsorisé par NUMFOCUS  (https://numfocus.org/).
+[^noterOpen2a]: https://github.com/ropensci/drake consulté le 26 décembre 2018.
+[^noterOpen2b]: voir https://github.com/ropensci/taxize et https://ropensci.org/tutorials/taxize_tutorial/ consultés le 26 décembre 2018.
+[^noterOpen2]: https://ropensci.org/packages/ consulté le 26 décembre 2018.
+[^noterOpen3]: https://ropensci.org/blog/ consulté le 26 décembre 2018.
+[^noterOpen4]: https://ropensci.org/community/ consulté le 26 décembre 2018.
+
 
 
 #### La communauté des utilisateurs de R
 
-Bien sur la myriade des utilisateurs de R. Répondent aux questions sur Stack
-ou encore des packages...
+La myriade des utilisateurs de R est sans aucun doute l'un des acteurs les plus importants. La communauté des utilisateurs de R:
+
+1. augmente les fonctionnalités de R en créant des packages;
+2. partage du contenu sur R que se soit en éditant des manuels, des livres, des blogs et des présentations;
+3. s'auto-organize à travers des communautés locales d'utilisateurs;
+4. s'auto-supporte: les utilisateurs répondent rapidement aux questions d'autres utilisateurs.
+
+Tout le monde peut écrire des packages ou partager son expérience avec R et de fait, beaucoup d'utilisateurs le font. Il existe un grand nombre de bloggers qui produisent une multitude de posts sur différents aspects de R[^noteCom]. C'est une resource riche et diversifiée, il existe une plateforme très utile qui rassemble de nombreux posts issu de blog plus ou moins populaire[^noteCom1]: R-bloggers[^noteCom2]. La communauté des utilisateurs de R est en croissance, il n'y pas, à notre connaissance, de manière directe de mesurer le nombre exacte d'utilisateurs de R mais il y a de nombreux indices comme le nombre de groupe d'utilisateurs de R comme le montre la couverture du dernier livre de John Chambers qui compare le nombre de groupe d'utlisateurs de R entre 2010 et 2015.
+
+![Couverture de *Extending R* [@chambers_extending_2016]. Pour une liste qui recense ces communautés, voir https://jumpingrivers.github.io/meetingsR/index.html (consulté le 26 décembre 2018)](https://images.tandf.co.uk/common/jackets/amazon/978149877/9781498775717.jpg)
+
+On peut aussi regarder le nombre de packages qui dépassait 10,000 en 2016 (voir https://blog.revolutionanalytics.com/2017/01/cran-10000.html consulté le 26 décembre 2018). Un autre indice plus proche de nous. Nous sommes des écologistes et dans notre discipline, R est un incontestablement figure parmi les logiciel les plus utiliser et la demande en formation est constante.
+
+
+[^noteCom]: Nous avons notre propre blog qui traite souvent de R https://insileco.github.io/.
+[^noteCom1]: https://blog.feedspot.com/r_programming_blogs/ pour une classification subjective.
+[^noteCom2]: https://www.r-bloggers.com/ consulté le 26 décembre 2018.
 
 
 
-
+<!-- ICI 26/12/2018 -->
 
 ### Trouver de la documentation pour R
 
@@ -268,6 +292,10 @@ La deuxième source est constituée par l'ensemble des listes de diffusion relat
 
 Les utilisateurs anglophones ont facilement accès à une masse considérable d'informations grâce à différents ouvrages, notamment ceux regroupés dans la collection _Use R!_, publiée par le groupe éditorial Springer et éditée par R. Gentleman, K. Hornik Kurt et G. Parmigiani. Des ouvrages dédiés à R sont aussi disponibles en français, mais en nombre plus restreint. Gaël Millot a ainsi écrit un ouvrage très complet (plus de 800 pages dans la troisième édition), *Comprendre et réaliser les tests statistiques à l'aide de R* édité chez de Boeck. Springer a édité durant un temps des ouvrages dans la série _Pratique R_. Il existe aussi trois ouvrages qui abordent la statistique avec R aux Presses Universitaires de Rennes, ou encore _R et espace_ édité chez Framabook. Une fois les bases acquises avec R, les utilisateurs peuvent avoir recours à la documentation disponible sur des forums tel que celui maintenu par le Centre de coopération internationale en recherche agronomique pour le développement (CIRAD) http://forums.cirad.fr/logiciel-R/index.php. Notons qu'il y a aussi de très bon blogs en anglais http://www.r-bloggers.com, http://www.r-statistics.com, http://blog.rstudio.org, http://blog.revolutionanalytics.com, etc.
 
+Des acteurs
+https://www.datacamp.com/courses/free-introduction-to-r
+
+https://insileco.github.io/wiki/usefulr/
 
 [^resR1]: Il s'agit d'un rassemblement des utilisateurs de R. La première conférence a eu lieu à Vienne en 2004 et les conférences se tiennent chaque année dans différents pays depuis 2006.
 
@@ -291,7 +319,7 @@ une source privilégiés mais non exclusifs Le CRA
 https://cran.r-project.org/web/packages/policies.html
 
 
-D'une centaine de package au début des années 2000, on arrive à plus de 7000 en août 2015. Comme le souligne Kurt Hortnik en 2009[ref], cette abondance de packages pose un certain nombre de questions relatives à la facilité de trouver la fonctionnalité désirée, la redondance des fonctions et la qualité du code. Un package soumis au CRAN est en fait soumis à un ensemble de tests qui s'assurent que les fonctions peuvent être exécutées et que les exemples fonctionnent. Il n'y a pas de vérification sur la redondance des fonctions vis à vis des autres packages ou encore sur la qualité du code. Selon Kurt Hortnik, en dépit des défis posés par le nombre croissant de packages développés, une politique plus contraignante n'est pas souhaitable, et quand bien même celle-ci serait mise en place, elle n'affecterait pas tant la courbe de croissance. A son avis, il faudrait repenser les relations entre les packages afin de diminuer la similarité entre les packages au profit d'interdépendances. Cela dit, pour rassurer les utilisateurs de R, la qualité de nombreux packages a été évaluée par des journaux spécialisés comme le _Journal of Statistical Software_. De même, les retours de la part de la communauté des utilisateurs de R est, comme en témoigne son histoire, un facteur essentiel. Ainsi, les faiblesses de tel ou tel package peuvent vite être détectées et la coopération entre utilisateurs est facilité grâce à des outils comme _Github_, *Bitbucket* ou encore l'outil R dédié [*R-Forge*](https://r-forge.r-project.org).
+D'une centaine de package au début des années 2000, on arrive à plus de 7000 en août 2015 et à près de 14300 à la fin décembre 2018. Comme le souligne déjà Kurt Hortnik en 2009[ref], cette abondance de packages pose un certain nombre de questions relatives à la facilité de trouver la fonctionnalité désirée, la redondance des fonctions et la qualité du code. Un package soumis au CRAN est en fait soumis à un ensemble de tests qui s'assurent que les fonctions peuvent être exécutées et que les exemples fonctionnent. Il n'y a pas de vérification sur la redondance des fonctions vis à vis des autres packages ou encore sur la qualité du code. Selon Kurt Hortnik, en dépit des défis posés par le nombre croissant de packages développés, une politique plus contraignante n'est pas souhaitable, et quand bien même celle-ci serait mise en place, elle n'affecterait pas tant la courbe de croissance. A son avis, il faudrait repenser les relations entre les packages afin de diminuer la similarité entre les packages au profit d'interdépendances. Cela dit, pour rassurer les utilisateurs de R, la qualité de nombreux packages a été évaluée par des journaux spécialisés comme le _Journal of Statistical Software_. De même, les retours de la part de la communauté des utilisateurs de R est, comme en témoigne son histoire, un facteur essentiel. Ainsi, les faiblesses de tel ou tel package peuvent vite être détectées et la coopération entre utilisateurs est facilité grâce à des outils comme _Github_, *Bitbucket* ou encore l'outil R dédié [*R-Forge*](https://r-forge.r-project.org).
 
 https://www.r-pkg.org/
 
@@ -303,9 +331,10 @@ https://rdrr.io/
 ![](img/chap2/rdrr.png)
 
 
+
 ### Les interfaces utilisateurs
 
-R est un langage de programmation qui pourrait bien demeurer en l'état d'abstraction, confiné dans des livres qui en décrivent le fonctionnement. Cependant, il existe bel et bien une réalisation opérationnelle de R qui fait de lui un outil numérique à part entière, un logiciel statistique dédié au traitement et à l'analyse de données. Travailler avec R, c'est finalement utiliser le langage R avec le logiciel R. Concrètement, le processus est relativement simple : écrire du code dans le langage R qui sont ensuite exécutées par le logiciel R.
+Travailler avec R, c'est finalement utiliser le langage R avec le logiciel R. Concrètement, le processus est relativement simple : écrire du code dans le langage R qui sont ensuite exécutées par le logiciel R.
 
 Pour réaliser ces étapes, il existe plusieurs cadres de travail possibles. Quand R est téléchargé sur le CRAN, pour Windows et Mac OS X, il est fournit avec une interface utilisateur dédié à chacun de ces systèmes d'exploitation. Ces interfaces permettent d'avoir une console graphique ainsi qu'une interface pour écrire les lignes de commandes que l'on exécute ensuite. Il est aussi possible d'utiliser R dans un terminal sous Linux, Mac OS X et Windows. Dans ce cas, l'utilisateur dispose d'une interface pour communiquer avec R sans aucune autre facilité. Ainsi, l'utilisateur devra se munir d'un outil de son choix pour écrire les commandes R qu'il souhaite enregistrer et utiliser de manière différée. Un tel outil est un bon éditeur de code, il en existe énormément, un éditeur récent, performant, multiplate-forme et gratuit est [Atom](https://atom.io).
 
