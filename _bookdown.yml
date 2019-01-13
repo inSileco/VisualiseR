@@ -4,3 +4,33 @@ language:
     chapter_name: "Chapitre"
 delete_merged_file: true
 edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
+rmd_files: [
+  "index.Rmd", #
+  "00-introduction.Rmd", #
+
+  # Part I
+  "01-ScienceetGraphique.Rmd",
+  "02-AproposdeR.Rmd",
+  "03-Philosophie.Rmd",
+
+  # Part II
+  "04-CreerEditer.Rmd",
+  "05-Editiongraph.Rmd",
+  "06-ParametresGraphiques.Rmd",
+  "07-Peripheriques.Rmd",
+  "08-Partitionnement.Rmd",
+  "09-Exercices.Rmd",
+  "10-Solutions.Rmd",
+
+  # Part III
+  "11-introductionGrid.Rmd",
+  "12-introductionGgplot2.Rmd",
+  "13-Ggplot2InAction.Rmd",
+  "14-GgplotExtension.Rmd",
+
+  # Part IV
+  "15-graphInteractive.Rmd",
+
+  # Part Annexes
+  "Annexe1.Rmd"
+]

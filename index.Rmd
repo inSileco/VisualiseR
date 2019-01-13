@@ -1,15 +1,15 @@
 ---
 title: "Visualiser vos données avec R"
 author: "Nicolas Casajus, Kevin Cazelles"
-date: "`r Sys.Date()`"
+github-repo: "inSileco/VisualiseR"
+date: '`r Sys.Date()`'
+knit: bookdown::render_book
 site: bookdown::bookdown_site
-output: bookdown::gitbook
-documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: inSileco/StatsMaths
 description: "Utiliser R pour faire des graphiques."
+url: "https://insileco.github.io/VisualiseR/"
 ---
 
 
