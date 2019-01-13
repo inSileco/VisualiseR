@@ -5,7 +5,7 @@ bookdown::gitbook:
       before: |
         <li> <a href="./">VisualiseR</a> </li>
       after: |
-        <li><a href="https://github.com/inSileco/StatsMaths" target="blank">Publié avec bookdown <i class="fa fa-github" aria-hidden="true"></i> </a></li>
+        <li><a href="https://github.com/inSileco/VisualiseR" target="blank">Publié avec bookdown <i class="fa fa-github" aria-hidden="true"></i> </a></li>
     edit: https://github.com/inSileco/VisualiseR/edit/devel/%s
     download: ["pdf", "epub"]
 bookdown::pdf_book:

@@ -1,1 +1,5 @@
-# ggplot2 in action 
+# ggplot2 in action
+
+## Principes
+
+## Reprendre ce qui a été fait dans la partie 1 

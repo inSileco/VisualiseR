@@ -1,3 +1,13 @@
-# Introduction Grid
+# Introduction au package `grid`
 
-Expliquer grid. 
+Expliquer grid.
+
+## Principes
+
+## Examples
+
+## Application
+
+### Lattice
+
+### ggplot2

@@ -7,6 +7,7 @@ edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
 rmd_files: [
   "index.Rmd", #
   "00-introduction.Rmd", #
+  "00-outline.Rmd",
 
   # Part I
   "01-ScienceetGraphique.Rmd",
@@ -14,8 +15,8 @@ rmd_files: [
   "03-Philosophie.Rmd",
 
   # Part II
-  "04-CreerEditer.Rmd",
-  "05-Editiongraph.Rmd",
+  "04-Editiongraph.Rmd",
+  "05-PremierGraphs.Rmd",
   "06-ParametresGraphiques.Rmd",
   "07-Peripheriques.Rmd",
   "08-Partitionnement.Rmd",
@@ -26,11 +27,13 @@ rmd_files: [
   "11-introductionGrid.Rmd",
   "12-introductionGgplot2.Rmd",
   "13-Ggplot2InAction.Rmd",
-  "14-GgplotExtension.Rmd",
+  "14-GgplotExtensions.Rmd",
 
   # Part IV
   "15-graphInteractive.Rmd",
 
   # Part Annexes
-  "Annexe1.Rmd"
+  "Annexe1.Rmd",
+  "Annexe2.Rmd",
+  "Annexe3.Rmd"
 ]

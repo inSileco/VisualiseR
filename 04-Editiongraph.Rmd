@@ -1,7 +1,6 @@
 # Édition d'un graphique
 
 
-
 ## Graphique vierge
 
 La philosophie des auteurs en termes de graphiques sous R est simple : ajouter les éléments un à un, en commençant par ouvrir une fenêtre graphique avec des dimensions (axes et marges) choisies, mais sans que rien ne s'affiche à l'écran. Regardons donc comment créer un graphe vide.

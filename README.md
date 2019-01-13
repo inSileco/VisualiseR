@@ -1,6 +1,6 @@
 # VisualiseR
 
-Visualiser vos données avec R.
+Visualiser vos données avec R
 
 [![Build Status](https://travis-ci.org/inSileco/VisualiseR.svg?branch=devel)](https://travis-ci.org/inSileco/VisualiseR)
 
@@ -8,7 +8,7 @@ Visualiser vos données avec R.
 
 ## Installation
 
-Pour ce qui sont intéressé à créer le livre localement:
+Pour compiler le livre localement:
 
 1. Cloner ce répertoire
 2. Installer [bookdown](https://github.com/rstudio/bookdownw/)
@@ -18,14 +18,28 @@ Pour ce qui sont intéressé à créer le livre localement:
 bookdown::render_book('index.Rmd', 'bookdown::gitbook')
 ```
 
+Il y a aussi un petit script bash `_build.sh` qui peut être utilisé:
+
+```
+sh _build.sh
+```
+
 
 
 ## Contribuer
 
-- Ce livre est édité avec [bookdown](https://github.com/rstudio/bookdownw/), la documentation est très utile https://bookdown.org/yihui/bookdown/
-- `code/chapN/` pour les script pour le chaptre N;
-- `img/chapN/` pour les figures/images non créés avec R pour le chaptre N;
+Toutes les contributions sont les bienvenues :smile:.
+Si vous êtes en dehors du groupe inSileco, vous pouvez forker ce répertoire et puis [créer un pull request à partir de votre *fork*](https://help.github.com/articles/creating-a-pull-request-from-a-fork/). Vous pouvez aussi directement [éditer les fichiers en ligne](https://help.github.com/articles/editing-files-in-another-user-s-repository/).
+
+Un chapitre est un fichier `chapitre.Rmd`. Pour en éditer le contenu, l'étendre ou signaler des erreurs, le plus simple est d'ouvrir un *issue* en expliquant ce que vous souhaitez faire ou de détailler l'erreur. Si vous êtes collaborateurs sur le projet, vous pouvez vous assignez la tâche pour signaler au groupe ce sur quoi vous travailler.
+Deux [projets](https://github.com/inSileco/VisualiseR/projects) ont été organisés dans le répertoire GitHub (voir [*About project boards*](https://help.github.com/articles/about-project-boards/) pour plus de détails). Pour les utiliser, il suffit de les mentionner au moment de l'ouverture d'un nouvel *issue* est ouvert, on peut en suite les éditer et suivre leur avancement dans l'onglet *project*.
+
+Autres remarques:
+
+- ce livre est édité avec [bookdown](https://github.com/rstudio/bookdownw/), la documentation est très utile https://bookdown.org/yihui/bookdown/
+- `code/chapN/` pour les scripts pour le chapitre N;
+- `img/chapN/` pour les figures/images non créés avec R pour le chapitre N;
 - `extdata/` pour les données externes;
-- Ajouter les references dans `book.bib`;
-- Suivre les bonnes pratiques pour le code: voir [goodpractice](https://github.com/MangoTheCat/goodpractice)
-- Donner des noms au code chunk pour nous faciliter la vie dans le futur!
+- ajouter les references dans `book.bib`;
+- suivre les bonnes pratiques pour le code: voir [goodpractice](https://github.com/MangoTheCat/goodpractice)
+- donner des noms au *code chunk* afin d'avoir des repères pour faciliter le débogage.

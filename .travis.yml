@@ -6,7 +6,8 @@ before_script:
   - chmod +x ./_build.sh
 
 script:
-  - ./_build.sh
+  - make html
+  - make epub
 
 notifications:
   slack:

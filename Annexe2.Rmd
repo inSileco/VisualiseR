@@ -1,0 +1,3 @@
+# Annexe 2 - une revue des packages existant {-}
+
+Voir [inSileco](https://insileco.github.io/wiki/rgraphpkgs/).

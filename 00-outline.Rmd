@@ -1,0 +1,52 @@
+# Outline
+
+## Introduction
+
+## Part 1: R et les graphiques
+
+### Science et graphiques
+
+### A propos de R
+
+### Les différents ensemble de packages sous R
+
+
+## Part 2: Graphics
+
+### Édition d'un graphique
+
+### Graphiques classiques
+
+### Paramètres graphiques
+
+### Périphériques et exportation
+
+### Partitionnement et composition
+
+## Exercices
+
+## Solution aux exercices
+
+
+## Part 3: Grids and ggplot2
+
+### Introduction au package `grid`
+
+### Introduction au package `ggplo2`
+
+### ggplot2 in action
+
+### Les extensions de ggplot2
+
+## Part 4: les graphiques interactifs du web
+
+### Graphiques interactives
+
+
+## Annexes
+
+### Annexe 1 - courte introduction à R
+
+### Annexe 2 - une revue des packages existant
+
+### Annexe 3 - quel package pour tel graphique ?

@@ -1,0 +1,4 @@
+# Annexe 3 - quel package pour tel graphique ?
+
+Voir https://www.r-graph-gallery.com/
+aussi https://cran.r-project.org/web/views/Graphics.html (pas trop a jour...)

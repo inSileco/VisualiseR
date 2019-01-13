@@ -1,4 +1,4 @@
-# Annexe I: courte introduction à R {-}
+# Annexe 1 - courte introduction à R {-}
 
 ### Les grands principes de R
 
