@@ -13,7 +13,7 @@ url: "https://insileco.github.io/VisualiseR/"
 ---
 
 
-# Bienvenu {-}
+# Bienvenue {-}
 
 ## Qu'est-ce que ce livre ? {-}
 

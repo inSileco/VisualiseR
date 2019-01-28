@@ -9,7 +9,7 @@ Dans la deuxième partie de ce chapitre, nous dressons un portait de R en 2019.
 
 
 
-## De S à R - 40 ans d'histoire
+## De S à R - 50 ans d'histoire
 
 La description ci-dessus est une synthèse des trois documents suivants:
 
@@ -220,8 +220,8 @@ voir les soutiens financiers du consortium R rendez vous sur cette page https://
 
 #### RStudio
 
-Il s'agit d'un acteur très connus au point qu'il y a une parfois une confusion
-entre R et RStudio. RStudio, Inc.[^noteRStudio] une entreprise fondé par Joseph J. Allaire qui développe un environment de développement[^noteRStudio2] pour R propose des services aux entreprises basés sur R (voir la section *Products* sur leur site Internet). En décembre 2018, RStudio comptait près d'une centaine de salariés https://www.rstudio.com/about/ dont de nombreux programmeurs parmi les plus actifs au sein de la communauté des utilisateurs de R (Hadley Wickham et Yihui Xie par exemple). RStudio est connu pour son interface de développement du même nom et pour la qualité des packages R que les salariés de RStudio développements. C'est un modèle économique classique dans le monde de l’opensource[^noteRStudio3]: une entreprise propose des services autour d'un logiciel qu'elle contribue activement a améliorer et dont elle fait une promotion active (étant donné que c'est la qualité du logiciel qui va déterminer son nombre de clients). Dans le cas de RStudio est énorme car les packages qu'elles contribuent à développer son parmi les plus utilisés[^noteRStudio4].
+Il s'agit d'un acteur tellement connu qu'il y a une parfois une confusion
+entre R et RStudio. RStudio, Inc.[^noteRStudio] une entreprise fondé par Joseph J. Allaire qui développe un environment de développement[^noteRStudio2] pour R et propose des services aux entreprises basés sur R (voir la section *Products* sur leur site Internet). En décembre 2018, RStudio comptait près d'une centaine de salariés https://www.rstudio.com/about/ dont de nombreux programmeurs parmi les plus actifs au sein de la communauté des utilisateurs de R (Hadley Wickham et Yihui Xie par exemple). RStudio est connu pour son interface de développement du même nom et pour la qualité des packages R que les salariés de RStudio développements. C'est un modèle économique classique dans le monde de l’opensource[^noteRStudio3]: une entreprise propose des services autour d'un logiciel qu'elle contribue activement a améliorer et dont elle fait une promotion active (étant donné que c'est la qualité du logiciel qui va déterminer son nombre de clients). Dans le cas de RStudio est énorme car les packages qu'elles contribuent à développer son parmi les plus utilisés[^noteRStudio4].
 
 [^noteRStudio]: https://www.rstudio.com/ consulté le 24 décembre 2018.
 [^noteRStudio2]: https://fr.wikipedia.org/wiki/Environnement_de_d%C3%A9veloppement consulté le 24 décembre 2018.
@@ -231,17 +231,16 @@ entre R et RStudio. RStudio, Inc.[^noteRStudio] une entreprise fondé par Joseph
 
 
 
-
 #### rOpenSci
 
-Comme indiqué sur le site Internet de rOpenSci[^noterOpen]
+Sur le site Internet de rOpenSci[^noterOpen], on peut lire:
 
 > rOpenSci fosters a culture that values open and reproducible research using shared data and reusable software.
 
 > [Traduction] rOpenSci encourage une culture qui promeut la recherche ouverte et reproductible qui utilise des données partagées et des logiciels réutilisables.
 
-
-Pour cela l'équipe de rOpenSci crée et révise des packages[^noterOpen2] qui facilitent la recherche reproductible. Il peut s'agir de packages qui améliorent l'efficacité et la reproductibilité de son flux de travail comme `drake`[^noterOpen2a] mais aussi des outils qui interrogent des bases de données accessibles en ligne via des interfaces spécifiques, un exemples emblématiques de cette catégorie est `taxize`[^noterOpen2b], véritable couteau suisse pour obtenir des informations taxonomiques. rOpenSci anime également un blog[^noterOpen3] sur lequel on trouve des posts présentant les différents packages révisés par cette organisation et des tutoriels pour apprendre à réaliser certaines manipulations de données avec R. Enfin, rOpenSci anime une communauté[^noterOpen4] dynamique et propose des *community calls*, c'est-à-dire des présentations sur certains aspects de R que l'on peut joindre en directe et qui sont par la suite archivées et consultable sur le site[^noterOpen5].
+Pour cela l'équipe de rOpenSci crée et révise des packages[^noterOpen2] qui facilitent la recherche ouverte et reproductible. Il peut s'agor de packages qui interrogent des bases de données accessibles en ligne via des interfaces spécifiques, un exemple emblématique de cette catégorie est `taxize`[^noterOpen2b], véritable couteau suisse pour obtenir des informations taxonomiques
+ou encore de packages qui améliore le flux de travail comme `drake`[^noterOpen2a]. rOpenSci anime également un blog[^noterOpen3] sur lequel on trouve des posts présentant les différents packages révisés par cette organisation et des tutoriels pour apprendre à réaliser certaines manipulations de données avec R. Enfin, rOpenSci anime une communauté[^noterOpen4] dynamique et propose des *community calls*, c'est-à-dire des présentations sur certains aspects de R que l'on peut joindre en direct ou consulté l'archive associée[^noterOpen5].
 
 
 [^noterOpen]: https://ropensci.org/about/ consulté le 26 décembre 2018 ou on apprend aussi que que rOpenSci est sponsorisé par NUMFOCUS  (https://numfocus.org/).
@@ -256,26 +255,26 @@ Pour cela l'équipe de rOpenSci crée et révise des packages[^noterOpen2] qui f
 
 #### La communauté des utilisateurs de R
 
-La myriade des utilisateurs de R est sans aucun doute l'un des acteurs les plus importants. La communauté des utilisateurs de R:
+La myriade des utilisateurs de R est sans aucun doute l'acteur le plus important
+car cette communauté :
 
 1. augmente les fonctionnalités de R en créant des packages;
-2. partage du contenu sur R que se soit en éditant des manuels, des livres, des blogs et des présentations;
+2. échanges des informations reltive à R par la création et l'édition de manuels, de livres, de blogs, etc.;
 3. s'auto-organize à travers des communautés locales d'utilisateurs;
 4. s'auto-supporte: les utilisateurs répondent rapidement aux questions d'autres utilisateurs.
 
-Tout le monde peut écrire des packages ou partager son expérience avec R et de fait, beaucoup d'utilisateurs le font. Il existe un grand nombre de bloggers qui produisent une multitude de posts sur différents aspects de R[^noteCom]. C'est une resource riche et diversifiée, il existe une plateforme très utile qui rassemble de nombreux posts issu de blog plus ou moins populaire[^noteCom1]: R-bloggers[^noteCom2]. La communauté des utilisateurs de R est en croissance, il n'y pas, à notre connaissance, de manière directe de mesurer le nombre exacte d'utilisateurs de R mais il y a de nombreux indices comme le nombre de groupe d'utilisateurs de R comme le montre la couverture du dernier livre de John Chambers qui compare le nombre de groupe d’utilisateurs de R entre 2010 et 2015.
+Tout le monde peut écrire des packages ou partager son expérience avec R et de fait, beaucoup d'utilisateurs le font. Il existe un grand nombre de bloggers qui produisent une multitude de posts sur différents aspects de R[^noteCom]. C'est une resource riche et diversifiée et il existe une plateforme très utile qui les rassemble[^noteCom1]: R-bloggers[^noteCom2]. De nombreux indices attestent que la communauté des utilisateurs de R est en croissance. Par exemple, le nombre de groupes d'utilisateurs de R est en très forte hausse comme le montre la couverture du dernier livre de John Chambers qui compare le nombre de groupe d’utilisateurs de R entre 2010 et 2015.
 
 ![Couverture de *Extending R* [@chambers_extending_2016]. Pour une liste qui recense ces communautés, voir https://jumpingrivers.github.io/meetingsR/index.html (consulté le 26 décembre 2018)](https://images.tandf.co.uk/common/jackets/amazon/978149877/9781498775717.jpg)
 
 On peut aussi regarder la croissance du nombre de packages qui dépassait 10,000 en 2016 (voir https://blog.revolutionanalytics.com/2017/01/cran-10000.html consulté le 26 décembre 2018). L'explosion du nombre de packages R hébergés sur GitHub[^noteCom3] (près de
-45000 à la fin décembre 2018 d'après https://rdrr.io/). Un autre indice est la popularité de R sur la plateforme d'échange *stack overflow* ou les utilisateurs posent des questions auxquels répondent rapidement d'autres utilisateurs. C'est d’ailleurs sur ces deux derniers
-indices que le site internet évaluent la popularité des langage de programmation
+45000 à la fin décembre 2018 d'après https://rdrr.io/). Un autre indice est la popularité du tag "R" sur la plateforme d'échange *stack overflow* où les utilisateurs posent des questions auxquelles répondent d'autres utilisateurs. C'est d’ailleurs la popularité sur Github et sur stack overflow que le site internet [redmonk](https://redmonk.com/) évaluent la popularité des langage de programmation
 et en janvier 2018, R était classé 12^ème^.
 
 ![Le résultat du sondage redmonk en janvier 2018, voir https://redmonk.com/sogrady/2018/03/07/language-rankings-1-18/ consulté le 26 décembre 2018.](http://sogrady-media.redmonk.com/sogrady/files/2018/03/lang.rank_.118.png)
 
 Un dernier indice de l'accroissement de la popularité de R chez les écologistes que nous
-sommes est la forte demande en formation de nos collègues. R figure incontestablement parmi les logiciels les plus utilisés pour la statistics et la science des données de manière générale et actuellement et de plus en plus d'écologue s'y forme à des niveaux de de plus en plus avancés.
+sommes est la forte demande en formation de nos collègues. R figure incontestablement parmi les outils computationnels les plus utilisés pour la statistique et la science des données de manière générale. De plus en plus d'écologues apprennent R avec un niveau de formation de de plus en plus avancé.
 
 
 [^noteCom]: Nous avons notre propre blog qui traite souvent de R https://insileco.github.io/.
@@ -289,7 +288,7 @@ sommes est la forte demande en formation de nos collègues. R figure incontestab
 
 ### Une documentation abondante
 
-<!-- ICI 26/12/2018 -->
+<!-- ICI 28/01/2019 -->
 
 Tous les acteurs décrits précédemment produisent une grande quantité de resources que ce soit pour débuter avec R, réaliser des tâches spécifiques avec R (au moyen de packages dédiés) mais aussi
 pour programmer efficacement avec R et développer ses propres packages[^noteDoc].

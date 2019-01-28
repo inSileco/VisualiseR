@@ -18,19 +18,19 @@ Pour compiler le livre localement:
 bookdown::render_book('index.Rmd', 'bookdown::gitbook')
 ```
 
-Il y a aussi un `maekfile` pour créer le gitbook
+Il y a aussi un `makefile` pour créer le gitbook en html :
 
 ```
 make html
 ```
 
-et le epub:
+et le epub :
 
 ```
 make epub
 ```
 
-De manière générale, il est utile de vérifier qu'il n'y a pas de problème avec le gitbook, c'est moins important pour le epub qui serait de toute façon créer par Travis.
+De manière générale, il est utile de vérifier qu'il n'y a pas de problème avec le gitbook, c'est un peu moins important pour le epub qui serait de toute façon créer par Travis.
 
 
 ## Contribuer
