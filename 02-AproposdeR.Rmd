@@ -268,8 +268,7 @@ Tout le monde peut écrire des packages ou partager son expérience avec R et de
 ![Couverture de *Extending R* [@chambers_extending_2016]. Pour une liste qui recense ces communautés, voir https://jumpingrivers.github.io/meetingsR/index.html (consulté le 26 décembre 2018)](https://images.tandf.co.uk/common/jackets/amazon/978149877/9781498775717.jpg)
 
 On peut aussi regarder la croissance du nombre de packages qui dépassait 10,000 en 2016 (voir https://blog.revolutionanalytics.com/2017/01/cran-10000.html consulté le 26 décembre 2018). L'explosion du nombre de packages R hébergés sur GitHub[^noteCom3] (près de
-45000 à la fin décembre 2018 d'après https://rdrr.io/). Un autre indice est la popularité du tag "R" sur la plateforme d'échange *stack overflow* où les utilisateurs posent des questions auxquelles répondent d'autres utilisateurs. C'est d’ailleurs la popularité sur Github et sur stack overflow que le site internet [redmonk](https://redmonk.com/) évaluent la popularité des langage de programmation
-et en janvier 2018, R était classé 12^ème^.
+45000 à la fin décembre 2018 d'après https://rdrr.io/). Un autre indice est la popularité du tag "R" sur la plateforme d'échange *stack overflow* où les utilisateurs posent des questions auxquelles répondent d'autres utilisateurs. C'est d’ailleurs la popularité sur Github et sur stack overflow que le site internet [redmonk](https://redmonk.com/) évaluent la popularité des langage de programmation et en janvier 2018, R était classé 12^ème^.
 
 ![Le résultat du sondage redmonk en janvier 2018, voir https://redmonk.com/sogrady/2018/03/07/language-rankings-1-18/ consulté le 26 décembre 2018.](http://sogrady-media.redmonk.com/sogrady/files/2018/03/lang.rank_.118.png)
 
@@ -286,48 +285,55 @@ sommes est la forte demande en formation de nos collègues. R figure incontestab
 
 
 
-### Une documentation abondante
+### Une documentation abondante et facilement accessible
 
 <!-- ICI 28/01/2019 -->
 
-Tous les acteurs décrits précédemment produisent une grande quantité de resources que ce soit pour débuter avec R, réaliser des tâches spécifiques avec R (au moyen de packages dédiés) mais aussi
-pour programmer efficacement avec R et développer ses propres packages[^noteDoc].
+Les acteurs mentionné ci-dessus précédemment produisent une documentation
+abondante aussi bien pour débuter avec R, réaliser des tâches spécifiques avec R (au moyen de packages dédiés) ou encore pour programmer efficacement avec R et développer ses propres packages[^noteDoc].
 
-Pour débuter avec R, un moyen simple est de consulter les sections *Manuals*, *Books* de la page Internet du projet R (https://www.r-project.org), et la  la section *Contributed* avec des introductions a R dans différentes langues. Cette page n'est malheureusement plus mise à jour mais on y trouve par exemple l'*Introduction à R* de Julien Barnier http://alea.fr.eu.org/pages/intro-R. Il y aussi des acteurs de formation très populaires qui offrent des formations dédiés à R. On peut citer la formation d'introductiona à R de DataCamp (https://www.datacamp.com/courses/free-introduction-to-r, consulté le 28 décembre 2018) mais aussi celle de OpenClassrooms (en français, malgré le nom,   https://openclassrooms.com/fr/courses/1393696-effectuez-vos-etudes-statistiques-avec-r, consulté le 28 décembre 2018).
+Pour les débutants, un moyen rapide de mettre le bien à l'étrier est de consulter les sections *Manuals*, *Books* de la page Internet du projet R (https://www.r-project.org) et la section *Contributed* qui propose des introductions à R dans différentes langues. Cette page n'est malheureusement plus mise à jour mais on y trouve, par exemple, l'*Introduction à R* de Julien Barnier (voir http://alea.fr.eu.org/pages/intro-R). On peut aussi citer des des acteurs de formation très populaires qui offrent des formations dédiés à R. On peut citer la formation d'introduction à R de DataCamp (en anglais, https://www.datacamp.com/courses/free-introduction-to-r, consulté le 28 décembre 2018) mais aussi celle de OpenClassrooms (en français, malgré le nom,
+ https://openclassrooms.com/fr/courses/1393696-effectuez-vos-etudes-statistiques-avec-r, consulté le 28 décembre 2018).
 
-De la documentation en ligne, gratuite et de qualité est aussi disponible pour se former à des tâches plus  spécifiques. Ainsi, le site bookdown.org[^noteDoc2] propose des livres disponibles en ligne d'une très grande qualité. Notons RStudio référence des ouvrages (certain aussi sur bookdown) https://www.rstudio.com/resources/training/books/. RStudio propose aussi des *cheatsheet* de très bonne uaalité https://www.rstudio.com/resources/cheatsheets/. Les utilisateurs anglophones ont facilement accès à une masse considérable d'informations grâce à différents ouvrages, notamment ceux regroupés dans la collection _Use R!_, publiée par le groupe éditorial Springer et éditée par R. Gentleman, K. Hornik Kurt et G. Parmigiani. Des ouvrages dédiés à R sont aussi disponibles en français, mais en nombre plus restreint. Gaël Millot a ainsi écrit un ouvrage très complet (plus de 800 pages dans la troisième édition), *Comprendre et réaliser les tests statistiques à l'aide de R* édité chez de Boeck. Springer a édité durant un temps des ouvrages dans la série _Pratique R_. Il existe aussi trois ouvrages qui abordent la statistique avec R aux Presses Universitaires de Rennes, ou encore _R et espace_ édité chez Framabook [@groupe_elementr_r_2014].
+De la documentation en ligne, gratuite et de qualité est aussi disponible pour se former à des tâches plus spécifiques. Le site bookdown.org[^noteDoc2] propose des livres disponibles, par exemple *Advanced R* de Hadley Wickham y est répertorié (voir https://adv-r.hadley.nz/). Notons que RStudio référence aussi certains ouvrage de leur membre https://www.rstudio.com/resources/training/books/. Le site RStudio propose aussi des *cheatsheet* (des fiches récapitulatives, voir https://www.rstudio.com/resources/cheatsheets/). A cela, il faut ajouter la longue listes des post de différents blogues et les réponses aux questions sur les forums[^noteFor]
+sur *stack overflow*.
 
-
-
-Une fois les bases acquises avec R, les utilisateurs peuvent avoir recours à la documentation disponible sur des forums tel que celui maintenu par le Centre de coopération internationale en recherche agronomique pour le développement (CIRAD) http://forums.cirad.fr/logiciel-R/index.php. Notons qu'il y a aussi de très bon blogs en anglais http://www.r-bloggers.com, http://www.r-statistics.com, http://blog.rstudio.org, http://blog.revolutionanalytics.com, etc.
-
-
-
-manière à
+Les utilisateurs anglophones ont facilement accès à une masse considérable d'informations grâce à différents ouvrages, notamment ceux regroupés dans la collection _Use R!_, publiée par le groupe éditorial Springer[^noteDoc3] et éditée par R. Gentleman, K. Hornik Kurt et G. Parmigiani. Il y a aussi un certain nombre d'ouvrage publié chez CRC Press and chez O'Reilly Media[^noteDoc5]. Des ouvrages en français sont également disponible mais en nombre plus restreint. Gaël Millot a ainsi écrit un ouvrage très complet (plus de 800 pages dans la troisième édition), *Comprendre et réaliser les tests statistiques à l'aide de R* édité chez de Boeck. Springer a édité durant un temps des ouvrages dans la série _Pratique R_. Il existe aussi trois ouvrages qui abordent la statistique avec R aux Presses Universitaires de Rennes et  _R et espace_ édité chez Framabook [@groupe_elementr_r_2014].
 
 
-[^noteDoc]: nous maintenons une liste de resource à l'adresse suivante: https://insileco.github.io/wiki/usefulr/.
-[^noteDoc2]: https://bookdown.org/  consulté le 28 décembre 2018.
+L'ensemble des listes de diffusion relatives à R est aussi une mone d'information. En 1997, il y avait trois listes de diffusion : _R-announcement_ pour annoncer les nouveautés de R, _R-help_ dédiée à l’entraide entre utilisateurs R et _R-devel_ pour les développeurs. Depuis, ont été ajoutées les listes _R-package-devel_, pour les développeurs de packages et _R-packages_ pour annoncer la sortie de nouveaux packages. À côté de ces listes principales, on trouve également pas moins de 20 autres listes de diffusion couvrant les différentes utilisations de R : les listes _R-SIG_ (_Special Interest Group_) qui traitent aussi bien du traitement des données spatiales que de l'écologie ou encore de la finance (https://www.r-project.org/mail.html consulté le 28 janvier 2018).
 
-  différents niveau. Dand des explications, en anglais pour la plupart, pour comprendre ce qu'est R, des liens pour se documenter et connaître les prochains événements autour de R, dont les conférences internationales _Use R!_[^resR1].
+Une autre façon de trouver de la documentation et de trouver de nouvelles sources est d'utiliser les réseaux sociaux. Sur Twitter, par example, il y a de nombreux nombreux membres actifs de la communauté R qui partagent quotidiennement des informations.
+Voici quelque compte twitter riche en information:
 
+- #rstats
+- @RLangPackage
+- @RLangTip
+- @rstudio
+- @rOpenSci:
+- @daily_r_sheets *Daily R Cheatsheets*
+- @dataandme : Mara Averick
+- @ One R Tip a Day
 
-La deuxième source est constituée par l'ensemble des listes de diffusion relatives à R. En 1997, il y avait trois listes de diffusion : _R-announcement_ pour annoncer les nouveautés de R, _R-help_ dédiée à l’entraide entre utilisateurs R et _R-devel_ pour les développeurs. Depuis, ont été ajoutées les listes _R-package-devel_, pour les développeurs de packages et _R-packages_ pour annoncer la sortie de nouveaux packages. À côté de ces listes principales, on trouve également pas moins de 22 autres listes de diffusion couvrant les différentes utilisations de R : les listes _R-SIG_ (_Special Interest Group_) qui traitent aussi bien du traitement des données spatiales que de l'écologie ou encore de la finance (https://www.r-project.org/mail.html).
-
-
-Blog et twitter iy a des comptes ootuu
+Les conférences internationales _Use R!_[^resR1].
+Locale Quebec
+Rstudio conf rOpenSci
 
 La première est _The R journal_ (intitulé _R news_ de 2001 à 2009) que nous avons mentionnés plus haut. Cette revue bisannuelle détaille les modifications apportées aux nouvelles versions de R parues depuis le numéro précédent. Les changements sur le CRAN y sont aussi indiqués avec la liste des nouveaux packages. On y trouve également des articles qui font, le plus souvent, la présentation d'un nouveau package.
-
-
-
-Pour l'utilisation d'un package spécifique se référer à ;a docuemntation. Nous dévelopons ci dessous.
-
 
 
 [^resR1]: Il s'agit d'un rassemblement des utilisateurs de R. La première conférence a eu lieu à Vienne en 2004 et les conférences se tiennent chaque année dans différents pays depuis 2006.
 
 
+
+[^noteDoc]: nous maintenons une liste de resource à l'adresse suivante: https://insileco.github.io/wiki/usefulr/.
+[^noteDoc2]: https://bookdown.org/ consulté le 28 décembre 2018.
+[^noteDoc3]: https://www.springer.com/series/6991 consulté le 28 janvier 2019.
+[^noteDoc4]:https://www.crcpress.com/ consulté le 28 janvier 2019.
+[^noteDoc5]:https://www.safaribooksonline.com/library/publisher/oreilly-media-inc/ consulté le 28 janvier 2019.
+
+[^noteFor]: Tel que celui maintenu par le Centre de coopération internationale en recherche agronomique pour le développement (CIRAD) http://forums.cirad.fr/logiciel-R/index.phpm
+consulté le 28 janvier 2019.
 
 
 
