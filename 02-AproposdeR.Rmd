@@ -338,43 +338,41 @@ consulté le 28 janvier 2019.
 
 ### Les packages
 
-Un package (ou librairie) est un ensemble de fichiers que l'on ajoute a R pour
-étendre ces fonctionnalités. Quand on installe R, par défault, on installe l'ensemble des fichiers qui permettent d'interagir avec R mais également des fonctionnalités de base regroupée en deux ensembles de packages: 15 packages dits de base (p. ex. le package package `graphics`) et 15 packages recommandés (dont le package `nlme` qui permet de faire des modèles mixtes)[^notePkg1]. Au gré de son usage, on peut ajouter des fonctionnalités supplémentaires pour étendre les possibilités offertes par R en téléchargeant depuis une archive qui contient des packages, par exemple depuis le CRAN.
+Un package (ou librairie) est un ensemble de fichiers que l'on ajoute à R pour en
+étendre les fonctionnalités. Quand on installe R, par défaut, on installe l'ensemble des fichiers qui permettent d'écrire en R et d'interagir avec, mais également des fonctionnalités de base regroupées en deux ensembles de packages: 15 packages dits de base (p. ex. le package package `graphics`) et 15 packages recommandés (dont le package `nlme` qui permet de faire des modèles mixtes)[^notePkg1]. L'utilisateur peut par la suite ajouter des fonctionnalités supplémentaires pour étendre les possibilités offertes par R en téléchargeant depuis un server qui héberge des packages R, par exemple depuis le CRAN.
 
-Un package valide est un ensemble de fichiers qui sont structurés de manière précise et qui répond a un certain nombre de tests[^notePkg2]. En général, un package regroupe un ensemble de fonctions réunies sous une même thématique. Par ex., on trouvera des packages pour faire des modèles mixtes, de la géostatistique, des graphiques, etc. Les packages _jpeg_ et _png_ proposés par Simon Urbanek sont chacun composé de deux fonctions permettant d'importer et d'exporter des fichiers au format jpeg et png. Le package _plotrix_, maintenu par Jim Lemon, dans sa version 3.7-4, est une collection d'environ 160 fonctions qui étendent les fonctionnalités graphiques du package _graphics_.
-Le package _ggplot2_, maintenu par Hadley Wickham, est une implémentation de _La Grammaire des Graphiques_ développée par Leland Wilkinson. Ce package est d'une certaine manière plus qu'une simple collection de fonctions, il développe des outils et des méthodes qui changent drastiquement l'approche que l'on a du graphique et d'ailleurs de nombreux packages l'utilisent pour ajouter de nouveaux types graphiques.
+Un package valide est un ensemble de fichiers structuré et qui passe a un certain nombre de tests[^notePkg2]. En général, un package regroupe un ensemble de fonctions réunies sous une même thématique. Par exemple, on trouvera des packages pour faire des modèles mixtes, de la géostatistique, des graphiques, etc. Les packages _jpeg_ et _png_ proposés par Simon Urbanek sont chacun composé de deux fonctions permettant d'importer et d'exporter des fichiers au format jpeg et png. Le package _plotrix_, maintenu par Jim Lemon, est une collection d'environ 160 fonctions (dans sa version 3.7-4) qui étendent les fonctionnalités graphiques du package _graphics_. Le package _ggplot2_, maintenu par Hadley Wickham, est une implémentation de _La Grammaire des Graphiques_ développée par Leland Wilkinson. Ce package est d'une certaine manière plus qu'une simple collection de fonctions, il développe des outils et des méthodes qui changent profondément l'approche de la création de graphique et d'ailleurs de nombreux packages l'utilisent pour ajouter de nouveaux types graphiques.
+Comment trouver un package sur le CRAN ? En générale c'est en lisant des articles ou des livres sur R qu'on apprend l'existence de tel ou tel packages. Cela étant dit, sur le CRAN sont disponibles de *task view* (https://cran.r-project.org/web/views/ consulté le 5 février 2018) qui dresse un paysage des packages disponibles pour un thème donné[^notePkg3]. Enfin, il y a le site [METACRAN](https://www.r-pkg.org/) qui permet une recherche efficace parmi les packages disponible sur le CRAN.
 
-Combien de packages existent-t-il actuellement ? Dans le numéro de décembre 2009 du _The R journal_, John Fox relate la croissance exponentielle du nombre de packages R [@fox_aspects_2009]. Cette tendance a été confirmé depuis.
+<!-- https://github.com/qinwf/awesome-R -->
 
- <!-- Prendre l'image d'un poste  -->
-
-<!-- Nous nous sommes inspirés de cet article pour actualiser cette évolution du nombre de packages archivés sur le CRAN jusqu'en 2015 pour réaliser la figure. -->
-<!-- @fig:nbpkgs. -->
-
-<!-- ![Somme cumulée des packages archivés sur le CRAN](chap2/fig/figpackg.pdf){width=95%}
- KC mettre aussi nombre de référence dans les publication scientific avec Web of science-->
-
-Pas seulement sur le CRAN.
-Depuis quelques années il y a des sites qui répertories les packages
+![Haut de la page principale du *METACRAN* https://www.r-pkg.org/ consultée le](img/chap2/metacran.png)
 
 
 
-D'une centaine de package au début des années 2000, on arrive à plus de 7000 en août 2015 et à près de 14300 à la fin décembre 2018. Comme le souligne déjà Kurt Hortnik en 2009[@hornik_are_2012], cette abondance de packages pose un certain nombre de questions relatives à la facilité de trouver la fonctionnalité désirée, la redondance des fonctions et la qualité du code. Un package soumis au CRAN est en fait soumis à un ensemble de tests qui s'assurent que les fonctions peuvent être exécutées et que les exemples fonctionnent. Il n'y a pas de vérification sur la redondance des fonctions vis à vis des autres packages ou encore sur la qualité du code. Selon Kurt Hortnik, en dépit des défis posés par le nombre croissant de packages développés, une politique plus contraignante n'est pas souhaitable, et quand bien même celle-ci serait mise en place, elle n'affecterait pas tant la courbe de croissance. A son avis, il faudrait repenser les relations entre les packages afin de diminuer la similarité entre les packages au profit d'interdépendances. Cela dit, pour rassurer les utilisateurs de R, la qualité de nombreux packages a été évaluée par des journaux spécialisés comme le _Journal of Statistical Software_. De même, les retours de la part de la communauté des utilisateurs de R est, comme en témoigne son histoire, un facteur essentiel. Ainsi, les faiblesses de tel ou tel package peuvent vite être détectées et la coopération entre utilisateurs est facilité grâce à des outils comme _Github_, *Bitbucket* ou encore l'outil R dédié [*R-Forge*](https://r-forge.r-project.org). https://github.com/qinwf/awesome-R
+Combien de packages existent-t-il actuellement ? Dans le numéro de décembre 2009 du _The R journal_, John Fox relate la croissance exponentielle du nombre de packages R [@fox_aspects_2009]. D'une centaine de packages au début des années 2000, on arrive à plus de 7000 en août 2015; la barre des 10000 packages a été franchie en 2017 et en février 2019, plus de 13600 packages sont disponibles sur le CRAN.
 
 
+![Croissance des packages R disponibles sur le CRAN - article de publié par David Smith sur le blog *Revolutions* https://blog.revolutionanalytics.com/2017/01/cran-10000.html, consulté le 5 février 2019](https://revolution-computing.typepad.com/.a/6a010534b1db25970b01b8d2594d25970c-800wi)
 
-![https://www.r-pkg.org/ consulté le](img/chap2/metacran.png)
+À ce nombre de packages viennent s'ajouter près de 1700 packages disponibles sur  [Bioconductor](https://www.bioconductor.org/) et des dizaines de milliers disponibles
+sur différentes forges logiciel : [R-forge](https://r-forge.r-project.org/), [omegahat](http://www.omegahat.net/), [GitHub](https://github.com/), [bitbucket](https://bitbucket.org/). Le site [R Package Documentation](https://rdrr.io/) rassemble la documentation des packages disponibles sous différentes plateformes.
+
+![Haut de la page principale du *R Package Documentation* https://rdrr.io/ consultée le 5 février 2019](img/chap2/rdrr.png)
 
 
-<br>
-
-![https://rdrr.io/ consulté le](img/chap2/rdrr.png)
+ Comme le soulignait déjà Kurt Hortnik en 2009 [@hornik_are_2012], cette abondance de packages pose un certain nombre de questions relatives à la facilité de trouver la fonctionnalité désirée, la redondance des fonctions et la qualité du code. Les tests auxquels sont soumis les packages soumis au CRAN ne couvrent pas complètement ces deux
+ derniers aspects. Selon Kurt Hortnik, en dépit des défis posés par le nombre croissant de packages développés, une politique plus contraignante n'est pas souhaitable, et quand bien même celle-ci serait mise en place, elle n'affecterait pas tant la courbe de croissance. A son avis, il faudrait repenser les relations entre les packages afin de diminuer la similarité entre les packages au profit d'interdépendances. Une première mesure pour maintenir une augmentation de la qualité des packages sur le CRAN est de permettre au utilisateur de donner un retour de leur utilisation (rapporté des bogues notamment). Les forges logiciel telles que _Github_, *Bitbucket* ou *R-Forge* sont fait pour cela et leur utilisation est de plus en plus fréquente. Une autre mesure est d'inciter les créateurs de packages à faire évaluer leur travail par les pairs, en soumettant leur package à des journaux/organisations spécialisée comme *Journal of Open Source Software* ou rOpenSci (voir plus haut).
 
 
 
 [^notePkg1]: Voir https://stackoverflow.com/questions/9700799 et  https://cran.r-project.org/src/contrib/3.5.2/Recommended/ consultés le 31 janvier 2019.
 
 [^notePkg2]: Pour les détails techniques voir *Writing R extensions* https://cran.r-project.org/doc/manuals/r-release/R-exts.html, consulté le 31 janvier 2018.
+
+[^notePkg3]: Le package [ctv](https://cran.r-project.org/web/packages/ctv/) permet d'installer tous packages d'un thème particulier.
+
+[^notePkg4]: Le nombre exact est indiqué en haut de la page https://cran.r-project.org/web/packages/ consulté le 5 février.
 
 
 
