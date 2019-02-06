@@ -379,18 +379,38 @@ sur différentes forges logiciel : [R-forge](https://r-forge.r-project.org/), [o
 
 ### Les interfaces utilisateurs
 
-Travailler avec R, c'est finalement utiliser le langage R avec le logiciel R. Concrètement, le processus est relativement simple : écrire du code dans le langage R qui sont ensuite exécutées par le logiciel R.
+Travailler avec R, c'est écrire des lignes de code dans le langage R qui sont interprétées par R. Donc pour travailler avec R, l'utilisateur a donc simplement d'utiliser le programme R qui peut être appelé dans un émulateur de Terminal[^noteInter].
 
-Pour réaliser ces étapes, il existe plusieurs cadres de travail possibles. Quand R est téléchargé sur le CRAN, pour Windows et Mac OS X, il est fournit avec une interface utilisateur dédié à chacun de ces systèmes d'exploitation. Ces interfaces permettent d'avoir une console graphique ainsi qu'une interface pour écrire les lignes de commandes que l'on exécute ensuite. Il est aussi possible d'utiliser R dans un terminal sous Linux, Mac OS X et Windows. Dans ce cas, l'utilisateur dispose d'une interface pour communiquer avec R sans aucune autre facilité. Ainsi, l'utilisateur devra se munir d'un outil de son choix pour écrire les commandes R qu'il souhaite enregistrer et utiliser de manière différée. Un tel outil est un bon éditeur de code, il en existe énormément, un éditeur récent, performant, multiplate-forme et gratuit est [Atom](https://atom.io).
-
-De l'utilité des scripts...
-
-Utiliser une interface de type console avec un éditeur de code reste une solution pour des habitués de la programmation. Pour les utilisateurs débutants, un environnement performant et moins austère est [RStudio](https://www.rstudio.com). C'est un environnement intégré de développement R open-source, multiplate-forme et gratuit pour la version _Desktop_ qui permet de visualiser facilement la console où le code est exécuté, l'éditeur de lignes de code, les figures réalisées, la liste des packages chargés, la documentation, etc. Cette solution est vraiment à recommander lorsqu'on débute avec R et même pour la suite. Noter que RStudio est aussi une entreprise qui propose d'autres services qui ont trait à R. Par exemple, RStudio propose des formules.
-
-- emac
-- vim
-- visual studio
-- sublime text
+![](img/chap2/terminal.png)
 
 
-[^fox]:Disponible à cette adresse : http://journal.r-project.org/archive/2009-2/
+Souvent on a besoin d'écrire une suite importante de commandes et les écrire dans la console est finalement assez peu efficace, on a alors recourt à un éditeur de code où écrit le code et une console R. Les éditeurs de code sont nombreux avec de multiples fonctionnalités bien utilie comme l'auto-complétion ou les snippets. Quand R est téléchargé sur le CRAN, il est fournit avec une interface utilisateur dédiée assez minimaliste relativement facile d'accès, on peut facilement créer des script et utilisateur dans des fenetre de travail.
+
+
+![](img/chap2/rgui.png)
+
+
+Comme nous l'avons mentionné plus haut, [RStudio](https://www.rstudio.com) a développé un environnement de development performant et moins austère.[RStudio](https://www.rstudio.com)  est multi-plateforme et gratuit pour la version _Desktop_ qui permet de visualiser facilement la console où le code est exécuté, l'éditeur de lignes de code, les figures réalisées, la liste des packages chargés, la documentation, etc. Cette solution est vraiment à recommander lorsqu'on débute avec R et même pour la suite.
+
+![](img/chap2/rstudio.png)
+
+
+Il y a d'autre interface de developemnt mais RSutio c'est largement imposer depuis les dernières années. Il est aussi possible d'utiliser R des éditeurs de codes généralistes et d,ajoter des functions spécifique à R, ou de le personnaliser, citons en quelque uns:
+
+- [Emacs](https://www.gnu.org/software/emacs/)
+- [Vim](https://www.vim.org/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Sublime Text](https://www.sublimetext.com/)
+- [Atom](https://atom.io/)
+
+Trouver lequel correspond le mieux à votre pratique.
+Par exemple atom et des packages atom adéquaes sont.
+facile à personnaliser.
+Par exemple Atom il ya différents package et facile de personnaliser.
+
+![](img/chap2/ratom.png)
+
+
+
+
+[^noteInter]: https://fr.wikipedia.org/wiki/%C3%89mulateur_de_terminal, consulté le 6 Février 2019.

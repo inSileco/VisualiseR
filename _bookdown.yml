@@ -6,8 +6,8 @@ delete_merged_file: true
 edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
 rmd_files: [
   "index.Rmd", #
+  "00-outline.Rmd", #
   "00-introduction.Rmd", #
-  "00-outline.Rmd",
 
   # Part I
   "01-ScienceetGraphique.Rmd",
