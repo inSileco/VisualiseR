@@ -2,9 +2,7 @@
 
 
 Étant donné l’engouement autour de R depuis les 10 dernières années, on oublie
-que le début de l'histoire remonte au années 70. Dans ce chapitre, nous revenons sur la naissance et le développement de R:
-de S depuis les années 70 jusqu'à la fin des années 90. Nous décrivons
-ensuite l'émergence de R et la relation qu'il existe entre S et R.
+que le début de l'histoire remonte au années 70. Dans ce chapitre, nous revenons sur la naissance et le développement de R: de S depuis les années 70 jusqu'à la fin des années 90. Nous décrivons ensuite l'émergence de R et la relation qu'il existe entre S et R.
 Dans la deuxième partie de ce chapitre, nous dressons un portait de R en 2019.
 
 
@@ -95,7 +93,7 @@ consulté le 31janvier 2018.
 
 Au milieu des années 1990, au département de statistiques de l'université
 d'Auckland, Ross Ihaka et Robert Gentleman font à un constat similaire à celui
-des chercheurs des Bell Labs firent des années plus tôt : le besoin d'un outil logiciel performant pour le domaine. Bien que les premières versions du langage S étaient facilement accessible aux milieux universitaires, l'outil n'était pas libre et difficile à mettre en place sur les machines Macintosh avec lesquelles ces chercheurs travaillaient. Les deux chercheurs se lancèrent alors dans le développement d'un nouvel outil inspirés par le new S mais aussi le Scheme[^noteR2] comme ils expliquent dans leur article de 1996 [@ihaka_r_1996]. Ainsi naquit le langage R, fortement influencé par le new S mais avec un soupçonné de quelque principe de Scheme, notamment pour la gestion de la mémoire et de la portée des variables. Il faut ajouter à ces changements, des travaux sur l'interface graphique avec l'implémentation des couleurs, la texture des lignes, la possibilité d'introduire des formules mathématiques sur un graphique et la mise en page des graphiques. Ces deux derniers éléments sont le fait des travaux de thèse de Paul Murrel qui a travaillé sur la gestion des graphiques sous R[^naisR3].
+des chercheurs des Bell Labs firent des années plus tôt : le besoin d'un outil logiciel performant pour le domaine. Bien que les premières versions du langage S étaient facilement accessible aux milieux universitaires, l'outil n'était pas libre et difficile à mettre en place sur les machines Macintosh avec lesquelles ces chercheurs travaillaient. Les deux chercheurs se lancèrent alors dans le développement d'un nouvel outil inspirés par le new S mais aussi le Scheme[^naisR2] comme ils expliquent dans leur article de 1996 [@ihaka_r_1996]. Ainsi naquit le langage R, fortement influencé par le new S mais avec un soupçonné de quelque principe de Scheme, notamment pour la gestion de la mémoire et de la portée des variables. Il faut ajouter à ces changements, des travaux sur l'interface graphique avec l'implémentation des couleurs, la texture des lignes, la possibilité d'introduire des formules mathématiques sur un graphique et la mise en page des graphiques. Ces deux derniers éléments sont le fait des travaux de thèse de Paul Murrel qui a travaillé sur la gestion des graphiques sous R[^naisR3].
 
 En août 1993, les auteurs annoncent la mise à disposition de leur travail R sur la liste de diffusion S-news. Comme il a été fait pour S, R a mis en place le moyen de s'enrichir  des retours des utilisateurs. L'un des utilisateurs  particulièrement actif, Martin Mächler de l'Eidgenössische Technische Hochschule Zürich (ETH Zürich)[^naisR5], devint un acteur important du projet et incita les chercheurs de Nouvelle-Zélande à rendre leur logiciel libre. C'est ainsi que R fut mis à disposition de tous sous la licence publique générale GNU-GPL dès 1995, d'où son surnom de _GNU S_. L'article de 1996 _R: A Language for Data Analysis and Graphics_ qui met au grand jour l'existence de R [@ihaka_r_1996]. Ces deux événements combinés donnent une impulsion forte au langage R. De fait, ces dispositions allaient accroître le nombre d'utilisateur, et la distribution et la communication allaient en être profondément changées. En mars 1996, Mächler créa la première liste de diffusion spécifique à R : R-tester, qui fut divisée en trois l'année suivante : R-announcement, R-help et R-devel. Pour organiser le développement de R, il devint pressant d'avoir un système d'archivage dédié à R. Ce fut Kurt Hornik de l'université Technique de Vienne[^naisR4] qui s'en chargea et mis au point un système qui évoluera pour donner le CRAN actuel. Le nombre de retours sur R devint tel que Ihaka, Gentleman et Mächler ne suffisaient plus pour assurer convenablement le développement du langage. Ils décidèrent alors de partager cette tâche avec Doug Bates, Peter Dalgaard, Kurt Hornik, Friedrich Leisch, Thomas Lumley, Paul Murrell, Heiner Schwarte et Luke Tierney : l'équipe de développement _R-Core_[^naisR6] se formait.
 
@@ -296,7 +294,7 @@ Pour les débutants, un moyen rapide de mettre le bien à l'étrier est de consu
 De la documentation en ligne, gratuite et de qualité est aussi disponible pour se former à des tâches plus spécifiques. Le site bookdown.org[^noteDoc2] propose des livres disponibles, par exemple *Advanced R* de Hadley Wickham y est répertorié (voir https://adv-r.hadley.nz/). Notons que RStudio référence aussi certains ouvrage de leur membre https://www.rstudio.com/resources/training/books/. Le site RStudio propose aussi des *cheatsheet* (des fiches récapitulatives, voir https://www.rstudio.com/resources/cheatsheets/). A cela, il faut ajouter la longue listes des post de différents blogues et les réponses aux questions sur les forums[^noteFor]
 sur *stack overflow*.
 
-Les utilisateurs anglophones ont facilement accès à une masse considérable d'informations grâce à différents ouvrages, notamment ceux regroupés dans la collection _Use R!_, publiée par le groupe éditorial Springer[^noteDoc3] et éditée par R. Gentleman, K. Hornik Kurt et G. Parmigiani. Il y a aussi un certain nombre d'ouvrage publié chez CRC Press and chez O'Reilly Media[^noteDoc5]. Des ouvrages en français sont également disponible mais en nombre plus restreint. Gaël Millot a ainsi écrit un ouvrage très complet (plus de 800 pages dans la troisième édition), *Comprendre et réaliser les tests statistiques à l'aide de R* édité chez de Boeck [@millot_comprendre_2018]. Springer a édité durant un temps des ouvrages dans la série _Pratique R_. Il existe aussi trois ouvrages qui abordent la statistique avec R aux Presses Universitaires de Rennes et  _R et espace_ édité chez Framabook [@groupe_elementr_r_2014].
+Les utilisateurs anglophones ont facilement accès à une masse considérable d'informations grâce à différents ouvrages, notamment ceux regroupés dans la collection _Use R!_, publiée par le groupe éditorial Springer[^noteDoc3] et éditée par R. Gentleman, K. Hornik Kurt et G. Parmigiani. Il y a aussi un certain nombre d'ouvrage publié chez CRC Press[^noteDoc4] and chez O'Reilly Media[^noteDoc5]. Des ouvrages en français sont également disponible mais en nombre plus restreint. Gaël Millot a ainsi écrit un ouvrage très complet (plus de 800 pages dans la troisième édition), *Comprendre et réaliser les tests statistiques à l'aide de R* édité chez de Boeck [@millot_comprendre_2018]. Springer a édité durant un temps des ouvrages dans la série _Pratique R_. Il existe aussi trois ouvrages qui abordent la statistique avec R aux Presses Universitaires de Rennes et  _R et espace_ édité chez Framabook [@groupe_elementr_r_2014].
 
 _The R journal_, que nous avons mentionnés plus haut[^noteDoc6], est une revue bisannuelle dédiée à l'actualité de R. Un numéro est un ensemble d'articles qui présentent les possibilités offertes par certains packages ou qui propose une synthèse des différentes packages sur un thème précis. On y trouve également un rapport exhaustif détaillant les modifications apportées aux nouvelles versions de R ainsi que les changements sur le CRAN.
 
@@ -304,17 +302,17 @@ L'ensemble des listes de diffusion relatives à R est aussi une mine d'informati
 
 Utiliser Twitter est une manière efficace de découvrir les possibilités qu'offrent R et de trouver de nouvelles resources. Les tweets relatifs à R contiennent généralement le hashtag **#rstats**. Il y a de nombreux nombreux membres actifs de la communauté R qui partagent quotidiennement des informations. Voici quelques comptes twitter avec des informations et des astuces bien utiles :
 
-- @_R_Foundation tweets de la fondation R;
-- @RConsortium tweets du consortium R;
-- @rstudio compte principal de RStudio;
-- @rOpenSci tweets de rOpenSci;
-- @RLangPackage tweet à propos de 1 package par jour;
-- @CRANberriesFeed un compte qui rapporte les mise à jour de packages;
-- @RLangTip donne des astuces quotidiennement;
-- @daily_r_sheets tweet une fiche récapitulative sur un package par jour
-- @dataandme compte de Mara Averick, employée apr RStudio, qui partage de nombreuses resources.
+- &#64;\_R\_Foundation tweets de la fondation R;
+- &#64;RConsortium tweets du consortium R;
+- &#64;rstudio compte principal de RStudio;
+- &#64;rOpenSci tweets de rOpenSci;
+- &#64;RLangPackage tweet à propos de 1 package par jour;
+- &#64;CRANberriesFeed un compte qui rapporte les mise à jour de packages;
+- &#64;RLangTip donne des astuces quotidiennement;
+- &#64;daily\_r\_sheets tweet une fiche récapitulative sur un package par jour
+- &#64;dataandme compte de Mara Averick, employée apr RStudio, qui partage de nombreuses resources.
 
-Enfin une autre manière d'enrichir ses connaissances relatives à R est de participer à l'une des conférences et autre rencontre sur R où se retrouvent les différents acteurs. La R foundation soutient activement deux conférences *Use R!* et *DSC* (Directions in Statistical Computing)[^noteDoc7]. La première est présentée comme un forum pour la communauté des utilisateurs de R et la seconde est orientée sur la recherche en statistique computationnelle et donc ne concerne pas exclusivement R et est plutôt destinée à un public de chercheurs. A ces deux conférences, il faut ajoutée deux autres rencontres annuelles: la *rstudio::conf* de RStudio[^noteDoc8], et la *unconference* (littéralement la non conférence) rOpenSci[^noteDoc8a]. Enfin, il y a des conférences qui à l’initiative de de membres actifs de la communauté R comme par exemple *R à Québec*[^noteDoc9] et aussi de nombreuses rencontres de groupe d'utilisateurs [^noteDoc10].
+Enfin, une autre manière d'enrichir ses connaissances relatives à R est de participer à l'une des conférences et autre rencontre sur R où se retrouvent les différents acteurs. La R foundation soutient activement deux conférences *Use R!* et *DSC* (Directions in Statistical Computing)[^noteDoc7]. La première est présentée comme un forum pour la communauté des utilisateurs de R et la seconde est orientée sur la recherche en statistique computationnelle et donc ne concerne pas exclusivement R et est plutôt destinée à un public de chercheurs. A ces deux conférences, il faut ajoutée deux autres rencontres annuelles: la *rstudio::conf* de RStudio[^noteDoc8], et la *unconference* (littéralement la non conférence) rOpenSci[^noteDoc8a]. Enfin, il y a des conférences qui à l’initiative de de membres actifs de la communauté R comme par exemple *R à Québec*[^noteDoc9] et aussi de nombreuses rencontres de groupe d'utilisateurs [^noteDoc10].
 
 
 
@@ -350,7 +348,7 @@ Comment trouver un package sur le CRAN ? En générale c'est en lisant des artic
 
 
 
-Combien de packages existent-t-il actuellement ? Dans le numéro de décembre 2009 du _The R journal_, John Fox relate la croissance exponentielle du nombre de packages R [@fox_aspects_2009]. D'une centaine de packages au début des années 2000, on arrive à plus de 7000 en août 2015; la barre des 10000 packages a été franchie en 2017 et en février 2019, plus de 13600 packages sont disponibles sur le CRAN.
+Combien de packages existent-t-il actuellement ? Dans le numéro de décembre 2009 du _The R journal_, John Fox relate la croissance exponentielle du nombre de packages R [@fox_aspects_2009]. D'une centaine de packages au début des années 2000, on arrive à plus de 7000 en août 2015; la barre des 10000 packages a été franchie en 2017 et en février 2019, plus de 13600 packages sont disponibles sur le CRAN[^notePkg4].
 
 
 ![Croissance des packages R disponibles sur le CRAN - article de publié par David Smith sur le blog *Revolutions* https://blog.revolutionanalytics.com/2017/01/cran-10000.html, consulté le 5 février 2019](https://revolution-computing.typepad.com/.a/6a010534b1db25970b01b8d2594d25970c-800wi)
@@ -361,8 +359,7 @@ sur différentes forges logiciel : [R-forge](https://r-forge.r-project.org/), [o
 ![Haut de la page principale du *R Package Documentation* https://rdrr.io/ consultée le 5 février 2019](img/chap2/rdrr.png)
 
 
- Comme le soulignait déjà Kurt Hortnik en 2009 [@hornik_are_2012], cette abondance de packages pose un certain nombre de questions relatives à la facilité de trouver la fonctionnalité désirée, la redondance des fonctions et la qualité du code. Les tests auxquels sont soumis les packages soumis au CRAN ne couvrent pas complètement ces deux
- derniers aspects. Selon Kurt Hortnik, en dépit des défis posés par le nombre croissant de packages développés, une politique plus contraignante n'est pas souhaitable, et quand bien même celle-ci serait mise en place, elle n'affecterait pas tant la courbe de croissance. A son avis, il faudrait repenser les relations entre les packages afin de diminuer la similarité entre les packages au profit d'interdépendances. Une première mesure pour maintenir une augmentation de la qualité des packages sur le CRAN est de permettre au utilisateur de donner un retour de leur utilisation (rapporté des bogues notamment). Les forges logiciel telles que _Github_, *Bitbucket* ou *R-Forge* sont fait pour cela et leur utilisation est de plus en plus fréquente. Une autre mesure est d'inciter les créateurs de packages à faire évaluer leur travail par les pairs, en soumettant leur package à des journaux/organisations spécialisée comme *Journal of Open Source Software* ou rOpenSci (voir plus haut).
+Comme le soulignait déjà Kurt Hortnik en 2009 [@hornik_are_2012], cette abondance de packages pose un certain nombre de questions relatives à la facilité de trouver la fonctionnalité désirée, la redondance des fonctions et la qualité du code. Les tests auxquels sont soumis les packages soumis au CRAN ne couvrent pas complètement ces deux derniers aspects. Selon Kurt Hortnik, en dépit des défis posés par le nombre croissant de packages développés, une politique plus contraignante n'est pas souhaitable, et quand bien même celle-ci serait mise en place, elle n'affecterait pas tant la courbe de croissance. A son avis, il faudrait repenser les relations entre les packages afin de diminuer la similarité entre les packages au profit d'interdépendances. Une première mesure pour maintenir une augmentation de la qualité des packages sur le CRAN est de permettre au utilisateur de donner un retour de leur utilisation (rapporté des bogues notamment). Les forges logiciel telles que _Github_, *Bitbucket* ou *R-Forge* sont fait pour cela et leur utilisation est de plus en plus fréquente. Une autre mesure est d'inciter les créateurs de packages à faire évaluer leur travail par les pairs, en soumettant leur package à des journaux/organisations spécialisée comme *Journal of Open Source Software* ou rOpenSci (voir plus haut).
 
 
 
@@ -379,23 +376,21 @@ sur différentes forges logiciel : [R-forge](https://r-forge.r-project.org/), [o
 
 ### Les interfaces utilisateurs
 
-Travailler avec R, c'est écrire des lignes de code dans le langage R qui sont interprétées par R. Donc pour travailler avec R, l'utilisateur a donc simplement d'utiliser le programme R qui peut être appelé dans un émulateur de Terminal[^noteInter].
+Travailler avec R, c'est écrire des lignes de code dans le langage R qui sont interprétées par R et pour cela, l'utilisateur utilise le programme R qui peut être ouvert de différentes manière. Par exemple en tappant `R` dans un émulateur de Terminal[^noteInter].
 
-![](img/chap2/terminal.png)
-
-
-Souvent on a besoin d'écrire une suite importante de commandes et les écrire dans la console est finalement assez peu efficace, on a alors recourt à un éditeur de code où écrit le code et une console R. Les éditeurs de code sont nombreux avec de multiples fonctionnalités bien utilie comme l'auto-complétion ou les snippets. Quand R est téléchargé sur le CRAN, il est fournit avec une interface utilisateur dédiée assez minimaliste relativement facile d'accès, on peut facilement créer des script et utilisateur dans des fenetre de travail.
+![R lancé dans GNOME Terminal 3.30.2](img/chap2/terminal.png)
 
 
-![](img/chap2/rgui.png)
+À chaque utilisation de R, l'utilisateur écrit une suite plus ou moins longue de commandes et utiliser simplement la console pour travailler son code est finalement assez peu efficace. C'est pour cela qu'on a recourt à un éditeur de code avec lequel l'utilisateur crée des fichier `.R` dans lequel il rédige les suites de commandes qu'il envoie vers la console R. Donc, ce qu'il fait pour travailler efficacement avec R c'est une console R et un éditeur de code. Il existe des logiciels qui offrent les deux fonctionnalités. Par exemple, lorsque R est téléchargé depuis le CRAN, il est fournit avec une interface utilisateur assez minimaliste avec laquelle l'utilisateur peut facilement créer des scripts et et une console R est ouverte à l'ouverture du logiciel.
+
+![R utilisé avec l'interface utilisateur téléchargée depuis le CRAN](img/chap2/rgui.png)
 
 
-Comme nous l'avons mentionné plus haut, [RStudio](https://www.rstudio.com) a développé un environnement de development performant et moins austère.[RStudio](https://www.rstudio.com)  est multi-plateforme et gratuit pour la version _Desktop_ qui permet de visualiser facilement la console où le code est exécuté, l'éditeur de lignes de code, les figures réalisées, la liste des packages chargés, la documentation, etc. Cette solution est vraiment à recommander lorsqu'on débute avec R et même pour la suite.
+Comme nous l'avons mentionné précédemment, une des interfaces utilisateurs les plus utilisée actuellement est [RStudio](https://www.rstudio.com). RStudio est un logiciel multi-plateforme et gratuit (pour la version _Desktop_ qui nou intéresse ici) qui permet de visualiser facilement la console où le code est exécuté, l'éditeur de lignes de code, les figures réalisées, la liste des packages chargés, la documentation, etc. Cette interface est à recommander lorsqu'on débute avec R et même pour la suite si vous utiliser principalement R.
 
-![](img/chap2/rstudio.png)
+![RStudio](img/chap2/rstudio.png)
 
-
-Il y a d'autre interface de developemnt mais RSutio c'est largement imposer depuis les dernières années. Il est aussi possible d'utiliser R des éditeurs de codes généralistes et d,ajoter des functions spécifique à R, ou de le personnaliser, citons en quelque uns:
+Enfin, il est aussi possible d'utiliser R avec des éditeurs de codes généralistes, citons en quelque uns:
 
 - [Emacs](https://www.gnu.org/software/emacs/)
 - [Vim](https://www.vim.org/)
@@ -403,14 +398,12 @@ Il y a d'autre interface de developemnt mais RSutio c'est largement imposer depu
 - [Sublime Text](https://www.sublimetext.com/)
 - [Atom](https://atom.io/)
 
-Trouver lequel correspond le mieux à votre pratique.
-Par exemple atom et des packages atom adéquaes sont.
-facile à personnaliser.
-Par exemple Atom il ya différents package et facile de personnaliser.
+Chacun des ces logiciels offrent de multiples fonctionnalités et viennent avec des extension pratique pour l'utilisation d'un très grande quantité de langage dont R. L'avantage de ces éditeurs de code est la multitude des fonctionnalités qui sont empruntées à différentes communautés de programmateurs. Avec ces logiciels, au prix de quelques heures de prise en main, il est possible d'avoir un environment de travail multi-langage, personnalisé d'une très grande efficacité.
 
-![](img/chap2/ratom.png)
+![Utilisé R avec atom](img/chap2/ratom.png)
 
 
+Cette section donne un aperçu des possibilités qui existent pour travailler avec R. Si vous débuté avec R sans grande expérience en programmation, nous recommandons l'utilisation de R Studio. Si vous êtes un programmateur chevronné et que vous utilisez déjà un éditeur de code performant et généraliste. il est probable que vous trouverez des extensions pour R.
 
 
 [^noteInter]: https://fr.wikipedia.org/wiki/%C3%89mulateur_de_terminal, consulté le 6 Février 2019.
