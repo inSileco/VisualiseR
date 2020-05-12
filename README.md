@@ -1,6 +1,6 @@
 # VisualiseR
 
-Visualiser vos données avec R
+:construction: Visualiser vos données avec R :construction:
 
 [![Build Status](https://travis-ci.org/inSileco/VisualiseR.svg?branch=devel)](https://travis-ci.org/inSileco/VisualiseR)
 
@@ -21,7 +21,7 @@ bookdown::render_book('index.Rmd', 'bookdown::gitbook')
 Il y a aussi un `makefile` pour créer le gitbook en html :
 
 ```
-make html
+make gitbook
 ```
 
 et le epub :
@@ -35,7 +35,7 @@ De manière générale, il est utile de vérifier qu'il n'y a pas de problème a
 
 ## Contribuer
 
-Toutes les contributions sont les bienvenues :smile:.
+Toutes les contributions sont les bienvenues :smile: et même très appréciées!
 Si vous êtes en dehors du groupe inSileco, vous pouvez forker ce répertoire et puis [créer un pull request à partir de votre *fork*](https://help.github.com/articles/creating-a-pull-request-from-a-fork/). Vous pouvez aussi directement [éditer les fichiers en ligne](https://help.github.com/articles/editing-files-in-another-user-s-repository/).
 
 Un chapitre est un fichier `chapitre.Rmd`. Pour en éditer le contenu, l'étendre ou signaler des erreurs, le plus simple est d'ouvrir un *issue* en expliquant ce que vous souhaitez faire ou de détailler l'erreur. Si vous êtes collaborateurs sur le projet, vous pouvez vous assignez la tâche pour signaler au groupe ce sur quoi vous travailler.

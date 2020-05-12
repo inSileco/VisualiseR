@@ -27,7 +27,11 @@ Par défaut, la fonction `plot()` affiche une boîte autour de la région graphi
 plot(x1, x2, xlim = c(0, 20), ylim = c(0, 20), bty = "n")
 ```
 
-Maintenant que nous avons fixé les axes, nous allons les supprimer. Ceci n'aura aucune incidence sur l'étendue du graphe. Pour ce faire, nous allons utiliser les arguments `xaxt` et `yaxt` qui contrôlent l'affichage des axes. L'argument `axes` permet quant à lui de supprimer à la fois les axes, mais aussi le cadre. Comparez ces graphes suivants
+Maintenant que nous avons fixé les axes, nous allons les supprimer. Ceci n'aura
+aucune incidence sur l'étendue du graphe. Pour ce faire, nous allons utiliser
+les arguments `xaxt` et `yaxt` qui contrôlent l'affichage des axes. L'argument
+`axes` permet quant à lui de supprimer à la fois les axes, mais aussi le cadre.
+Comparez ces graphes suivants
 
 ```{r fig.width = 10,fig.height = 10, out.width = '1\\linewidth'}
 par(mfrow = c(2, 2))
@@ -37,7 +41,11 @@ plot(x1, x2, xlim = c(0, 20), ylim = c(0, 20), bty = "n", yaxt = "n")
 plot(x1, x2, xlim = c(0, 20), ylim = c(0, 20), axes = FALSE)
 ```
 
-Poursuivons notre destruction graphique, et supprimons le nom des axes avec les arguments `xlab` et `ylab`. Par défaut, le nom des axes correspond au nom des variables. L'astuce ici consiste à leur attribuer la valeur `""`. Cependant, une alternative consisterait à utiliser l'argument `ann` qui va supprimer toute annotation dans le graphe (nom des axes, mais aussi titre et sous-titre).
+Poursuivons notre destruction graphique, et supprimons le nom des axes avec les
+arguments `xlab` et `ylab`. Par défaut, le nom des axes correspond au nom des
+variables. L'astuce ici consiste à leur attribuer la valeur `""`. Cependant, une
+alternative consisterait à utiliser l'argument `ann` qui va supprimer toute
+annotation dans le graphe (nom des axes, mais aussi titre et sous-titre).
 
 ```{r out.width = '.5\\linewidth'}
 plot(x1, x2, xlim = c(0, 20), ylim = c(0, 20), axes = FALSE, ann = FALSE)
@@ -49,7 +57,11 @@ Il ne nous reste plus qu'à supprimer les points avec l'argument `type`. Nous al
 plot(x1, x2, xlim = c(0, 20), ylim = c(0, 20), xaxt = "n", yaxt = "n", ann = FALSE, type = "n")
 ```
 
-Étant donné que nous fixons les bornes des axes, et que nous supprimons l'affichage des données, nous pourrions éviter de spécifier les données en x et en y, et simplement demander de (ne pas) représenter la valeur **0** (ou autre chose). Ainsi, l'écriture précédente pourrait se résumer à ceci (sans le cadre) :
+Étant donné que nous fixons les bornes des axes, et que nous supprimons
+l'affichage des données, nous pourrions éviter de spécifier les données en x et
+en y, et simplement demander de (ne pas) représenter la valeur **0** (ou autre
+chose). Ainsi, l'écriture précédente pourrait se résumer à ceci (sans le cadre)
+:
 
 ```{r eval = FALSE}
 plot(0, xlim = c(0, 20), ylim = c(0, 20), axes = FALSE, ann = FALSE, type = "n")
@@ -84,7 +96,9 @@ var2 <- sample(var1, 20, replace = FALSE)
 var3 <- sample(var1, 20, replace = FALSE)
 ```
 
-Nous allons maintenant représenter sur le même graphe **var2** en fonction de **var1**, puis dans un second temps **var3** en fonction de **var1**. Nous alloir voir trois exemples pour distinguer les deux séries de valeurs.
+Nous allons maintenant représenter sur le même graphe **var2** en fonction de
+**var1**, puis dans un second temps **var3** en fonction de **var1**. Nous
+allons voir trois exemples pour distinguer les deux séries de valeurs.
 
 ```{r out.width = '.9\\linewidth'}
 par(mfrow = c(2, 2))
@@ -96,14 +110,21 @@ plot(var1, var2, cex = 1, main = "Tailles")
 points(var1, var3, cex = 2)
 ```
 
-Dans ces exemples, les trois variables présentaient la même gamme de valeurs (de 1 à 20). Si vous souhaitez superposer sur un même graphe des séries de points qui n'ont pas la même étendue de valeurs, il faudra convenablement définir les bornes des axes dans la fonction `plot()` avec les arguments `xlim` et `ylim` de manière à ce que toutes les séries de points s'affichent correctement.
-Introduisons maintenant une commande intéressante sous R : la fonction `locator()`. Celle-ci permet de récupérer les coordonnées d'un (ou de plusieurs) clic(s) sur un graphique. Voici comment l'utiliser pour deux clics :
+Dans ces exemples, les trois variables présentaient la même gamme de valeurs (de
+1 à 20). Si vous souhaitez superposer sur un même graphe des séries de points
+qui n'ont pas la même étendue de valeurs, il faudra convenablement définir les
+bornes des axes dans la fonction `plot()` avec les arguments `xlim` et `ylim` de
+manière à ce que toutes les séries de points s'affichent correctement.
+Introduisons maintenant une commande intéressante sous R : la fonction
+`locator()`. Celle-ci permet de récupérer les coordonnées d'un (ou de plusieurs)
+clic(s) sur un graphique. Voici comment l'utiliser pour deux clics :
 
 ```{r eval = FALSE}
 locator(n = 2)
 ```
 
-Cette fonction permet également de rajouter simultanément des points sur le graphe au fur et à mesure des clics.
+Cette fonction permet également de rajouter simultanément des points sur le
+graphe au fur et à mesure des clics.
 
 ```{r eval = FALSE}
 locator(n = 3, type = "p")
@@ -119,7 +140,10 @@ Remarque : la sélection peut être interrompue par un clic droit. La valeur par
 
 ## Ajout de lignes
 
-Sous R, plusieurs fonctions permettent de tracer une ligne. Tout dépend de l'information de départ. Si on dispose des coordonnées des deux points extrêmes, nous pouvons utiliser à nouveau la fonction `points()`. La fonction `lines()` s'écrira de la même manière.
+Sous R, plusieurs fonctions permettent de tracer une ligne. Tout dépend de
+l'information de départ. Si on dispose des coordonnées des deux points extrêmes,
+nous pouvons utiliser à nouveau la fonction `points()`. La fonction `lines()`
+s'écrira de la même manière.
 
 ```{r fig.width = 10,fig.height = 5, out.width = '.8\\linewidth'}
 par(mfrow = c(1, 2))
@@ -184,16 +208,24 @@ polygon(x = seqX, y = GaussA, border = 0, col = "#FF000088")
 polygon(x = seqX, y = GaussB, border = 0, col = "#0000FF88")
 ```
 
-Ici, une remarque s'impose : nous venons d'attribuer deux couleurs dans un format un peu spécial : il s'agit du format hexadécimal. Celui-ci comprend, dans sa forme minimale, six caractères précédés du symbole *dièse* : les deux premiers symboles reflètent la quantité de rouge, les deux suivants celle de vert, et les deux derniers la quantité de bleu. À ceci, on peut rajouter (comme nous l'avons fait) deux autres caractères représentant le degré de transparence. Nous reviendrons sur ce point dans le chapitre suivant.
-Intéressons-nous maintenant à la fonction `rect()` qui permet de tracer un rectangle.
+Ici, une remarque s'impose : nous venons d'attribuer deux couleurs dans un
+format un peu spécial : il s'agit du format hexadécimal. Celui-ci comprend, dans
+sa forme minimale, six caractères précédés du symbole *dièse* : les deux
+premiers symboles reflètent la quantité de rouge, les deux suivants celle de
+vert, et les deux derniers la quantité de bleu. À ceci, on peut rajouter (comme
+nous l'avons fait) deux autres caractères représentant le degré de transparence.
+Nous reviendrons sur ce point dans le chapitre suivant. Intéressons-nous
+maintenant à la fonction `rect()` qui permet de tracer un rectangle.
 
 ```{r out.width = '.45\\linewidth'}
 plot(var1, var2, pch = 15)
 rect(xleft = 5, ybottom = 5, xright = 15, ytop = 15, col = "gray")
 ```
 
-Remarque : la fonction `locator()` peut également être utilisée avec `polygon()`, mais pas avec la fonction `rect()`.
-Mettons à profit ce que nous venons d'apprendre avec les fonctions `rect()` et `abline()` pour personnaliser la zone de plot.
+Remarque : la fonction `locator()` peut également être utilisée avec
+`polygon()`, mais pas avec la fonction `rect()`. Mettons à profit ce que nous
+venons d'apprendre avec les fonctions `rect()` et `abline()` pour personnaliser
+la zone de plot.
 
 ```{r out.width = '.75\\linewidth'}
 plot(0, type = "n", xlim = c(0, 20), ylim = c(0, 20), ann = FALSE, las = 1, bty = "n")
@@ -206,8 +238,17 @@ abline(v = seq(2.5, 17.5, by = 5), col = "white", lty = 3)
 rect(xleft = par()$usr[1], ybottom = par()$usr[3], ytop = par()$usr[4], xright = par()$usr[2], col = 0, border = "white")
 ```
 
-Ici, nous avons utilisé de nouveaux arguments. L'argument `lty` contrôle le type de ligne (**1** étant un trait plein, et **3** un trait en pointillés). L'argument `border = 0` indique que la couleur du contour du rectangle sera transparente. Enfin, l'argument `las = 1` spécifie que les valeurs portées sur les axes seront écrites horizontalement.
-Quelques précisions maintenant sur la commande `par()\$usr`. Nous avons défini nous-même l'étendue des axes x et y (0, 20). Cependant, par défaut, R laisse un peu de marge avant et après chaque axe (4\% pour être précis). Ainsi, cette commande nous permet de récupérer les dimensions exactes (après ajout de ces 4\%) de la région du plot. En attribuant la valeur **"i"** aux paramètres graphiques `xaxs` et `yaxs`, nous aurions supprimé cet ajout de 4\%. Pour preuve :
+Ici, nous avons utilisé de nouveaux arguments. L'argument `lty` contrôle le type
+de ligne (**1** étant un trait plein, et **3** un trait en pointillés).
+L'argument `border = 0` indique que la couleur du contour du rectangle sera
+transparente. Enfin, l'argument `las = 1` spécifie que les valeurs portées sur
+les axes seront écrites horizontalement. Quelques précisions maintenant sur la
+commande `par()\$usr`. Nous avons défini nous-même l'étendue des axes x et y (0,
+20). Cependant, par défaut, R laisse un peu de marge avant et après chaque axe
+(4\% pour être précis). Ainsi, cette commande nous permet de récupérer les
+dimensions exactes (après ajout de ces 4\%) de la région du plot. En attribuant
+la valeur **"i"** aux paramètres graphiques `xaxs` et `yaxs`, nous aurions
+supprimé cet ajout de 4\%. Pour preuve :
 
 ```{r fig.show="hide"}
 plot(0, xlim = c(0, 20), ylim = c(0, 20), xaxs = "i", yaxs = "i")
@@ -217,7 +258,11 @@ par()$usr
 
 ## Ajout d'une flèche
 
-Bien que peu fréquent, nous pouvons aussi tracer des flèches. Ceci se fera avec la fonction `arrows()`. Nous pouvons spécifier si la flèche sera en début ou en fin de ligne (ou les deux) avec l'argument `code`. On peut aussi définir la longueur de la flèche et son angle par rapport au trait. Un dessin vaut mille mots, donc allons-y.
+Bien que peu fréquent, nous pouvons aussi tracer des flèches. Ceci se fera avec
+la fonction `arrows()`. Nous pouvons spécifier si la flèche sera en début ou en
+fin de ligne (ou les deux) avec l'argument `code`. On peut aussi définir la
+longueur de la flèche et son angle par rapport au trait. Un dessin vaut mille
+mots, donc allons-y.
 
 ```{r out.width = '.5\\linewidth'}
 plot(0, xlim = c(0, 2), ylim = c(0, 2), type = "n", ann = FALSE)
@@ -231,8 +276,10 @@ Nous n'en dirons pas plus sur les flèches.
 
 ## Ajout d'un titre
 
-Précédemment, nous avons vu qu'il était possible de définir un titre directement dans les *High-level plotting functions*. Mais, il existe aussi la fonction `title()` en alternative. Voici les principaux arguments de cette fonction (qui sont aussi valables pour les fonctions `plot()` and co.).
-{ll}
+Précédemment, nous avons vu qu'il était possible de définir un titre directement
+dans les *High-level plotting functions*. Mais, il existe aussi la fonction
+`title()` en alternative. Voici les principaux arguments de cette fonction (qui
+sont aussi valables pour les fonctions `plot()` and co.). {ll}
 
 **Argument** & **Signification**:
 
@@ -257,19 +304,29 @@ Nous verrons dans la section suivante qu'il est aussi possible d'ajouter des ann
 
 ## Ajout de texte
 
-Intéressons-nous maintenant aux annotations textuelles. Nous distinguerons les expressions textuelles insérées dans la zone de plot de celles destinées à apparaître en dehors de cette zone, c.-à-d. dans les marges de la figure. En effet, les fonctions correspondantes ne sont pas les mêmes et ne s'écrivent pas de la même manière.
+Intéressons-nous maintenant aux annotations textuelles. Nous distinguerons les
+expressions textuelles insérées dans la zone de plot de celles destinées à
+apparaître en dehors de cette zone, c.-à-d. dans les marges de la figure. En
+effet, les fonctions correspondantes ne sont pas les mêmes et ne s'écrivent pas
+de la même manière.s
 
 La fonction `text()` permet d'insérer du texte dans la région du plot. Il faudra lui fournir les coordonnées en x et en y, ainsi que l'expression textuelle à ajouter. Regardons cela au travers d'un exemple.
 
-```{r fig.width = 10,fig.height = 5, out.width = '.7\\linewidth'}
-(nom <- letters[1 : length(var1)])
+```{r fig.width = 10, fig.height = 5, out.width = '.7\\linewidth'}
+(nom <- letters[seq_along(var1)])
 par(mfrow = c(1, 2))
 plot(var1, var2, pch = 15)
 plot(var1, var2, type = "n")
 text(x = var1, y = var2, labels = nom, font = 2)
 ```
 
-L'argument `font` contrôle la graisse du texte, c.-à-d. que le texte pourra être écrit normalement (**1**), en gras (**2**), en italique (**3**), etc. Ici, le texte se place exactement aux coordonnées fournies. Mais, on imagine facilement que si on superpose à la fois les points et les étiquettes, le graphique sera illisible. Heureusement, cette fonction présente l'argument `pos` qui contrôle le positionnement du texte par rapport aux coordonnées. Le tableau suivant fournit les valeurs possibles pour cet argument.
+L'argument `font` contrôle la graisse du texte, c.-à-d. que le texte pourra être
+écrit normalement (**1**), en gras (**2**), en italique (**3**), etc. Ici, le
+texte se place exactement aux coordonnées fournies. Mais, on imagine facilement
+que si on superpose à la fois les points et les étiquettes, le graphique sera
+illisible. Heureusement, cette fonction présente l'argument `pos` qui contrôle
+le positionnement du texte par rapport aux coordonnées. Le tableau suivant
+fournit les valeurs possibles pour cet argument.
 
 
 **Valeur de `pos`** & **Signification**\\
@@ -284,9 +341,15 @@ plot(var1, var2, pch = 15, ann = FALSE, las = 1)
 text(x = var1, y = var2, labels = nom, pos = 2)
 ```
 
-Remarque : la fonction `locator()` pourra s'appliquer ici.
-Pour rajouter du texte dans les marges, nous utiliserons la fonction `mtext()`. Cependant, cette fonction s’écrit différemment : l'argument `side` indique dans quelle marge doit être affiché le texte (**1** en bas, **2** à gauche, **3** en haut, **4** à droite). L'argument `line` permet quant à lui de positionner le texte par rapport aux limites de la région du plot. Enfin, l'argument `at` permet d'indiquer la coordonnée de placement sur l'axe en question.
-Vu qu'on ne fournit pas de coordonnées dans cette fonction, la fonction `locator()` ne fonctionnera pas.
+Remarque : la fonction `locator()` pourra s'appliquer ici. Pour rajouter du
+texte dans les marges, nous utiliserons la fonction `mtext()`. Cependant, cette
+fonction s’écrit différemment : l'argument `side` indique dans quelle marge doit
+être affiché le texte (**1** en bas, **2** à gauche, **3** en haut, **4** à
+droite). L'argument `line` permet quant à lui de positionner le texte par
+rapport aux limites de la région du plot. Enfin, l'argument `at` permet
+d'indiquer la coordonnée de placement sur l'axe en question. Vu qu'on ne fournit
+pas de coordonnées dans cette fonction, la fonction `locator()` ne fonctionnera
+pas.
 
 Regardons cela avec un exemple simple.
 
@@ -304,7 +367,9 @@ mtext(side = 4, line = -2, text = "line = -2", font = 3)
 
 ## Ajout d'une légende
 
-Que serait un graphe sans légende ? La fonction `legend()` permet d'insérer une légende assez élaborée dans la région du plot et offre de nombreuses possibilités.
+Que serait un graphe sans légende ? La fonction `legend()` permet d'insérer une
+légende assez élaborée dans la région du plot et offre de nombreuses
+possibilités.
 
 ```{r eval = FALSE}
 example(legend)
@@ -312,8 +377,10 @@ example(legend)
 
 Tous les éléments de la légende sont modifiables, à l'exception de la police de caractères, ce qui peut être problématique si les autres éléments textuels du graphe (titre, nom des axes, etc.) n'utilisent pas la police par défaut. Nous verrons comment contourner cette difficulté plus loin.
 Le positionnement de la légende peut s'effectuer de deux manières différentes :
+
 - soit en indiquant les coordonnées x et y du coin supérieur gauche;
 - soit en spécifiant un mot-clé prédéfini (`top`, `bottom`, `topleft`, `center`, etc.).
+
 Le tableau ci-après présente les principaux arguments de cette fonction `legend()`.
 {ll}
 
@@ -346,7 +413,10 @@ plot(var1, var2, xlim = c(0, 20), ylim = c(0, 20), pch = 15)
 (leg <- legend("center", legend = c("Item 1", "Item 2"), pch = 15))
 ```
 
-Les informations retournées correspondent à la boîte `\$rect` (largeur, hauteur, coordonnées du coin supérieur gauche) et au positionnement des différents noms des items (`\$text`). Regardons le comportement de quelques arguments de la fonction `legend()`.
+Les informations retournées correspondent à la boîte `\$rect` (largeur, hauteur,
+coordonnées du coin supérieur gauche) et au positionnement des différents noms
+des items (`\$text`). Regardons le comportement de quelques arguments de la
+fonction `legend()`.
 
 ```{r out.width = '.6\\linewidth'}
 plot(0, xlim = c(0, 20), ylim = c(0, 20), type = "n", ann = FALSE, las = 1)
@@ -360,7 +430,9 @@ legend("top", c("Var2", "Var3", "y = x", "Var2 ~ Var1", "Var2 ~ Var1"), bg = "bl
 
 ## Ajout d'un axe
 
-Regardons comment ajouter des axes à un graphe. Dans un premier temps, nous allons faire un plot vide et créer nous-même les axes avec la fonction `axis()`. Cette fonction accepte plusieurs arguments détaillés dans le tableau suivant.
+Regardons comment ajouter des axes à un graphe. Dans un premier temps, nous
+allons faire un plot vide et créer nous-même les axes avec la fonction `axis()`.
+Cette fonction accepte plusieurs arguments détaillés dans le tableau suivant.
 
 
 **Argument** & **Signification**
@@ -397,7 +469,7 @@ Ici, nous avons défini une graduation secondaire dépourvue d'étiquette sur le
 Pour terminer ce chapitre, nous allons nous intéresser à l'inclusion d'une image dans un graphe. En effet, il peut être fort intéressant de pouvoir mettre une image quelconque sur un graphique. Par ex., sur une carte, il pourra s'agir de symboles divers permettant de figurer certains éléments caractéristiques (e.g. parc de stationnement, hôtel, station météo, etc.) ou des repères (e.g. nord géographique, etc.). Il pourra également s'agir du logo d'une institution, et bien d'autres.
 La fonction `rasterImage()` du package `graphics` permet d'ajouter à un graphe existant une image sous forme matricielle. Il peut s'agir d'une image sous format **JPEG**, **PNG**, **GIF**, etc. Dans la suite, nous n'importerons que des images au format **PNG**. Pour ce faire, nous avons besoin de charger un package complémentaire, spécialement dédié à cette tâche : le package `png`.
 
-```{r eval=-1}
+```{r eval = -1}
 install.packages("png")
 library(png)
 ```

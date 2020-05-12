@@ -117,7 +117,7 @@ affichées.
 
 ## Pour R, tout est objet {-}
 
-<!-- En informatique, un objet est  ontient des informations et des mécanismes -->
+<!-- En informatique, un objet contient des informations et des mécanismes -->
 
 <!-- les variables sont donc des ensemble de caractères contraint qui sont
  auxquels sont associés des objets -->

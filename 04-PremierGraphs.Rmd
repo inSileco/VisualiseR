@@ -86,7 +86,11 @@ boxplot(var2, plot = FALSE)
 
 ## Diagramme en bâtons
 
-Ce type de représentation est utile pour visualiser des données discrètes ou catégoriques. Chaque modalité de la variable catégorique (ou discrète) sera représentée par une barre verticale (ou horizontale) dont la longueur sera proportionnelle à son effectif (relatif ou absolu) parmi l'ensemble des modalités. Sous R, on réalise un tel graphique avec la fonction `barplot()`.
+Ce type de représentation est utile pour visualiser des données discrètes ou
+catégoriques. Chaque modalité de la variable catégorique (ou discrète) sera
+représentée par une barre verticale (ou horizontale) dont la longueur sera
+proportionnelle à son effectif (relatif ou absolu) parmi l'ensemble des
+modalités. Sous R, on réalise un tel graphique avec la fonction `barplot()`.
 Créons tout d'abord un vecteur contenant six modalités (chaînes de caractères).
 
 ```{r}
@@ -119,22 +123,28 @@ Nous pouvons également représenter cette même variable sous forme relative. C
 ```
 
 Visuellement, rien ne changera, mis à part les valeurs portées sur l'axe des ordonnées. La fonction `barplot()` possède aussi de nombreux arguments. Nous vous invitons à consulter l'aide associée à cette fonction.
+
 ```{r eval = FALSE}
 help(barplot)
 ```
+
 Il est possible de hachurer les rectangles plutôt que de leur associer une couleur. Pour ce faire, deux arguments doivent être spécifiés :
 - `density` : nombre de hachures par pouce;
 - `angle` : orientation des hachures dans le sens trigonométrique.
+
 Par exemple,
+
 ```{r out.width = '.6\\linewidth'}
 barplot(var4, density = c(rep(5, 4), 40, 10), angle = c(0, 45, 90, 135))
 ```
 
 ## Histogramme
 
-L'histogramme permet de visualiser la répartition des valeurs d'une variable continue en créant des classes de valeurs. Il est très utile pour connaître la loi
-de distribution que suivent les valeurs (loi normale, loi de Poisson, etc.). Sous R, ce graphe se fera à l'aide de la fonction `hist()`.
-Générons 1000 valeurs aléatoires selon une loi gaussienne.
+L'histogramme permet de visualiser la répartition des valeurs d'une variable
+continue en créant des classes de valeurs. Il est très utile pour connaître la
+loi de distribution que suivent les valeurs (loi normale, loi de Poisson, etc.).
+Sous R, ce graphe se fera à l'aide de la fonction `hist()`. Générons 1000
+valeurs aléatoires selon une loi gaussienne.
 
 ```{r}
 var6 <- rnorm(n = 1000)

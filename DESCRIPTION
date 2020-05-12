@@ -6,7 +6,9 @@ Imports:
   bookdown,
   graphicsutils,
   ggplot2,
-  lattice
+  lattice,
+  png,
+  showtext
 Remotes:
   rstudio/bookdown,
   inSileco/graphicsutils
