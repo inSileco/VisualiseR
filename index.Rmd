@@ -108,7 +108,7 @@ knitr::write_bib(c(
 ), 'packages.bib')
 ```
 
-```{r setup, echo = F}
+```{r setup, echo = FALSE}
 knitr::opts_chunk$set(
   comment = "#>",
   fig.align = "center",

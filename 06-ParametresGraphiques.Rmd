@@ -111,7 +111,7 @@ box("figure")
 
 Revenons maintenant aux polices de caractères. Il en existe deux autres sous R et celles-ci sont regroupées dans les fontes `Hershey`. Il s'agit des polices `script` (également appelée cursive) qui imite l'écriture manuscrite et `gothic` (ou fantaisie) avant tout décorative. Cet ensemble de fontes regroupe des polices permettant d'afficher toute sorte de symboles (grecs, musicaux, japonais, pictogrammes, etc.). Le meilleur moyen d'en faire le tour reste encore d'utiliser la commande suivante.
 
-```{r eval = F}
+```{r eval = FALSE}
 demo(Hershey)
 ```
 
@@ -156,7 +156,7 @@ Les points possèdent trois caractéristiques : un type de symbole, une taille e
 ```{r echo=-c(1, 5), out.width = '.5 | linewidth'}
 par(bg = "lightgray", family = "serif")
 k <- 1
-plot(0, xlim = c(1, 4), ylim = c(1, 4), type = "n", ann = F)
+plot(0, xlim = c(1, 4), ylim = c(1, 4), type = "n", ann = FALSE)
 for (i in seq(.5, 50, by = .5)){
 points(2.5, 2.5, cex = i, col = rainbow(120)[k])
 k <- k + 1
@@ -169,7 +169,7 @@ La figure suivante illustre différentes valeurs possibles pour l'argument `pch`
 
 ```{r warning = FALSE, echo = FALSE, out.width = '.8 | linewidth'}
 par(mar = c(1, 1, 1, 1), bg = "lightgray")
-plot(0, xlim = c(1, 10), ylim = c(1, 12), axes = FALSE, ann = F)
+plot(0, xlim = c(1, 10), ylim = c(1, 12), axes = FALSE, ann = FALSE)
 for (i in 1 : 12){
 points(x = 1:10, y = rep(i, 10), pch = (((i-1)*10)+1):(i*10), family = "mono")
 text(x = 1:10, y = rep(i, 10), labels = (((i-1)*10)+1):(i*10), pos = 1,
@@ -203,7 +203,7 @@ Les lignes, tout comme les bordures de polygones et les axes, possèdent trois c
 
 ```{r warning = FALSE, echo = FALSE, out.width = '.8 | linewidth'}
 par(mar = c(1, 1, 1, 1), bg = "lightgray")
-plot(0, xlim = c(1, 10), ylim = c(1, 18), axes = FALSE, ann = F)
+plot(0, xlim = c(1, 10), ylim = c(1, 18), axes = FALSE, ann = FALSE)
 for (i in 1 : 6){
 points(x = c(1, 10), y = rep(i, 2), lty = i, type = "l")
 text(x = 1.7, y = i, labels = paste("lty =", i, "& lwd = 1"), pos = 1,
@@ -316,8 +316,8 @@ col.ticks = "darkgray")
 mtext(text = "x-axis", side = 1, line = 1.5, family = "serif", font = 2, col = "darkgray")
 mtext(text = "y-axis", side = 2, line = 1.75, family = "serif", las = 0, font = 2, col = "darkgray")
 ## Informations
-x <- sample(1:39, 50, replace = T)
-y <- sample(1:39, 50, replace = T)
+x <- sample(1:39, 50, replace = TRUE)
+y <- sample(1:39, 50, replace = TRUE)
 points(x, y, col = "#FF000080", pch = 19, cex = 2)
 ```
 ```{r warning = FALSE, echo = FALSE, out.width = '.8 | linewidth'}
@@ -344,8 +344,8 @@ axis(side = 2, at = seq(5, 35, by = 10), labels = FALSE, lwd = 0, pos = 0, tck =
 col.ticks = "darkgray")
 mtext(text = "x-axis", side = 1, line = 1.5, family = "serif", font = 2, col = "darkgray")
 mtext(text = "y-axis", side = 2, line = 1.75, family = "serif", las = 0, font = 2, col = "darkgray")
-x <- sample(1:39, 50, replace = T)
-y <- sample(1:39, 50, replace = T)
+x <- sample(1:39, 50, replace = TRUE)
+y <- sample(1:39, 50, replace = TRUE)
 points(x, y, col = "#FF000080", pch = 19, cex = 2)
 ```
 
@@ -376,7 +376,7 @@ mtext(side = 2, line = 4.75, text = "oma", family = "mono", col = "darkgreen", f
 mtext(side = 3, line = 1.5, text = "mar", family = "mono", col = "blue", font = 2)
 ```
 
-```{r eval = F}
+```{r eval = FALSE}
 par(oma = c(2, 2, 2, 2), bg = "lightgray", mfrow = c(1, 2))
 par(family = "mono")
 plot(0, 0, type = "n", xlab = "Axe des x", ylab = "Axe des y")
@@ -390,7 +390,7 @@ rect(-1, -1, 1, 1, border = NA, col = "red", density = 20, angle = 45)
 box("figure", col = "blue", lwd = 2)
 mtext(side = 3, line = 1.75, text = "mar", col = "blue", font = 2)
 box("outer", col = "darkgreen", lwd = 4)
-mtext(side = 3, line = 0.5, text = "oma", col = "darkgreen", font = 2, outer = T)
+mtext(side = 3, line = 0.5, text = "oma", col = "darkgreen", font = 2, outer = TRUE)
 ```
 
 ```{r warning=F, echo = FALSE, fig.width = 10,fig.height = 5, out.width = '.6 | linewidth'}
@@ -407,7 +407,7 @@ rect(-1, -1, 1, 1, border = NA, col = "red", density = 20, angle = 45)
 box("figure", col = "blue", lwd = 2)
 mtext(side = 3, line = 1.75, text = "mar", col = "blue", font = 2)
 box("outer", col = "darkgreen", lwd = 4)
-mtext(side = 3, line = 0.5, text = "oma", col = "darkgreen", font = 2, outer = T)
+mtext(side = 3, line = 0.5, text = "oma", col = "darkgreen", font = 2, outer = TRUE)
 ```
 
 L'espace compris entre les bordures verte et bleue correspond à la marge extérieure à la région graphique (*outer margin*). Elle est contrôlée par le paramètre `oma`. Par défaut, sa valeur est :
@@ -637,17 +637,17 @@ Et en image.
 
 ```{r eval=FALSE}
 par(mar = c(0, 0, 0, 0), mfrow = c(2, 1))
-image(matrix(1:255, ncol = 1), col = rainbow(255), axes = F)
+image(matrix(1:255, ncol = 1), col = rainbow(255), axes = FALSE)
 box("figure", lwd = 2)
-image(matrix(c(0:255), ncol = 1), col = gray(c(0:255)/255), axes = F)
+image(matrix(c(0:255), ncol = 1), col = gray(c(0:255)/255), axes = FALSE)
 box("figure", lwd = 2)
 ```
 
 ```{r echo = FALSE, fig.width = 10,fig.height = 2, out.width = '1 | linewidth'}
 par(mar = c(0, 0, 0, 0), mfrow = c(2, 1))
-image(matrix(1:255, ncol = 1), col = rainbow(255), axes = F)
+image(matrix(1:255, ncol = 1), col = rainbow(255), axes = FALSE)
 box("figure", lwd = 2)
-image(matrix(c(0:255), ncol = 1), col = gray(c(0:255)/255), axes = F)
+image(matrix(c(0:255), ncol = 1), col = gray(c(0:255)/255), axes = FALSE)
 box("figure", lwd = 2)
 ```
 

@@ -181,13 +181,13 @@ Dans les deux exemples précédents, nous avons défini des couleurs à l'aide d
 Pour terminer, exécutez le code suivant sous R.
 
 ```{r eval = FALSE}
-for (i in 1 : 250){
-if (i > 1){
-cols <- rainbow(250)[c(i:250, 1:(i-1))]
-pie(rep(1, 250), col = cols, border = NA, labels = "")
-}else{
-pie(rep(1, 250), col = rainbow(250), border = NA, labels = "")
-}
+for (i in 1:250){
+  if (i > 1){
+    cols <- rainbow(250)[c(i:250, 1:(i-1))]
+    pie(rep(1, 250), col = cols, border = NA, labels = "")
+  } else {
+    pie(rep(1, 250), col = rainbow(250), border = NA, labels = "")
+  }
 }
 ```
 

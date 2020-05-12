@@ -1,6 +1,7 @@
 # Édition d'un graphique
 
 
+
 ## Graphique vierge
 
 La philosophie des auteurs en termes de graphiques sous R est simple : ajouter les éléments un à un, en commençant par ouvrir une fenêtre graphique avec des dimensions (axes et marges) choisies, mais sans que rien ne s'affiche à l'écran. Regardons donc comment créer un graphe vide.
@@ -500,18 +501,17 @@ Regardons les différents placements par défaut.
 
 ```{r echo=-3, out.width = '.5\\linewidth', eval = FALSE}
 par(mfrow = c(3, 3))
-for (i in 0 : 8){
-par(mar = c(1, 1, 1, 1))
-plotimage("./icon8.png", size = 0.25, pos = i)
-box("figure")
+for (i in 0:8) {
+  par(mar = c(1, 1, 1, 1))
+  plotimage("./icon8.png", size = 0.25, pos = i)
+  box("figure")
 }
 ```
 
 ```{r echo=-1, out.width = '.5\\linewidth', eval = FALSE}
 par(mar = c(1, 1, 1, 1), bg = "lightgray")
 plot(0, type = "n", axes = FALSE, ann = FALSE)
-for (i in 0 : 8)
-plotimage("./icon6.png", size = 0.25, pos = i, add = TRUE)
+for (i in 0 : 8) plotimage("./icon6.png", size = 0.25, pos = i, add = TRUE)
 box("figure")
 ```
 
@@ -521,7 +521,7 @@ Pour terminer, regardons l'impact de l'angle en superposant la même image tous 
 par(mar = c(0, 0, 0, 0), bg = "lightgray")
 plot0(xlim = c(-1, 1), ylim = c(-1, 1), xaxs = "i", yaxs = "i")
 for (i in seq(0, 360, 45)){
-plotimage("./icon2.png", size = 0.25, add = TRUE, angle = i, x = .25, y = .25)
+  plotimage("./icon2.png", size = 0.25, add = TRUE, angle = i, x = .25, y = .25)
 }
 plotimage("./icon2.png", size = 0.2, add = TRUE, pos = 7)
 box("figure")
@@ -530,14 +530,14 @@ Un petit dernier, parce qu'on aime ça.
 
 ```{r echo = FALSE, out.width = '.85\\linewidth', eval = FALSE}
 par(mfrow = c(3, 3))
-for (j in 1 : 9){
-img <- paste("./icon", j, ".png", sep = "")
-par(mar = c(1, 1, 1, 1), bg = "lightgray")
-plot0(xlim = c(-1, 1), ylim = c(-1, 1), xaxs = "i", yaxs = "i")
-for (i in seq(0, 360, 45)){
-plotimage(img, size = .25, angle = i, x = .25, y = .25, add = TRUE)
-}
-plotimage(img, size = 0.2, add = TRUE, pos = 7)
-box("figure")
+for (j in 1:9){
+  img <- paste("./icon", j, ".png", sep = "")
+  par(mar = c(1, 1, 1, 1), bg = "lightgray")
+  plot0(xlim = c(-1, 1), ylim = c(-1, 1), xaxs = "i", yaxs = "i")
+  for (i in seq(0, 360, 45)){
+    plotimage(img, size = .25, angle = i, x = .25, y = .25, add = TRUE)
+  }
+  plotimage(img, size = 0.2, add = TRUE, pos = 7)
+  box("figure")
 }
 ```

@@ -1,4 +1,4 @@
-# Exercices
+# Solutions aux exercices
 
 Nous allons maintenant mettre en pratique tout ce qui a été vu au cours de cet enseignement au travers de trois exemples pratiques. Dans le premier, nous allons avoir recours à la fonction `layout()` afin de créer une figure composée de trois graphiques ayant un axe en commun. Dans le second, nous allons voir comment composer un graphique dans lequel seront représentées deux séries de données ayant en commun un axe mais dont le second axe ne présente pas les même dimensions. Enfin, nous verrons comment insérer un graphe en médaillon dans un autre. Les lignes de commandes permettant de réaliser chaque figure seront disponibles dans le chapitre 7. Essayez de reproduire ces figures sans avoir recours au code, sauf si vous bloquez bien évidemment.
 

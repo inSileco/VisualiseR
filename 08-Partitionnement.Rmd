@@ -52,7 +52,7 @@ Nous avons fait le tour des possibilités offertes par ces arguments de la fonct
 Dans la plupart des situations courantes, le partitionnement basique tel que vu dans la section précédente suffira. Mais, si vous avez besoin de créer des compositions graphiques encore plus poussées, vous allez devoir utiliser les fonctions que nous allons voir maintenant. La première fonction dont nous allons parler est la fonction `layout()` contenue dans le package `graphics`. Celle-ci va diviser la fenêtre graphique d'après le contenu d'une matrice. Regardons un premier exemple afin de faire connaissance avec cette fonction.
 
 ```{r echo=T, out.width = '.6\\linewidth'}
-(mat <- matrix(1:4, ncol = 2, byrow = T))
+(mat <- matrix(1:4, ncol = 2, byrow = TRUE))
 layout(mat)
 layout.show(n = 4)
 ```
@@ -65,7 +65,7 @@ layout(mat)
 par(bg = "lightgray")
 for (i in 1 : 4){
 par(mar = c(1, 1, 1, 1))
-plot(c(-1, 1), c(-1, 1), type = "n", ann = F, axes = F)
+plot(c(-1, 1), c(-1, 1), type = "n", ann = FALSE, axes = FALSE)
 rect(-1, -1, 1, 1, col = palette()[i])
 }
 box("outer")
@@ -75,7 +75,7 @@ Par contre, si on transposait la matrice, le remplissage se ferait en colonnes.
 Ici, le résultat est très similaire à ce que nous aurions obtenu avec les arguments `mfrow` ou `mfcol`. Cependant, la fonction `layout()` permet de partitionner la fenêtre graphique en un nombre impair de régions : c'est ce qui fait sa force, car cela implique un redimensionnement des régions graphiques. Pour ce faire, nous devons modifier la matrice de base de manière à ce que certaines cellules de la matrice possède la même valeur.
 
 ```{r eval = TRUE}
-(mat <- matrix(c(1, 1, 2, 3, 4, 4), ncol = 2, byrow = T))
+(mat <- matrix(c(1, 1, 2, 3, 4, 4), ncol = 2, byrow = TRUE))
 ```
 
 ```{r echo = TRUE, out.width = '.6\\linewidth'}
@@ -83,7 +83,7 @@ layout(mat)
 par(bg = "lightgray")
 for (i in 1 : 4){
 par(mar = c(1, 1, 1, 1))
-plot(c(-1, 1), c(-1, 1), type = "n", ann = F, axes = F)
+plot(c(-1, 1), c(-1, 1), type = "n", ann = FALSE, axes = FALSE)
 rect(-1, -1, 1, 1, col = palette()[i])
 }
 box("outer")
@@ -141,38 +141,38 @@ Voyons un exemple avec des données fictives.
 ```{r eval = FALSE}
 ## Creation des variables
 x <- seq(50, 1500, by = 50)
-y1 <- sample(100:2000, size = length(x), replace = T)
+y1 <- sample(100:2000, size = length(x), replace = TRUE)
 y2 <- sort(y1)/100
-y1 <- sort(y1, decreasing = T)
+y1 <- sort(y1, decreasing = TRUE)
 ## Premier graphe
-par(cex.axis = .75, ann = F)
-plot(x, y1, col = "steelblue", type = "h", lwd = 5, ylim = c(0, 2000), axes = F, xlim = c(0, 1550))
+par(cex.axis = .75, ann = FALSE)
+plot(x, y1, col = "steelblue", type = "h", lwd = 5, ylim = c(0, 2000), axes = FALSE, xlim = c(0, 1550))
 axis(1, pos = 0, seq(0, 1500, 500), seq(0, 1500, 500))
 axis(2, pos = 0, seq(0, 2000, 500), seq(0, 2000, 500), las = 1)
 ## Second graphe
 par(new = TRUE)
-plot(x, y2, type = "l", col = "red", lwd = 2, ann = F, ylim = c(0, 30), axes = F, xlim = c(0, 1550))
+plot(x, y2, type = "l", col = "red", lwd = 2, ann = FALSE, ylim = c(0, 30), axes = FALSE, xlim = c(0, 1550))
 axis(4, pos = 1550, seq(0, 30, 5), seq(0, 30, 5), las = 1, col = "red", col.axis = "red")
 ```
 
 ```{r echo = FALSE, out.width = '.6\\linewidth'}
 ## Creation des variables
 x <- seq(50, 1500, by = 50)
-y1 <- sample(100:2000, size = length(x), replace = T)
+y1 <- sample(100:2000, size = length(x), replace = TRUE)
 y2 <- sort(y1)/100
-y1 <- sort(y1, decreasing = T)
+y1 <- sort(y1, decreasing = TRUE)
 ## Premier graphe
-par(cex.axis = .75, ann = F, mar = c(1,1,1,1))
-plot(x, y1, col = "steelblue", type = "h", lwd = 5, ylim = c(0, 2000), axes = F, xlim = c(0, 1550))
+par(cex.axis = .75, ann = FALSE, mar = c(1,1,1,1))
+plot(x, y1, col = "steelblue", type = "h", lwd = 5, ylim = c(0, 2000), axes = FALSE, xlim = c(0, 1550))
 axis(1, pos = 0, seq(0, 1500, 500), seq(0, 1500, 500))
 axis(2, pos = 0, seq(0, 2000, 500), seq(0, 2000, 500), las = 1)
 ## Second graphe
-par(new = T)
-plot(x, y2, type = "l", col = "red", lwd = 2, ann = F, ylim = c(0, 30), axes = F, xlim = c(0, 1550))
+par(new = TRUE)
+plot(x, y2, type = "l", col = "red", lwd = 2, ann = FALSE, ylim = c(0, 30), axes = FALSE, xlim = c(0, 1550))
 axis(4, pos = 1550, seq(0, 30, 5), seq(0, 30, 5), las = 1, col = "red", col.axis = "red")
 ```
 
-Mise à part l'inclusion de la commande `par(new = T)`, tout se passe normalement. En enlevant cette ligne de code, les graphiques s'afficheraient bien (sauf que le second aurait écrasé le premier). Dans le second graphe, nous n'affichons pas l'axe des x puisque celui-ci est déjà tracé dans le premier graphe. L'exercice 2 du chapitre 6 montre un exemple de graphique plus élaboré.
+Mise à part l'inclusion de la commande `par(new = TRUE)`, tout se passe normalement. En enlevant cette ligne de code, les graphiques s'afficheraient bien (sauf que le second aurait écrasé le premier). Dans le second graphe, nous n'affichons pas l'axe des x puisque celui-ci est déjà tracé dans le premier graphe. L'exercice 2 du chapitre 6 montre un exemple de graphique plus élaboré.
 Le second cas que vous pourriez rencontrer concerne l'inclusion d'un graphique dans une région restreinte d'un autre graphique. On appelle cela l'inclusion en médaillon. C'est très fréquent en cartographie, le médaillon représente une carte générale et le graphe principal une portion agrandie de ce médaillon.
 Pour réaliser ce genre de graphique, nous allons encore utiliser le paramètre graphique `new`. Mais, cette fois-ci nous aurons besoin de le combiner avec un autre argument : `fig`. Regardons ses valeurs par défaut.
 
@@ -186,13 +186,13 @@ Pour inclure une graphe en médaillon, il faudra donc modifier ces valeurs de `f
 Par ex., si on souhaite inclure un médaillon dans le quart supérieur-droit du périphérique, nous utiliserons la commande suivante.
 
 ```{r eval = FALSE}
-par(fig = c(.5, 1, .5, 1), new = T)
+par(fig = c(.5, 1, .5, 1), new = TRUE)
 ```
 
 Et pour un médaillon placé au centre,
 
 ```{r eval = FALSE}
-par(fig = c(.25, .75, .25, .75), new = T)
+par(fig = c(.25, .75, .25, .75), new = TRUE)
 ```
 
 Une remarque maintenant : si vous modifiez les marges des graphes, et que vous souhaitiez un alignement parfait des graphes, il faudra que les marges des côtés sur lesquels les graphes doivent s'aligner (par ex. marge en haut et à droite, pour un médaillon placé en haut et à droite) soient identiques.
@@ -204,18 +204,18 @@ par(mgp = c(0, .75, 0), xaxs = "i", yaxs = "i")
 par(family = "serif", font.axis = 2)
 par(mar = c(2, 2, 2, 2), cex.axis = .75)
 plot(c(0, 5), c(0, 5), xaxt = "n", yaxt = "n", ann = F , type = "n")
-x <- sample(1:3, 10, replace = T)
-y <- sample(1:4, 10, replace = T)
+x <- sample(1:3, 10, replace = TRUE)
+y <- sample(1:4, 10, replace = TRUE)
 points(x, y, cex = 5, col = "#FF00007D", pch = 15)
 axis(1, at = 0:5, 0:5, col = par()$col.axis)
 axis(2, at = 0:5, 0:5, col = par()$col.axis, las = 1)
-par(new = T)
+par(new = TRUE)
 par(fig = c(.7, 1, .7, 1), mar = c(0, 0, 2, 2), cex.axis = .75)
 par(xaxs = "i", yaxs = "i", mgp = c(0, .25, 0), tck = -.02)
 plot(c(0, 60), c(0, 60), xaxt = "n", yaxt = "n", ann = F , type = "n")
 rect(0, 0, 60, 60, col = "black")
-x <- sample(15:50, 30, replace = T)
-y <- sample(15:50, 30, replace = T)
+x <- sample(15:50, 30, replace = TRUE)
+y <- sample(15:50, 30, replace = TRUE)
 points(x, y, cex = 1, col = "#0000FF7D", pch = 19)
 axis(3, seq(0 ,60, 20), seq(0 ,60, 20), col = par()$col.axis)
 axis(4, seq(0, 60, 20), seq(0 ,60, 20), col = par()$col.axis, las = 1)
@@ -227,18 +227,18 @@ par(mgp = c(0, .75, 0), xaxs = "i", yaxs = "i")
 par(family = "serif", font.axis = 2)
 par(mar = c(2, 2, 2, 2), cex.axis = .75)
 plot(c(0, 5), c(0, 5), xaxt = "n", yaxt = "n", ann = F , type = "n")
-x <- sample(1:3, 10, replace = T)
-y <- sample(1:4, 10, replace = T)
+x <- sample(1:3, 10, replace = TRUE)
+y <- sample(1:4, 10, replace = TRUE)
 points(x, y, cex = 5, col = "#FF00007D", pch = 15)
 axis(1, at = 0:5, 0:5, col = par()$col.axis)
 axis(2, at = 0:5, 0:5, col = par()$col.axis, las = 1)
-par(new = T)
+par(new = TRUE)
 par(fig = c(.7, 1, .7, 1), mar = c(0, 0, 2, 2), cex.axis = .75)
 par(xaxs = "i", yaxs = "i", mgp = c(0, .25, 0), tck = -.02)
 plot(c(0, 60), c(0, 60), xaxt = "n", yaxt = "n", ann = F , type = "n")
 rect(0, 0, 60, 60, col = "black")
-x <- sample(15:50, 30, replace = T)
-y <- sample(15:50, 30, replace = T)
+x <- sample(15:50, 30, replace = TRUE)
+y <- sample(15:50, 30, replace = TRUE)
 points(x, y, cex = 1, col = "#0000FF7D", pch = 19)
 axis(3, at = seq(0 ,60, 20), seq(0 ,60, 20), col = par()$col.axis)
 axis(4, at = seq(0, 60, 20), seq(0 ,60, 20), col = par()$col.axis, las = 1)
@@ -256,8 +256,8 @@ par(family = "serif", font.axis = 2, col.axis = "white", col = "white")
 par(fig = c(.45, 1, .45, 1), mar = c(0, 0, 2, 2), cex.axis = .75)
 plot(c(0, 5), c(0, 5), xaxt = "n", yaxt = "n", ann = F , type = "n")
 rect(0, 0, 5, 5, col = "#0000FF7D")
-x <- sample(1:4, 10, replace = T)
-y <- sample(1:4, 10, replace = T)
+x <- sample(1:4, 10, replace = TRUE)
+y <- sample(1:4, 10, replace = TRUE)
 points(x, y, cex = 5, col = "#FF00007D", pch = 15)
 axis(3, at = 0:5, 0:5, col = par()$col.axis)
 axis(4, at = 0:5, 0:5, col = par()$col.axis, las = 1)
@@ -266,8 +266,8 @@ par(fig = c(0, .55, 0, .55), mar = c(2, 2, 0, 0), cex.axis = .75)
 par(xaxs = "i", yaxs = "i", mgp = c(0, .75, 0))
 plot(c(0, 5), c(0, 5), xaxt = "n", yaxt = "n", ann = F , type = "n")
 rect(0, 0, 5, 5, col = "#FF00007D")
-x <- sample(1:4, 10, replace = T)
-y <- sample(1:4, 10, replace = T)
+x <- sample(1:4, 10, replace = TRUE)
+y <- sample(1:4, 10, replace = TRUE)
 points(x, y, cex = 5, col = "#0000FF7D", pch = 19)
 axis(1, at = 0:5, 0:5, col = par()$col.axis)
 axis(2, at = 0:5, 0:5, col = par()$col.axis, las = 1)
@@ -280,13 +280,13 @@ par(family = "serif", font.axis = 2, col.axis = "white", col = "white")
 par(fig = c(.45, 1, .45, 1), mar = c(0, 0, 2, 2), xaxs = "i", yaxs = "i", mgp = c(0, .75, 0), cex.axis = .75)
 plot(c(0, 5), c(0, 5), xaxt = "n", yaxt = "n", ann = F , type = "n")
 rect(0, 0, 5, 5, col = "#0000FF7D")
-points(sample(1:4, 10, replace = T), sample(1:4, 10, replace = T), col = "#FF00007D", pch = 15, cex = 5)
+points(sample(1:4, 10, replace = TRUE), sample(1:4, 10, replace = TRUE), col = "#FF00007D", pch = 15, cex = 5)
 axis(3, at = 0:5, 0:5, col = par()$col.axis)
 axis(4, at = 0:5, 0:5, col = par()$col.axis, las = 1)
-par(fig = c(0, .55, 0, .55), mar = c(2, 2, 0, 0), xaxs = "i", yaxs = "i", mgp = c(0, .75, 0), cex.axis = .75, new = T)
+par(fig = c(0, .55, 0, .55), mar = c(2, 2, 0, 0), xaxs = "i", yaxs = "i", mgp = c(0, .75, 0), cex.axis = .75, new = TRUE)
 plot(c(0, 5), c(0, 5), xaxt = "n", yaxt = "n", ann = F , type = "n")
 rect(0, 0, 5, 5, col = "#FF00007D")
-points(sample(1:4, 10, replace = T), sample(1:4, 10, replace = T), col = "#0000FF7D", pch = 19, cex = 5)
+points(sample(1:4, 10, replace = TRUE), sample(1:4, 10, replace = TRUE), col = "#0000FF7D", pch = 19, cex = 5)
 axis(1, at = 0:5, 0:5, col = par()$col.axis)
 axis(2, at = 0:5, 0:5, col = par()$col.axis, las = 1)
 box("outer", col = "white")

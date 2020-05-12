@@ -23,8 +23,19 @@ principaux contributeurs de S et maintenant contributeur de R [@chambers_extendi
 Pour bien comprendre l'émergence de R, nous revenons sur le contexte dans lequel le langage S a vu le jour et comprendre ce que R lui doit. S est le produit du travail de chercheurs qui
 en quête d'un outil performant pour la recherche en statistique dans un monde où l'informatique était en pleine effervescence.
 
-Le résumé que nous faisons de cette émergence débute en 1976, à Murray Hill dans le New-Jersey (États-Unis), au département de recherche en statistique informatique des laboratoires Bell[^noteS1], les calculs sont alors réalisés à l'aide d'une bibliothèque FORTRAN[^noteS2] SCS (_Statistical Computing Subroutines_). Un des problèmes posés par cet outil était le temps passé à gérer les entrées et les sortis au programme qui était long même pour des calculs simples (une régression linéaire par exemple). Suite à ce constat, les chercheurs John Chambers, Richard Becker, Doug Dunn et Paul Tukey, décidèrent de construire un environnement interactif et un nouveau langage afin de faciliter leur recherche[^noteS3]. Ce nouveau programme informatique faciliterait l'utilisation des la bibliothèque SCS grâce à un ensemble d'objets et de fonctions manipulés à l'aide d'une syntaxe intuitive et permettrait une exploration visuelle des données à l'aide
-d'un outil graphique performant.
+Le résumé que nous faisons de cette émergence débute en 1976, à Murray Hill dans
+le New-Jersey (États-Unis), au département de recherche en statistique
+informatique des laboratoires Bell[^noteS1], les calculs sont alors réalisés à
+l'aide d'une bibliothèque FORTRAN[^noteS2] SCS (_Statistical Computing
+Subroutines_). Un des problèmes posés par cet outil était le temps passé à gérer
+les entrées et les sortis au programme qui était long même pour des calculs
+simples (une régression linéaire par exemple). Suite à ce constat, les
+chercheurs John Chambers, Richard Becker, Doug Dunn et Paul Tukey, décidèrent de
+construire un environnement interactif et un nouveau langage afin de faciliter
+leur recherche[^noteS3]. Ce nouveau programme informatique faciliterait
+l'utilisation des la bibliothèque SCS grâce à un ensemble d'objets et de
+fonctions manipulés à l'aide d'une syntaxe intuitive et permettrait une
+exploration visuelle des données à l'aide d'un outil graphique performant.
 
 <!-- Tukey Exploratory Data Analysis-->
 
@@ -111,20 +122,20 @@ Une manière simple et efficace pour prendre conscience de l'évolution de R de 
 |R-2.0.0     | 4 octobre 2004     | introduit le *lazy loading*                |
 |R-3.0.0     | 3 avril 2013       | optimization pour les processeurs à 64 bits|
 |R-3.5.0     | 23 avril 2018      | tous les packages sont                     |
-|R-3.5.2     | 20 décembre 2018   | version utilisée pour ce livre             |
-
+|R-4.0.0     | 24 avril 2020      | pour les 20 ans de R                       |
+|R-4.0.0     | 24 avril 2020      | version utilisée pour ce livre             |
 : Date de sortie des différentes version sur le CRAN (voir https://cran.r-project.org/ pour une list complète).
 
 
-[^naisR3]:Il est notamment l'auteur de l'ouvrage _R graphics_[ref].
+[^naisR3]: Il est notamment l'auteur de l'ouvrage _R graphics_[ref].
 
-[^naisR2]:Scheme est apparu dans les années 1970 au Massachusetts Institute of Technology (MIT) grâce au travail de Guy Lewis Steel et Geral Jay Sussman.
+[^naisR2]: Scheme est apparu dans les années 1970 au Massachusetts Institute of Technology (MIT) grâce au travail de Guy Lewis Steel et Geral Jay Sussman.
 
-[^naisR4]:https://stat.ethz.ch/mailman/listinfo
+[^naisR4]: https://stat.ethz.ch/mailman/listinfo
 
-[^naisR5]:Avec Friedrich Leisch, de la même institution, ils s'étaient rapprochés du projet en apportant des corrections à des bugs.
+[^naisR5]: Avec Friedrich Leisch, de la même institution, ils s'étaient rapprochés du projet en apportant des corrections à des bugs.
 
-[^naisR6]:Ils étaient 11 initialement, 16 en 2002 et 21 en août 2015.
+[^naisR6]: Ils étaient 11 initialement, 16 en 2002 et 21 en août 2015.
 
 
 
@@ -218,7 +229,7 @@ voir les soutiens financiers du consortium R rendez vous sur cette page https://
 #### RStudio
 
 Il s'agit d'un acteur tellement connu qu'il y a une parfois une confusion
-entre R et RStudio. RStudio, Inc.[^noteRStudio] une entreprise fondé par Joseph J. Allaire qui développe un environment de développement[^noteRStudio2] pour R et propose des services aux entreprises basés sur R (voir la section *Products* sur leur site Internet). En décembre 2018, RStudio comptait près d'une centaine de salariés https://www.rstudio.com/about/ dont de nombreux programmeurs parmi les plus actifs au sein de la communauté des utilisateurs de R (Hadley Wickham et Yihui Xie par exemple). RStudio est connu pour son interface de développement du même nom et pour la qualité des packages R que les salariés de RStudio développements. C'est un modèle économique classique dans le monde de l’opensource[^noteRStudio3]: une entreprise propose des services autour d'un logiciel qu'elle contribue activement à améliorer et dont elle fait une promotion active (étant donné que c'est la qualité du logiciel qui va déterminer son nombre de clients). La contributionde RStudio à R est considérable, les packages qu'elles contribuent à développer son parmi les plus utilisés[^noteRStudio4].
+entre R et RStudio. RStudio, Inc.[^noteRStudio] une entreprise fondé par Joseph J. Allaire qui développe un environment de développement[^noteRStudio2] pour R et propose des services aux entreprises basés sur R (voir la section *Products* sur leur site Internet). En décembre 2018, RStudio comptait près d'une centaine de salariés https://www.rstudio.com/about/ dont de nombreux programmeurs parmi les plus actifs au sein de la communauté des utilisateurs de R (Hadley Wickham et Yihui Xie par exemple). RStudio est connu pour son interface de développement du même nom et pour la qualité des packages R que les salariés de RStudio développements. C'est un modèle économique classique dans le monde de l’opensource[^noteRStudio3]: une entreprise propose des services autour d'un logiciel qu'elle contribue activement à améliorer et dont elle fait une promotion active (étant donné que c'est la qualité du logiciel qui va déterminer son nombre de clients). La contribution de RStudio à R est considérable, les packages qu'elles contribuent à développer son parmi les plus utilisés[^noteRStudio4].
 
 [^noteRStudio]: https://www.rstudio.com/ consulté le 24 décembre 2018.
 [^noteRStudio2]: https://fr.wikipedia.org/wiki/Environnement_de_d%C3%A9veloppement consulté le 24 décembre 2018.
@@ -374,7 +385,7 @@ Comme le soulignait déjà Kurt Hortnik en 2009 [@hornik_are_2012], cette abonda
 
 ### Les interfaces utilisateurs
 
-Travailler avec R, c'est écrire des lignes de code dans le langage R qui sont interprétées par R et pour cela, l'utilisateur utilise le programme R qui peut être ouvert de différentes manière. Par exemple en tappant `R` dans un émulateur de Terminal[^noteInter].
+Travailler avec R, c'est écrire des lignes de code dans le langage R qui sont interprétées par R et pour cela, l'utilisateur utilise le programme R qui peut être ouvert de différentes manière. Par exemple en tapant `R` dans un émulateur de Terminal[^noteInter].
 
 ![R lancé dans GNOME Terminal 3.30.2](img/chap2/terminal.png)
 
@@ -396,7 +407,7 @@ Enfin, il est aussi possible d'utiliser R avec des éditeurs de codes générali
 - [Sublime Text](https://www.sublimetext.com/)
 - [Atom](https://atom.io/)
 
-Chacun des ces logiciels offrent de multiples fonctionnalités et viennent avec des extensions pratiques pour l'utilisation d'un très grande quantité de langaged de programmation dont R. L'avantage de ces éditeurs de code est la multitude des fonctionnalités qui sont empruntées à différentes communautés de programmateurs. Avec ces logiciels, au prix de quelques heures de prise en main, il est possible d'avoir un environment de travail multi-langage, personnalisé d'une très grande efficacité.
+Chacun des ces logiciels offrent de multiples fonctionnalités et viennent avec des extensions pratiques pour l'utilisation d'un très grande quantité de langages de programmation dont R. L'avantage de ces éditeurs de code est la multitude des fonctionnalités qui sont empruntées à différentes communautés de programmateurs. Avec ces logiciels, au prix de quelques heures de prise en main, il est possible d'avoir un environment de travail multi-langage, personnalisé d'une très grande efficacité.
 
 ![Utilisé R avec atom](img/chap2/ratom.png)
 

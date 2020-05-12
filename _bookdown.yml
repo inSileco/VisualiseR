@@ -1,5 +1,9 @@
 book_filename: "visualiseR.Rmd"
 language:
+  label:
+    fig: "Figure "
+    tab: "Tableau "
+    eq: "Equation "
   ui:
     chapter_name: "Chapitre"
 delete_merged_file: true
