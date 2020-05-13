@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapitre5 Créer et Éditer des graphiques avec R | Visualiser vos données avec R</title>
+  <title>Chapitre4 Créer et Éditer des graphiques avec R | Visualiser vos données avec R</title>
   <meta name="description" content="Utiliser R pour faire des graphiques." />
   <meta name="generator" content="bookdown 0.18.3 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapitre5 Créer et Éditer des graphiques avec R | Visualiser vos données avec R" />
+  <meta property="og:title" content="Chapitre4 Créer et Éditer des graphiques avec R | Visualiser vos données avec R" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://insileco.github.io/VisualiseR/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="inSileco/VisualiseR" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapitre5 Créer et Éditer des graphiques avec R | Visualiser vos données avec R" />
+  <meta name="twitter:title" content="Chapitre4 Créer et Éditer des graphiques avec R | Visualiser vos données avec R" />
   
   <meta name="twitter:description" content="Utiliser R pour faire des graphiques." />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Nicolas Casajus, Kevin Cazelles" />
 
 
-<meta name="date" content="2020-05-12" />
+<meta name="date" content="2020-05-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="à-propos-de-r.html"/>
-<link rel="next" href="édition-dun-graphique-1.html"/>
+<link rel="next" href="édition-dun-graphique.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -137,143 +137,112 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#avant-propos"><i class="fa fa-check"></i>Avant propos</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#remerciements"><i class="fa fa-check"></i>Remerciements</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="outline.html"><a href="outline.html"><i class="fa fa-check"></i><b>1</b> Outline</a><ul>
-<li class="chapter" data-level="1.1" data-path="outline.html"><a href="outline.html#introduction"><i class="fa fa-check"></i><b>1.1</b> Introduction</a></li>
-<li class="chapter" data-level="1.2" data-path="outline.html"><a href="outline.html#part-1-r-et-les-graphiques"><i class="fa fa-check"></i><b>1.2</b> Part 1: R et les graphiques</a><ul>
-<li class="chapter" data-level="1.2.1" data-path="outline.html"><a href="outline.html#science-et-graphiques"><i class="fa fa-check"></i><b>1.2.1</b> Science et graphiques</a></li>
-<li class="chapter" data-level="1.2.2" data-path="outline.html"><a href="outline.html#a-propos-de-r"><i class="fa fa-check"></i><b>1.2.2</b> A propos de R</a></li>
-<li class="chapter" data-level="1.2.3" data-path="outline.html"><a href="outline.html#les-différents-ensemble-de-packages-sous-r"><i class="fa fa-check"></i><b>1.2.3</b> Les différents ensemble de packages sous R</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="science-et-graphiques.html"><a href="science-et-graphiques.html"><i class="fa fa-check"></i><b>2</b> Science et graphiques</a><ul>
+<li class="chapter" data-level="2.1" data-path="science-et-graphiques.html"><a href="science-et-graphiques.html#une-breve-histoire-du-graphique"><i class="fa fa-check"></i><b>2.1</b> Une brève histoire du graphique</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="science-et-graphiques.html"><a href="science-et-graphiques.html#premiers-balbutiements"><i class="fa fa-check"></i><b>2.1.1</b> Premiers balbutiements</a></li>
+<li class="chapter" data-level="2.1.2" data-path="science-et-graphiques.html"><a href="science-et-graphiques.html#lage-dor"><i class="fa fa-check"></i><b>2.1.2</b> L’âge d’or</a></li>
+<li class="chapter" data-level="2.1.3" data-path="science-et-graphiques.html"><a href="science-et-graphiques.html#lage-sombre"><i class="fa fa-check"></i><b>2.1.3</b> L’âge sombre</a></li>
+<li class="chapter" data-level="2.1.4" data-path="science-et-graphiques.html"><a href="science-et-graphiques.html#renaissance"><i class="fa fa-check"></i><b>2.1.4</b> Renaissance</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="outline.html"><a href="outline.html#part-2-graphics"><i class="fa fa-check"></i><b>1.3</b> Part 2: Graphics</a><ul>
-<li class="chapter" data-level="1.3.1" data-path="outline.html"><a href="outline.html#édition-dun-graphique"><i class="fa fa-check"></i><b>1.3.1</b> Édition d’un graphique</a></li>
-<li class="chapter" data-level="1.3.2" data-path="outline.html"><a href="outline.html#graphiques-classiques"><i class="fa fa-check"></i><b>1.3.2</b> Graphiques classiques</a></li>
-<li class="chapter" data-level="1.3.3" data-path="outline.html"><a href="outline.html#paramètres-graphiques"><i class="fa fa-check"></i><b>1.3.3</b> Paramètres graphiques</a></li>
-<li class="chapter" data-level="1.3.4" data-path="outline.html"><a href="outline.html#périphériques-et-exportation"><i class="fa fa-check"></i><b>1.3.4</b> Périphériques et exportation</a></li>
-<li class="chapter" data-level="1.3.5" data-path="outline.html"><a href="outline.html#partitionnement-et-composition"><i class="fa fa-check"></i><b>1.3.5</b> Partitionnement et composition</a></li>
+<li class="chapter" data-level="2.2" data-path="science-et-graphiques.html"><a href="science-et-graphiques.html#quest-ce-quun-graphique"><i class="fa fa-check"></i><b>2.2</b> Qu’est-ce qu’un graphique ?</a></li>
+<li class="chapter" data-level="2.3" data-path="science-et-graphiques.html"><a href="science-et-graphiques.html#un-graphique-pour-quoi-faire"><i class="fa fa-check"></i><b>2.3</b> Un graphique pour quoi faire ?</a></li>
+<li class="chapter" data-level="2.4" data-path="science-et-graphiques.html"><a href="science-et-graphiques.html#du-bon-usage-des-graphiques"><i class="fa fa-check"></i><b>2.4</b> Du bon usage des graphiques</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="outline.html"><a href="outline.html#exercices"><i class="fa fa-check"></i><b>1.4</b> Exercices</a></li>
-<li class="chapter" data-level="1.5" data-path="outline.html"><a href="outline.html#solution-aux-exercices"><i class="fa fa-check"></i><b>1.5</b> Solution aux exercices</a></li>
-<li class="chapter" data-level="1.6" data-path="outline.html"><a href="outline.html#part-3-grids-and-ggplot2"><i class="fa fa-check"></i><b>1.6</b> Part 3: Grids and ggplot2</a><ul>
-<li class="chapter" data-level="1.6.1" data-path="outline.html"><a href="outline.html#introduction-au-package-grid"><i class="fa fa-check"></i><b>1.6.1</b> Introduction au package <code>grid</code></a></li>
-<li class="chapter" data-level="1.6.2" data-path="outline.html"><a href="outline.html#introduction-au-package-ggplo2"><i class="fa fa-check"></i><b>1.6.2</b> Introduction au package <code>ggplo2</code></a></li>
-<li class="chapter" data-level="1.6.3" data-path="outline.html"><a href="outline.html#ggplot2-in-action"><i class="fa fa-check"></i><b>1.6.3</b> ggplot2 in action</a></li>
-<li class="chapter" data-level="1.6.4" data-path="outline.html"><a href="outline.html#les-extensions-de-ggplot2"><i class="fa fa-check"></i><b>1.6.4</b> Les extensions de ggplot2</a></li>
+<li class="chapter" data-level="3" data-path="à-propos-de-r.html"><a href="à-propos-de-r.html"><i class="fa fa-check"></i><b>3</b> À propos de R</a><ul>
+<li class="chapter" data-level="3.1" data-path="à-propos-de-r.html"><a href="à-propos-de-r.html#de-s-à-r---50-ans-dhistoire"><i class="fa fa-check"></i><b>3.1</b> De S à R - 50 ans d’histoire</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="à-propos-de-r.html"><a href="à-propos-de-r.html#le-langage-s"><i class="fa fa-check"></i><b>3.1.1</b> Le langage S</a></li>
+<li class="chapter" data-level="3.1.2" data-path="à-propos-de-r.html"><a href="à-propos-de-r.html#le-new-s"><i class="fa fa-check"></i><b>3.1.2</b> Le « new S »</a></li>
+<li class="chapter" data-level="3.1.3" data-path="à-propos-de-r.html"><a href="à-propos-de-r.html#de-s-à-r"><i class="fa fa-check"></i><b>3.1.3</b> De S à R</a></li>
 </ul></li>
-<li class="chapter" data-level="1.7" data-path="outline.html"><a href="outline.html#part-4-les-graphiques-interactifs-du-web"><i class="fa fa-check"></i><b>1.7</b> Part 4: les graphiques interactifs du web</a><ul>
-<li class="chapter" data-level="1.7.1" data-path="outline.html"><a href="outline.html#graphiques-interactives"><i class="fa fa-check"></i><b>1.7.1</b> Graphiques interactives</a></li>
-</ul></li>
-<li class="chapter" data-level="1.8" data-path="outline.html"><a href="outline.html#annexes"><i class="fa fa-check"></i><b>1.8</b> Annexes</a><ul>
-<li class="chapter" data-level="1.8.1" data-path="outline.html"><a href="outline.html#annexe-1---courte-introduction-à-r"><i class="fa fa-check"></i><b>1.8.1</b> Annexe 1 - courte introduction à R</a></li>
-<li class="chapter" data-level="1.8.2" data-path="outline.html"><a href="outline.html#annexe-2---une-revue-des-packages-existant"><i class="fa fa-check"></i><b>1.8.2</b> Annexe 2 - une revue des packages existant</a></li>
-<li class="chapter" data-level="1.8.3" data-path="outline.html"><a href="outline.html#annexe-3---quel-package-pour-tel-graphique"><i class="fa fa-check"></i><b>1.8.3</b> Annexe 3 - quel package pour tel graphique ?</a></li>
+<li class="chapter" data-level="3.2" data-path="à-propos-de-r.html"><a href="à-propos-de-r.html#r-aujourdhui"><i class="fa fa-check"></i><b>3.2</b> R aujourd’hui</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="à-propos-de-r.html"><a href="à-propos-de-r.html#mais-r-cest-quoi-au-juste"><i class="fa fa-check"></i><b>3.2.1</b> Mais R c’est quoi au juste?</a></li>
+<li class="chapter" data-level="3.2.2" data-path="à-propos-de-r.html"><a href="à-propos-de-r.html#un-ensemble-dacteurs"><i class="fa fa-check"></i><b>3.2.2</b> Un ensemble d’acteurs</a></li>
+<li class="chapter" data-level="3.2.3" data-path="à-propos-de-r.html"><a href="à-propos-de-r.html#une-documentation-abondante-et-facilement-accessible"><i class="fa fa-check"></i><b>3.2.3</b> Une documentation abondante et facilement accessible</a></li>
+<li class="chapter" data-level="3.2.4" data-path="à-propos-de-r.html"><a href="à-propos-de-r.html#les-packages"><i class="fa fa-check"></i><b>3.2.4</b> Les packages</a></li>
+<li class="chapter" data-level="3.2.5" data-path="à-propos-de-r.html"><a href="à-propos-de-r.html#les-interfaces-utilisateurs"><i class="fa fa-check"></i><b>3.2.5</b> Les interfaces utilisateurs</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="introduction-1.html"><a href="introduction-1.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
-<li class="chapter" data-level="3" data-path="science-et-graphiques-1.html"><a href="science-et-graphiques-1.html"><i class="fa fa-check"></i><b>3</b> Science et graphiques</a><ul>
-<li class="chapter" data-level="3.1" data-path="science-et-graphiques-1.html"><a href="science-et-graphiques-1.html#une-breve-histoire-du-graphique"><i class="fa fa-check"></i><b>3.1</b> Une brève histoire du graphique</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="science-et-graphiques-1.html"><a href="science-et-graphiques-1.html#premiers-balbutiements"><i class="fa fa-check"></i><b>3.1.1</b> Premiers balbutiements</a></li>
-<li class="chapter" data-level="3.1.2" data-path="science-et-graphiques-1.html"><a href="science-et-graphiques-1.html#lage-dor"><i class="fa fa-check"></i><b>3.1.2</b> L’âge d’or</a></li>
-<li class="chapter" data-level="3.1.3" data-path="science-et-graphiques-1.html"><a href="science-et-graphiques-1.html#lage-sombre"><i class="fa fa-check"></i><b>3.1.3</b> L’âge sombre</a></li>
-<li class="chapter" data-level="3.1.4" data-path="science-et-graphiques-1.html"><a href="science-et-graphiques-1.html#renaissance"><i class="fa fa-check"></i><b>3.1.4</b> Renaissance</a></li>
+<li class="chapter" data-level="4" data-path="créer-et-éditer-des-graphiques-avec-r.html"><a href="créer-et-éditer-des-graphiques-avec-r.html"><i class="fa fa-check"></i><b>4</b> Créer et Éditer des graphiques avec R</a><ul>
+<li class="chapter" data-level="4.1" data-path="créer-et-éditer-des-graphiques-avec-r.html"><a href="créer-et-éditer-des-graphiques-avec-r.html#le-système-graphique-du-package-graphics"><i class="fa fa-check"></i><b>4.1</b> Le système graphique du package <em>graphics</em></a></li>
+<li class="chapter" data-level="4.2" data-path="créer-et-éditer-des-graphiques-avec-r.html"><a href="créer-et-éditer-des-graphiques-avec-r.html#le-système-graphique-du-package-grid"><i class="fa fa-check"></i><b>4.2</b> Le système graphique du package <em>grid</em></a></li>
+<li class="chapter" data-level="4.3" data-path="créer-et-éditer-des-graphiques-avec-r.html"><a href="créer-et-éditer-des-graphiques-avec-r.html#les-graphiques-interactives"><i class="fa fa-check"></i><b>4.3</b> Les graphiques interactives</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="science-et-graphiques-1.html"><a href="science-et-graphiques-1.html#quest-ce-quun-graphique"><i class="fa fa-check"></i><b>3.2</b> Qu’est-ce qu’un graphique ?</a></li>
-<li class="chapter" data-level="3.3" data-path="science-et-graphiques-1.html"><a href="science-et-graphiques-1.html#un-graphique-pour-quoi-faire"><i class="fa fa-check"></i><b>3.3</b> Un graphique pour quoi faire ?</a></li>
-<li class="chapter" data-level="3.4" data-path="science-et-graphiques-1.html"><a href="science-et-graphiques-1.html#du-bon-usage-des-graphiques"><i class="fa fa-check"></i><b>3.4</b> Du bon usage des graphiques</a></li>
+<li class="chapter" data-level="5" data-path="édition-dun-graphique.html"><a href="édition-dun-graphique.html"><i class="fa fa-check"></i><b>5</b> Édition d’un graphique</a><ul>
+<li class="chapter" data-level="5.1" data-path="édition-dun-graphique.html"><a href="édition-dun-graphique.html#graphique-vierge"><i class="fa fa-check"></i><b>5.1</b> Graphique vierge</a></li>
+<li class="chapter" data-level="5.2" data-path="édition-dun-graphique.html"><a href="édition-dun-graphique.html#ajout-de-points"><i class="fa fa-check"></i><b>5.2</b> Ajout de points</a></li>
+<li class="chapter" data-level="5.3" data-path="édition-dun-graphique.html"><a href="édition-dun-graphique.html#ajout-de-lignes"><i class="fa fa-check"></i><b>5.3</b> Ajout de lignes</a></li>
+<li class="chapter" data-level="5.4" data-path="édition-dun-graphique.html"><a href="édition-dun-graphique.html#ajout-de-polygones"><i class="fa fa-check"></i><b>5.4</b> Ajout de polygones</a></li>
+<li class="chapter" data-level="5.5" data-path="édition-dun-graphique.html"><a href="édition-dun-graphique.html#ajout-dune-flèche"><i class="fa fa-check"></i><b>5.5</b> Ajout d’une flèche</a></li>
+<li class="chapter" data-level="5.6" data-path="édition-dun-graphique.html"><a href="édition-dun-graphique.html#ajout-dun-titre"><i class="fa fa-check"></i><b>5.6</b> Ajout d’un titre</a></li>
+<li class="chapter" data-level="5.7" data-path="édition-dun-graphique.html"><a href="édition-dun-graphique.html#ajout-de-texte"><i class="fa fa-check"></i><b>5.7</b> Ajout de texte</a></li>
+<li class="chapter" data-level="5.8" data-path="édition-dun-graphique.html"><a href="édition-dun-graphique.html#ajout-dune-légende"><i class="fa fa-check"></i><b>5.8</b> Ajout d’une légende</a></li>
+<li class="chapter" data-level="5.9" data-path="édition-dun-graphique.html"><a href="édition-dun-graphique.html#ajout-dun-axe"><i class="fa fa-check"></i><b>5.9</b> Ajout d’un axe</a></li>
+<li class="chapter" data-level="5.10" data-path="édition-dun-graphique.html"><a href="édition-dun-graphique.html#ajout-dune-image"><i class="fa fa-check"></i><b>5.10</b> Ajout d’une image</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="à-propos-de-r.html"><a href="à-propos-de-r.html"><i class="fa fa-check"></i><b>4</b> À propos de R</a><ul>
-<li class="chapter" data-level="4.1" data-path="à-propos-de-r.html"><a href="à-propos-de-r.html#de-s-à-r---50-ans-dhistoire"><i class="fa fa-check"></i><b>4.1</b> De S à R - 50 ans d’histoire</a><ul>
-<li class="chapter" data-level="4.1.1" data-path="à-propos-de-r.html"><a href="à-propos-de-r.html#le-langage-s"><i class="fa fa-check"></i><b>4.1.1</b> Le langage S</a></li>
-<li class="chapter" data-level="4.1.2" data-path="à-propos-de-r.html"><a href="à-propos-de-r.html#le-new-s"><i class="fa fa-check"></i><b>4.1.2</b> Le « new S »</a></li>
-<li class="chapter" data-level="4.1.3" data-path="à-propos-de-r.html"><a href="à-propos-de-r.html#de-s-à-r"><i class="fa fa-check"></i><b>4.1.3</b> De S à R</a></li>
+<li class="chapter" data-level="6" data-path="graphiques-classiques.html"><a href="graphiques-classiques.html"><i class="fa fa-check"></i><b>6</b> Graphiques classiques</a><ul>
+<li class="chapter" data-level="6.1" data-path="graphiques-classiques.html"><a href="graphiques-classiques.html#diagramme-de-dispersion"><i class="fa fa-check"></i><b>6.1</b> Diagramme de dispersion</a></li>
+<li class="chapter" data-level="6.2" data-path="graphiques-classiques.html"><a href="graphiques-classiques.html#boîte-à-moustaches"><i class="fa fa-check"></i><b>6.2</b> Boîte à moustaches</a></li>
+<li class="chapter" data-level="6.3" data-path="graphiques-classiques.html"><a href="graphiques-classiques.html#diagramme-en-bâtons"><i class="fa fa-check"></i><b>6.3</b> Diagramme en bâtons</a></li>
+<li class="chapter" data-level="6.4" data-path="graphiques-classiques.html"><a href="graphiques-classiques.html#histogramme"><i class="fa fa-check"></i><b>6.4</b> Histogramme</a></li>
+<li class="chapter" data-level="6.5" data-path="graphiques-classiques.html"><a href="graphiques-classiques.html#diagramme-sectoriel"><i class="fa fa-check"></i><b>6.5</b> Diagramme sectoriel</a></li>
+<li class="chapter" data-level="6.6" data-path="graphiques-classiques.html"><a href="graphiques-classiques.html#fonctions-mathématiques"><i class="fa fa-check"></i><b>6.6</b> Fonctions mathématiques</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="à-propos-de-r.html"><a href="à-propos-de-r.html#r-aujourdhui"><i class="fa fa-check"></i><b>4.2</b> R aujourd’hui</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="à-propos-de-r.html"><a href="à-propos-de-r.html#mais-r-cest-quoi-au-juste"><i class="fa fa-check"></i><b>4.2.1</b> Mais R c’est quoi au juste?</a></li>
-<li class="chapter" data-level="4.2.2" data-path="à-propos-de-r.html"><a href="à-propos-de-r.html#un-ensemble-dacteurs"><i class="fa fa-check"></i><b>4.2.2</b> Un ensemble d’acteurs</a></li>
-<li class="chapter" data-level="4.2.3" data-path="à-propos-de-r.html"><a href="à-propos-de-r.html#une-documentation-abondante-et-facilement-accessible"><i class="fa fa-check"></i><b>4.2.3</b> Une documentation abondante et facilement accessible</a></li>
-<li class="chapter" data-level="4.2.4" data-path="à-propos-de-r.html"><a href="à-propos-de-r.html#les-packages"><i class="fa fa-check"></i><b>4.2.4</b> Les packages</a></li>
-<li class="chapter" data-level="4.2.5" data-path="à-propos-de-r.html"><a href="à-propos-de-r.html#les-interfaces-utilisateurs"><i class="fa fa-check"></i><b>4.2.5</b> Les interfaces utilisateurs</a></li>
+<li class="chapter" data-level="7" data-path="paramètres-graphiques.html"><a href="paramètres-graphiques.html"><i class="fa fa-check"></i><b>7</b> Paramètres graphiques</a><ul>
+<li class="chapter" data-level="7.1" data-path="paramètres-graphiques.html"><a href="paramètres-graphiques.html#la-fonction-par"><i class="fa fa-check"></i><b>7.1</b> La fonction <code>par()</code></a></li>
+<li class="chapter" data-level="7.2" data-path="paramètres-graphiques.html"><a href="paramètres-graphiques.html#fonte-de-caractères"><i class="fa fa-check"></i><b>7.2</b> Fonte de caractères</a></li>
+<li class="chapter" data-level="7.3" data-path="paramètres-graphiques.html"><a href="paramètres-graphiques.html#symboles-ponctuels"><i class="fa fa-check"></i><b>7.3</b> Symboles ponctuels</a></li>
+<li class="chapter" data-level="7.4" data-path="paramètres-graphiques.html"><a href="paramètres-graphiques.html#types-de-lignes"><i class="fa fa-check"></i><b>7.4</b> Types de lignes</a></li>
+<li class="chapter" data-level="7.5" data-path="paramètres-graphiques.html"><a href="paramètres-graphiques.html#modification-des-axes"><i class="fa fa-check"></i><b>7.5</b> Modification des axes</a></li>
+<li class="chapter" data-level="7.6" data-path="paramètres-graphiques.html"><a href="paramètres-graphiques.html#ajustement-des-marges"><i class="fa fa-check"></i><b>7.6</b> Ajustement des marges</a></li>
+<li class="chapter" data-level="7.7" data-path="paramètres-graphiques.html"><a href="paramètres-graphiques.html#les-couleurs-sous-r"><i class="fa fa-check"></i><b>7.7</b> Les couleurs sous R</a></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="périphériques-et-exportation.html"><a href="périphériques-et-exportation.html"><i class="fa fa-check"></i><b>8</b> Périphériques et exportation</a><ul>
+<li class="chapter" data-level="8.1" data-path="périphériques-et-exportation.html"><a href="périphériques-et-exportation.html#types-de-périphériques"><i class="fa fa-check"></i><b>8.1</b> Types de périphériques</a></li>
+<li class="chapter" data-level="8.2" data-path="périphériques-et-exportation.html"><a href="périphériques-et-exportation.html#les-fonctions-dev.x"><i class="fa fa-check"></i><b>8.2</b> Les fonctions <code>dev.x()</code></a></li>
+<li class="chapter" data-level="8.3" data-path="périphériques-et-exportation.html"><a href="périphériques-et-exportation.html#exportation-dun-graphe"><i class="fa fa-check"></i><b>8.3</b> Exportation d’un graphe</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="créer-et-éditer-des-graphiques-avec-r.html"><a href="créer-et-éditer-des-graphiques-avec-r.html"><i class="fa fa-check"></i><b>5</b> Créer et Éditer des graphiques avec R</a><ul>
-<li class="chapter" data-level="5.1" data-path="créer-et-éditer-des-graphiques-avec-r.html"><a href="créer-et-éditer-des-graphiques-avec-r.html#le-système-graphique-du-package-graphics"><i class="fa fa-check"></i><b>5.1</b> Le système graphique du package <em>graphics</em></a></li>
-<li class="chapter" data-level="5.2" data-path="créer-et-éditer-des-graphiques-avec-r.html"><a href="créer-et-éditer-des-graphiques-avec-r.html#le-système-graphique-du-package-grid"><i class="fa fa-check"></i><b>5.2</b> Le système graphique du package <em>grid</em></a></li>
-<li class="chapter" data-level="5.3" data-path="créer-et-éditer-des-graphiques-avec-r.html"><a href="créer-et-éditer-des-graphiques-avec-r.html#les-graphiques-interactives"><i class="fa fa-check"></i><b>5.3</b> Les graphiques interactives</a></li>
+<li class="chapter" data-level="9" data-path="partitionnement-et-composition.html"><a href="partitionnement-et-composition.html"><i class="fa fa-check"></i><b>9</b> Partitionnement et composition</a><ul>
+<li class="chapter" data-level="9.1" data-path="partitionnement-et-composition.html"><a href="partitionnement-et-composition.html#partitionnement-basique"><i class="fa fa-check"></i><b>9.1</b> Partitionnement basique</a></li>
+<li class="chapter" data-level="9.2" data-path="partitionnement-et-composition.html"><a href="partitionnement-et-composition.html#partitionnement-avancé"><i class="fa fa-check"></i><b>9.2</b> Partitionnement avancé</a></li>
+<li class="chapter" data-level="9.3" data-path="partitionnement-et-composition.html"><a href="partitionnement-et-composition.html#graphe-dans-un-graphe"><i class="fa fa-check"></i><b>9.3</b> Graphe dans un graphe</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="édition-dun-graphique-1.html"><a href="édition-dun-graphique-1.html"><i class="fa fa-check"></i><b>6</b> Édition d’un graphique</a><ul>
-<li class="chapter" data-level="6.1" data-path="édition-dun-graphique-1.html"><a href="édition-dun-graphique-1.html#graphique-vierge"><i class="fa fa-check"></i><b>6.1</b> Graphique vierge</a></li>
-<li class="chapter" data-level="6.2" data-path="édition-dun-graphique-1.html"><a href="édition-dun-graphique-1.html#ajout-de-points"><i class="fa fa-check"></i><b>6.2</b> Ajout de points</a></li>
-<li class="chapter" data-level="6.3" data-path="édition-dun-graphique-1.html"><a href="édition-dun-graphique-1.html#ajout-de-lignes"><i class="fa fa-check"></i><b>6.3</b> Ajout de lignes</a></li>
-<li class="chapter" data-level="6.4" data-path="édition-dun-graphique-1.html"><a href="édition-dun-graphique-1.html#ajout-de-polygones"><i class="fa fa-check"></i><b>6.4</b> Ajout de polygones</a></li>
-<li class="chapter" data-level="6.5" data-path="édition-dun-graphique-1.html"><a href="édition-dun-graphique-1.html#ajout-dune-flèche"><i class="fa fa-check"></i><b>6.5</b> Ajout d’une flèche</a></li>
-<li class="chapter" data-level="6.6" data-path="édition-dun-graphique-1.html"><a href="édition-dun-graphique-1.html#ajout-dun-titre"><i class="fa fa-check"></i><b>6.6</b> Ajout d’un titre</a></li>
-<li class="chapter" data-level="6.7" data-path="édition-dun-graphique-1.html"><a href="édition-dun-graphique-1.html#ajout-de-texte"><i class="fa fa-check"></i><b>6.7</b> Ajout de texte</a></li>
-<li class="chapter" data-level="6.8" data-path="édition-dun-graphique-1.html"><a href="édition-dun-graphique-1.html#ajout-dune-légende"><i class="fa fa-check"></i><b>6.8</b> Ajout d’une légende</a></li>
-<li class="chapter" data-level="6.9" data-path="édition-dun-graphique-1.html"><a href="édition-dun-graphique-1.html#ajout-dun-axe"><i class="fa fa-check"></i><b>6.9</b> Ajout d’un axe</a></li>
-<li class="chapter" data-level="6.10" data-path="édition-dun-graphique-1.html"><a href="édition-dun-graphique-1.html#ajout-dune-image"><i class="fa fa-check"></i><b>6.10</b> Ajout d’une image</a></li>
+<li class="chapter" data-level="10" data-path="exercices.html"><a href="exercices.html"><i class="fa fa-check"></i><b>10</b> Exercices</a><ul>
+<li class="chapter" data-level="10.1" data-path="exercices.html"><a href="exercices.html#partitionnement-avancé-1"><i class="fa fa-check"></i><b>10.1</b> Partitionnement avancé</a></li>
+<li class="chapter" data-level="10.2" data-path="exercices.html"><a href="exercices.html#superposition-de-graphes"><i class="fa fa-check"></i><b>10.2</b> Superposition de graphes</a></li>
+<li class="chapter" data-level="10.3" data-path="exercices.html"><a href="exercices.html#inclusion-en-médaillon"><i class="fa fa-check"></i><b>10.3</b> Inclusion en médaillon</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="graphiques-classiques-1.html"><a href="graphiques-classiques-1.html"><i class="fa fa-check"></i><b>7</b> Graphiques classiques</a><ul>
-<li class="chapter" data-level="7.1" data-path="graphiques-classiques-1.html"><a href="graphiques-classiques-1.html#diagramme-de-dispersion"><i class="fa fa-check"></i><b>7.1</b> Diagramme de dispersion</a></li>
-<li class="chapter" data-level="7.2" data-path="graphiques-classiques-1.html"><a href="graphiques-classiques-1.html#boîte-à-moustaches"><i class="fa fa-check"></i><b>7.2</b> Boîte à moustaches</a></li>
-<li class="chapter" data-level="7.3" data-path="graphiques-classiques-1.html"><a href="graphiques-classiques-1.html#diagramme-en-bâtons"><i class="fa fa-check"></i><b>7.3</b> Diagramme en bâtons</a></li>
-<li class="chapter" data-level="7.4" data-path="graphiques-classiques-1.html"><a href="graphiques-classiques-1.html#histogramme"><i class="fa fa-check"></i><b>7.4</b> Histogramme</a></li>
-<li class="chapter" data-level="7.5" data-path="graphiques-classiques-1.html"><a href="graphiques-classiques-1.html#diagramme-sectoriel"><i class="fa fa-check"></i><b>7.5</b> Diagramme sectoriel</a></li>
-<li class="chapter" data-level="7.6" data-path="graphiques-classiques-1.html"><a href="graphiques-classiques-1.html#fonctions-mathématiques"><i class="fa fa-check"></i><b>7.6</b> Fonctions mathématiques</a></li>
+<li class="chapter" data-level="11" data-path="solutions-des-exercices.html"><a href="solutions-des-exercices.html"><i class="fa fa-check"></i><b>11</b> Solutions des exercices</a><ul>
+<li class="chapter" data-level="11.1" data-path="solutions-des-exercices.html"><a href="solutions-des-exercices.html#partitionnement-avancé-2"><i class="fa fa-check"></i><b>11.1</b> Partitionnement avancé</a></li>
+<li class="chapter" data-level="11.2" data-path="solutions-des-exercices.html"><a href="solutions-des-exercices.html#superposition-de-graphes-1"><i class="fa fa-check"></i><b>11.2</b> Superposition de graphes</a></li>
+<li class="chapter" data-level="11.3" data-path="solutions-des-exercices.html"><a href="solutions-des-exercices.html#inclusion-en-médaillon-1"><i class="fa fa-check"></i><b>11.3</b> Inclusion en médaillon</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="paramètres-graphiques-1.html"><a href="paramètres-graphiques-1.html"><i class="fa fa-check"></i><b>8</b> Paramètres graphiques</a><ul>
-<li class="chapter" data-level="8.1" data-path="paramètres-graphiques-1.html"><a href="paramètres-graphiques-1.html#la-fonction-par"><i class="fa fa-check"></i><b>8.1</b> La fonction <code>par()</code></a></li>
-<li class="chapter" data-level="8.2" data-path="paramètres-graphiques-1.html"><a href="paramètres-graphiques-1.html#fonte-de-caractères"><i class="fa fa-check"></i><b>8.2</b> Fonte de caractères</a></li>
-<li class="chapter" data-level="8.3" data-path="paramètres-graphiques-1.html"><a href="paramètres-graphiques-1.html#symboles-ponctuels"><i class="fa fa-check"></i><b>8.3</b> Symboles ponctuels</a></li>
-<li class="chapter" data-level="8.4" data-path="paramètres-graphiques-1.html"><a href="paramètres-graphiques-1.html#types-de-lignes"><i class="fa fa-check"></i><b>8.4</b> Types de lignes</a></li>
-<li class="chapter" data-level="8.5" data-path="paramètres-graphiques-1.html"><a href="paramètres-graphiques-1.html#modification-des-axes"><i class="fa fa-check"></i><b>8.5</b> Modification des axes</a></li>
-<li class="chapter" data-level="8.6" data-path="paramètres-graphiques-1.html"><a href="paramètres-graphiques-1.html#ajustement-des-marges"><i class="fa fa-check"></i><b>8.6</b> Ajustement des marges</a></li>
-<li class="chapter" data-level="8.7" data-path="paramètres-graphiques-1.html"><a href="paramètres-graphiques-1.html#les-couleurs-sous-r"><i class="fa fa-check"></i><b>8.7</b> Les couleurs sous R</a></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="périphériques-et-exportation-1.html"><a href="périphériques-et-exportation-1.html"><i class="fa fa-check"></i><b>9</b> Périphériques et exportation</a><ul>
-<li class="chapter" data-level="9.1" data-path="périphériques-et-exportation-1.html"><a href="périphériques-et-exportation-1.html#types-de-périphériques"><i class="fa fa-check"></i><b>9.1</b> Types de périphériques</a></li>
-<li class="chapter" data-level="9.2" data-path="périphériques-et-exportation-1.html"><a href="périphériques-et-exportation-1.html#les-fonctions-dev.x"><i class="fa fa-check"></i><b>9.2</b> Les fonctions <code>dev.x()</code></a></li>
-<li class="chapter" data-level="9.3" data-path="périphériques-et-exportation-1.html"><a href="périphériques-et-exportation-1.html#exportation-dun-graphe"><i class="fa fa-check"></i><b>9.3</b> Exportation d’un graphe</a></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="partitionnement-et-composition-1.html"><a href="partitionnement-et-composition-1.html"><i class="fa fa-check"></i><b>10</b> Partitionnement et composition</a><ul>
-<li class="chapter" data-level="10.1" data-path="partitionnement-et-composition-1.html"><a href="partitionnement-et-composition-1.html#partitionnement-basique"><i class="fa fa-check"></i><b>10.1</b> Partitionnement basique</a></li>
-<li class="chapter" data-level="10.2" data-path="partitionnement-et-composition-1.html"><a href="partitionnement-et-composition-1.html#partitionnement-avancé"><i class="fa fa-check"></i><b>10.2</b> Partitionnement avancé</a></li>
-<li class="chapter" data-level="10.3" data-path="partitionnement-et-composition-1.html"><a href="partitionnement-et-composition-1.html#graphe-dans-un-graphe"><i class="fa fa-check"></i><b>10.3</b> Graphe dans un graphe</a></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="exercices-1.html"><a href="exercices-1.html"><i class="fa fa-check"></i><b>11</b> Exercices</a><ul>
-<li class="chapter" data-level="11.1" data-path="exercices-1.html"><a href="exercices-1.html#partitionnement-avancé-1"><i class="fa fa-check"></i><b>11.1</b> Partitionnement avancé</a></li>
-<li class="chapter" data-level="11.2" data-path="exercices-1.html"><a href="exercices-1.html#superposition-de-graphes"><i class="fa fa-check"></i><b>11.2</b> Superposition de graphes</a></li>
-<li class="chapter" data-level="11.3" data-path="exercices-1.html"><a href="exercices-1.html#inclusion-en-médaillon"><i class="fa fa-check"></i><b>11.3</b> Inclusion en médaillon</a></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="solutions-des-exercices.html"><a href="solutions-des-exercices.html"><i class="fa fa-check"></i><b>12</b> Solutions des exercices</a><ul>
-<li class="chapter" data-level="12.1" data-path="solutions-des-exercices.html"><a href="solutions-des-exercices.html#partitionnement-avancé-2"><i class="fa fa-check"></i><b>12.1</b> Partitionnement avancé</a></li>
-<li class="chapter" data-level="12.2" data-path="solutions-des-exercices.html"><a href="solutions-des-exercices.html#superposition-de-graphes-1"><i class="fa fa-check"></i><b>12.2</b> Superposition de graphes</a></li>
-<li class="chapter" data-level="12.3" data-path="solutions-des-exercices.html"><a href="solutions-des-exercices.html#inclusion-en-médaillon-1"><i class="fa fa-check"></i><b>12.3</b> Inclusion en médaillon</a></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="introduction-au-package-grid-1.html"><a href="introduction-au-package-grid-1.html"><i class="fa fa-check"></i><b>13</b> Introduction au package <code>grid</code></a><ul>
-<li class="chapter" data-level="13.1" data-path="introduction-au-package-grid-1.html"><a href="introduction-au-package-grid-1.html#principes"><i class="fa fa-check"></i><b>13.1</b> Principes</a></li>
-<li class="chapter" data-level="13.2" data-path="introduction-au-package-grid-1.html"><a href="introduction-au-package-grid-1.html#examples"><i class="fa fa-check"></i><b>13.2</b> Examples</a></li>
-<li class="chapter" data-level="13.3" data-path="introduction-au-package-grid-1.html"><a href="introduction-au-package-grid-1.html#application"><i class="fa fa-check"></i><b>13.3</b> Application</a><ul>
-<li class="chapter" data-level="13.3.1" data-path="introduction-au-package-grid-1.html"><a href="introduction-au-package-grid-1.html#lattice"><i class="fa fa-check"></i><b>13.3.1</b> Lattice</a></li>
-<li class="chapter" data-level="13.3.2" data-path="introduction-au-package-grid-1.html"><a href="introduction-au-package-grid-1.html#ggplot2"><i class="fa fa-check"></i><b>13.3.2</b> ggplot2</a></li>
+<li class="chapter" data-level="12" data-path="introduction-au-package-grid.html"><a href="introduction-au-package-grid.html"><i class="fa fa-check"></i><b>12</b> Introduction au package <code>grid</code></a><ul>
+<li class="chapter" data-level="12.1" data-path="introduction-au-package-grid.html"><a href="introduction-au-package-grid.html#principes"><i class="fa fa-check"></i><b>12.1</b> Principes</a></li>
+<li class="chapter" data-level="12.2" data-path="introduction-au-package-grid.html"><a href="introduction-au-package-grid.html#examples"><i class="fa fa-check"></i><b>12.2</b> Examples</a></li>
+<li class="chapter" data-level="12.3" data-path="introduction-au-package-grid.html"><a href="introduction-au-package-grid.html#application"><i class="fa fa-check"></i><b>12.3</b> Application</a><ul>
+<li class="chapter" data-level="12.3.1" data-path="introduction-au-package-grid.html"><a href="introduction-au-package-grid.html#lattice"><i class="fa fa-check"></i><b>12.3.1</b> Lattice</a></li>
+<li class="chapter" data-level="12.3.2" data-path="introduction-au-package-grid.html"><a href="introduction-au-package-grid.html#ggplot2"><i class="fa fa-check"></i><b>12.3.2</b> ggplot2</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="introduction-au-package-ggplo2-1.html"><a href="introduction-au-package-ggplo2-1.html"><i class="fa fa-check"></i><b>14</b> Introduction au package <code>ggplo2</code></a></li>
-<li class="chapter" data-level="15" data-path="ggplot2-in-action-1.html"><a href="ggplot2-in-action-1.html"><i class="fa fa-check"></i><b>15</b> ggplot2 in action</a><ul>
-<li class="chapter" data-level="15.1" data-path="ggplot2-in-action-1.html"><a href="ggplot2-in-action-1.html#principes-1"><i class="fa fa-check"></i><b>15.1</b> Principes</a></li>
-<li class="chapter" data-level="15.2" data-path="ggplot2-in-action-1.html"><a href="ggplot2-in-action-1.html#reprendre-ce-qui-a-été-fait-dans-la-partie-1"><i class="fa fa-check"></i><b>15.2</b> Reprendre ce qui a été fait dans la partie 1</a></li>
+<li class="chapter" data-level="13" data-path="introduction-au-package-ggplo2.html"><a href="introduction-au-package-ggplo2.html"><i class="fa fa-check"></i><b>13</b> Introduction au package <code>ggplo2</code></a></li>
+<li class="chapter" data-level="14" data-path="ggplot2-in-action.html"><a href="ggplot2-in-action.html"><i class="fa fa-check"></i><b>14</b> ggplot2 in action</a><ul>
+<li class="chapter" data-level="14.1" data-path="ggplot2-in-action.html"><a href="ggplot2-in-action.html#principes-1"><i class="fa fa-check"></i><b>14.1</b> Principes</a></li>
+<li class="chapter" data-level="14.2" data-path="ggplot2-in-action.html"><a href="ggplot2-in-action.html#reprendre-ce-qui-a-été-fait-dans-la-partie-1"><i class="fa fa-check"></i><b>14.2</b> Reprendre ce qui a été fait dans la partie 1</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="les-extensions-de-ggplot2-1.html"><a href="les-extensions-de-ggplot2-1.html"><i class="fa fa-check"></i><b>16</b> Les extensions de ggplot2</a></li>
-<li class="chapter" data-level="17" data-path="graphiques-interactives-1.html"><a href="graphiques-interactives-1.html"><i class="fa fa-check"></i><b>17</b> Graphiques interactives</a></li>
-<li class="chapter" data-level="" data-path="annexe-1-courte-introduction-à-r-1.html"><a href="annexe-1-courte-introduction-à-r-1.html"><i class="fa fa-check"></i>Annexe 1 - courte introduction à R</a><ul>
-<li class="chapter" data-level="17.0.1" data-path="annexe-1-courte-introduction-à-r-1.html"><a href="annexe-1-courte-introduction-à-r-1.html#les-grands-principes-de-r"><i class="fa fa-check"></i><b>17.0.1</b> Les grands principes de R</a></li>
-<li class="chapter" data-level="" data-path="annexe-1-courte-introduction-à-r-1.html"><a href="annexe-1-courte-introduction-à-r-1.html#première-commande"><i class="fa fa-check"></i>Première commande</a></li>
-<li class="chapter" data-level="" data-path="annexe-1-courte-introduction-à-r-1.html"><a href="annexe-1-courte-introduction-à-r-1.html#pour-r-tout-est-objet"><i class="fa fa-check"></i>Pour R, tout est objet</a><ul>
-<li class="chapter" data-level="" data-path="annexe-1-courte-introduction-à-r-1.html"><a href="annexe-1-courte-introduction-à-r-1.html#conditions"><i class="fa fa-check"></i>Conditions</a></li>
-<li class="chapter" data-level="" data-path="annexe-1-courte-introduction-à-r-1.html"><a href="annexe-1-courte-introduction-à-r-1.html#boucles"><i class="fa fa-check"></i>Boucles</a></li>
-<li class="chapter" data-level="" data-path="annexe-1-courte-introduction-à-r-1.html"><a href="annexe-1-courte-introduction-à-r-1.html#les-fonctions"><i class="fa fa-check"></i>Les fonctions</a></li>
+<li class="chapter" data-level="15" data-path="les-extensions-de-ggplot2.html"><a href="les-extensions-de-ggplot2.html"><i class="fa fa-check"></i><b>15</b> Les extensions de ggplot2</a></li>
+<li class="chapter" data-level="16" data-path="graphiques-interactives.html"><a href="graphiques-interactives.html"><i class="fa fa-check"></i><b>16</b> Graphiques interactives</a></li>
+<li class="chapter" data-level="" data-path="annexe-1-courte-introduction-à-r.html"><a href="annexe-1-courte-introduction-à-r.html"><i class="fa fa-check"></i>Annexe 1 - courte introduction à R</a><ul>
+<li class="chapter" data-level="16.0.1" data-path="annexe-1-courte-introduction-à-r.html"><a href="annexe-1-courte-introduction-à-r.html#les-grands-principes-de-r"><i class="fa fa-check"></i><b>16.0.1</b> Les grands principes de R</a></li>
+<li class="chapter" data-level="" data-path="annexe-1-courte-introduction-à-r.html"><a href="annexe-1-courte-introduction-à-r.html#première-commande"><i class="fa fa-check"></i>Première commande</a></li>
+<li class="chapter" data-level="" data-path="annexe-1-courte-introduction-à-r.html"><a href="annexe-1-courte-introduction-à-r.html#pour-r-tout-est-objet"><i class="fa fa-check"></i>Pour R, tout est objet</a><ul>
+<li class="chapter" data-level="" data-path="annexe-1-courte-introduction-à-r.html"><a href="annexe-1-courte-introduction-à-r.html#conditions"><i class="fa fa-check"></i>Conditions</a></li>
+<li class="chapter" data-level="" data-path="annexe-1-courte-introduction-à-r.html"><a href="annexe-1-courte-introduction-à-r.html#boucles"><i class="fa fa-check"></i>Boucles</a></li>
+<li class="chapter" data-level="" data-path="annexe-1-courte-introduction-à-r.html"><a href="annexe-1-courte-introduction-à-r.html#les-fonctions"><i class="fa fa-check"></i>Les fonctions</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="annexe-2-une-revue-des-packages-existant-1.html"><a href="annexe-2-une-revue-des-packages-existant-1.html"><i class="fa fa-check"></i>Annexe 2 - une revue des packages existant</a></li>
-<li class="chapter" data-level="18" data-path="annexe-3-quel-package-pour-tel-graphique-1.html"><a href="annexe-3-quel-package-pour-tel-graphique-1.html"><i class="fa fa-check"></i><b>18</b> Annexe 3 - quel package pour tel graphique ?</a></li>
+<li class="chapter" data-level="" data-path="annexe-2-une-revue-des-packages-existant.html"><a href="annexe-2-une-revue-des-packages-existant.html"><i class="fa fa-check"></i>Annexe 2 - une revue des packages existant</a></li>
+<li class="chapter" data-level="17" data-path="annexe-3-quel-package-pour-tel-graphique.html"><a href="annexe-3-quel-package-pour-tel-graphique.html"><i class="fa fa-check"></i><b>17</b> Annexe 3 - quel package pour tel graphique ?</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/inSileco/VisualiseR" target="blank">Publié avec bookdown <i class="fa fa-github" aria-hidden="true"></i> </a></li>
 
@@ -295,11 +264,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="créer-et-éditer-des-graphiques-avec-r" class="section level1">
-<h1><span class="header-section-number">Chapitre5</span> Créer et Éditer des graphiques avec R</h1>
+<h1><span class="header-section-number">Chapitre4</span> Créer et Éditer des graphiques avec R</h1>
 <p>Développer la philosophie des différents packages sous R.</p>
 <p>R dispose de nombreux outils pour faire un travail approfondi de visualisation des données. Lorsque R est installé, nous avons à notre disposition de multiple fonctionnalités pour éditer nos figures et les exporter sous différents formats. L’édition de graphique sous R peut être divisé en deux branches : d’un côté l’approche développé dans le package <em>graphics</em> et de l’autre l’approche encore plus flexible développé dans le package <em>grid</em>.</p>
 <div id="le-système-graphique-du-package-graphics" class="section level2">
-<h2><span class="header-section-number">5.1</span> Le système graphique du package <em>graphics</em></h2>
+<h2><span class="header-section-number">4.1</span> Le système graphique du package <em>graphics</em></h2>
 <p>Le package <em>graphics</em> est une implémentation du système graphique historique de <em>S</em>. Il s’agit, en effet, de la ré-écriture des fonctionnalités de la bibliothèque GRZ pour les utiliser avec R. Ce travail a été en large partie mené par Ross Ihaka, l’un des deux initiateurs de R. Avec ce package, nous pouvons obtenir en très peu de lignes de commandes des graphiques tout à fait convenable (grâce, par exemple, à la fonction <em>plot()</em>). Nous pouvons également travailler par couches successive pour ajouter un à un les éléments du graphiques et obtenir un rendu graphique plus aboutit. l’utilisation de <em>graphics</em> est répandue, simple, intuitive et sa puissance est souvent mésestimée. C’est pour ces raisons que nous avons choisi de la détailler dans ce livre. De manière générale, pour faire un graphique avec ce système on procède en trois étapes&amp;nbsp:</p>
 <ol style="list-style-type: decimal">
 <li>On définit les paramètre graphiques globaux (fonction <em>par()</em> voir chapitre)</li>
@@ -316,13 +285,13 @@ celui-ci de nombreux types de graphiques supplémentaires dont les graphiques en
 co-ordonnées polaires.</p>
 </div>
 <div id="le-système-graphique-du-package-grid" class="section level2">
-<h2><span class="header-section-number">5.2</span> Le système graphique du package <em>grid</em></h2>
+<h2><span class="header-section-number">4.2</span> Le système graphique du package <em>grid</em></h2>
 <p>Le package <em>grid</em>, que nous devons à Paul Murrel, est un système graphique puissant qui donne un cadre performant pour développer des graphiques précis. Il y a plusieurs éléments importants sur lesquels nous revenons en annexe. Le premier est le concept de <em>viewPort</em> : il s’agit de zone rectangulaire qui sont définis dans l’espace et avec un système de co-ordonnées. Il est possible d’en utiliser autant que souhaiter, elles peuvent se recouper ou non et posséder des paramètres. C’est en quelques sortes un ensemble très flexibles de calques. Il est possible de naviguer à travers pour placer à tout moment n’importe quel élément du future graphique. Le package <em>grid</em> définis ces propres fonction primitive pour dessiner points lignes et polygones. En plus d’un affichage et contrairement à ce que nous avons dans le package <em>graphics</em>, dans <em>grid</em>, les objets affichés sont aussi des objets que l’on peut modifier à sa guise. Cela donne au package <em>grid</em> une grande puissance. Il serait bien long de redévolppé chaque graphique avec grid et comparer <em>graphics</em> et <em>grid</em> est un peu bancal en se sens qu’il ne sont pas réellement implémenté et qu’il faut les faire à la main. Néanmoins c’est grâce à sa puissance que sont nés deux autres systèmes de graphique à succès. Le premier est le système développé par Deepayan Sarkar dans le package <em>lattice</em>. Le second est une implémentation de la grammaire des graphiques, <em>ggplot2</em> que nous devons à Hadley Wickham. Notez que depuis peu, <em>grid</em> et <em>graphics</em> ont été reliés partiellement grâce au package <em>gridGraphics</em> qui permet d’écrire les fonctions graphics en <em>grid</em>.
 Ces packages doivent beaucoup au travail de Paul Murrel dont le livre <em>R graphics</em> [ref] et aussi un chapitre sur lattice demeure une référence pour approfondir l’édition de graphiques avec R.</p>
 <p>Lorsque les graphiques sont produits que ce soit avec <em>grid</em> ou <em>graphics</em>, pour les exporter dans différent format, on fait appel à un troisième package : <em>grDevices</em>.</p>
 </div>
 <div id="les-graphiques-interactives" class="section level2">
-<h2><span class="header-section-number">5.3</span> Les graphiques interactives</h2>
+<h2><span class="header-section-number">4.3</span> Les graphiques interactives</h2>
 <p>Les graphiques qui font appel à des bibliothèques JS.</p>
 
 </div>
@@ -333,7 +302,7 @@ Ces packages doivent beaucoup au travail de Paul Murrel dont le livre <em>R grap
         </div>
       </div>
 <a href="à-propos-de-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="édition-dun-graphique-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="édition-dun-graphique.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
