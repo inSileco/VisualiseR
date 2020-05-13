@@ -13,14 +13,11 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@master
-      - name: Install apt-get package(s)
-        run: |-
-          sudo apt-get update
-          sudo apt-get install -y texlive-full
       - name: Install Dependencies
         run: |-
           Rscript -e "install.packages(c('remotes', 'bookdown'), repos = 'https://muug.ca/mirror/cran/')"
           Rscript -e "remotes::install_deps(dependencies = TRUE, repos = 'https://muug.ca/mirror/cran/')"
+          Rscript -e "tinytex::install_tinytex()"
       - name: Build GitBook
         run: |-
           Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
