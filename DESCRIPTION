@@ -10,5 +10,4 @@ Imports:
   png,
   showtext
 Remotes:
-  rstudio/bookdown,
   inSileco/graphicsutils
