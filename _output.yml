@@ -9,10 +9,13 @@ bookdown::gitbook:
     edit: https://github.com/inSileco/VisualiseR/edit/devel/%s
     download: ["pdf", "epub"]
 bookdown::pdf_book:
+  documentclass: book
   includes:
     in_header: preamble.tex
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
   dev: "cairo_pdf"
+  bibliography: [book.bib, packages.bib]
+  biblio-style: apalike
 bookdown::epub_book: default
