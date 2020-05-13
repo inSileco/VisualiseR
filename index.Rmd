@@ -30,18 +30,18 @@ Ce site internet est déployé [GitHub
 Actions](https://github.com/features/actions)
 
 <a rel="Render and deploy GitBook"
-href="https://github.com/inSileco/VisualiseR/workflows"><img alt="Render and
+href="https://github.com/inSileco/VisualiseR/actions"><img alt="Render and
 deploy GitBook" style="border-width:0"
-src="https://github.com/inSileco/VisualiseR/workflows/Render%20and%20deploy%20GitBook/badge.svg"/></a><br
-/>
+src="https://github.com/inSileco/VisualiseR/workflows/Render%20and%20deploy%20GitBook/badge.svg"/></a><br/>
 
 
 
 ## Future et Collaboration {-}
 
-La première version de ce livre est centré sur faire des graphiques avec
-les fonctionnalités de base de R mais le paysage R a bien changé au cours des dernières années et beaucoup de packages sont devenus très
-populaires notamment `ggplot2`. Nous souhaitons augmenter cette version et introduire ces paquets.
+La première version de ce livre est centré sur faire des graphiques avec les
+fonctionnalités de base de R mais le paysage R a bien changé au cours des
+dernières années et beaucoup de packages sont devenus très populaires notamment
+`ggplot2`. Nous souhaitons augmenter cette version et introduire ces paquets.
 
 
 Pour d'autres tours d'horizons des capacités graphiques que R offrent,
@@ -55,8 +55,12 @@ https://www.springer.com/us/book/9780387981413
 
 <!-- Ajouter comment collaborer -->
 
-Toutes les contributions sont les bienvenues :smile:.
-Si vous êtes en dehors du groupe inSileco, vous pouvez forker ce répertoire et puis [créer un pull request à partir de votre *fork*](https://help.github.com/articles/creating-a-pull-request-from-a-fork/). Vous pouvez aussi directement [éditer les fichiers en ligne](https://help.github.com/articles/editing-files-in-another-user-s-repository/).
+Toutes les contributions sont les bienvenues :smile:. Si vous êtes en dehors du
+groupe inSileco et que vous avez un compte GitHub, vous pouvez créer une fork ce
+répertoire et puis [créer un pull request à partir de votre
+*fork*](https://help.github.com/articles/creating-a-pull-request-from-a-fork/).
+Vous pouvez aussi directement [éditer les fichiers en
+ligne](https://help.github.com/articles/editing-files-in-another-user-s-repository/).
 
 Un chapitre est un fichier `chapitre.Rmd`. Pour en éditer le contenu, l'étendre ou signaler des erreurs, le plus simple est d'ouvrir un *issue* en expliquant ce que vous souhaitez faire ou de détailler l'erreur. Si vous êtes collaborateurs sur le projet, vous pouvez vous assignez la tâche pour signaler au groupe ce sur quoi vous travailler.
 Deux [projets](https://github.com/inSileco/VisualiseR/projects) ont été organisés dans le répertoire GitHub (voir [*About project boards*](https://help.github.com/articles/about-project-boards/) pour plus de détails). Pour les utiliser, il suffit de les mentionner au moment de l'ouverture d'un nouvel *issue* est ouvert, on peut en suite les éditer et suivre leur avancement dans l'onglet *project*.

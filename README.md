@@ -1,9 +1,7 @@
-# VisualiseR
-
-:construction: Visualiser vos données avec R :construction:
-
+# :construction: VisualiseR vos données avec R :construction:
 ![Render and deploy GitBook](https://github.com/inSileco/VisualiseR/workflows/Render%20and%20deploy%20GitBook/badge.svg)
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+
 
 
 ## Installation
@@ -18,28 +16,50 @@ Pour compiler le livre localement:
 bookdown::render_book('index.Rmd', 'bookdown::gitbook')
 ```
 
-Il y a aussi un `makefile` pour créer le gitbook en html :
+Il y a aussi un `makefile` pour créer le gitbook :
 
 ```
 make gitbook
 ```
 
-et le epub :
+le epub :
 
 ```
 make epub
 ```
 
-De manière générale, il est utile de vérifier qu'il n'y a pas de problème avec le gitbook, c'est un peu moins important pour le epub qui serait de toute façon créer par Travis.
+et le pdf
+
+```
+make pdf
+```
+
+De manière générale, il est utile de vérifier qu'il n'y a pas de problème avec
+le gitbook, c'est un peu moins important pour le epub qui serait de toute façon
+créer par Travis.
 
 
 ## Contribuer
 
-Toutes les contributions sont les bienvenues :smile: et même très appréciées!
-Si vous êtes en dehors du groupe inSileco, vous pouvez forker ce répertoire et puis [créer un pull request à partir de votre *fork*](https://help.github.com/articles/creating-a-pull-request-from-a-fork/). Vous pouvez aussi directement [éditer les fichiers en ligne](https://help.github.com/articles/editing-files-in-another-user-s-repository/).
+Toutes les contributions sont les bienvenues :smile: et même très appréciées! Si
+vous êtes en dehors du groupe inSileco, vous pouvez forker ce répertoire et puis
+[créer un pull request à partir de votre
+*fork*](https://help.github.com/articles/creating-a-pull-request-from-a-fork/).
+Vous pouvez aussi directement [éditer les fichiers en
+ligne](https://help.github.com/articles/editing-files-in-another-user-s-repository/).
 
-Un chapitre est un fichier `chapitre.Rmd`. Pour en éditer le contenu, l'étendre ou signaler des erreurs, le plus simple est d'ouvrir un *issue* en expliquant ce que vous souhaitez faire ou de détailler l'erreur. Si vous êtes collaborateurs sur le projet, vous pouvez vous assignez la tâche pour signaler au groupe ce sur quoi vous travailler.
-Deux [projets](https://github.com/inSileco/VisualiseR/projects) ont été organisés dans le répertoire GitHub (voir [*About project boards*](https://help.github.com/articles/about-project-boards/) pour plus de détails). Pour les utiliser, il suffit de les mentionner au moment de l'ouverture d'un nouvel *issue* est ouvert, on peut en suite les éditer et suivre leur avancement dans l'onglet *project*.
+Un chapitre est un fichier `chapitre.Rmd`. Pour en éditer le contenu, l'étendre
+ou signaler des erreurs, le plus simple est d'ouvrir un *issue* en expliquant ce
+que vous souhaitez faire ou de détailler l'erreur. Si vous êtes collaborateurs
+sur le projet, vous pouvez vous assignez la tâche pour signaler au groupe ce sur
+quoi vous travailler. Deux
+[projets](https://github.com/inSileco/VisualiseR/projects) ont été organisés
+dans le répertoire GitHub (voir [*About project
+boards*](https://help.github.com/articles/about-project-boards/) pour plus de
+détails). Pour les utiliser, il suffit de les mentionner au moment de
+l'ouverture d'un nouvel *issue* est ouvert, on peut en suite les éditer et
+suivre leur avancement dans l'onglet *project*.
+
 
 Autres remarques:
 
