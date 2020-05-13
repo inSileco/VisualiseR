@@ -162,10 +162,11 @@ hist(var6, plot = FALSE)
 ```
 
 L'argument `breaks` permet de modifier les classes de l'histogramme. Une façon simple de procéder consiste à donner le nombre de classes que l'on souhaite représenter.
+
 ```{r out.width = '.6\\linewidth'}
 hist(var6, breaks = 30)
 ```
-Nous aurions également pu indiquer les bornes de chaque classe désirée (par ex. des classes tous les 0.25). De même, plusieurs algorithmes ont été implémentés afin de déterminer un nombre de classes \og optimum \fg . Consultez l'aide de cette fonction pour en savoir plus.
+Nous aurions également pu indiquer les bornes de chaque classe désirée (par ex. des classes tous les 0.25). De même, plusieurs algorithmes ont été implémentés afin de déterminer un nombre de classes `optimum` . Consultez l'aide de cette fonction pour en savoir plus.
 
 ```{r eval = FALSE}
 help(hist)
@@ -218,8 +219,13 @@ txt <- expression(f(x)==tan(x))
 curve(tan(x), from = -10, to = 10, main = "Tangente", ylab = txt)
 ```
 
-Ici, des éclaircissements s'imposent. Premièrement, nous avons modifié un autre paramètre graphique : `mgp`. Celui permet de contrôler le positionnement du nom des axes, des étiquettes des axes et des axes eux-mêmes. Ces positionnements sont relatifs à la région du plot. Nous y reviendrons plus loin.
-La fonction `expression()` permet quant à elle d'utiliser l'écriture mathématique dans des graphiques. Consultez l'aide de cette fonction ainsi que celle de la fonction `plotmath()` pour en savoir plus.
+Ici, des éclaircissements s'imposent. Premièrement, nous avons modifié un autre
+paramètre graphique : `mgp`. Celui permet de contrôler le positionnement du nom
+des axes, des étiquettes des axes et des axes eux-mêmes. Ces positionnements
+sont relatifs à la région du plot. Nous y reviendrons plus loin. La fonction
+`expression()` permet quant à elle d'utiliser l'écriture mathématique dans des
+graphiques. Consultez l'aide de cette fonction ainsi que celle de la fonction
+`plotmath()` pour en savoir plus.
 
 
 ```{r fig.width = 9,fig.height = 6, out.width = '1\\linewidth'}

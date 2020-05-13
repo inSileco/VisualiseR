@@ -26,9 +26,15 @@ disponibles à l'adresse suivante: https://github.com/inSileco/VisualiseR.
 Cet ouvrage est sous licence
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
 
-Ce site internet est déployé par [Travis CI](https://travis-ci.org/)
+Ce site internet est déployé [GitHub
+Actions](https://github.com/features/actions)
 
-[![Build Status](https://travis-ci.org/inSileco/VisualiseR.svg?branch=devel)](https://travis-ci.org/inSileco/VisualiseR)
+<a rel="Render and deploy GitBook"
+href="https://github.com/inSileco/VisualiseR/workflows"><img alt="Render and
+deploy GitBook" style="border-width:0"
+src="https://github.com/inSileco/VisualiseR/workflows/Render%20and%20deploy%20GitBook/badge.svg"/></a><br
+/>
+
 
 
 ## Future et Collaboration {-}
@@ -114,6 +120,7 @@ knitr::opts_chunk$set(
   fig.align = "center",
   collapse = TRUE,
   warning = FALSE,
-  message = FALSE
+  message = FALSE,
+  cache = TRUE
 )
 ```

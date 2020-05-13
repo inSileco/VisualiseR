@@ -1,7 +1,11 @@
 name: Render and deploy GitBook
-'on':
-  - push
-  - pull_request
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 jobs:
   build:
     runs-on: ubuntu-18.04
@@ -21,6 +25,7 @@ jobs:
       - name: Build GitBook
         run: |-
           Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
+          Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::epub_book')"
       - name: Deploy GitBook to gh-pages
         uses: peaceiris/actions-gh-pages@v2
         env:

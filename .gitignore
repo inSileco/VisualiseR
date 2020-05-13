@@ -1,9 +1,10 @@
 # Other
-
 tmp/
 _book/
 _bookdown_files/
 Exported\ Items.bib
+*.log
+
 
 # History files
 .Rhistory

@@ -61,7 +61,11 @@ La fonction `plot()` offre de nombreux autres arguments qu'il est possible de mo
 
 ## Boîte à moustaches
 
-La boîte à moustaches est une représentation graphique très utile en statistiques, puisqu'elle permet de résumer les caractéristiques de position (médiane, 1\up{er} et 3\up{ème} quartiles, minimum et maximum) d'une variable quantitative. Sous R, la fonction utilisée sera `boxplot()`.
+La boîte à moustaches est une représentation graphique très utile en
+statistiques, puisqu'elle permet de résumer les caractéristiques de position
+(médiane, 1^er^ et 3^ème^ quartiles, minimum et maximum) d'une variable
+quantitative. Sous R, la fonction utilisée sera `boxplot()`.
+
 ```{r out.width = '.55\\linewidth'}
 boxplot(var1, var2)
 ```
@@ -151,11 +155,18 @@ De la même manière que pour les boîtes à moustaches, l'argument `plot = FALS
 hist(var6, plot = FALSE)
 ```
 
-L'argument `breaks` permet de modifier les classes de l'histogramme. Une façon simple de procéder consiste à donner le nombre de classes que l'on souhaite représenter.
+L'argument `breaks` permet de modifier les classes de l'histogramme. Une façon
+simple de procéder consiste à donner le nombre de classes que l'on souhaite
+représenter.
+
 ```{r out.width = '.6\\linewidth'}
 hist(var6, breaks = 30)
 ```
-Nous aurions également pu indiquer les bornes de chaque classe désirée (par ex. des classes tous les 0.25). De même, plusieurs algorithmes ont été implémentés afin de déterminer un nombre de classes \og optimum \fg . Consultez l'aide de cette fonction pour en savoir plus.
+
+Nous aurions également pu indiquer les bornes de chaque classe désirée (par ex.
+des classes tous les 0.25). De même, plusieurs algorithmes ont été implémentés
+afin de déterminer un nombre de classes `optimum` . Consultez l'aide de cette
+fonction pour en savoir plus.
 
 ```{r eval = FALSE}
 help(hist)
@@ -182,12 +193,12 @@ Pour terminer, exécutez le code suivant sous R.
 
 ```{r eval = FALSE}
 for (i in 1 : 250){
-if (i > 1){
-cols <- rainbow(250)[c(i:250, 1:(i-1))]
-pie(rep(1, 250), col = cols, border = NA, labels = "")
-}else{
-pie(rep(1, 250), col = rainbow(250), border = NA, labels = "")
-}
+  if (i > 1){
+    cols <- rainbow(250)[c(i:250, 1:(i-1))]
+    pie(rep(1, 250), col = cols, border = NA, labels = "")
+  }else{
+    pie(rep(1, 250), col = rainbow(250), border = NA, labels = "")
+  }
 }
 ```
 

@@ -2,8 +2,11 @@
 
 
 Étant donné l’engouement autour de R depuis les 10 dernières années, on oublie
-que le début de l'histoire remonte au années 70. Dans ce chapitre, nous revenons sur la naissance et le développement de R: de S depuis les années 70 jusqu'à la fin des années 90. Nous décrivons ensuite l'émergence de R et la relation qu'il existe entre S et R.
-Dans la deuxième partie de ce chapitre, nous dressons un portait de R en 2019.
+que le début de l'histoire remonte au années 70. Dans ce chapitre, nous revenons
+sur la naissance et le développement de R: de S depuis les années 70 jusqu'à la
+fin des années 90. Nous décrivons ensuite l'émergence de R et la relation qu'il
+existe entre S et R. Dans la deuxième partie de ce chapitre, nous dressons un
+portait de R en 2019.
 
 
 
@@ -163,11 +166,11 @@ De même sur la page du projet R, on peut lire:
 R est donc un langage: permet d'écrire du code (*en* R) mais aussi en logiciel qui permet d'exécuter du code R (*dans* R) pour faire des statistiques et des graphiques.
 R est un langage dit interprété.
 
-![Langage interprété (voir http://www.france-ioi.org/algo/course.php?idChapter=561&idCourse=2368)](http://data.france-ioi.org/Course/general_interpreted_vs_compiled/schema_interpreted_FR.png)
+![Langage interprété (voir http://www.france-ioi.org/algo/course.php?idChapter=561&idCourse=2368)](img/chap2/schema_interpreted_FR.png)
 
 Par opposition à un langage compilé comme C (le langage dans lequel R est écrit).
 
-![Langage compilé (voir http://www.france-ioi.org/algo/course.php?idChapter=561&idCourse=2368)](http://data.france-ioi.org/Course/general_interpreted_vs_compiled/schema_compiled_FR.png)
+![Langage compilé (voir http://www.france-ioi.org/algo/course.php?idChapter=561&idCourse=2368)](img/chap2/schema_compiled_FR.png)
 
 Concrètement R est un ensemble de fichiers. Dans la version 3.5.2, il y, entre autre, 559 fichiers `.c`, 289 fichiers `.po` (pour la traduction en différente langues), 196 fichiers `.h` (headers utilisé avec C), 86 fichiers `.f` (FORTRAN) et 2346 fichiers `.R`. À l'installation de R, tous ces fichiers sont compilés de sorte que vous pouvez utiliser R dans un terminal.
 
@@ -273,12 +276,12 @@ car cette communauté :
 
 Tout le monde peut écrire des packages ou partager son expérience avec R et de fait, beaucoup d'utilisateurs le font. Il existe un grand nombre de bloggers qui produisent une multitude de posts sur différents aspects de R[^noteCom]. C'est une resource riche et diversifiée et il existe une plateforme très utile qui les rassemble[^noteCom1]: R-bloggers[^noteCom2]. De nombreux indices attestent que la communauté des utilisateurs de R est en croissance. Par exemple, le nombre de groupes d'utilisateurs de R est en très forte hausse comme le montre la couverture du dernier livre de John Chambers qui compare le nombre de groupe d’utilisateurs de R entre 2010 et 2015.
 
-![Couverture de *Extending R* [@chambers_extending_2016]. Pour une liste qui recense ces communautés, voir https://jumpingrivers.github.io/meetingsR/index.html (consulté le 26 décembre 2018)](https://images.tandf.co.uk/common/jackets/amazon/978149877/9781498775717.jpg)
+![Couverture de *Extending R* [@chambers_extending_2016]. Pour une liste qui recense ces communautés, voir https://jumpingrivers.github.io/meetingsR/index.html (consulté le 26 décembre 2018)](img/chap2/extendingR.jpg)
 
 On peut aussi regarder la croissance du nombre de packages qui dépassait 10,000 en 2016 (voir https://blog.revolutionanalytics.com/2017/01/cran-10000.html consulté le 26 décembre 2018). L'explosion du nombre de packages R hébergés sur GitHub[^noteCom3] (près de
 45000 à la fin décembre 2018 d'après https://rdrr.io/). Un autre indice est la popularité du tag "R" sur la plateforme d'échange *stack overflow* où les utilisateurs posent des questions auxquelles répondent d'autres utilisateurs. C'est d’ailleurs la popularité sur Github et sur stack overflow que le site internet [redmonk](https://redmonk.com/) évaluent la popularité des langage de programmation et en janvier 2018, R était classé 12^ème^.
 
-![Le résultat du sondage redmonk en janvier 2018, voir https://redmonk.com/sogrady/2018/03/07/language-rankings-1-18/ consulté le 26 décembre 2018.](http://sogrady-media.redmonk.com/sogrady/files/2018/03/lang.rank_.118.png)
+![Le résultat du sondage redmonk en janvier 2018, voir https://redmonk.com/sogrady/2018/03/07/language-rankings-1-18/ consulté le 26 décembre 2018.](img/chap2/rank_18.png)
 
 Un dernier indice de l'accroissement de la popularité de R chez les écologistes que nous sommes est la forte demande en formation de nos collègues. R figure incontestablement parmi les outils computationnels les plus utilisés pour la statistique et la science des données de manière générale. De plus en plus d'écologues apprennent R avec un niveau de formation de de plus en plus avancé.
 
@@ -358,9 +361,9 @@ Un package valide est un ensemble de fichiers structuré et qui passe a un certa
 Combien de packages existent-t-il actuellement ? Dans le numéro de décembre 2009 du _The R journal_, John Fox relate la croissance exponentielle du nombre de packages R [@fox_aspects_2009]. D'une centaine de packages au début des années 2000, on arrive à plus de 7000 en août 2015; la barre des 10000 packages a été franchie en 2017 et en février 2019, plus de 13600 packages sont disponibles sur le CRAN[^notePkg5].
 
 
-![Croissance des packages R disponibles sur le CRAN - article de publié par David Smith sur le blog *Revolutions* https://blog.revolutionanalytics.com/2017/01/cran-10000.html, consulté le 5 février 2019](https://revolution-computing.typepad.com/.a/6a010534b1db25970b01b8d2594d25970c-800wi)
+![Croissance des packages R disponibles sur le CRAN - article de publié par David Smith sur le blog *Revolutions* https://blog.revolutionanalytics.com/2017/01/cran-10000.html, consulté le 5 février 2019](img/chap2/package2017.png)
 
-À ce nombre de packages viennent s'ajouter près de 1700 packages disponibles sur  [Bioconductor](https://www.bioconductor.org/) et des dizaines de milliers disponibles
+À ce nombre de packages viennent s'ajouter près de 1700 packages disponibles sur [Bioconductor](https://www.bioconductor.org/) et des dizaines de milliers disponibles
 sur différentes forges logiciel : [R-forge](https://r-forge.r-project.org/), [omegahat](http://www.omegahat.net/), [GitHub](https://github.com/), [bitbucket](https://bitbucket.org/). Le site [R Package Documentation](https://rdrr.io/) rassemble la documentation des packages disponibles sous différentes plateformes.
 
 ![Haut de la page principale du *R Package Documentation* https://rdrr.io/ consultée le 5 février 2019](img/chap2/rdrr.png)
