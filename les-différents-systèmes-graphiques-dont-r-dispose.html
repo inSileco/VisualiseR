@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapitre4 Créer et Éditer des graphiques avec R | Visualiser vos données avec R</title>
+  <title>Chapitre4 Les différents systèmes graphiques dont R dispose | Visualiser vos données avec R</title>
   <meta name="description" content="Utiliser R pour faire des graphiques." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapitre4 Créer et Éditer des graphiques avec R | Visualiser vos données avec R" />
+  <meta property="og:title" content="Chapitre4 Les différents systèmes graphiques dont R dispose | Visualiser vos données avec R" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://insileco.github.io/VisualiseR/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="inSileco/VisualiseR" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapitre4 Créer et Éditer des graphiques avec R | Visualiser vos données avec R" />
+  <meta name="twitter:title" content="Chapitre4 Les différents systèmes graphiques dont R dispose | Visualiser vos données avec R" />
   
   <meta name="twitter:description" content="Utiliser R pour faire des graphiques." />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Nicolas Casajus, Kevin Cazelles" />
 
 
-<meta name="date" content="2020-05-13" />
+<meta name="date" content="2020-05-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -138,6 +138,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#remerciements"><i class="fa fa-check"></i>Remerciements</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="part"><span><b>I Science visualisation et R</b></span></li>
 <li class="chapter" data-level="2" data-path="science-et-graphiques.html"><a href="science-et-graphiques.html"><i class="fa fa-check"></i><b>2</b> Science et graphiques</a><ul>
 <li class="chapter" data-level="2.1" data-path="science-et-graphiques.html"><a href="science-et-graphiques.html#une-breve-histoire-du-graphique"><i class="fa fa-check"></i><b>2.1</b> Une brève histoire du graphique</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="science-et-graphiques.html"><a href="science-et-graphiques.html#premiers-balbutiements"><i class="fa fa-check"></i><b>2.1.1</b> Premiers balbutiements</a></li>
@@ -163,11 +164,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2.5" data-path="à-propos-de-r.html"><a href="à-propos-de-r.html#les-interfaces-utilisateurs"><i class="fa fa-check"></i><b>3.2.5</b> Les interfaces utilisateurs</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="créer-et-éditer-des-graphiques-avec-r.html"><a href="créer-et-éditer-des-graphiques-avec-r.html"><i class="fa fa-check"></i><b>4</b> Créer et Éditer des graphiques avec R</a><ul>
-<li class="chapter" data-level="4.1" data-path="créer-et-éditer-des-graphiques-avec-r.html"><a href="créer-et-éditer-des-graphiques-avec-r.html#le-système-graphique-du-package-graphics"><i class="fa fa-check"></i><b>4.1</b> Le système graphique du package <em>graphics</em></a></li>
-<li class="chapter" data-level="4.2" data-path="créer-et-éditer-des-graphiques-avec-r.html"><a href="créer-et-éditer-des-graphiques-avec-r.html#le-système-graphique-du-package-grid"><i class="fa fa-check"></i><b>4.2</b> Le système graphique du package <em>grid</em></a></li>
-<li class="chapter" data-level="4.3" data-path="créer-et-éditer-des-graphiques-avec-r.html"><a href="créer-et-éditer-des-graphiques-avec-r.html#les-graphiques-interactives"><i class="fa fa-check"></i><b>4.3</b> Les graphiques interactives</a></li>
+<li class="chapter" data-level="4" data-path="les-différents-systèmes-graphiques-dont-r-dispose.html"><a href="les-différents-systèmes-graphiques-dont-r-dispose.html"><i class="fa fa-check"></i><b>4</b> Les différents systèmes graphiques dont R dispose</a><ul>
+<li class="chapter" data-level="4.1" data-path="les-différents-systèmes-graphiques-dont-r-dispose.html"><a href="les-différents-systèmes-graphiques-dont-r-dispose.html#les-étapes-pour-créer-un-graphique-avec-r"><i class="fa fa-check"></i><b>4.1</b> Les étapes pour créer un graphique avec R</a></li>
+<li class="chapter" data-level="4.2" data-path="les-différents-systèmes-graphiques-dont-r-dispose.html"><a href="les-différents-systèmes-graphiques-dont-r-dispose.html#le-système-graphique-du-package-graphics"><i class="fa fa-check"></i><b>4.2</b> Le système graphique du package <em>graphics</em></a></li>
+<li class="chapter" data-level="4.3" data-path="les-différents-systèmes-graphiques-dont-r-dispose.html"><a href="les-différents-systèmes-graphiques-dont-r-dispose.html#le-système-graphique-du-package-grid"><i class="fa fa-check"></i><b>4.3</b> Le système graphique du package <em>grid</em></a></li>
+<li class="chapter" data-level="4.4" data-path="les-différents-systèmes-graphiques-dont-r-dispose.html"><a href="les-différents-systèmes-graphiques-dont-r-dispose.html#les-graphiques-interactives"><i class="fa fa-check"></i><b>4.4</b> Les graphiques interactives</a></li>
+<li class="chapter" data-level="4.5" data-path="les-différents-systèmes-graphiques-dont-r-dispose.html"><a href="les-différents-systèmes-graphiques-dont-r-dispose.html#interfcaes"><i class="fa fa-check"></i><b>4.5</b> Interfcaes</a></li>
 </ul></li>
+<li class="part"><span><b>II Utiliser graphics</b></span></li>
 <li class="chapter" data-level="5" data-path="édition-dun-graphique.html"><a href="édition-dun-graphique.html"><i class="fa fa-check"></i><b>5</b> Édition d’un graphique</a><ul>
 <li class="chapter" data-level="5.1" data-path="édition-dun-graphique.html"><a href="édition-dun-graphique.html#graphique-vierge"><i class="fa fa-check"></i><b>5.1</b> Graphique vierge</a></li>
 <li class="chapter" data-level="5.2" data-path="édition-dun-graphique.html"><a href="édition-dun-graphique.html#ajout-de-points"><i class="fa fa-check"></i><b>5.2</b> Ajout de points</a></li>
@@ -217,6 +221,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.2" data-path="solutions-des-exercices.html"><a href="solutions-des-exercices.html#superposition-de-graphes-1"><i class="fa fa-check"></i><b>11.2</b> Superposition de graphes</a></li>
 <li class="chapter" data-level="11.3" data-path="solutions-des-exercices.html"><a href="solutions-des-exercices.html#inclusion-en-médaillon-1"><i class="fa fa-check"></i><b>11.3</b> Inclusion en médaillon</a></li>
 </ul></li>
+<li class="part"><span><b>III Utiliser ggplot2</b></span></li>
 <li class="chapter" data-level="12" data-path="introduction-au-package-grid.html"><a href="introduction-au-package-grid.html"><i class="fa fa-check"></i><b>12</b> Introduction au package <code>grid</code></a><ul>
 <li class="chapter" data-level="12.1" data-path="introduction-au-package-grid.html"><a href="introduction-au-package-grid.html#principes"><i class="fa fa-check"></i><b>12.1</b> Principes</a></li>
 <li class="chapter" data-level="12.2" data-path="introduction-au-package-grid.html"><a href="introduction-au-package-grid.html#examples"><i class="fa fa-check"></i><b>12.2</b> Examples</a></li>
@@ -263,12 +268,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="créer-et-éditer-des-graphiques-avec-r" class="section level1">
-<h1><span class="header-section-number">Chapitre4</span> Créer et Éditer des graphiques avec R</h1>
-<p>Développer la philosophie des différents packages sous R.</p>
-<p>R dispose de nombreux outils pour faire un travail approfondi de visualisation des données. Lorsque R est installé, nous avons à notre disposition de multiple fonctionnalités pour éditer nos figures et les exporter sous différents formats. L’édition de graphique sous R peut être divisé en deux branches : d’un côté l’approche développé dans le package <em>graphics</em> et de l’autre l’approche encore plus flexible développé dans le package <em>grid</em>.</p>
+<div id="les-différents-systèmes-graphiques-dont-r-dispose" class="section level1">
+<h1><span class="header-section-number">Chapitre4</span> Les différents systèmes graphiques dont R dispose</h1>
+<!-- KC: Développer la philosophie des différents packages sous R. -->
+<p>R dispose de nombreux outils pour faire un travail approfondi de visualisation
+des données. Lorsque R est installé, nous avons à notre disposition de multiple
+fonctionnalités pour créer, éditer et exporter des figures.
+L’édition de graphique sous R peut être divisé en trois branches : d’un côté
+l’approche développée dans le package <em>graphics</em>, celle du package <em>grid</em> (qui inclus ggplot2) et une troisième, hétérogène, qui est l’ensemble des libraries qui utilisent d’autres languages, par exemple, javascript (et ainsi créer des figures dans un navigateur web).</p>
+<!-- KC ici je rajouterais un schéma de comment ça fonctionne -->
+<div id="les-étapes-pour-créer-un-graphique-avec-r" class="section level2">
+<h2><span class="header-section-number">4.1</span> Les étapes pour créer un graphique avec R</h2>
+</div>
 <div id="le-système-graphique-du-package-graphics" class="section level2">
-<h2><span class="header-section-number">4.1</span> Le système graphique du package <em>graphics</em></h2>
+<h2><span class="header-section-number">4.2</span> Le système graphique du package <em>graphics</em></h2>
 <p>Le package <em>graphics</em> est une implémentation du système graphique historique de <em>S</em>. Il s’agit, en effet, de la ré-écriture des fonctionnalités de la bibliothèque GRZ pour les utiliser avec R. Ce travail a été en large partie mené par Ross Ihaka, l’un des deux initiateurs de R. Avec ce package, nous pouvons obtenir en très peu de lignes de commandes des graphiques tout à fait convenable (grâce, par exemple, à la fonction <em>plot()</em>). Nous pouvons également travailler par couches successive pour ajouter un à un les éléments du graphiques et obtenir un rendu graphique plus aboutit. l’utilisation de <em>graphics</em> est répandue, simple, intuitive et sa puissance est souvent mésestimée. C’est pour ces raisons que nous avons choisi de la détailler dans ce livre. De manière générale, pour faire un graphique avec ce système on procède en trois étapes&amp;nbsp:</p>
 <ol style="list-style-type: decimal">
 <li>On définit les paramètre graphiques globaux (fonction <em>par()</em> voir chapitre)</li>
@@ -285,17 +298,23 @@ celui-ci de nombreux types de graphiques supplémentaires dont les graphiques en
 co-ordonnées polaires.</p>
 </div>
 <div id="le-système-graphique-du-package-grid" class="section level2">
-<h2><span class="header-section-number">4.2</span> Le système graphique du package <em>grid</em></h2>
+<h2><span class="header-section-number">4.3</span> Le système graphique du package <em>grid</em></h2>
 <p>Le package <em>grid</em>, que nous devons à Paul Murrel, est un système graphique puissant qui donne un cadre performant pour développer des graphiques précis. Il y a plusieurs éléments importants sur lesquels nous revenons en annexe. Le premier est le concept de <em>viewPort</em> : il s’agit de zone rectangulaire qui sont définis dans l’espace et avec un système de co-ordonnées. Il est possible d’en utiliser autant que souhaiter, elles peuvent se recouper ou non et posséder des paramètres. C’est en quelques sortes un ensemble très flexibles de calques. Il est possible de naviguer à travers pour placer à tout moment n’importe quel élément du future graphique. Le package <em>grid</em> définis ces propres fonction primitive pour dessiner points lignes et polygones. En plus d’un affichage et contrairement à ce que nous avons dans le package <em>graphics</em>, dans <em>grid</em>, les objets affichés sont aussi des objets que l’on peut modifier à sa guise. Cela donne au package <em>grid</em> une grande puissance. Il serait bien long de redévolppé chaque graphique avec grid et comparer <em>graphics</em> et <em>grid</em> est un peu bancal en se sens qu’il ne sont pas réellement implémenté et qu’il faut les faire à la main. Néanmoins c’est grâce à sa puissance que sont nés deux autres systèmes de graphique à succès. Le premier est le système développé par Deepayan Sarkar dans le package <em>lattice</em>. Le second est une implémentation de la grammaire des graphiques, <em>ggplot2</em> que nous devons à Hadley Wickham. Notez que depuis peu, <em>grid</em> et <em>graphics</em> ont été reliés partiellement grâce au package <em>gridGraphics</em> qui permet d’écrire les fonctions graphics en <em>grid</em>.
 Ces packages doivent beaucoup au travail de Paul Murrel dont le livre <em>R graphics</em> [ref] et aussi un chapitre sur lattice demeure une référence pour approfondir l’édition de graphiques avec R.</p>
 <p>Lorsque les graphiques sont produits que ce soit avec <em>grid</em> ou <em>graphics</em>, pour les exporter dans différent format, on fait appel à un troisième package : <em>grDevices</em>.</p>
 </div>
 <div id="les-graphiques-interactives" class="section level2">
-<h2><span class="header-section-number">4.3</span> Les graphiques interactives</h2>
+<h2><span class="header-section-number">4.4</span> Les graphiques interactives</h2>
 <p>Les graphiques qui font appel à des bibliothèques JS.</p>
+</div>
+<div id="interfcaes" class="section level2">
+<h2><span class="header-section-number">4.5</span> Interfcaes</h2>
 
 </div>
 </div>
+
+
+
             </section>
 
           </div>
@@ -333,7 +352,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/inSileco/VisualiseR/edit/devel/03-Philosophie.Rmd",
+"link": "https://github.com/inSileco/VisualiseR/edit/devel/03-systemes_graphiques.Rmd",
 "text": "Edit"
 },
 "history": {

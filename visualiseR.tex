@@ -119,7 +119,7 @@
 
 \title{Visualiser vos données avec R}
 \author{Nicolas Casajus, Kevin Cazelles}
-\date{2020-05-13}
+\date{2020-05-14}
 
 \begin{document}
 \maketitle
@@ -230,6 +230,9 @@ A ajouter.
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
+
+\hypertarget{part-science-visualisation-et-r}{%
+\part{Science visualisation et R}\label{part-science-visualisation-et-r}}
 
 \hypertarget{science-et-graphiques}{%
 \section{Science et graphiques}\label{science-et-graphiques}}
@@ -786,12 +789,17 @@ Chacun des ces logiciels offrent de multiples fonctionnalités et viennent avec 
 
 Cette section donne un aperçu des possibilités qui existent pour travailler avec R. Si vous débutez avec R sans grande expérience en programmation, nous recommandons l'utilisation de R Studio. Si vous êtes un programmateur chevronné et que vous utilisez déjà un éditeur de code performant et généraliste, il est probable que vous trouverez des extensions pour R pour cet éditeur de code pour cet éditeur de code en particulier.
 
-\hypertarget{cruxe9er-et-uxe9diter-des-graphiques-avec-r}{%
-\section{Créer et Éditer des graphiques avec R}\label{cruxe9er-et-uxe9diter-des-graphiques-avec-r}}
+\hypertarget{les-diffuxe9rents-systuxe8mes-graphiques-dont-r-dispose}{%
+\section{Les différents systèmes graphiques dont R dispose}\label{les-diffuxe9rents-systuxe8mes-graphiques-dont-r-dispose}}
 
-Développer la philosophie des différents packages sous R.
+R dispose de nombreux outils pour faire un travail approfondi de visualisation
+des données. Lorsque R est installé, nous avons à notre disposition de multiple
+fonctionnalités pour créer, éditer et exporter des figures.
+L'édition de graphique sous R peut être divisé en trois branches : d'un côté
+l'approche développée dans le package \emph{graphics}, celle du package \emph{grid} (qui inclus ggplot2) et une troisième, hétérogène, qui est l'ensemble des libraries qui utilisent d'autres languages, par exemple, javascript (et ainsi créer des figures dans un navigateur web).
 
-R dispose de nombreux outils pour faire un travail approfondi de visualisation des données. Lorsque R est installé, nous avons à notre disposition de multiple fonctionnalités pour éditer nos figures et les exporter sous différents formats. L'édition de graphique sous R peut être divisé en deux branches : d'un côté l'approche développé dans le package \emph{graphics} et de l'autre l'approche encore plus flexible développé dans le package \emph{grid}.
+\hypertarget{les-uxe9tapes-pour-cruxe9er-un-graphique-avec-r}{%
+\subsection{Les étapes pour créer un graphique avec R}\label{les-uxe9tapes-pour-cruxe9er-un-graphique-avec-r}}
 
 \hypertarget{le-systuxe8me-graphique-du-package-graphics}{%
 \subsection{\texorpdfstring{Le système graphique du package \emph{graphics}}{Le système graphique du package graphics}}\label{le-systuxe8me-graphique-du-package-graphics}}
@@ -831,6 +839,12 @@ Lorsque les graphiques sont produits que ce soit avec \emph{grid} ou \emph{graph
 
 Les graphiques qui font appel à des bibliothèques JS.
 
+\hypertarget{interfcaes}{%
+\subsection{Interfcaes}\label{interfcaes}}
+
+\hypertarget{part-utiliser-graphics}{%
+\part{Utiliser graphics}\label{part-utiliser-graphics}}
+
 \hypertarget{uxe9dition-dun-graphique}{%
 \section{Édition d'un graphique}\label{uxe9dition-dun-graphique}}
 
@@ -844,9 +858,9 @@ Créons tout d'abord deux variables continues.
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{(x1 <-}\StringTok{ }\KeywordTok{sample}\NormalTok{(}\DataTypeTok{x =} \DecValTok{0}\OperatorTok{:}\DecValTok{10}\NormalTok{, }\DataTypeTok{size =} \DecValTok{20}\NormalTok{, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{))}
-\CommentTok{#>  [1]  5  4  5  2  9  0  8  2  8  3  0  6  8  3  5 10  2  0  9  5}
+\CommentTok{#>  [1]  8  3  2  2  9  3  5  5  7  6 10  7  8  4  3  7  1  6  6  2}
 \NormalTok{(x2 <-}\StringTok{ }\KeywordTok{sample}\NormalTok{(}\DataTypeTok{x =} \DecValTok{10}\OperatorTok{:}\DecValTok{20}\NormalTok{, }\DataTypeTok{size =} \DecValTok{20}\NormalTok{, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{))}
-\CommentTok{#>  [1] 13 18 11 13 11 10 20 11 14 12 11 18 18 14 14 16 10 19 10 13}
+\CommentTok{#>  [1] 11 13 11 10 16 16 12 14 15 20 14 12 15 16 17 10 13 10 19 11}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1572,10 +1586,10 @@ Remarque : les parenthèses permettent d'afficher dans la console le résultat d
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{(var2 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DataTypeTok{n =} \DecValTok{20}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{))}
-\CommentTok{#>  [1] -0.09928877  1.08863638 -0.60860494  1.49802262 -0.33329970 -0.59899989}
-\CommentTok{#>  [7]  1.58486254  1.03276569 -0.27644687  0.25625451 -0.65463280 -0.79557655}
-\CommentTok{#> [13] -1.43563506 -0.42872199  0.25665556  0.60580928 -2.46538498  0.14238921}
-\CommentTok{#> [19] -0.57801050  0.01172054}
+\CommentTok{#>  [1] -1.683585022 -0.390552469 -0.021185514 -1.314088977  0.941554777}
+\CommentTok{#>  [6]  0.302050842  0.967869334 -0.895130091  0.788909965  1.655221646}
+\CommentTok{#> [11]  0.121147195 -0.993488810  1.179651057 -0.009870677  0.533769860}
+\CommentTok{#> [16] -0.956857241  0.936392341 -0.135503465 -0.712642251 -0.288095170}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1683,25 +1697,25 @@ L'argument \texttt{plot} mis à la valeur \textbf{FALSE} n'affiche pas de boîte
 \KeywordTok{boxplot}\NormalTok{(var2, }\DataTypeTok{plot =} \OtherTok{FALSE}\NormalTok{)}
 \CommentTok{#> $stats}
 \CommentTok{#>            [,1]}
-\CommentTok{#> [1,] -1.4356351}
-\CommentTok{#> [2,] -0.6038024}
-\CommentTok{#> [3,] -0.1878678}
-\CommentTok{#> [4,]  0.4312324}
-\CommentTok{#> [5,]  1.5848625}
+\CommentTok{#> [1,] -1.6835850}
+\CommentTok{#> [2,] -0.8038862}
+\CommentTok{#> [3,] -0.0155281}
+\CommentTok{#> [4,]  0.8626512}
+\CommentTok{#> [5,]  1.6552216}
 \CommentTok{#> }
 \CommentTok{#> $n}
 \CommentTok{#> [1] 20}
 \CommentTok{#> }
 \CommentTok{#> $conf}
 \CommentTok{#>            [,1]}
-\CommentTok{#> [1,] -0.5535443}
-\CommentTok{#> [2,]  0.1778087}
+\CommentTok{#> [1,] -0.6043136}
+\CommentTok{#> [2,]  0.5732574}
 \CommentTok{#> }
 \CommentTok{#> $out}
-\CommentTok{#> [1] -2.465385}
+\CommentTok{#> numeric(0)}
 \CommentTok{#> }
 \CommentTok{#> $group}
-\CommentTok{#> [1] 1}
+\CommentTok{#> numeric(0)}
 \CommentTok{#> }
 \CommentTok{#> $names}
 \CommentTok{#> [1] "1"}
@@ -1727,9 +1741,9 @@ Maintenant, nous allons tirer aléatoirement 1000 valeurs (avec remise donc) dan
 \begin{Highlighting}[]
 \NormalTok{echn <-}\StringTok{ }\KeywordTok{sample}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ nom, }\DataTypeTok{size =} \DecValTok{1000}\NormalTok{, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{)}
 \NormalTok{echn[}\DecValTok{1}\OperatorTok{:}\DecValTok{20}\NormalTok{]}
-\CommentTok{#>  [1] "Vert"  "Noir"  "Rouge" "Rouge" "Blanc" "Rouge" "Bleu"  "Vert"  "Jaune"}
-\CommentTok{#> [10] "Jaune" "Blanc" "Noir"  "Rouge" "Vert"  "Bleu"  "Rouge" "Blanc" "Blanc"}
-\CommentTok{#> [19] "Blanc" "Noir"}
+\CommentTok{#>  [1] "Blanc" "Noir"  "Blanc" "Bleu"  "Noir"  "Rouge" "Noir"  "Bleu"  "Rouge"}
+\CommentTok{#> [10] "Bleu"  "Jaune" "Noir"  "Rouge" "Blanc" "Blanc" "Jaune" "Rouge" "Jaune"}
+\CommentTok{#> [19] "Bleu"  "Noir"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1740,7 +1754,7 @@ Comptons combien de fois se retrouve chaque modalité dans cette variable.
 \NormalTok{(var4 <-}\StringTok{ }\KeywordTok{table}\NormalTok{(echn))}
 \CommentTok{#> echn}
 \CommentTok{#> Blanc  Bleu Jaune  Noir Rouge  Vert }
-\CommentTok{#>   154   184   158   164   173   167}
+\CommentTok{#>   154   154   166   184   170   172}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1761,7 +1775,7 @@ Nous pouvons également représenter cette même variable sous forme relative. C
 \NormalTok{(var5 <-}\StringTok{ }\NormalTok{var4}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(var4))}
 \CommentTok{#> echn}
 \CommentTok{#> Blanc  Bleu Jaune  Noir Rouge  Vert }
-\CommentTok{#> 0.154 0.184 0.158 0.164 0.173 0.167}
+\CommentTok{#> 0.154 0.154 0.166 0.184 0.170 0.172}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1797,10 +1811,10 @@ Générons 1000 valeurs aléatoires selon une loi gaussienne.
 \begin{Highlighting}[]
 \NormalTok{var6 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DataTypeTok{n =} \DecValTok{1000}\NormalTok{)}
 \NormalTok{var6[}\DecValTok{1}\OperatorTok{:}\DecValTok{20}\NormalTok{]}
-\CommentTok{#>  [1]  0.02927754  0.10971452  1.33887184  1.55527841 -1.15098757 -0.92776423}
-\CommentTok{#>  [7] -0.70080967  2.32012852  0.61680902 -1.05012239 -0.96292036 -0.63791840}
-\CommentTok{#> [13]  1.57195015 -0.16558283 -0.41705357  0.14261012  0.52891919  0.82822683}
-\CommentTok{#> [19]  0.84351028  0.66526716}
+\CommentTok{#>  [1]  0.19359751  0.96029622  0.54074423 -0.72409945  0.75019699 -0.58318593}
+\CommentTok{#>  [7]  1.14004002  0.39983284  0.15731241  0.44523979 -0.57196975  1.33313527}
+\CommentTok{#> [13] -1.33786090  0.26980298  0.69867018  0.47619594  0.01923574 -1.95193093}
+\CommentTok{#> [19] -0.44230633  0.63921757}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1818,18 +1832,18 @@ De la même manière que pour les boîtes à moustaches, l'argument \texttt{plot
 \begin{Highlighting}[]
 \KeywordTok{hist}\NormalTok{(var6, }\DataTypeTok{plot =} \OtherTok{FALSE}\NormalTok{)}
 \CommentTok{#> $breaks}
-\CommentTok{#>  [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5}
+\CommentTok{#>  [1] -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5  4.0}
 \CommentTok{#> }
 \CommentTok{#> $counts}
-\CommentTok{#>  [1]   3   7  15  46  89 155 166 186 167  96  44  25   0   1}
+\CommentTok{#>  [1]   4  20  35 103 155 205 189 154  82  34  13   3   2   1}
 \CommentTok{#> }
 \CommentTok{#> $density}
-\CommentTok{#>  [1] 0.006 0.014 0.030 0.092 0.178 0.310 0.332 0.372 0.334 0.192 0.088 0.050}
-\CommentTok{#> [13] 0.000 0.002}
+\CommentTok{#>  [1] 0.008 0.040 0.070 0.206 0.310 0.410 0.378 0.308 0.164 0.068 0.026 0.006}
+\CommentTok{#> [13] 0.004 0.002}
 \CommentTok{#> }
 \CommentTok{#> $mids}
-\CommentTok{#>  [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25}
-\CommentTok{#> [13]  2.75  3.25}
+\CommentTok{#>  [1] -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25  2.75}
+\CommentTok{#> [13]  3.25  3.75}
 \CommentTok{#> }
 \CommentTok{#> $xname}
 \CommentTok{#> [1] "var6"}
@@ -3692,6 +3706,9 @@ Voici une solution pour réaliser les figures du précédent chapitre.
 \end{Highlighting}
 \end{Shaded}
 
+\hypertarget{part-utiliser-ggplot2}{%
+\part{Utiliser ggplot2}\label{part-utiliser-ggplot2}}
+
 \hypertarget{introduction-au-package-grid}{%
 \section{\texorpdfstring{Introduction au package \texttt{grid}}{Introduction au package grid}}\label{introduction-au-package-grid}}
 
@@ -4194,7 +4211,7 @@ Pour R, une fonction est un bel et bien un objet dont le contenu est finalement 
 \NormalTok{typeof}
 \CommentTok{#> function (x) }
 \CommentTok{#> .Internal(typeof(x))}
-\CommentTok{#> <bytecode: 0x557a7f1e8c30>}
+\CommentTok{#> <bytecode: 0x55862bca7a00>}
 \CommentTok{#> <environment: namespace:base>}
 \end{Highlighting}
 \end{Shaded}
