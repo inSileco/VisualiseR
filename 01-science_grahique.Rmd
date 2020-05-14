@@ -1,3 +1,5 @@
+# (PART) Science visualisation et R {-}
+
 # Science et graphiques
 
 Ce chapitre se veut une introduction générale au graphique scientifique. Il s'ouvre sur une brève histoire de la visualisation graphique des données. Le lecteur voyagera des premières cartes rudimentaires du Paléolithique jusqu'à l'époque moderne, marquée par la naissance du _dataviz_ et de l'infographie. Il n'existe pas pour l'instant de théorie complètement satisfaisante sur le graphique (même si des efforts ont été entrepris depuis la seconde moitié du XX^e^ siècle), mais nous avons tout de même souhaité fournir au lecteur quelques règles de bon usage dans l'élaboration de graphiques. C'est l'objet de la dernière partie de ce chapitre.
@@ -117,6 +119,8 @@ Les innovations vont se poursuivre jusqu'à la fin du XIX^e^ siècle : carte ép
 
 - exploration vs. présentation
 
+<!-- KC: Peut etre parlé de ce qui est fait en terme de data visualisatio un peut partout -->
+
 
 ## Du bon usage des graphiques {#du-bon-usage-des-graphiques}
 
@@ -126,3 +130,6 @@ Les innovations vont se poursuivre jusqu'à la fin du XIX^e^ siècle : carte ép
 - Data-ink ratio; 3D; pie chart; line chart pour données continues
 - Titre; repère (axe, étiquette); source des données; symbologie;
 - Un graphique doit se suffire à lui-même (donc légende et clarté)
+
+
+

@@ -1,3 +1,5 @@
+# (PART) Utiliser graphics {-}
+
 # Édition d'un graphique
 
 

@@ -1,3 +1,5 @@
+# (PART) Utiliser ggplot2 {-}
+
 # Introduction au package `grid`
 
 Expliquer grid.

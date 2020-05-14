@@ -1,9 +1,17 @@
-# Créer et Éditer des graphiques avec R
+# Les différents systèmes graphiques dont R dispose
 
-Développer la philosophie des différents packages sous R.
+<!-- KC: Développer la philosophie des différents packages sous R. -->
+
+R dispose de nombreux outils pour faire un travail approfondi de visualisation
+des données. Lorsque R est installé, nous avons à notre disposition de multiple
+fonctionnalités pour créer, éditer et exporter des figures.
+L'édition de graphique sous R peut être divisé en trois branches : d'un côté
+l'approche développée dans le package _graphics_, celle du package _grid_ (qui inclus ggplot2) et une troisième, hétérogène, qui est l'ensemble des libraries qui utilisent d'autres languages, par exemple, javascript (et ainsi créer des figures dans un navigateur web).
 
 
-R dispose de nombreux outils pour faire un travail approfondi de visualisation des données. Lorsque R est installé, nous avons à notre disposition de multiple fonctionnalités pour éditer nos figures et les exporter sous différents formats. L'édition de graphique sous R peut être divisé en deux branches : d'un côté l'approche développé dans le package _graphics_ et de l'autre l'approche encore plus flexible développé dans le package _grid_.
+<!-- KC ici je rajouterais un schéma de comment ça fonctionne -->
+
+## Les étapes pour créer un graphique avec R
 
 
 ## Le système graphique du package _graphics_
@@ -36,3 +44,7 @@ Lorsque les graphiques sont produits que ce soit avec _grid_ ou _graphics_, pour
 ## Les graphiques interactives
 
 Les graphiques qui font appel à des bibliothèques JS.
+
+
+
+## Interfcaes
