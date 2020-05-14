@@ -858,9 +858,9 @@ Créons tout d'abord deux variables continues.
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{(x1 <-}\StringTok{ }\KeywordTok{sample}\NormalTok{(}\DataTypeTok{x =} \DecValTok{0}\OperatorTok{:}\DecValTok{10}\NormalTok{, }\DataTypeTok{size =} \DecValTok{20}\NormalTok{, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{))}
-\CommentTok{#>  [1]  8  3  2  2  9  3  5  5  7  6 10  7  8  4  3  7  1  6  6  2}
+\CommentTok{#>  [1]  8  7  4  5  4  2  4 10  6  9  8 10  8  6  6  5  6  8  1  4}
 \NormalTok{(x2 <-}\StringTok{ }\KeywordTok{sample}\NormalTok{(}\DataTypeTok{x =} \DecValTok{10}\OperatorTok{:}\DecValTok{20}\NormalTok{, }\DataTypeTok{size =} \DecValTok{20}\NormalTok{, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{))}
-\CommentTok{#>  [1] 11 13 11 10 16 16 12 14 15 20 14 12 15 16 17 10 13 10 19 11}
+\CommentTok{#>  [1] 18 12 14 20 14 13 12 12 14 18 17 14 15 13 16 12 14 10 13 18}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1586,10 +1586,10 @@ Remarque : les parenthèses permettent d'afficher dans la console le résultat d
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{(var2 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DataTypeTok{n =} \DecValTok{20}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{))}
-\CommentTok{#>  [1] -1.683585022 -0.390552469 -0.021185514 -1.314088977  0.941554777}
-\CommentTok{#>  [6]  0.302050842  0.967869334 -0.895130091  0.788909965  1.655221646}
-\CommentTok{#> [11]  0.121147195 -0.993488810  1.179651057 -0.009870677  0.533769860}
-\CommentTok{#> [16] -0.956857241  0.936392341 -0.135503465 -0.712642251 -0.288095170}
+\CommentTok{#>  [1] -1.30158592  1.00199023 -0.21469905 -0.67772829  0.77796330  0.93286144}
+\CommentTok{#>  [7]  0.70814503  0.09586562 -0.28800979 -0.06531592 -0.20758215 -1.66985489}
+\CommentTok{#> [13] -0.66917716  0.30468606 -0.87530490  0.25275209  0.76092100 -0.37592154}
+\CommentTok{#> [19]  1.12856708 -1.08185323}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1697,19 +1697,19 @@ L'argument \texttt{plot} mis à la valeur \textbf{FALSE} n'affiche pas de boîte
 \KeywordTok{boxplot}\NormalTok{(var2, }\DataTypeTok{plot =} \OtherTok{FALSE}\NormalTok{)}
 \CommentTok{#> $stats}
 \CommentTok{#>            [,1]}
-\CommentTok{#> [1,] -1.6835850}
-\CommentTok{#> [2,] -0.8038862}
-\CommentTok{#> [3,] -0.0155281}
-\CommentTok{#> [4,]  0.8626512}
-\CommentTok{#> [5,]  1.6552216}
+\CommentTok{#> [1,] -1.6698549}
+\CommentTok{#> [2,] -0.6734527}
+\CommentTok{#> [3,] -0.1364490}
+\CommentTok{#> [4,]  0.7345330}
+\CommentTok{#> [5,]  1.1285671}
 \CommentTok{#> }
 \CommentTok{#> $n}
 \CommentTok{#> [1] 20}
 \CommentTok{#> }
 \CommentTok{#> $conf}
 \CommentTok{#>            [,1]}
-\CommentTok{#> [1,] -0.6043136}
-\CommentTok{#> [2,]  0.5732574}
+\CommentTok{#> [1,] -0.6338886}
+\CommentTok{#> [2,]  0.3609906}
 \CommentTok{#> }
 \CommentTok{#> $out}
 \CommentTok{#> numeric(0)}
@@ -1741,9 +1741,9 @@ Maintenant, nous allons tirer aléatoirement 1000 valeurs (avec remise donc) dan
 \begin{Highlighting}[]
 \NormalTok{echn <-}\StringTok{ }\KeywordTok{sample}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ nom, }\DataTypeTok{size =} \DecValTok{1000}\NormalTok{, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{)}
 \NormalTok{echn[}\DecValTok{1}\OperatorTok{:}\DecValTok{20}\NormalTok{]}
-\CommentTok{#>  [1] "Blanc" "Noir"  "Blanc" "Bleu"  "Noir"  "Rouge" "Noir"  "Bleu"  "Rouge"}
-\CommentTok{#> [10] "Bleu"  "Jaune" "Noir"  "Rouge" "Blanc" "Blanc" "Jaune" "Rouge" "Jaune"}
-\CommentTok{#> [19] "Bleu"  "Noir"}
+\CommentTok{#>  [1] "Jaune" "Bleu"  "Bleu"  "Blanc" "Blanc" "Jaune" "Noir"  "Bleu"  "Noir" }
+\CommentTok{#> [10] "Rouge" "Noir"  "Jaune" "Noir"  "Rouge" "Rouge" "Rouge" "Jaune" "Vert" }
+\CommentTok{#> [19] "Jaune" "Rouge"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1754,7 +1754,7 @@ Comptons combien de fois se retrouve chaque modalité dans cette variable.
 \NormalTok{(var4 <-}\StringTok{ }\KeywordTok{table}\NormalTok{(echn))}
 \CommentTok{#> echn}
 \CommentTok{#> Blanc  Bleu Jaune  Noir Rouge  Vert }
-\CommentTok{#>   154   154   166   184   170   172}
+\CommentTok{#>   167   175   160   163   163   172}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1775,7 +1775,7 @@ Nous pouvons également représenter cette même variable sous forme relative. C
 \NormalTok{(var5 <-}\StringTok{ }\NormalTok{var4}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(var4))}
 \CommentTok{#> echn}
 \CommentTok{#> Blanc  Bleu Jaune  Noir Rouge  Vert }
-\CommentTok{#> 0.154 0.154 0.166 0.184 0.170 0.172}
+\CommentTok{#> 0.167 0.175 0.160 0.163 0.163 0.172}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1811,10 +1811,10 @@ Générons 1000 valeurs aléatoires selon une loi gaussienne.
 \begin{Highlighting}[]
 \NormalTok{var6 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DataTypeTok{n =} \DecValTok{1000}\NormalTok{)}
 \NormalTok{var6[}\DecValTok{1}\OperatorTok{:}\DecValTok{20}\NormalTok{]}
-\CommentTok{#>  [1]  0.19359751  0.96029622  0.54074423 -0.72409945  0.75019699 -0.58318593}
-\CommentTok{#>  [7]  1.14004002  0.39983284  0.15731241  0.44523979 -0.57196975  1.33313527}
-\CommentTok{#> [13] -1.33786090  0.26980298  0.69867018  0.47619594  0.01923574 -1.95193093}
-\CommentTok{#> [19] -0.44230633  0.63921757}
+\CommentTok{#>  [1] -0.84662648  0.88428710 -0.61045109  0.40266609  1.10209985  0.09268090}
+\CommentTok{#>  [7]  0.31801968 -0.06017932 -0.97767294 -1.07471188 -0.71395050 -1.01911101}
+\CommentTok{#> [13]  1.69670482 -0.53455813 -0.32133670 -1.43342050 -0.09313099  0.52829319}
+\CommentTok{#> [19] -1.03240366 -0.47266098}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1832,18 +1832,16 @@ De la même manière que pour les boîtes à moustaches, l'argument \texttt{plot
 \begin{Highlighting}[]
 \KeywordTok{hist}\NormalTok{(var6, }\DataTypeTok{plot =} \OtherTok{FALSE}\NormalTok{)}
 \CommentTok{#> $breaks}
-\CommentTok{#>  [1] -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5  4.0}
+\CommentTok{#> [1] -4 -3 -2 -1  0  1  2  3  4}
 \CommentTok{#> }
 \CommentTok{#> $counts}
-\CommentTok{#>  [1]   4  20  35 103 155 205 189 154  82  34  13   3   2   1}
+\CommentTok{#> [1]   5  21 144 335 335 137  20   3}
 \CommentTok{#> }
 \CommentTok{#> $density}
-\CommentTok{#>  [1] 0.008 0.040 0.070 0.206 0.310 0.410 0.378 0.308 0.164 0.068 0.026 0.006}
-\CommentTok{#> [13] 0.004 0.002}
+\CommentTok{#> [1] 0.005 0.021 0.144 0.335 0.335 0.137 0.020 0.003}
 \CommentTok{#> }
 \CommentTok{#> $mids}
-\CommentTok{#>  [1] -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25  2.75}
-\CommentTok{#> [13]  3.25  3.75}
+\CommentTok{#> [1] -3.5 -2.5 -1.5 -0.5  0.5  1.5  2.5  3.5}
 \CommentTok{#> }
 \CommentTok{#> $xname}
 \CommentTok{#> [1] "var6"}
@@ -4211,7 +4209,7 @@ Pour R, une fonction est un bel et bien un objet dont le contenu est finalement 
 \NormalTok{typeof}
 \CommentTok{#> function (x) }
 \CommentTok{#> .Internal(typeof(x))}
-\CommentTok{#> <bytecode: 0x55862bca7a00>}
+\CommentTok{#> <bytecode: 0x55f9145e0bc8>}
 \CommentTok{#> <environment: namespace:base>}
 \end{Highlighting}
 \end{Shaded}
