@@ -1,6 +1,5 @@
 # À propos de R
 
-
 Étant donné l’engouement autour de R depuis les 10 dernières années, on oublie
 que le début de l'histoire remonte au années 70. Dans ce chapitre, nous revenons
 sur la naissance et le développement de R: de S depuis les années 70 jusqu'à la
