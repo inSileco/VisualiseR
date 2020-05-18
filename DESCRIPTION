@@ -1,13 +1,16 @@
 Package: placeholder
 Type: Book
 Title: VisualiseR
+date: 18-04-2020
 Version: 0.0.1
 Imports:
   bookdown,
+  jpeg,
   graphicsutils,
   ggplot2,
   lattice,
   png,
-  showtext
+  showtext,
+  tiff
 Remotes:
   inSileco/graphicsutils

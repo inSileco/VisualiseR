@@ -4,7 +4,7 @@ Voici une solution pour réaliser les figures du précédent chapitre.
 
 ## Partitionnement avancé
 
-```{r eval = FALSE, fig.show="hide"}
+```{r eval = FALSE, fig.show = "hide"}
 ###
 ### CONFIGURATION DU PERIPHERIQUE
 ###
@@ -85,11 +85,11 @@ rect(0, 0, .3, 40, col = "gray", border = par()$col.axis)
 points(x = c(.1, .1), y = c(0, 40), col = "white", type = "l")
 points(x = c(.2, .2), y = c(0, 40), col = "white", type = "l")
 for (i in c(10, 20, 30))
-points(x = c(0, .3), y = c(i, i), type = "l", col = "white")
+  points(x = c(0, .3), y = c(i, i), type = "l", col = "white")
 for (i in seq(.05, .25, by = .1))
-points(y = c(0, 40), x = c(i, i), type = "l", col = "white", lty = 3)
+  points(y = c(0, 40), x = c(i, i), type = "l", col = "white", lty = 3)
 for (i in seq(5, 35, by = 10)){
-points(c(0, .3), c(i, i), type = "l", col = "white", lty = 3)
+  points(c(0, .3), c(i, i), type = "l", col = "white", lty = 3)
 }
 ## Axe principal
 axis(1, pos = 0, at = seq(0, .3, .1), col = par()$col.axis, las = 1, labels = format(seq(0, .3, .1)), font = 2)
@@ -131,7 +131,7 @@ lines(x = c(1, 1.6), y = c(1.0, 1.0), col = "#DC29337D", lwd = 2)
 
 ## Superposition de graphes
 
-```{r eval = FALSE, fig.show="hide"}
+```{r eval = FALSE, fig.show = "hide"}
 ### CONCEPTION DE L'HISTOGRAMME
 ## Empty plot
 par(mar = c(2.5, 2.5, 3, 3), family = "serif", xaxs = "i", yaxs = "i", col.axis = "darkgray", mgp = c(0, 0.6, 0))

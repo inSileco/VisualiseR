@@ -58,7 +58,7 @@ Le degré d'abstraction est poussé encore plus loin et, avec le développement 
 
 
 
-Un autre personnage majeur de ce XVIII^e^ siècle est le mathématicien-philosophe Jean-Henri Lambert. Il est le premier à utiliser les graphiques pour analyser des données empiriques et calculer les pentes de courbes. Il a également développé un système de couleurs pyramidal figurant pour la première fois la notion de saturation. Enfin, il est l'un des premiers à reconnaitre l'utilité des graphiques : _a diagram does incomparably better service here than a table_.
+Un autre personnage majeur de ce XVIII^e^ siècle est le mathématicien-philosophe Jean-Henri Lambert. Il est le premier à utiliser les graphiques pour analyser des données empiriques et calculer les pentes de courbes. Il a également développé un système de couleurs pyramidal figurant pour la première fois la notion de saturation. Enfin, il est l'un des premiers à reconnaître l'utilité des graphiques : _a diagram does incomparably better service here than a table_.
 
 Cependant, ces différentes innovations graphiques étaient restreintes à quelques publications éparses, et il faudra attendre la première moitié du XIX^e^ siècle pour que le graphique statistique et la cartographie thématique se démocratisent et connaissent un essor sans précédent. On estime que vers les années 1850, les principales formes graphiques avaient été inventées.
 
@@ -85,6 +85,8 @@ Figure de proue de cette seconde moitié du XIX^e^ siècle, l'ingénieur civil f
 Les innovations vont se poursuivre jusqu'à la fin du XIX^e^ siècle : carte épidémiologique (Snow, 1855), carte météorologique (Galton, 1861), cartogramme (Levasseur, 1868), diagramme illustrant la notion de corrélation (Galton, 1874), graphique en 3D (Perrozzo, 1880), carte anamorphique (Cheysson, 1888), etc. On assiste à la fin de ce siècle aux premiers inventaires des graphiques : écriture de la _Statistique graphique_ par Émile Levasseur en 1885, publication annuelle des _Albums de statistiques graphiques_ par le Ministère des travaux publics de 1879 à 1897 sous la direction d'Émile Cheysson, synthèse de l'ensemble des graphiques statistiques connus présentée à la _Statistical Society_ de Londres, etc. La fin du XIX^e^ siècle sera donc caractérisée par une large diffusion des méthodes graphiques dans différents sphères publiques.
 
 
+<!-- KC: John snow e.g. https://www.laboiteverte.fr/cette-carte-a-revolutionne-medecine/ -->
+<!-- KC: Grammaire des graohiques -->
 
 
 ### L'âge sombre {#lage-sombre}
@@ -119,7 +121,8 @@ Les innovations vont se poursuivre jusqu'à la fin du XIX^e^ siècle : carte ép
 
 - exploration vs. présentation
 
-<!-- KC: Peut etre parlé de ce qui est fait en terme de data visualisatio un peut partout -->
+<!-- KC: Peut etre parlé de ce qui est fait en terme de data visualisation un peut partout -->
+
 
 
 ## Du bon usage des graphiques {#du-bon-usage-des-graphiques}

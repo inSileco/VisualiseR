@@ -1,3 +1,6 @@
-# Graphiques interactives
+# (PART) Utiliser graphics {-}
 
-Dans cette partie nous aborderons les graphiques interactives via des bibliothèques web. 
+# Graphiques interactives
+<!-- pas vraiment juste interactifs -->
+
+Dans cette partie nous aborderons les graphiques interactives via des bibliothèques web.

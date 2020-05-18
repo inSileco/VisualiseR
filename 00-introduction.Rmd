@@ -1,1 +1,19 @@
 # Introduction
+
+<!-- KC: as-ton besoin d'une intro? Si oui y,a peut-etre des morceaux de l'avant propos a déplacer ici! -->
+
+- Par de nombreux aspects, nous visons dans un âge des données.
+
+- les visualiser est devenu un aspect important que ce soit en science ou dans le traitement de l'actualité.
+
+- Différent langages de programmation offre des libraries de visualisation des données, par example Python et JavaScript. R a ces propres atouts.
+
+- Visualiser les données peut permettre de comprendre mais aussi délivrer un message sur ces dernières. Pour le faire il faut une certaines maîtrise techniques et de la créativité. Sans maîtrise technique, il est difficile de donner corps à sa créativité.
+
+- Ce livre est divisé en quatre parties:
+  1. Dans une première partie, nous donnons des éléments de réflexion générale relative à la visualisation des données et R
+  2. graphics
+  3. grids
+  4. web
+
+ <!-- j'aime pas trop le plan a date... -->

@@ -263,7 +263,7 @@ Intéressons-nous maintenant aux annotations textuelles. Nous distinguerons les 
 La fonction `text()` permet d'insérer du texte dans la région du plot. Il faudra lui fournir les coordonnées en x et en y, ainsi que l'expression textuelle à ajouter. Regardons cela au travers d'un exemple.
 
 ```{r fig.width = 10,fig.height = 5, out.width = '.7\\linewidth'}
-(nom <- letters[1 : length(var1)])
+(nom <- letters[seq_along(var1)])
 par(mfrow = c(1, 2))
 plot(var1, var2, pch = 15)
 plot(var1, var2, type = "n")
@@ -411,64 +411,64 @@ Commençons par définir cette fonction dans R.
 plotimage <- function(file, x = NULL, y = NULL, size = 1, add = FALSE,
 angle = 0, pos = 0, bg = "lightgray", ...){
 if (length(grep(".png", file)) > 0){
-require("png")
-img <- readPNG(file, native = TRUE)
+  require("png")
+  img <- readPNG(file, native = TRUE)
 }
 if (length(grep(".tif", file)) > 0){
-require("tiff")
-img <- readTIFF(file, native = TRUE)
+  require("tiff")
+  img <- readTIFF(file, native = TRUE)
 }
 if (length(grep(".jp", file)) > 0){
-require("jpeg")
-img <- readJPEG(file, native = TRUE)
+  require("jpeg")
+  img <- readJPEG(file, native = TRUE)
 }
 res <- dim(img)[2:1]
 if (add){
-xres <- par()$usr[2] - par()$usr[1]
-yres <- par()$usr[4] - par()$usr[3]
-res <- c(xres, yres)
-}else{
-par(mar = c(1, 1, 1, 1), bg = bg, xaxs = "i", yaxs = "i")
-dims <- c(0, max(res))
-plot(0, type = "n", axes = FALSE, xlim = dims, ann = FALSE,
-ylim = dims, ...)
+  xres <- par()$usr[2] - par()$usr[1]
+  yres <- par()$usr[4] - par()$usr[3]
+  res <- c(xres, yres)
+} else{
+  par(mar = c(1, 1, 1, 1), bg = bg, xaxs = "i", yaxs = "i")
+  dims <- c(0, max(res))
+  plot(0, type = "n", axes = FALSE, xlim = dims, ann = FALSE,
+  ylim = dims, ...)
 }
 if (is.null(x) && is.null(y)){
 if (pos == "center" || pos == 0){
-x <- par()$usr[1]+(par()$usr[2]-par()$usr[1])/2
-y <- par()$usr[3]+(par()$usr[4]-par()$usr[3])/2
+  x <- par()$usr[1]+(par()$usr[2]-par()$usr[1])/2
+  y <- par()$usr[3]+(par()$usr[4]-par()$usr[3])/2
 }
 if (pos == "bottom" || pos == 1){
-x <- par()$usr[1]+(par()$usr[2]-par()$usr[1])/2
-y <- par()$usr[3]+res[2]*size/2
+  x <- par()$usr[1]+(par()$usr[2]-par()$usr[1])/2
+  y <- par()$usr[3]+res[2]*size/2
 }
 if (pos == "left" || pos == 2){
-x <- par()$usr[1]+res[1]*size/2
-y <- par()$usr[3]+(par()$usr[4]-par()$usr[3])/2
+  x <- par()$usr[1]+res[1]*size/2
+  y <- par()$usr[3]+(par()$usr[4]-par()$usr[3])/2
 }
 if (pos == "top" || pos == 3){
-x <- par()$usr[1]+(par()$usr[2]-par()$usr[1])/2
-y <- par()$usr[4]-res[2]*size/2
+  x <- par()$usr[1]+(par()$usr[2]-par()$usr[1])/2
+  y <- par()$usr[4]-res[2]*size/2
 }
 if (pos == "right" || pos == 4){
-x <- par()$usr[2]-res[1]*size/2
-y <- par()$usr[3]+(par()$usr[4]-par()$usr[3])/2
+  x <- par()$usr[2]-res[1]*size/2
+  y <- par()$usr[3]+(par()$usr[4]-par()$usr[3])/2
 }
 if (pos == "bottomleft" || pos == 5){
 x <- par()$usr[1]+res[1]*size/2
 y <- par()$usr[3]+res[2]*size/2
 }
 if (pos == "topleft" || pos == 6){
-x <- par()$usr[1]+res[1]*size/2
-y <- par()$usr[4]-res[2]*size/2
+  x <- par()$usr[1]+res[1]*size/2
+  y <- par()$usr[4]-res[2]*size/2
 }
 if (pos == "topright" || pos == 7){
-x <- par()$usr[2]-res[1]*size/2
-y <- par()$usr[4]-res[2]*size/2
+  x <- par()$usr[2]-res[1]*size/2
+  y <- par()$usr[4]-res[2]*size/2
 }
 if (pos == "bottomright" || pos == 8){
-x <- par()$usr[2]-res[1]*size/2
-y <- par()$usr[3]+res[2]*size/2
+  x <- par()$usr[2]-res[1]*size/2
+  y <- par()$usr[3]+res[2]*size/2
 }
 }
 xx <- res[1]*size/2
