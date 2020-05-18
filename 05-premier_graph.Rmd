@@ -112,7 +112,7 @@ Comptons combien de fois se retrouve chaque modalité dans cette variable.
 
 Visualisons cette nouvelle variable catégorique.
 
-```{r out.width = '.6\\linewidth'}
+```{r out.width = "60%"}
 barplot(var4)
 ```
 
@@ -130,7 +130,7 @@ Il est possible de hachurer les rectangles plutôt que de leur associer une coul
 - `density` : nombre de hachures par pouce;
 - `angle` : orientation des hachures dans le sens trigonométrique.
 Par exemple,
-```{r out.width = '.6\\linewidth'}
+```{r out.width = "60%"}
 barplot(var4, density = c(rep(5, 4), 40, 10), angle = c(0, 45, 90, 135))
 ```
 
@@ -159,7 +159,7 @@ L'argument `breaks` permet de modifier les classes de l'histogramme. Une façon
 simple de procéder consiste à donner le nombre de classes que l'on souhaite
 représenter.
 
-```{r out.width = '.6\\linewidth'}
+```{r out.width = "60%"}
 hist(var6, breaks = 30)
 ```
 
@@ -179,11 +179,11 @@ Finalement, mentionnons que les arguments `density` et `angle` sont aussi dispon
 
 Une alternative au diagramme en bâtons est le diagramme sectoriel (camembert). Regardons ce que ça donne avec les données précédentes (couleurs).
 
-```{r out.width = '.6\\linewidth'}
+```{r out.width = "60%"}
 pie(var4, col = c("white", "blue", "yellow", "black", "red", "green"))
 ```
 
-```{r out.width = '.6\\linewidth'}
+```{r out.width = "60%"}
 pie(rep(1, 250), col = rainbow(250), border = NA, labels = "")
 ```
 

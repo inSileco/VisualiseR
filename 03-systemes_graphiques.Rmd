@@ -6,7 +6,7 @@ R dispose de nombreux outils pour faire un travail approfondi de visualisation
 des données. Lorsque R est installé, nous avons à notre disposition de multiple
 fonctionnalités pour créer, éditer et exporter des figures.
 L'édition de graphique sous R peut être divisé en trois branches : d'un côté
-l'approche développée dans le package _graphics_, celle du package _grid_ (qui inclus ggplot2) et une troisième, hétérogène, qui est l'ensemble des libraries qui utilisent d'autres languages, par exemple, javascript (et ainsi créer des figures dans un navigateur web).
+l'approche développée dans le package _graphics_, celle du package _grid_ (qui inclus ggplot2) et une troisième, hétérogène, qui est l'ensemble des libraries qui utilisent d'autres languages, comme par exemple javascript, (et ainsi créer des figures dans un navigateur web).
 
 
 <!-- KC ici je rajouterais un schéma de comment ça fonctionne -->
@@ -16,7 +16,18 @@ l'approche développée dans le package _graphics_, celle du package _grid_ (qui
 
 ## Le système graphique du package _graphics_
 
-Le package _graphics_ est une implémentation du système graphique historique de _S_. Il s'agit, en effet, de la ré-écriture des fonctionnalités de la bibliothèque GRZ pour les utiliser avec R. Ce travail a été en large partie mené par Ross Ihaka, l'un des deux initiateurs de R. Avec ce package, nous pouvons obtenir en très peu de lignes de commandes des graphiques tout à fait convenable (grâce, par exemple, à la fonction _plot()_). Nous pouvons également travailler par couches successive pour ajouter un à un les éléments du graphiques et obtenir un rendu graphique plus aboutit. l'utilisation de _graphics_ est répandue, simple, intuitive et sa puissance est souvent mésestimée. C'est pour ces raisons que nous avons choisi de la détailler dans ce livre. De manière générale, pour faire un graphique avec ce système on procède en trois étapes\&nbsp:
+Le package _graphics_ est une implémentation du système graphique historique de
+_S_. Il s'agit, en effet, de la ré-écriture des fonctionnalités de la
+bibliothèque GRZ pour les utiliser avec R. Ce travail a été en large partie mené
+par Ross Ihaka, l'un des deux initiateurs de R. Avec ce package, nous pouvons
+obtenir en très peu de lignes de commandes des graphiques tout à fait convenable
+(grâce, par exemple, à la fonction _plot()_). Nous pouvons également travailler
+par couches successive pour ajouter un à un les éléments du graphiques et
+obtenir un rendu graphique plus aboutit. l'utilisation de _graphics_ est
+répandue, simple, intuitive et sa puissance est souvent mésestimée. C'est pour
+ces raisons que nous avons choisi de la détailler dans ce livre. De manière
+générale, pour faire un graphique avec ce système on procède en trois
+étapes\&nbsp:
 
 1. On définit les paramètre graphiques globaux (fonction _par()_ voir chapitre)
 2. On trace le plot ajoute la fonction que nous souhaitons (_plot()_, _boxplot()_,....)
@@ -35,7 +46,7 @@ co-ordonnées polaires.
 
 ## Le système graphique du package _grid_
 
-Le package _grid_, que nous devons à Paul Murrel, est un système graphique puissant qui donne un cadre performant pour développer des graphiques précis. Il y a plusieurs éléments importants sur lesquels nous revenons en annexe. Le premier est le concept de _viewPort_ : il s'agit de zone rectangulaire qui sont définis dans l'espace et avec un système de co-ordonnées. Il est possible d'en utiliser autant que souhaiter, elles peuvent se recouper ou non et posséder des paramètres. C'est en quelques sortes un ensemble très flexibles de calques. Il est possible de naviguer à travers pour placer à tout moment n'importe quel élément du future graphique. Le package _grid_  définis ces propres fonction primitive pour dessiner points lignes et polygones. En plus d'un affichage et contrairement à ce que nous avons dans le package _graphics_, dans _grid_, les objets affichés sont aussi des objets que l'on peut modifier à sa guise. Cela donne au package _grid_ une grande puissance. Il serait bien long de redévolppé chaque graphique avec grid et comparer _graphics_ et _grid_ est un peu bancal en se sens qu'il ne sont pas réellement implémenté et qu'il faut les faire à la main. Néanmoins c'est grâce à sa puissance que sont nés deux autres systèmes de graphique à succès. Le premier est le système développé par Deepayan Sarkar dans le package _lattice_. Le second est une implémentation de la grammaire des graphiques, _ggplot2_ que nous devons à Hadley Wickham. Notez que depuis peu, _grid_ et _graphics_ ont été reliés partiellement grâce au package _gridGraphics_ qui permet d'écrire les fonctions graphics en _grid_.
+Le package _grid_, que nous devons à Paul Murrel, est un système graphique puissant qui donne un cadre performant pour développer des graphiques précis. Il y a plusieurs éléments importants sur lesquels nous revenons en annexe. Le premier est le concept de _viewPort_ : il s'agit de zone rectangulaire qui sont définis dans l'espace et avec un système de co-ordonnées. Il est possible d'en utiliser autant que souhaité, elles peuvent se recouper ou non et posséder des paramètres. C'est en quelques sortes un ensemble très flexibles de calques. Il est possible de naviguer à travers pour placer à tout moment n'importe quel élément du future graphique. Le package _grid_  définis ces propres fonctions primitives pour dessiner points, lignes et polygones. En plus d'un affichage et contrairement à ce que nous avons dans le package _graphics_, dans _grid_, les objets affichés sont aussi des objets que l'on peut modifier à sa guise. Cela donne au package _grid_ une grande puissance. Il serait bien long de redévelopper chaque graphique avec grid et comparer _graphics_ et _grid_ est un peu bancal en se sens qu'il ne sont pas réellement implémenté et qu'il faut les faire à la main. Néanmoins c'est grâce à sa puissance que sont nés deux autres systèmes de graphique à succès. Le premier est le système développé par Deepayan Sarkar dans le package _lattice_. Le second est une implémentation de la grammaire des graphiques de (voir la section précédente), _ggplot2_ que nous devons à Hadley Wickham. Notez que depuis peu, _grid_ et _graphics_ ont été reliés partiellement grâce au package _gridGraphics_ qui permet d'écrire les fonctions graphics en _grid_.
 Ces packages doivent beaucoup au travail de Paul Murrel dont le livre _R graphics_ [ref] et aussi un chapitre sur lattice demeure une référence pour approfondir l'édition de graphiques avec R.
 
 Lorsque les graphiques sont produits que ce soit avec _grid_ ou _graphics_, pour les exporter dans différent format, on fait appel à un troisième package : _grDevices_.
@@ -47,4 +58,4 @@ Les graphiques qui font appel à des bibliothèques JS.
 
 
 
-## Interfcaes
+## Interfaes
