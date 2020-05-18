@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapitre2 Science et graphiques | Visualiser vos données avec R</title>
   <meta name="description" content="Utiliser R pour faire des graphiques." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapitre2 Science et graphiques | Visualiser vos données avec R" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Nicolas Casajus, Kevin Cazelles" />
 
 
-<meta name="date" content="2020-05-14" />
+<meta name="date" content="2020-05-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -169,7 +169,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="les-différents-systèmes-graphiques-dont-r-dispose.html"><a href="les-différents-systèmes-graphiques-dont-r-dispose.html#le-système-graphique-du-package-graphics"><i class="fa fa-check"></i><b>4.2</b> Le système graphique du package <em>graphics</em></a></li>
 <li class="chapter" data-level="4.3" data-path="les-différents-systèmes-graphiques-dont-r-dispose.html"><a href="les-différents-systèmes-graphiques-dont-r-dispose.html#le-système-graphique-du-package-grid"><i class="fa fa-check"></i><b>4.3</b> Le système graphique du package <em>grid</em></a></li>
 <li class="chapter" data-level="4.4" data-path="les-différents-systèmes-graphiques-dont-r-dispose.html"><a href="les-différents-systèmes-graphiques-dont-r-dispose.html#les-graphiques-interactives"><i class="fa fa-check"></i><b>4.4</b> Les graphiques interactives</a></li>
-<li class="chapter" data-level="4.5" data-path="les-différents-systèmes-graphiques-dont-r-dispose.html"><a href="les-différents-systèmes-graphiques-dont-r-dispose.html#interfcaes"><i class="fa fa-check"></i><b>4.5</b> Interfcaes</a></li>
+<li class="chapter" data-level="4.5" data-path="les-différents-systèmes-graphiques-dont-r-dispose.html"><a href="les-différents-systèmes-graphiques-dont-r-dispose.html#interfaes"><i class="fa fa-check"></i><b>4.5</b> Interfaes</a></li>
 </ul></li>
 <li class="part"><span><b>II Utiliser graphics</b></span></li>
 <li class="chapter" data-level="5" data-path="édition-dun-graphique.html"><a href="édition-dun-graphique.html"><i class="fa fa-check"></i><b>5</b> Édition d’un graphique</a><ul>
@@ -236,6 +236,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.2" data-path="ggplot2-in-action.html"><a href="ggplot2-in-action.html#reprendre-ce-qui-a-été-fait-dans-la-partie-1"><i class="fa fa-check"></i><b>14.2</b> Reprendre ce qui a été fait dans la partie 1</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="les-extensions-de-ggplot2.html"><a href="les-extensions-de-ggplot2.html"><i class="fa fa-check"></i><b>15</b> Les extensions de ggplot2</a></li>
+<li class="part"><span><b>IV Utiliser graphics</b></span></li>
 <li class="chapter" data-level="16" data-path="graphiques-interactives.html"><a href="graphiques-interactives.html"><i class="fa fa-check"></i><b>16</b> Graphiques interactives</a></li>
 <li class="chapter" data-level="" data-path="annexe-1-courte-introduction-à-r.html"><a href="annexe-1-courte-introduction-à-r.html"><i class="fa fa-check"></i>Annexe 1 - courte introduction à R</a><ul>
 <li class="chapter" data-level="16.0.1" data-path="annexe-1-courte-introduction-à-r.html"><a href="annexe-1-courte-introduction-à-r.html#les-grands-principes-de-r"><i class="fa fa-check"></i><b>16.0.1</b> Les grands principes de R</a></li>
@@ -302,7 +303,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <img src="img/chap1/priestley.jpg" alt="A new chart of History (Joseph Priestley, 1765, domaine publique)" id="fig:priestley" />
 <p class="caption"><em>A new chart of History</em> (Joseph Priestley, 1765, domaine publique)</p>
 </div>
-<p>Un autre personnage majeur de ce XVIII<sup>e</sup> siècle est le mathématicien-philosophe Jean-Henri Lambert. Il est le premier à utiliser les graphiques pour analyser des données empiriques et calculer les pentes de courbes. Il a également développé un système de couleurs pyramidal figurant pour la première fois la notion de saturation. Enfin, il est l’un des premiers à reconnaitre l’utilité des graphiques : <em>a diagram does incomparably better service here than a table</em>.</p>
+<p>Un autre personnage majeur de ce XVIII<sup>e</sup> siècle est le mathématicien-philosophe Jean-Henri Lambert. Il est le premier à utiliser les graphiques pour analyser des données empiriques et calculer les pentes de courbes. Il a également développé un système de couleurs pyramidal figurant pour la première fois la notion de saturation. Enfin, il est l’un des premiers à reconnaître l’utilité des graphiques : <em>a diagram does incomparably better service here than a table</em>.</p>
 <p>Cependant, ces différentes innovations graphiques étaient restreintes à quelques publications éparses, et il faudra attendre la première moitié du XIX<sup>e</sup> siècle pour que le graphique statistique et la cartographie thématique se démocratisent et connaissent un essor sans précédent. On estime que vers les années 1850, les principales formes graphiques avaient été inventées.</p>
 <p>Un des pionniers de cette époque est William Playfair, ingénieur et économiste écossais, à qui l’on doit l’invention de trois graphiques majeurs constituant l’assise de la statistique graphique moderne : le diagramme en barres (1786), probablement inspiré des frises chronologiques de Priestley, le diagramme circulaire, ou camembert (1801), permettant de représenter les proportions relatives des parties au tout, et le graphique linéaire, ou série temporelle (1786), visualisant l’évolution temporelle d’une variable. Ces graphiques sont, encore aujourd’hui, considérés comme des modèles de clarté (Figure ). En 1876, il publie <em>The Commercial and Political Atlas</em>, premier ouvrage illustré de graphiques statistiques. Ces graphiques, outre le fait d’introduire de nouvelles formes visuelles, superposent plusieurs informations permettant d’établir le rapport entre plusieurs variables. Vingt ans plus tard, Playfair publiera le <em>Statistical Breviary</em> (1801) qui fit découvrir les premiers diagrammes circulaires.</p>
 <div class="figure">
@@ -317,6 +318,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p class="caption">Carte figurative des pertes successives en hommes de l’Armée française dans la campagne de Russie en 1812–1813 (Charles Joseph Minard, 1869, domaine publique)</p>
 </div>
 <p>Les innovations vont se poursuivre jusqu’à la fin du XIX<sup>e</sup> siècle : carte épidémiologique (Snow, 1855), carte météorologique (Galton, 1861), cartogramme (Levasseur, 1868), diagramme illustrant la notion de corrélation (Galton, 1874), graphique en 3D (Perrozzo, 1880), carte anamorphique (Cheysson, 1888), etc. On assiste à la fin de ce siècle aux premiers inventaires des graphiques : écriture de la <em>Statistique graphique</em> par Émile Levasseur en 1885, publication annuelle des <em>Albums de statistiques graphiques</em> par le Ministère des travaux publics de 1879 à 1897 sous la direction d’Émile Cheysson, synthèse de l’ensemble des graphiques statistiques connus présentée à la <em>Statistical Society</em> de Londres, etc. La fin du XIX<sup>e</sup> siècle sera donc caractérisée par une large diffusion des méthodes graphiques dans différents sphères publiques.</p>
+<!-- KC: John snow e.g. https://www.laboiteverte.fr/cette-carte-a-revolutionne-medecine/ -->
+<!-- KC: Grammaire des graohiques -->
 </div>
 <div id="lage-sombre" class="section level3">
 <h3><span class="header-section-number">2.1.3</span> L’âge sombre</h3>
@@ -347,7 +350,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>exploration vs. présentation</li>
 </ul>
-<!-- KC: Peut etre parlé de ce qui est fait en terme de data visualisatio un peut partout -->
+<!-- KC: Peut etre parlé de ce qui est fait en terme de data visualisation un peut partout -->
 </div>
 <div id="du-bon-usage-des-graphiques" class="section level2">
 <h2><span class="header-section-number">2.4</span> Du bon usage des graphiques</h2>

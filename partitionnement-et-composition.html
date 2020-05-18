@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapitre9 Partitionnement et composition | Visualiser vos données avec R</title>
   <meta name="description" content="Utiliser R pour faire des graphiques." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapitre9 Partitionnement et composition | Visualiser vos données avec R" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Nicolas Casajus, Kevin Cazelles" />
 
 
-<meta name="date" content="2020-05-14" />
+<meta name="date" content="2020-05-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -169,7 +169,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="les-différents-systèmes-graphiques-dont-r-dispose.html"><a href="les-différents-systèmes-graphiques-dont-r-dispose.html#le-système-graphique-du-package-graphics"><i class="fa fa-check"></i><b>4.2</b> Le système graphique du package <em>graphics</em></a></li>
 <li class="chapter" data-level="4.3" data-path="les-différents-systèmes-graphiques-dont-r-dispose.html"><a href="les-différents-systèmes-graphiques-dont-r-dispose.html#le-système-graphique-du-package-grid"><i class="fa fa-check"></i><b>4.3</b> Le système graphique du package <em>grid</em></a></li>
 <li class="chapter" data-level="4.4" data-path="les-différents-systèmes-graphiques-dont-r-dispose.html"><a href="les-différents-systèmes-graphiques-dont-r-dispose.html#les-graphiques-interactives"><i class="fa fa-check"></i><b>4.4</b> Les graphiques interactives</a></li>
-<li class="chapter" data-level="4.5" data-path="les-différents-systèmes-graphiques-dont-r-dispose.html"><a href="les-différents-systèmes-graphiques-dont-r-dispose.html#interfcaes"><i class="fa fa-check"></i><b>4.5</b> Interfcaes</a></li>
+<li class="chapter" data-level="4.5" data-path="les-différents-systèmes-graphiques-dont-r-dispose.html"><a href="les-différents-systèmes-graphiques-dont-r-dispose.html#interfaes"><i class="fa fa-check"></i><b>4.5</b> Interfaes</a></li>
 </ul></li>
 <li class="part"><span><b>II Utiliser graphics</b></span></li>
 <li class="chapter" data-level="5" data-path="édition-dun-graphique.html"><a href="édition-dun-graphique.html"><i class="fa fa-check"></i><b>5</b> Édition d’un graphique</a><ul>
@@ -236,6 +236,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.2" data-path="ggplot2-in-action.html"><a href="ggplot2-in-action.html#reprendre-ce-qui-a-été-fait-dans-la-partie-1"><i class="fa fa-check"></i><b>14.2</b> Reprendre ce qui a été fait dans la partie 1</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="les-extensions-de-ggplot2.html"><a href="les-extensions-de-ggplot2.html"><i class="fa fa-check"></i><b>15</b> Les extensions de ggplot2</a></li>
+<li class="part"><span><b>IV Utiliser graphics</b></span></li>
 <li class="chapter" data-level="16" data-path="graphiques-interactives.html"><a href="graphiques-interactives.html"><i class="fa fa-check"></i><b>16</b> Graphiques interactives</a></li>
 <li class="chapter" data-level="" data-path="annexe-1-courte-introduction-à-r.html"><a href="annexe-1-courte-introduction-à-r.html"><i class="fa fa-check"></i>Annexe 1 - courte introduction à R</a><ul>
 <li class="chapter" data-level="16.0.1" data-path="annexe-1-courte-introduction-à-r.html"><a href="annexe-1-courte-introduction-à-r.html#les-grands-principes-de-r"><i class="fa fa-check"></i><b>16.0.1</b> Les grands principes de R</a></li>
@@ -294,7 +295,7 @@ Voici un exemple illustrant l’utilisation de l’argument <code>mfrow</code>.<
 <a class="sourceLine" id="cb107-7" data-line-number="7"><span class="kw">box</span>(<span class="st">&quot;figure&quot;</span>)</a>
 <a class="sourceLine" id="cb107-8" data-line-number="8"><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">30</span>), <span class="dt">pch =</span> <span class="dv">15</span>, <span class="dt">col =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Graphe 4&quot;</span>)</a>
 <a class="sourceLine" id="cb107-9" data-line-number="9"><span class="kw">box</span>(<span class="st">&quot;figure&quot;</span>)</a></code></pre></div>
-<p><img src="visualiseR_files/figure-html/unnamed-chunk-116-1.png" width=".6\linewidth" style="display: block; margin: auto;" /></p>
+<p><img src="visualiseR_files/figure-html/unnamed-chunk-116-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>Avec ces arguments, il est possible d’ignorer une région graphique et de passer à la suivante en utilisant la fonction <code>plot.new()</code>.</p>
 <div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb108-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), <span class="dt">bg =</span> <span class="st">&quot;lightgray&quot;</span>, <span class="dt">las =</span> <span class="dv">1</span>, <span class="dt">family =</span> <span class="st">&quot;serif&quot;</span>)</a>
 <a class="sourceLine" id="cb108-2" data-line-number="2"><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">30</span>), <span class="dt">pch =</span> <span class="dv">15</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Graphe 1&quot;</span>)</a>
@@ -303,7 +304,7 @@ Voici un exemple illustrant l’utilisation de l’argument <code>mfrow</code>.<
 <a class="sourceLine" id="cb108-5" data-line-number="5"><span class="kw">box</span>(<span class="st">&quot;figure&quot;</span>)</a>
 <a class="sourceLine" id="cb108-6" data-line-number="6"><span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">30</span>), <span class="dt">pch =</span> <span class="dv">15</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Graphe 2&quot;</span>)</a>
 <a class="sourceLine" id="cb108-7" data-line-number="7"><span class="kw">box</span>(<span class="st">&quot;figure&quot;</span>)</a></code></pre></div>
-<p><img src="visualiseR_files/figure-html/unnamed-chunk-117-1.png" width=".9\linewidth" style="display: block; margin: auto;" /></p>
+<p><img src="visualiseR_files/figure-html/unnamed-chunk-117-1.png" width="90%" style="display: block; margin: auto;" /></p>
 <p>Nous avons fait le tour des possibilités offertes par ces arguments de la fonction <code>par()</code>. Regardons maintenant des fonctions plus élaborées.</p>
 </div>
 <div id="partitionnement-avancé" class="section level2">
@@ -321,7 +322,7 @@ premier exemple afin de faire connaissance avec cette fonction.</p>
 <a class="sourceLine" id="cb109-4" data-line-number="4"><span class="co">#&gt; [2,]    3    4</span></a>
 <a class="sourceLine" id="cb109-5" data-line-number="5"><span class="kw">layout</span>(mat)</a>
 <a class="sourceLine" id="cb109-6" data-line-number="6"><span class="kw">layout.show</span>(<span class="dt">n =</span> <span class="dv">4</span>)</a></code></pre></div>
-<p><img src="visualiseR_files/figure-html/unnamed-chunk-118-1.png" width=".6\linewidth" style="display: block; margin: auto;" /></p>
+<p><img src="visualiseR_files/figure-html/unnamed-chunk-118-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>La fonction <code>layout.show()</code> permet de visualiser le partitionnement réalisé.
 L’argument <code>n</code> mentionné correspond au nombre de régions graphiques issues du
 partitionnement que l’on souhaite afficher. Par ex., si <code>n</code> avait pris la valeur
@@ -336,7 +337,7 @@ notre cas, le remplissage se fera par ligne. Vérifions.</p>
 <a class="sourceLine" id="cb110-6" data-line-number="6"><span class="kw">rect</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">-1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dt">col =</span> <span class="kw">palette</span>()[i])</a>
 <a class="sourceLine" id="cb110-7" data-line-number="7">}</a>
 <a class="sourceLine" id="cb110-8" data-line-number="8"><span class="kw">box</span>(<span class="st">&quot;outer&quot;</span>)</a></code></pre></div>
-<p><img src="visualiseR_files/figure-html/unnamed-chunk-119-1.png" width=".6\linewidth" style="display: block; margin: auto;" /></p>
+<p><img src="visualiseR_files/figure-html/unnamed-chunk-119-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>Par contre, si on transposait la matrice, le remplissage se ferait en colonnes.
 Ici, le résultat est très similaire à ce que nous aurions obtenu avec les
 arguments <code>mfrow</code> ou <code>mfcol</code>. Cependant, la fonction <code>layout()</code> permet de
@@ -357,7 +358,7 @@ certaines cellules de la matrice possède la même valeur.</p>
 <a class="sourceLine" id="cb112-6" data-line-number="6"><span class="kw">rect</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">-1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dt">col =</span> <span class="kw">palette</span>()[i])</a>
 <a class="sourceLine" id="cb112-7" data-line-number="7">}</a>
 <a class="sourceLine" id="cb112-8" data-line-number="8"><span class="kw">box</span>(<span class="st">&quot;outer&quot;</span>)</a></code></pre></div>
-<p><img src="visualiseR_files/figure-html/unnamed-chunk-121-1.png" width=".6\linewidth" style="display: block; margin: auto;" /></p>
+<p><img src="visualiseR_files/figure-html/unnamed-chunk-121-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>Cependant, nous remarquons que les marges définies ont été modifiées pour les
 régions fusionnées. Ce qui peut être problématique dans la recherche d’un
 alignement vertical des graphes (ce qui est sûrement le cas vu qu’on touche à
@@ -369,7 +370,7 @@ graphiques, alors que le second s’occupera de la hauteur des lignes. Voyons
 cela.</p>
 <div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb113-1" data-line-number="1"><span class="kw">layout</span>(mat, <span class="dt">widths =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>), <span class="dt">heights =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">1</span>))</a>
 <a class="sourceLine" id="cb113-2" data-line-number="2"><span class="kw">layout.show</span>(<span class="dv">4</span>)</a></code></pre></div>
-<p><img src="visualiseR_files/figure-html/unnamed-chunk-123-1.png" width=".6\linewidth" style="display: block; margin: auto;" /></p>
+<p><img src="visualiseR_files/figure-html/unnamed-chunk-123-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>Le premier exercice du chapitre 6 présente une utilisation avancée de la fonction <code>layout()</code> et de tous ses arguments.</p>
 <p>Introduisons maintenant la fonction <code>split.screen()</code>. Celle-ci offre encore plus
 d’interactivité que la fonction <code>layout()</code>. Le partitionnement de la fenêtre
@@ -444,7 +445,7 @@ des précipitations en fonction de l’altitude.</p>
 <a class="sourceLine" id="cb115-12" data-line-number="12"><span class="kw">par</span>(<span class="dt">new =</span> <span class="ot">TRUE</span>)</a>
 <a class="sourceLine" id="cb115-13" data-line-number="13"><span class="kw">plot</span>(x, y2, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">ann =</span> <span class="ot">FALSE</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">30</span>), <span class="dt">axes =</span> <span class="ot">FALSE</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1550</span>))</a>
 <a class="sourceLine" id="cb115-14" data-line-number="14"><span class="kw">axis</span>(<span class="dv">4</span>, <span class="dt">pos =</span> <span class="dv">1550</span>, <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">30</span>, <span class="dv">5</span>), <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">30</span>, <span class="dv">5</span>), <span class="dt">las =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">col.axis =</span> <span class="st">&quot;red&quot;</span>)</a></code></pre></div>
-<p><img src="visualiseR_files/figure-html/unnamed-chunk-126-1.png" width=".6\linewidth" style="display: block; margin: auto;" /></p>
+<p><img src="visualiseR_files/figure-html/unnamed-chunk-126-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>Mise à part l’inclusion de la commande <code>par(new = TRUE)</code>, tout se passe
 normalement. En enlevant cette ligne de code, les graphiques s’afficheraient
 bien (sauf que le second aurait écrasé le premier). Dans le second graphe, nous
@@ -495,7 +496,7 @@ valeurs dans le <code>par()</code> en même temps qu’on modifiera la valeur du
 <a class="sourceLine" id="cb119-18" data-line-number="18"><span class="kw">axis</span>(<span class="dv">3</span>, <span class="kw">seq</span>(<span class="dv">0</span> ,<span class="dv">60</span>, <span class="dv">20</span>), <span class="kw">seq</span>(<span class="dv">0</span> ,<span class="dv">60</span>, <span class="dv">20</span>), <span class="dt">col =</span> <span class="kw">par</span>()<span class="op">$</span>col.axis)</a>
 <a class="sourceLine" id="cb119-19" data-line-number="19"><span class="kw">axis</span>(<span class="dv">4</span>, <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">60</span>, <span class="dv">20</span>), <span class="kw">seq</span>(<span class="dv">0</span> ,<span class="dv">60</span>, <span class="dv">20</span>), <span class="dt">col =</span> <span class="kw">par</span>()<span class="op">$</span>col.axis, <span class="dt">las =</span> <span class="dv">1</span>)</a>
 <a class="sourceLine" id="cb119-20" data-line-number="20"><span class="kw">box</span>(<span class="st">&quot;outer&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;white&quot;</span>)</a></code></pre></div>
-<p><img src="visualiseR_files/figure-html/unnamed-chunk-131-1.png" width=".6\linewidth" style="display: block; margin: auto;" /></p>
+<p><img src="visualiseR_files/figure-html/unnamed-chunk-131-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>Voilà, ce n’est pas plus compliqué. D’ailleurs, si on y réfléchit bien, si on ne
 modifie pas le paramètre <code>fig</code>, on se retrouverait dans le cas de figure vu dans
 la section précédente. Maintenant, si vous vous rappelez la fonction
@@ -527,7 +528,7 @@ pouvez essayer pour voir.</p>
 <a class="sourceLine" id="cb120-19" data-line-number="19"><span class="kw">axis</span>(<span class="dv">1</span>, <span class="dt">at =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">5</span>, <span class="dv">0</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">col =</span> <span class="kw">par</span>()<span class="op">$</span>col.axis)</a>
 <a class="sourceLine" id="cb120-20" data-line-number="20"><span class="kw">axis</span>(<span class="dv">2</span>, <span class="dt">at =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">5</span>, <span class="dv">0</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">col =</span> <span class="kw">par</span>()<span class="op">$</span>col.axis, <span class="dt">las =</span> <span class="dv">1</span>)</a>
 <a class="sourceLine" id="cb120-21" data-line-number="21"><span class="kw">box</span>(<span class="st">&quot;outer&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;white&quot;</span>)</a></code></pre></div>
-<p><img src="visualiseR_files/figure-html/unnamed-chunk-133-1.png" width=".6\linewidth" style="display: block; margin: auto;" /></p>
+<p><img src="visualiseR_files/figure-html/unnamed-chunk-133-1.png" width="60%" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>

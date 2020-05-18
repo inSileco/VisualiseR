@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Annexe 1 - courte introduction à R | Visualiser vos données avec R</title>
   <meta name="description" content="Utiliser R pour faire des graphiques." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Annexe 1 - courte introduction à R | Visualiser vos données avec R" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Nicolas Casajus, Kevin Cazelles" />
 
 
-<meta name="date" content="2020-05-14" />
+<meta name="date" content="2020-05-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -169,7 +169,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="les-différents-systèmes-graphiques-dont-r-dispose.html"><a href="les-différents-systèmes-graphiques-dont-r-dispose.html#le-système-graphique-du-package-graphics"><i class="fa fa-check"></i><b>4.2</b> Le système graphique du package <em>graphics</em></a></li>
 <li class="chapter" data-level="4.3" data-path="les-différents-systèmes-graphiques-dont-r-dispose.html"><a href="les-différents-systèmes-graphiques-dont-r-dispose.html#le-système-graphique-du-package-grid"><i class="fa fa-check"></i><b>4.3</b> Le système graphique du package <em>grid</em></a></li>
 <li class="chapter" data-level="4.4" data-path="les-différents-systèmes-graphiques-dont-r-dispose.html"><a href="les-différents-systèmes-graphiques-dont-r-dispose.html#les-graphiques-interactives"><i class="fa fa-check"></i><b>4.4</b> Les graphiques interactives</a></li>
-<li class="chapter" data-level="4.5" data-path="les-différents-systèmes-graphiques-dont-r-dispose.html"><a href="les-différents-systèmes-graphiques-dont-r-dispose.html#interfcaes"><i class="fa fa-check"></i><b>4.5</b> Interfcaes</a></li>
+<li class="chapter" data-level="4.5" data-path="les-différents-systèmes-graphiques-dont-r-dispose.html"><a href="les-différents-systèmes-graphiques-dont-r-dispose.html#interfaes"><i class="fa fa-check"></i><b>4.5</b> Interfaes</a></li>
 </ul></li>
 <li class="part"><span><b>II Utiliser graphics</b></span></li>
 <li class="chapter" data-level="5" data-path="édition-dun-graphique.html"><a href="édition-dun-graphique.html"><i class="fa fa-check"></i><b>5</b> Édition d’un graphique</a><ul>
@@ -236,6 +236,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.2" data-path="ggplot2-in-action.html"><a href="ggplot2-in-action.html#reprendre-ce-qui-a-été-fait-dans-la-partie-1"><i class="fa fa-check"></i><b>14.2</b> Reprendre ce qui a été fait dans la partie 1</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="les-extensions-de-ggplot2.html"><a href="les-extensions-de-ggplot2.html"><i class="fa fa-check"></i><b>15</b> Les extensions de ggplot2</a></li>
+<li class="part"><span><b>IV Utiliser graphics</b></span></li>
 <li class="chapter" data-level="16" data-path="graphiques-interactives.html"><a href="graphiques-interactives.html"><i class="fa fa-check"></i><b>16</b> Graphiques interactives</a></li>
 <li class="chapter" data-level="" data-path="annexe-1-courte-introduction-à-r.html"><a href="annexe-1-courte-introduction-à-r.html"><i class="fa fa-check"></i>Annexe 1 - courte introduction à R</a><ul>
 <li class="chapter" data-level="16.0.1" data-path="annexe-1-courte-introduction-à-r.html"><a href="annexe-1-courte-introduction-à-r.html#les-grands-principes-de-r"><i class="fa fa-check"></i><b>16.0.1</b> Les grands principes de R</a></li>
@@ -277,7 +278,7 @@ sur les trois principes fondamentaux de R pour aller plus loin dans
 la compréhension des mécanismes d’extension de R:</p>
 <ol style="list-style-type: decimal">
 <li><strong>objet</strong>: tout ce qui existe dans R est un objet;</li>
-<li><strong>function</strong>: tout ce qui se passe dans R est un appelle à une fonction;</li>
+<li><strong>function</strong>: tout ce qui se passe dans R est un appel à une fonction;</li>
 <li><strong>interface</strong>: les interfaces avec les autres software sont une partie de R.</li>
 </ol>
 <!-- KC: SOIT ON LE LAISSE EN ANNEXE SOIT ON EN FAIT UN CHAPITRE MAIS MON
@@ -291,16 +292,17 @@ correctement les requêtes et donc maîtriser la syntaxe de ce langage. Aussi,
 pour améliorer ces compétences il faut enrichir son vocabulaire (en augmentant
 ses connaissance des fonctions et packages disponibles) et creuser la question
 du fonctionnement de R (et se confronter à des questions plus techniques).</p>
-<p>L’objectif de cette annexe est de familiariser le lecteur néophyte avec
-la syntaxe de R en utilisant des exemples de lignes de commande que nous
-commentons. Nous discutons brièvement de quelques principes fondamentaux
-du langage et nous couvrons un vocabulaire très limité (nous mentionnons un
-nombre restreint de fonctions et d’opérateurs). Cette annexe a été conçu pour
-rendre l’ouvrage autonome. Cependant, cette annexe ne peut constituer à elle
-seule une introduction au langage R. C’est pourquoi, nous vous recommandons
-vivement de consulter les trois premiers chapitres de <em>R et espace</em>
-(REF+ouvrage disponible sur le site de Framabook <a href="https://framabook.org/r-et-espace/" class="uri">https://framabook.org/r-et-espace/</a>),
-et le manuel <em>R pour les débutants</em> d’Emmanuel Paradis (REF+disponible sur le CRAN <a href="https://cran.r-project.org/doc/contrib/Paradis-rdebuts_fr.pdf" class="uri">https://cran.r-project.org/doc/contrib/Paradis-rdebuts_fr.pdf</a>).</p>
+<p>L’objectif de cette annexe est de familiariser le lecteur néophyte avec la
+syntaxe de R en utilisant des exemples de lignes de commande que nous
+commentons. Nous discutons brièvement de quelques principes fondamentaux du
+langage et nous couvrons un vocabulaire très limité (nous mentionnons un nombre
+restreint de fonctions et d’opérateurs). Cette annexe a été conçu pour rendre
+l’ouvrage autonome. Cependant, cette annexe ne peut constituer à elle seule une
+introduction au langage R. C’est pourquoi, nous vous recommandons vivement de
+consulter les trois premiers chapitres de <em>R et espace</em> (REF+ouvrage disponible
+sur le site de Framabook <a href="https://framabook.org/r-et-espace/" class="uri">https://framabook.org/r-et-espace/</a>), et le manuel <em>R
+pour les débutants</em> d’Emmanuel Paradis (REF+disponible sur le CRAN
+<a href="https://cran.r-project.org/doc/contrib/Paradis-rdebuts_fr.pdf" class="uri">https://cran.r-project.org/doc/contrib/Paradis-rdebuts_fr.pdf</a>).</p>
 </div>
 <div id="première-commande" class="section level2 unnumbered">
 <h2>Première commande</h2>
@@ -318,14 +320,14 @@ et finalement le résultat de cette opération va être associé à la variable
 a été alloué pour y inclure la variable (incluant son nom et sa valeur) et la
 variable est disponible dans la session de R.</p>
 <p>Il est important de noter dès maintenant que les noms donnés aux variables sont
-soumis à deux contraintes. Premièrement, un nom de variable doit systématiquement
-commencer par une lettre latine (minuscule ou majuscule) ou un point (“.”).
-Deuxièmement, le reste du nom peut-être formé par des lettres latines (minuscules
-ou majuscules), des chiffres, des points (“.”) et des tirets-bas (“_”). Pour
-ne pas se perdre dans les noms de vos variables, il est préférable de rester
-concis et aussi explicite que possible. Notez que si un nom de variable est
-utilisé dans la console alors que la variable n’a pas été définie, un message
-d’erreur est retourné.</p>
+soumis à deux contraintes. Premièrement, un nom de variable doit
+systématiquement commencer par une lettre latine (minuscule ou majuscule) ou un
+point (“.”). Deuxièmement, le reste du nom peut-être formé par des lettres
+latines (minuscules ou majuscules), des chiffres, des points (“.”) et des
+tirets-bas (“_”). Pour ne pas se perdre dans les noms de vos variables, il est
+préférable de rester concis et aussi explicite que possible. Notez que si un nom
+de variable est utilisé dans la console alors que la variable n’a pas été
+définie, un message d’erreur est retourné.</p>
 <div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb128-1" data-line-number="1">var0</a>
 <a class="sourceLine" id="cb128-2" data-line-number="2"><span class="co">#&gt; Error in eval(expr, envir, enclos): object &#39;var0&#39; not found</span></a></code></pre></div>
 <p>Si nous rappelons maintenant l’objet <code>var1</code>, il est correctement afficher :</p>
@@ -373,7 +375,11 @@ objet. Pour R, tout est objet, depuis les nombres jusqu’aux fonctions. Pour fa
 <a class="sourceLine" id="cb134-8" data-line-number="8"><span class="co">#&gt; [1] &quot;logical&quot;</span></a>
 <a class="sourceLine" id="cb134-9" data-line-number="9"><span class="co">#&gt; [1] &quot;integer&quot;</span></a>
 <a class="sourceLine" id="cb134-10" data-line-number="10"><span class="co">#&gt; [1] &quot;double&quot;</span></a></code></pre></div>
-<p>Ces objets sont en fait des vecteurs de différents types et de taille 1. Un vecteur est constitué d’un ou plusieurs éléments de même nature. Il sont construits avec la fonction <code>c()</code>. La taille des vecteurs peut être retournée avec <code>length()</code>. Noter que dans la suite, on ajoute des parenthèses à une ligne donnée pour pouvoir afficher le résulat de l’assignation :</p>
+<p>Ces objets sont en fait des vecteurs de différents types et de taille 1. Un
+vecteur est constitué d’un ou plusieurs éléments de même nature. Il sont
+construits avec la fonction <code>c()</code>. La taille des vecteurs peut être retournée
+avec <code>length()</code>. Noter que dans la suite, on ajoute des parenthèses à une ligne
+donnée pour pouvoir afficher le résultat de l’assignation :</p>
 <div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb135-1" data-line-number="1">(var7 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">9</span>))</a>
 <a class="sourceLine" id="cb135-2" data-line-number="2"><span class="kw">typeof</span>(var7)</a>
 <a class="sourceLine" id="cb135-3" data-line-number="3"><span class="kw">length</span>(var7)</a>
@@ -386,7 +392,12 @@ objet. Pour R, tout est objet, depuis les nombres jusqu’aux fonctions. Pour fa
 <a class="sourceLine" id="cb135-10" data-line-number="10"><span class="co">#&gt; [1] &quot;aa&quot; &quot;ab&quot; &quot;ac&quot; &quot;ad&quot;</span></a>
 <a class="sourceLine" id="cb135-11" data-line-number="11"><span class="co">#&gt; [1] &quot;character&quot;</span></a>
 <a class="sourceLine" id="cb135-12" data-line-number="12"><span class="co">#&gt; [1] 4</span></a></code></pre></div>
-<p>Un ensemble d’objet de même nature peut être contenu dans un tableau doublement indexé, c’est ce qu’on appelle une matrice. Les matrices peuvent être créées à l’aide de la fonction <code>matrix()</code>. Les tableaux peuvent même être indexés dans un nombre quelconque de dimensions grâce aux objets “array” créés avec la fonction <code>array()</code>. Pour appeler une des valeurs de ces tableaux, on utilise les crochets, comme nous le montrons ci-dessous :</p>
+<p>Un ensemble d’objet de même nature peut être contenu dans un tableau doublement
+indexé, c’est ce qu’on appelle une matrice. Les matrices peuvent être créées à
+l’aide de la fonction <code>matrix()</code>. Les tableaux peuvent même être indexés dans un
+nombre quelconque de dimensions grâce aux objets “array” créés avec la fonction
+<code>array()</code>. Pour appeler une des valeurs de ces tableaux, on utilise les
+crochets, comme nous le montrons ci-dessous :</p>
 <div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb136-1" data-line-number="1">var9 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data=</span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">9</span>), <span class="dt">ncol=</span><span class="dv">2</span>, <span class="dt">nrow=</span><span class="dv">3</span>)</a>
 <a class="sourceLine" id="cb136-2" data-line-number="2">var9[<span class="dv">1</span>,<span class="dv">2</span>]</a>
 <a class="sourceLine" id="cb136-3" data-line-number="3">var9[<span class="dv">1</span>,]</a>
@@ -395,7 +406,10 @@ objet. Pour R, tout est objet, depuis les nombres jusqu’aux fonctions. Pour fa
 <a class="sourceLine" id="cb136-6" data-line-number="6"><span class="co">#&gt; [1] 6</span></a>
 <a class="sourceLine" id="cb136-7" data-line-number="7"><span class="co">#&gt; [1] 3 6</span></a>
 <a class="sourceLine" id="cb136-8" data-line-number="8"><span class="co">#&gt; [1] 2</span></a></code></pre></div>
-<p>Un dernier objet permet de rassembler des objets de nature différentes, il s’agit des listes, pour accéder à l’un de ces objets, on utilise le double crochet et si on souhaite accéder à un objet en particulier dans la liste, on ajoute un crochet.</p>
+<p>Un dernier objet permet de rassembler des objets de nature différentes, il
+s’agit des listes, pour accéder à l’un de ces objets, on utilise le double
+crochet et si on souhaite accéder à un objet en particulier dans la liste, on
+ajoute un crochet.</p>
 <div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb137-1" data-line-number="1">(var11 &lt;-<span class="st"> </span><span class="kw">list</span>(var7,var2,var8))</a>
 <a class="sourceLine" id="cb137-2" data-line-number="2"><span class="kw">typeof</span>(var11)</a>
 <a class="sourceLine" id="cb137-3" data-line-number="3">var11[[<span class="dv">2</span>]]</a>
@@ -412,25 +426,32 @@ objet. Pour R, tout est objet, depuis les nombres jusqu’aux fonctions. Pour fa
 <a class="sourceLine" id="cb137-14" data-line-number="14"><span class="co">#&gt; [1] &quot;list&quot;</span></a>
 <a class="sourceLine" id="cb137-15" data-line-number="15"><span class="co">#&gt; [1] 83</span></a>
 <a class="sourceLine" id="cb137-16" data-line-number="16"><span class="co">#&gt; [1] &quot;ab&quot;</span></a></code></pre></div>
-<p>Nous avons vu les objets de bases les plus importants. Parmi les objets les plus utilisés de R, il y a les “dataframe”. Il s’agit d’objets de type S3, construits avec l’utilisation de la fonction .</p>
+<p>Nous avons vu les objets de bases les plus importants. Parmi les objets les plus
+utilisés de R, il y a les “dataframe”. Il s’agit d’objets de type S3, construits
+avec l’utilisation de la fonction .</p>
 <div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb138-1" data-line-number="1">(var12 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(var7,<span class="dt">Format=</span><span class="kw">c</span>(<span class="st">&quot;A1&quot;</span>,<span class="st">&quot;A2&quot;</span>,</a>
 <a class="sourceLine" id="cb138-2" data-line-number="2">  <span class="st">&quot;A3&quot;</span>)))</a>
 <a class="sourceLine" id="cb138-3" data-line-number="3"><span class="co">#&gt;   var7 Format</span></a>
 <a class="sourceLine" id="cb138-4" data-line-number="4"><span class="co">#&gt; 1    2     A1</span></a>
 <a class="sourceLine" id="cb138-5" data-line-number="5"><span class="co">#&gt; 2    4     A2</span></a>
 <a class="sourceLine" id="cb138-6" data-line-number="6"><span class="co">#&gt; 3    9     A3</span></a></code></pre></div>
-<p>Ces objets sont finalement des tableaux dont les colonnes sont des vecteurs. C’est un format très pratique pour travailler sur les données. L’utilisation du  vous pernet d’accéder à l’un de ces vecteurs, en utilisant le nom de la colonne :</p>
+<p>Ces objets sont finalement des tableaux dont les colonnes sont des vecteurs.
+C’est un format très pratique pour travailler sur les données. L’utilisation du
+<code>\$</code> vous permet d’accéder à l’un de ces vecteurs, en utilisant le nom de
+la colonne :</p>
 <div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb139-1" data-line-number="1">var12<span class="op">$</span>var7</a>
 <a class="sourceLine" id="cb139-2" data-line-number="2"><span class="co">#&gt; [1] 2 4 9</span></a></code></pre></div>
-<p>Vous pouvez également utiliser les crochets pour accéder aux différents éléments, comme dans une matrice. Un dernier détail pur savoir s’il s’agit d’un objet S3 ou S4 on utilise la fonction , si elle retourne “TRUE”, alors il s’agit d’un objet S3 ou S4. Nous l’utilisons sur notre “matrix” et notre “data.frame”.</p>
+<p>Vous pouvez également utiliser les crochets pour accéder aux différents éléments, comme dans une matrice. Un dernier détail pur savoir s’il s’agit d’un objet S3 ou S4 on utilise la fonction <code>is.object()</code>, si elle retourne <code>TRUE</code>, alors il s’agit d’un objet S3 ou S4. Nous l’utilisons sur notre <code>matrix</code> et notre <code>data.frame</code>.</p>
 <div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb140-1" data-line-number="1"><span class="kw">is.object</span>(var9)</a>
 <a class="sourceLine" id="cb140-2" data-line-number="2"><span class="kw">is.object</span>(var12)</a>
 <a class="sourceLine" id="cb140-3" data-line-number="3"><span class="co">#&gt; [1] FALSE</span></a>
 <a class="sourceLine" id="cb140-4" data-line-number="4"><span class="co">#&gt; [1] TRUE</span></a></code></pre></div>
-<p>Pour ces objets conposites, une notion imprtante est la classe de l’objet c’est-à-dire l’espèce à laquelle cet objet appartient. Pour le savoir, il suffit d’utiliser la fonction <code>class()</code>.</p>
+<p>Pour ces objets composites, une notion importante est la classe de l’objet c’est-à-dire l’espèce à laquelle cet objet appartient. Pour le savoir, il suffit d’utiliser la fonction <code>class()</code>.</p>
 <div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb141-1" data-line-number="1"><span class="kw">class</span>(var12)</a>
 <a class="sourceLine" id="cb141-2" data-line-number="2"><span class="co">#&gt; [1] &quot;data.frame&quot;</span></a></code></pre></div>
-<p>C’est grâce à la classe que R reconnait les objets composés. En fait, il est très facile de créer un objet S3 personnalisé dans R grâce à la fonction <code>structure()</code> :</p>
+<p>C’est grâce à la classe que R reconnaît les objets composés. En fait, il est
+très facile de créer un objet S3 personnalisé dans R grâce à la fonction
+<code>structure()</code> :</p>
 <div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb142-1" data-line-number="1">(</a>
 <a class="sourceLine" id="cb142-2" data-line-number="2">  var13 &lt;-<span class="st"> </span><span class="kw">structure</span>(</a>
 <a class="sourceLine" id="cb142-3" data-line-number="3">  <span class="kw">list</span>(</a>
@@ -451,12 +472,16 @@ objet. Pour R, tout est objet, depuis les nombres jusqu’aux fonctions. Pour fa
 <a class="sourceLine" id="cb142-18" data-line-number="18"><span class="co">#&gt; [1] &quot;monobjet&quot;</span></a></code></pre></div>
 <div id="conditions" class="section level3 unnumbered">
 <h3>Conditions</h3>
-<p>Lorsqu’on utilise un langage de programmation, on a souvent besoin de comparer des valeurs. Pour cela, on utilise des tests logiques. Il s’agit de comparaisons entre deux objets dont le résultat est soit “TRUE” (vrai) soit “FALSE” (faux).</p>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb143-1" data-line-number="1">var1<span class="op">==</span><span class="dv">85</span></a>
-<a class="sourceLine" id="cb143-2" data-line-number="2">var1<span class="op">&lt;</span><span class="dv">50</span></a>
-<a class="sourceLine" id="cb143-3" data-line-number="3">var1<span class="op">&gt;</span><span class="dv">50</span></a>
-<a class="sourceLine" id="cb143-4" data-line-number="4">var1<span class="op">!=</span><span class="dv">45</span></a></code></pre></div>
-<p>Avec R, les tests sont élargis à différents type d’objet. Par exemple, les cpmparaisons peuvent aussi se faire sur les lettres, c’est alors une question d’ordre alphabétique :</p>
+<p>Lorsqu’on utilise un langage de programmation, on a souvent besoin de comparer
+des valeurs. Pour cela, on utilise des tests logiques. Il s’agit de comparaisons
+entre deux objets dont le résultat est soit “TRUE” (vrai) soit “FALSE” (faux).</p>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb143-1" data-line-number="1">var1 <span class="op">==</span><span class="st"> </span><span class="dv">85</span></a>
+<a class="sourceLine" id="cb143-2" data-line-number="2">var1 <span class="op">&lt;</span><span class="st"> </span><span class="dv">50</span></a>
+<a class="sourceLine" id="cb143-3" data-line-number="3">var1 <span class="op">&gt;</span><span class="st"> </span><span class="dv">50</span></a>
+<a class="sourceLine" id="cb143-4" data-line-number="4">var1 <span class="op">!=</span><span class="st"> </span><span class="dv">45</span></a></code></pre></div>
+<p>Avec R, les tests sont élargis à différents types d’objet. Par exemple, les
+comparaisons peuvent aussi se faire sur les lettres, c’est alors une question
+d’ordre alphabétique :</p>
 <div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb144-1" data-line-number="1"><span class="st">&quot;a&quot;</span><span class="op">&gt;</span><span class="st">&quot;b&quot;</span></a>
 <a class="sourceLine" id="cb144-2" data-line-number="2"><span class="co">#&gt; [1] FALSE</span></a>
 <a class="sourceLine" id="cb144-3" data-line-number="3"><span class="st">&quot;bestiaire&quot;</span><span class="op">&lt;</span><span class="st">&quot;bestiole&quot;</span></a>
@@ -479,7 +504,7 @@ La fonction <code>print()</code> permet d’afficher un objet, ici ce sont des c
 </div>
 <div id="boucles" class="section level3 unnumbered">
 <h3>Boucles</h3>
-<p>Lorsqu’on fait des analyses, il se peut qu’on répète plusieurs fois les mêmes opérations mais pour des données différentes, par exemple pour les différentes colonnes d’un tableux. Dans ce cas, nous utilisons des boucles. Il existe les boucles <code>for</code> et les boucles <code>while</code>. Les boucles <code>for</code> consiste en une itération de commande sur un ensemble de valeurs pré-déterminée.</p>
+<p>Lorsqu’on fait des analyses, il se peut qu’on répète plusieurs fois les mêmes opérations mais pour des données différentes, par exemple pour les différentes colonnes d’un tableaux. Dans ce cas, nous utilisons des boucles. Il existe les boucles <code>for</code> et les boucles <code>while</code>. Les boucles <code>for</code> consiste en une itération de commande sur un ensemble de valeurs pré-déterminée.</p>
 <div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb147-1" data-line-number="1"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) <span class="kw">print</span>(i)</a>
 <a class="sourceLine" id="cb147-2" data-line-number="2"><span class="co">#&gt; [1] 1</span></a>
 <a class="sourceLine" id="cb147-3" data-line-number="3"><span class="co">#&gt; [1] 2</span></a>
@@ -494,7 +519,7 @@ Comme nous l’avons mentionné plus tôt, R dispose d’une structure très fle
 <a class="sourceLine" id="cb148-6" data-line-number="6"><span class="co">#&gt; [1] 4</span></a>
 <a class="sourceLine" id="cb148-7" data-line-number="7"><span class="co">#&gt; [1] 64</span></a>
 <a class="sourceLine" id="cb148-8" data-line-number="8"><span class="co">#&gt; [1] 100</span></a></code></pre></div>
-<p>Au contraire des boules <code>for</code>, les boucles <code>while</code> répètent des instructions pour un ensemble de valeur qui n’est pas pré-déterminé. Les instructions sont répétées indéfniment (donc méfiance avec ces boucles) tant qu’une condition n’est pas respectée.</p>
+<p>Au contraire des boules <code>for</code>, les boucles <code>while</code> répètent des instructions pour un ensemble de valeur qui n’est pas pré-déterminé. Les instructions sont répétées indéfiniment (donc méfiance avec ces boucles) tant qu’une condition n’est pas respectée.</p>
 <div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb149-1" data-line-number="1">d &lt;-<span class="st"> </span><span class="dv">3</span></a>
 <a class="sourceLine" id="cb149-2" data-line-number="2">i &lt;-<span class="st"> </span><span class="dv">0</span></a>
 <a class="sourceLine" id="cb149-3" data-line-number="3"><span class="cf">while</span> (i<span class="op">&lt;</span>d) {</a>
@@ -509,7 +534,7 @@ Comme nous l’avons mentionné plus tôt, R dispose d’une structure très fle
 </div>
 <div id="les-fonctions" class="section level3 unnumbered">
 <h3>Les fonctions</h3>
-<p>De manière générale, en informatique, une fonction est un ensemble de lignes de code dédié à la réalisation d’une tâche spécifique concrétisée par le renvoie d’une valeur (un objet dans R). Nous avons jusqu’ici déjà utiliser différentes fonctions. Le lecteur attentif a certainement remarqué que les fonctions de R présentent toutes une structure commune: elles commençent par une suite de caractères (son nom) suivie de parenthèses à l’intérieur desquelles se trouvent éventuellement un ou plusieurs arguments. Les arguments sont des objets transmis à la fonction qui seront soient ceux manipuler soit précise comment la tâche doit être effectuées. Par exemple, quand nous avons utilisé la ligne :</p>
+<p>De manière générale, en informatique, une fonction est un ensemble de lignes de code dédié à la réalisation d’une tâche spécifique concrétisée par le renvoie d’une valeur (un objet dans R). Nous avons jusqu’ici déjà utiliser différentes fonctions. Le lecteur attentif a certainement remarqué que les fonctions de R présentent toutes une structure commune: elles commencent par une suite de caractères (son nom) suivie de parenthèses à l’intérieur desquelles se trouvent éventuellement un ou plusieurs arguments. Les arguments sont des objets transmis à la fonction qui seront soient ceux manipuler soit précise comment la tâche doit être effectuées. Par exemple, quand nous avons utilisé la ligne :</p>
 <div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb150-1" data-line-number="1">var9 &lt;-<span class="st"> </span><span class="kw">matrix</span>(</a>
 <a class="sourceLine" id="cb150-2" data-line-number="2">  <span class="dt">data=</span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">9</span>),</a>
 <a class="sourceLine" id="cb150-3" data-line-number="3">  <span class="dt">ncol=</span><span class="dv">2</span>,</a>
@@ -545,26 +570,36 @@ Dans R, c’est un objet qui est retourné que nous pouvons passer à une variab
 <div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb153-1" data-line-number="1">typeof</a>
 <a class="sourceLine" id="cb153-2" data-line-number="2"><span class="co">#&gt; function (x) </span></a>
 <a class="sourceLine" id="cb153-3" data-line-number="3"><span class="co">#&gt; .Internal(typeof(x))</span></a>
-<a class="sourceLine" id="cb153-4" data-line-number="4"><span class="co">#&gt; &lt;bytecode: 0x55f6dbbc1c10&gt;</span></a>
+<a class="sourceLine" id="cb153-4" data-line-number="4"><span class="co">#&gt; &lt;bytecode: 0x55f6ef7f5878&gt;</span></a>
 <a class="sourceLine" id="cb153-5" data-line-number="5"><span class="co">#&gt; &lt;environment: namespace:base&gt;</span></a></code></pre></div>
-<p>Cette remarque vous facilitera la compréhension des messages d’erreur : lorsque R parle d’un objet de type “closure” il parle d’une fonction. R est un langage ou votre efficacité repose très fortement sur votre vocabulaire. Pour engranger rapidement un grand nombre de fonctions, la compilation de fonctions proposées par sur le site du CRAN est très utile. Toutes fonctions de R sont assorties d’une documentation qui vous explique, en anglais, comment l’uitliser. Pour y accéder, l’utilisateur a deux possibilités, précéder par un  le nom de la fonction ou utiliser la fonction <code>help()</code>, cette dernière permet des recherche plus détaillée.</p>
+<p>Cette remarque vous facilitera la compréhension des messages d’erreur : lorsque
+R parle d’un objet de type “closure” il parle d’une fonction. R est un langage
+ou votre efficacité repose très fortement sur votre vocabulaire. Pour engranger
+rapidement un grand nombre de fonctions, la compilation de fonctions proposées
+par sur le site du CRAN est très utile. Toutes fonctions de R sont assorties
+d’une documentation qui vous explique, en anglais, comment l’utiliser. Pour y
+accéder, l’utilisateur a deux possibilités, précéder par un  le nom de
+la fonction ou utiliser la fonction <code>help()</code>, cette dernière permet des
+recherche plus détaillée.</p>
 <div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb154-1" data-line-number="1">?matrix</a>
 <a class="sourceLine" id="cb154-2" data-line-number="2"><span class="kw">help</span>(matrix)</a></code></pre></div>
-<p>Les fonctions de R sont très flexible. Avec les arguments par défaut qui permettent de ne pas utiliser l’ensemble des arguments, il y a aussi l’argument sous forme de “…” qui permet de passer des arguments supplémentaires. Ces arguments sont utilisésconne argument de fonctions utilisée à l’intérieur d’une fonction donnée. C’est une utilisation très fréquent dans R.</p>
-<p>En utilisant R, on est facilement amené à créer nos propres fonctions, c’est-à-dire des objets de type “closure”. Dans l’exemple ci-dessous, nous créons la fonction <code>affine()</code> qui a trois arguments. Le premier n’a pas de valeur par défaut, l’utilsateur est obligé de le spécifier, pour les deux autres, nous avons ajouté des valeurs par défaut, l’utilisateur à le choix de les changer</p>
+<p>Les fonctions de R sont très flexible. Avec les arguments par défaut qui permettent de ne pas utiliser l’ensemble des arguments, il y a aussi l’argument sous forme de “…” qui permet de passer des arguments supplémentaires. Ces arguments sont utilisés comme argument de fonctions utilisée à l’intérieur d’une fonction donnée. C’est une utilisation très fréquent dans R.</p>
+<p>En utilisant R, on est facilement amené à créer nos propres fonctions, c’est-à-dire des objets de type “closure”. Dans l’exemple ci-dessous, nous créons la fonction <code>affine()</code> qui a trois arguments. Le premier n’a pas de valeur par défaut, l’utilisateur est obligé de le spécifier, pour les deux autres, nous avons ajouté des valeurs par défaut, l’utilisateur à le choix de les changer</p>
 <div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb155-1" data-line-number="1">  affine &lt;-<span class="st"> </span><span class="cf">function</span>(x,<span class="dt">a=</span><span class="dv">1</span>,<span class="dt">b=</span><span class="dv">0</span>){</a>
 <a class="sourceLine" id="cb155-2" data-line-number="2">    y &lt;-<span class="st"> </span>a<span class="op">*</span>x<span class="op">+</span>b</a>
 <a class="sourceLine" id="cb155-3" data-line-number="3">    <span class="kw">return</span>(y)</a>
 <a class="sourceLine" id="cb155-4" data-line-number="4">  }</a></code></pre></div>
 <p>Dans une fonction, il n’est pas nécessaire d’écrire tous les noms d’arguments utilisés, nous pouvons simplement indiquer les valeurs. Dans ce cas, l’ordre des valeurs doit être l’ordre des arguments.</p>
 <div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb156-1" data-line-number="1"><span class="kw">affine</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">3</span>)</a></code></pre></div>
-<p>L’exemple suivant montre comment profiter des arguments supplémentaires, “…”. Nous créons la fonction <code>affinen()</code> qui retourne la valeur de la fonction affine à la puissance n. Nous pourions ré-écrire l’ensemble des paramètre de la fonction affine mais nous pouvons aussi utiliser les “…”, de la sorte :</p>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb157-1" data-line-number="1">  affinen &lt;-<span class="st"> </span><span class="cf">function</span>(..., <span class="dt">pow=</span><span class="dv">2</span>){</a>
-<a class="sourceLine" id="cb157-2" data-line-number="2">    y &lt;-<span class="st"> </span><span class="kw">affine</span>(...)</a>
-<a class="sourceLine" id="cb157-3" data-line-number="3">    <span class="kw">return</span>(y<span class="op">^</span>pow)</a>
-<a class="sourceLine" id="cb157-4" data-line-number="4">  }</a>
-<a class="sourceLine" id="cb157-5" data-line-number="5">  <span class="kw">affine</span>(<span class="dt">x=</span><span class="dv">4</span>,<span class="dt">a=</span><span class="dv">2</span>,<span class="dt">b=</span><span class="dv">3</span>,<span class="dt">pow=</span><span class="dv">3</span>)</a></code></pre></div>
-<p>Les oublis de l’orthographe exact d’une fonction sont fréquents. Pour chercher efficacement les noms de fonctions par motifs, il existe la fonction <code>apropos()</code> :</p>
+<p>L’exemple suivant montre comment profiter des arguments supplémentaires, “…”. Nous créons la fonction <code>affine()</code> qui retourne la valeur de la fonction affine à la puissance n. Nous pourrions ré-écrire l’ensemble des paramètre de la fonction affine mais nous pouvons aussi utiliser les “…”, de la sorte :</p>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb157-1" data-line-number="1">affinen &lt;-<span class="st"> </span><span class="cf">function</span>(..., <span class="dt">pow =</span> <span class="dv">2</span>){</a>
+<a class="sourceLine" id="cb157-2" data-line-number="2">  y &lt;-<span class="st"> </span><span class="kw">affine</span>(...)</a>
+<a class="sourceLine" id="cb157-3" data-line-number="3">  <span class="kw">return</span>(y<span class="op">^</span>pow)</a>
+<a class="sourceLine" id="cb157-4" data-line-number="4">}</a>
+<a class="sourceLine" id="cb157-5" data-line-number="5"><span class="kw">affine</span>(<span class="dt">x =</span> <span class="dv">4</span>, <span class="dt">a =</span> <span class="dv">2</span>, <span class="dt">b =</span> <span class="dv">3</span>, <span class="dt">pow =</span> <span class="dv">3</span>)</a></code></pre></div>
+<p>Les oublis de l’orthographe exact d’une fonction sont fréquents. Pour chercher
+efficacement les noms de fonctions par motifs, il existe la fonction <code>apropos()</code>
+:</p>
 <div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb158-1" data-line-number="1"><span class="kw">apropos</span>(<span class="st">&quot;plo&quot;</span>)</a></code></pre></div>
 
 </div>
@@ -578,7 +613,9 @@ Dans R, c’est un objet qui est retourné que nous pouvons passer à une variab
 </div>
 <div class="footnotes">
 <hr />
-<ol start="55">
+<ol start="54">
+<li id="fn54"><p>R propose trois opérateurs d’assignation: <code>&lt;-</code>, <code>=</code> (<code>var1 = 1 + 1</code>)
+et <code>-&gt;</code> (<code>1 + 1 -&gt; var1</code>) nous utilisons toujours le premier dans cette ouvrage.<a href="annexe-1-courte-introduction-à-r.html#fnref54" class="footnote-back">↩</a></p></li>
 <li id="fn55"><p>C’est un moment difficile à passer quand on utilise des langages de plus bas niveau comme le langage C, sur lequel R repose.<a href="annexe-1-courte-introduction-à-r.html#fnref55" class="footnote-back">↩</a></p></li>
 <li id="fn56"><p>Il est possible d’utiliser la fonction <code>mode()</code> qui est simplement un alias de cette fonction.<a href="annexe-1-courte-introduction-à-r.html#fnref56" class="footnote-back">↩</a></p></li>
 </ol>

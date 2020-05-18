@@ -119,7 +119,7 @@
 
 \title{Visualiser vos données avec R}
 \author{Nicolas Casajus, Kevin Cazelles}
-\date{2020-05-14}
+\date{2020-05-18}
 
 \begin{document}
 \maketitle
@@ -216,9 +216,9 @@ Bien que ces packages soient très intéressants, ils présentent l'inconvénien
 
 Cet enseignement est basé sur l'utilisation du système graphique traditionnel de R : le package \texttt{graphics}. Il fait abstraction de tout autre package complémentaire. Le package \texttt{graphics} fait partie des packages de base de R. Sa philosophie est à la fois simple et très puissante : n'importe quel graphique peut être généré sans avoir recours à des packages additionnels. Cela a néanmoins un coût : tout est possible, certes, mais avec un nombre de lignes parfois important, nous le concédons volontiers. Mais, c'est un très bon support pour découvrir l'univers des graphiques et faire connaissance avec leurs éléments constitutifs.
 
-Ce document fait suite à une formation donnée en novembre 2014 à une trentaine d'étudiants gradués de l'Université du Québec à Rimouski. Il est structuré en sept parties. Alors que le premier chapitre illustre les grands types de graphiques réalisables sous R à l'aide des \textit{High-level plotting functions}, le second vous permettra d'éditer un graphe en lui ajoutant des informations avec des \textit{Low-level plotting functions}. Le troisième, probablement le plus long, passe en revue les différents paramètres graphiques. Ainsi, vous apprendrez à jouer avec les couleurs, modifier les marges, les axes, formater une fonte de caractères, etc. Les deux chapitres suivants, un peu plus avancés, vous permettront d'en savoir plus sur les périphériques graphiques et l'exportation de graphes, ainsi que sur la réalisation de graphiques composés (fonction \texttt{layout()}). Le chapitre six est constitué de trois exercices que nous vous invitons à essayer de réaliser avant de consulter le code source présent au chapitre suivant.
+Ce document fait suite à une formation donnée en novembre 2014 à une trentaine d'étudiants gradués de l'Université du Québec à Rimouski. Il est structuré en sept parties. Alors que le premier chapitre illustre les grands types de graphiques réalisables sous R à l'aide des \emph{High-level plotting functions}, le second vous permettra d'éditer un graphe en lui ajoutant des informations avec des \emph{Low-level plotting functions}. Le troisième, probablement le plus long, passe en revue les différents paramètres graphiques. Ainsi, vous apprendrez à jouer avec les couleurs, modifier les marges, les axes, formater une fonte de caractères, etc. Les deux chapitres suivants, un peu plus avancés, vous permettront d'en savoir plus sur les périphériques graphiques et l'exportation de graphes, ainsi que sur la réalisation de graphiques composés (fonction \texttt{layout()}). Le chapitre six est constitué de trois exercices que nous vous invitons à essayer de réaliser avant de consulter le code source présent au chapitre suivant.
 
-Malgré ce programme alléchant, ce document est loin d'être exhaustif, loin s'en faut. Mais, nous voulons croire qu'il répondra à certaines de vos interrogations sur les graphiques sous R. Écrire un document sur les graphiques sous-entend que ce-dit document soit richement illustré. Et c'est le cas. Cependant, les graphiques produits par l'ensemble des lignes de code recensées ici ne sont pas tous présentés. Ceci dans un soucis de clarté de lecture, mais aussi de taille de document. C'est pourquoi nous vous invitons à ouvrir une session R en parallèle de votre lecture, et à recopier les lignes de code. Amusez-vous également à modifier certains paramètres pour voir leurs impacts. La connaissance commence par la curiosité.
+Malgré ce programme alléchant, ce document est loin d'être exhaustif, loin s'en faut. Mais, nous voulons croire qu'il répondra à certaines de vos interrogations sur les graphiques sous R. Écrire un document sur les graphiques sous-entend que ce-dit document soit richement illustré. Et c'est le cas. Cependant, les graphiques produits par l'ensemble des lignes de code recensées ici ne sont pas tous présentés. Ceci dans un soucis de clarté de lecture, mais aussi de taille de document. C'est pourquoi nous vous invitons à ouvrir une session R en parallèle de votre lecture, et à recopier les lignes de code. N'hésitez pas à modifier certains paramètres pour voir leurs impacts. La connaissance commence par la curiosité.
 
 Nicolas Casajus, Kevin Cazelles
 
@@ -230,6 +230,32 @@ A ajouter.
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
+
+\begin{itemize}
+\item
+  Par de nombreux aspects, nous visons dans un âge des données.
+\item
+  les visualiser est devenu un aspect important que ce soit en science ou dans le traitement de l'actualité.
+\item
+  Différent langages de programmation offre des libraries de visualisation des données, par example Python et JavaScript. R a ces propres atouts.
+\item
+  Visualiser les données peut permettre de comprendre mais aussi délivrer un message sur ces dernières. Pour le faire il faut une certaines maîtrise techniques et de la créativité. Sans maîtrise technique, il est difficile de donner corps à sa créativité.
+\item
+  Ce livre est divisé en quatre parties:
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    Dans une première partie, nous donnons des éléments de réflexion générale relative à la visualisation des données et R
+  \item
+    graphics
+  \item
+    grids
+  \item
+    web
+  \end{enumerate}
+\end{itemize}
 
 \hypertarget{part-science-visualisation-et-r}{%
 \part{Science visualisation et R}\label{part-science-visualisation-et-r}}
@@ -294,7 +320,7 @@ Le degré d'abstraction est poussé encore plus loin et, avec le développement 
 }
 \end{figure}
 
-Un autre personnage majeur de ce XVIII\textsuperscript{e} siècle est le mathématicien-philosophe Jean-Henri Lambert. Il est le premier à utiliser les graphiques pour analyser des données empiriques et calculer les pentes de courbes. Il a également développé un système de couleurs pyramidal figurant pour la première fois la notion de saturation. Enfin, il est l'un des premiers à reconnaitre l'utilité des graphiques : \emph{a diagram does incomparably better service here than a table}.
+Un autre personnage majeur de ce XVIII\textsuperscript{e} siècle est le mathématicien-philosophe Jean-Henri Lambert. Il est le premier à utiliser les graphiques pour analyser des données empiriques et calculer les pentes de courbes. Il a également développé un système de couleurs pyramidal figurant pour la première fois la notion de saturation. Enfin, il est l'un des premiers à reconnaître l'utilité des graphiques : \emph{a diagram does incomparably better service here than a table}.
 
 Cependant, ces différentes innovations graphiques étaient restreintes à quelques publications éparses, et il faudra attendre la première moitié du XIX\textsuperscript{e} siècle pour que le graphique statistique et la cartographie thématique se démocratisent et connaissent un essor sans précédent. On estime que vers les années 1850, les principales formes graphiques avaient été inventées.
 
@@ -796,7 +822,7 @@ R dispose de nombreux outils pour faire un travail approfondi de visualisation
 des données. Lorsque R est installé, nous avons à notre disposition de multiple
 fonctionnalités pour créer, éditer et exporter des figures.
 L'édition de graphique sous R peut être divisé en trois branches : d'un côté
-l'approche développée dans le package \emph{graphics}, celle du package \emph{grid} (qui inclus ggplot2) et une troisième, hétérogène, qui est l'ensemble des libraries qui utilisent d'autres languages, par exemple, javascript (et ainsi créer des figures dans un navigateur web).
+l'approche développée dans le package \emph{graphics}, celle du package \emph{grid} (qui inclus ggplot2) et une troisième, hétérogène, qui est l'ensemble des libraries qui utilisent d'autres languages, comme par exemple javascript, (et ainsi créer des figures dans un navigateur web).
 
 \hypertarget{les-uxe9tapes-pour-cruxe9er-un-graphique-avec-r}{%
 \subsection{Les étapes pour créer un graphique avec R}\label{les-uxe9tapes-pour-cruxe9er-un-graphique-avec-r}}
@@ -804,7 +830,18 @@ l'approche développée dans le package \emph{graphics}, celle du package \emph{
 \hypertarget{le-systuxe8me-graphique-du-package-graphics}{%
 \subsection{\texorpdfstring{Le système graphique du package \emph{graphics}}{Le système graphique du package graphics}}\label{le-systuxe8me-graphique-du-package-graphics}}
 
-Le package \emph{graphics} est une implémentation du système graphique historique de \emph{S}. Il s'agit, en effet, de la ré-écriture des fonctionnalités de la bibliothèque GRZ pour les utiliser avec R. Ce travail a été en large partie mené par Ross Ihaka, l'un des deux initiateurs de R. Avec ce package, nous pouvons obtenir en très peu de lignes de commandes des graphiques tout à fait convenable (grâce, par exemple, à la fonction \emph{plot()}). Nous pouvons également travailler par couches successive pour ajouter un à un les éléments du graphiques et obtenir un rendu graphique plus aboutit. l'utilisation de \emph{graphics} est répandue, simple, intuitive et sa puissance est souvent mésestimée. C'est pour ces raisons que nous avons choisi de la détailler dans ce livre. De manière générale, pour faire un graphique avec ce système on procède en trois étapes\&nbsp:
+Le package \emph{graphics} est une implémentation du système graphique historique de
+\emph{S}. Il s'agit, en effet, de la ré-écriture des fonctionnalités de la
+bibliothèque GRZ pour les utiliser avec R. Ce travail a été en large partie mené
+par Ross Ihaka, l'un des deux initiateurs de R. Avec ce package, nous pouvons
+obtenir en très peu de lignes de commandes des graphiques tout à fait convenable
+(grâce, par exemple, à la fonction \emph{plot()}). Nous pouvons également travailler
+par couches successive pour ajouter un à un les éléments du graphiques et
+obtenir un rendu graphique plus aboutit. l'utilisation de \emph{graphics} est
+répandue, simple, intuitive et sa puissance est souvent mésestimée. C'est pour
+ces raisons que nous avons choisi de la détailler dans ce livre. De manière
+générale, pour faire un graphique avec ce système on procède en trois
+étapes\&nbsp:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -829,7 +866,7 @@ co-ordonnées polaires.
 \hypertarget{le-systuxe8me-graphique-du-package-grid}{%
 \subsection{\texorpdfstring{Le système graphique du package \emph{grid}}{Le système graphique du package grid}}\label{le-systuxe8me-graphique-du-package-grid}}
 
-Le package \emph{grid}, que nous devons à Paul Murrel, est un système graphique puissant qui donne un cadre performant pour développer des graphiques précis. Il y a plusieurs éléments importants sur lesquels nous revenons en annexe. Le premier est le concept de \emph{viewPort} : il s'agit de zone rectangulaire qui sont définis dans l'espace et avec un système de co-ordonnées. Il est possible d'en utiliser autant que souhaiter, elles peuvent se recouper ou non et posséder des paramètres. C'est en quelques sortes un ensemble très flexibles de calques. Il est possible de naviguer à travers pour placer à tout moment n'importe quel élément du future graphique. Le package \emph{grid} définis ces propres fonction primitive pour dessiner points lignes et polygones. En plus d'un affichage et contrairement à ce que nous avons dans le package \emph{graphics}, dans \emph{grid}, les objets affichés sont aussi des objets que l'on peut modifier à sa guise. Cela donne au package \emph{grid} une grande puissance. Il serait bien long de redévolppé chaque graphique avec grid et comparer \emph{graphics} et \emph{grid} est un peu bancal en se sens qu'il ne sont pas réellement implémenté et qu'il faut les faire à la main. Néanmoins c'est grâce à sa puissance que sont nés deux autres systèmes de graphique à succès. Le premier est le système développé par Deepayan Sarkar dans le package \emph{lattice}. Le second est une implémentation de la grammaire des graphiques, \emph{ggplot2} que nous devons à Hadley Wickham. Notez que depuis peu, \emph{grid} et \emph{graphics} ont été reliés partiellement grâce au package \emph{gridGraphics} qui permet d'écrire les fonctions graphics en \emph{grid}.
+Le package \emph{grid}, que nous devons à Paul Murrel, est un système graphique puissant qui donne un cadre performant pour développer des graphiques précis. Il y a plusieurs éléments importants sur lesquels nous revenons en annexe. Le premier est le concept de \emph{viewPort} : il s'agit de zone rectangulaire qui sont définis dans l'espace et avec un système de co-ordonnées. Il est possible d'en utiliser autant que souhaité, elles peuvent se recouper ou non et posséder des paramètres. C'est en quelques sortes un ensemble très flexibles de calques. Il est possible de naviguer à travers pour placer à tout moment n'importe quel élément du future graphique. Le package \emph{grid} définis ces propres fonctions primitives pour dessiner points, lignes et polygones. En plus d'un affichage et contrairement à ce que nous avons dans le package \emph{graphics}, dans \emph{grid}, les objets affichés sont aussi des objets que l'on peut modifier à sa guise. Cela donne au package \emph{grid} une grande puissance. Il serait bien long de redévelopper chaque graphique avec grid et comparer \emph{graphics} et \emph{grid} est un peu bancal en se sens qu'il ne sont pas réellement implémenté et qu'il faut les faire à la main. Néanmoins c'est grâce à sa puissance que sont nés deux autres systèmes de graphique à succès. Le premier est le système développé par Deepayan Sarkar dans le package \emph{lattice}. Le second est une implémentation de la grammaire des graphiques de (voir la section précédente), \emph{ggplot2} que nous devons à Hadley Wickham. Notez que depuis peu, \emph{grid} et \emph{graphics} ont été reliés partiellement grâce au package \emph{gridGraphics} qui permet d'écrire les fonctions graphics en \emph{grid}.
 Ces packages doivent beaucoup au travail de Paul Murrel dont le livre \emph{R graphics} {[}ref{]} et aussi un chapitre sur lattice demeure une référence pour approfondir l'édition de graphiques avec R.
 
 Lorsque les graphiques sont produits que ce soit avec \emph{grid} ou \emph{graphics}, pour les exporter dans différent format, on fait appel à un troisième package : \emph{grDevices}.
@@ -839,8 +876,8 @@ Lorsque les graphiques sont produits que ce soit avec \emph{grid} ou \emph{graph
 
 Les graphiques qui font appel à des bibliothèques JS.
 
-\hypertarget{interfcaes}{%
-\subsection{Interfcaes}\label{interfcaes}}
+\hypertarget{interfaes}{%
+\subsection{Interfaes}\label{interfaes}}
 
 \hypertarget{part-utiliser-graphics}{%
 \part{Utiliser graphics}\label{part-utiliser-graphics}}
@@ -858,9 +895,9 @@ Créons tout d'abord deux variables continues.
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{(x1 <-}\StringTok{ }\KeywordTok{sample}\NormalTok{(}\DataTypeTok{x =} \DecValTok{0}\OperatorTok{:}\DecValTok{10}\NormalTok{, }\DataTypeTok{size =} \DecValTok{20}\NormalTok{, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{))}
-\CommentTok{#>  [1]  8  7  4  5  4  2  4 10  6  9  8 10  8  6  6  5  6  8  1  4}
+\CommentTok{#>  [1]  4  5  1  1  0  8  4  3  7  6  2  9 10  9  4  9  4  2  8  4}
 \NormalTok{(x2 <-}\StringTok{ }\KeywordTok{sample}\NormalTok{(}\DataTypeTok{x =} \DecValTok{10}\OperatorTok{:}\DecValTok{20}\NormalTok{, }\DataTypeTok{size =} \DecValTok{20}\NormalTok{, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{))}
-\CommentTok{#>  [1] 18 12 14 20 14 13 12 12 14 18 17 14 15 13 16 12 14 10 13 18}
+\CommentTok{#>  [1] 12 19 11 19 12 20 15 20 13 16 10 14 17 11 20 18 14 13 12 16}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1210,7 +1247,7 @@ La fonction \texttt{text()} permet d'insérer du texte dans la région du plot. 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{(nom <-}\StringTok{ }\NormalTok{letters[}\DecValTok{1} \OperatorTok{:}\StringTok{ }\KeywordTok{length}\NormalTok{(var1)])}
+\NormalTok{(nom <-}\StringTok{ }\NormalTok{letters[}\KeywordTok{seq_along}\NormalTok{(var1)])}
 \CommentTok{#>  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s"}
 \CommentTok{#> [20] "t"}
 \KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{))}
@@ -1439,64 +1476,64 @@ Commençons par définir cette fonction dans R.
 \NormalTok{plotimage <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(file, }\DataTypeTok{x =} \OtherTok{NULL}\NormalTok{, }\DataTypeTok{y =} \OtherTok{NULL}\NormalTok{, }\DataTypeTok{size =} \DecValTok{1}\NormalTok{, }\DataTypeTok{add =} \OtherTok{FALSE}\NormalTok{,}
 \DataTypeTok{angle =} \DecValTok{0}\NormalTok{, }\DataTypeTok{pos =} \DecValTok{0}\NormalTok{, }\DataTypeTok{bg =} \StringTok{"lightgray"}\NormalTok{, ...)\{}
 \ControlFlowTok{if}\NormalTok{ (}\KeywordTok{length}\NormalTok{(}\KeywordTok{grep}\NormalTok{(}\StringTok{".png"}\NormalTok{, file)) }\OperatorTok{>}\StringTok{ }\DecValTok{0}\NormalTok{)\{}
-\KeywordTok{require}\NormalTok{(}\StringTok{"png"}\NormalTok{)}
-\NormalTok{img <-}\StringTok{ }\KeywordTok{readPNG}\NormalTok{(file, }\DataTypeTok{native =} \OtherTok{TRUE}\NormalTok{)}
+  \KeywordTok{require}\NormalTok{(}\StringTok{"png"}\NormalTok{)}
+\NormalTok{  img <-}\StringTok{ }\KeywordTok{readPNG}\NormalTok{(file, }\DataTypeTok{native =} \OtherTok{TRUE}\NormalTok{)}
 \NormalTok{\}}
 \ControlFlowTok{if}\NormalTok{ (}\KeywordTok{length}\NormalTok{(}\KeywordTok{grep}\NormalTok{(}\StringTok{".tif"}\NormalTok{, file)) }\OperatorTok{>}\StringTok{ }\DecValTok{0}\NormalTok{)\{}
-\KeywordTok{require}\NormalTok{(}\StringTok{"tiff"}\NormalTok{)}
-\NormalTok{img <-}\StringTok{ }\KeywordTok{readTIFF}\NormalTok{(file, }\DataTypeTok{native =} \OtherTok{TRUE}\NormalTok{)}
+  \KeywordTok{require}\NormalTok{(}\StringTok{"tiff"}\NormalTok{)}
+\NormalTok{  img <-}\StringTok{ }\KeywordTok{readTIFF}\NormalTok{(file, }\DataTypeTok{native =} \OtherTok{TRUE}\NormalTok{)}
 \NormalTok{\}}
 \ControlFlowTok{if}\NormalTok{ (}\KeywordTok{length}\NormalTok{(}\KeywordTok{grep}\NormalTok{(}\StringTok{".jp"}\NormalTok{, file)) }\OperatorTok{>}\StringTok{ }\DecValTok{0}\NormalTok{)\{}
-\KeywordTok{require}\NormalTok{(}\StringTok{"jpeg"}\NormalTok{)}
-\NormalTok{img <-}\StringTok{ }\KeywordTok{readJPEG}\NormalTok{(file, }\DataTypeTok{native =} \OtherTok{TRUE}\NormalTok{)}
+  \KeywordTok{require}\NormalTok{(}\StringTok{"jpeg"}\NormalTok{)}
+\NormalTok{  img <-}\StringTok{ }\KeywordTok{readJPEG}\NormalTok{(file, }\DataTypeTok{native =} \OtherTok{TRUE}\NormalTok{)}
 \NormalTok{\}}
 \NormalTok{res <-}\StringTok{ }\KeywordTok{dim}\NormalTok{(img)[}\DecValTok{2}\OperatorTok{:}\DecValTok{1}\NormalTok{]}
 \ControlFlowTok{if}\NormalTok{ (add)\{}
-\NormalTok{xres <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{2}\NormalTok{] }\OperatorTok{-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{]}
-\NormalTok{yres <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{] }\OperatorTok{-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{]}
-\NormalTok{res <-}\StringTok{ }\KeywordTok{c}\NormalTok{(xres, yres)}
-\NormalTok{\}}\ControlFlowTok{else}\NormalTok{\{}
-\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DataTypeTok{bg =}\NormalTok{ bg, }\DataTypeTok{xaxs =} \StringTok{"i"}\NormalTok{, }\DataTypeTok{yaxs =} \StringTok{"i"}\NormalTok{)}
-\NormalTok{dims <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\KeywordTok{max}\NormalTok{(res))}
-\KeywordTok{plot}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DataTypeTok{type =} \StringTok{"n"}\NormalTok{, }\DataTypeTok{axes =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{xlim =}\NormalTok{ dims, }\DataTypeTok{ann =} \OtherTok{FALSE}\NormalTok{,}
-\DataTypeTok{ylim =}\NormalTok{ dims, ...)}
+\NormalTok{  xres <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{2}\NormalTok{] }\OperatorTok{-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{]}
+\NormalTok{  yres <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{] }\OperatorTok{-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{]}
+\NormalTok{  res <-}\StringTok{ }\KeywordTok{c}\NormalTok{(xres, yres)}
+\NormalTok{\} }\ControlFlowTok{else}\NormalTok{\{}
+  \KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DataTypeTok{bg =}\NormalTok{ bg, }\DataTypeTok{xaxs =} \StringTok{"i"}\NormalTok{, }\DataTypeTok{yaxs =} \StringTok{"i"}\NormalTok{)}
+\NormalTok{  dims <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\KeywordTok{max}\NormalTok{(res))}
+  \KeywordTok{plot}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DataTypeTok{type =} \StringTok{"n"}\NormalTok{, }\DataTypeTok{axes =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{xlim =}\NormalTok{ dims, }\DataTypeTok{ann =} \OtherTok{FALSE}\NormalTok{,}
+  \DataTypeTok{ylim =}\NormalTok{ dims, ...)}
 \NormalTok{\}}
 \ControlFlowTok{if}\NormalTok{ (}\KeywordTok{is.null}\NormalTok{(x) }\OperatorTok{&&}\StringTok{ }\KeywordTok{is.null}\NormalTok{(y))\{}
 \ControlFlowTok{if}\NormalTok{ (pos }\OperatorTok{==}\StringTok{ "center"} \OperatorTok{||}\StringTok{ }\NormalTok{pos }\OperatorTok{==}\StringTok{ }\DecValTok{0}\NormalTok{)\{}
-\NormalTok{x <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{]}\OperatorTok{+}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{2}\NormalTok{]}\OperatorTok{-}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{])}\OperatorTok{/}\DecValTok{2}
-\NormalTok{y <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{]}\OperatorTok{+}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{]}\OperatorTok{-}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{])}\OperatorTok{/}\DecValTok{2}
+\NormalTok{  x <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{]}\OperatorTok{+}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{2}\NormalTok{]}\OperatorTok{-}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{])}\OperatorTok{/}\DecValTok{2}
+\NormalTok{  y <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{]}\OperatorTok{+}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{]}\OperatorTok{-}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{])}\OperatorTok{/}\DecValTok{2}
 \NormalTok{\}}
 \ControlFlowTok{if}\NormalTok{ (pos }\OperatorTok{==}\StringTok{ "bottom"} \OperatorTok{||}\StringTok{ }\NormalTok{pos }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{)\{}
-\NormalTok{x <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{]}\OperatorTok{+}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{2}\NormalTok{]}\OperatorTok{-}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{])}\OperatorTok{/}\DecValTok{2}
-\NormalTok{y <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{]}\OperatorTok{+}\NormalTok{res[}\DecValTok{2}\NormalTok{]}\OperatorTok{*}\NormalTok{size}\OperatorTok{/}\DecValTok{2}
+\NormalTok{  x <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{]}\OperatorTok{+}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{2}\NormalTok{]}\OperatorTok{-}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{])}\OperatorTok{/}\DecValTok{2}
+\NormalTok{  y <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{]}\OperatorTok{+}\NormalTok{res[}\DecValTok{2}\NormalTok{]}\OperatorTok{*}\NormalTok{size}\OperatorTok{/}\DecValTok{2}
 \NormalTok{\}}
 \ControlFlowTok{if}\NormalTok{ (pos }\OperatorTok{==}\StringTok{ "left"} \OperatorTok{||}\StringTok{ }\NormalTok{pos }\OperatorTok{==}\StringTok{ }\DecValTok{2}\NormalTok{)\{}
-\NormalTok{x <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{]}\OperatorTok{+}\NormalTok{res[}\DecValTok{1}\NormalTok{]}\OperatorTok{*}\NormalTok{size}\OperatorTok{/}\DecValTok{2}
-\NormalTok{y <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{]}\OperatorTok{+}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{]}\OperatorTok{-}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{])}\OperatorTok{/}\DecValTok{2}
+\NormalTok{  x <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{]}\OperatorTok{+}\NormalTok{res[}\DecValTok{1}\NormalTok{]}\OperatorTok{*}\NormalTok{size}\OperatorTok{/}\DecValTok{2}
+\NormalTok{  y <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{]}\OperatorTok{+}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{]}\OperatorTok{-}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{])}\OperatorTok{/}\DecValTok{2}
 \NormalTok{\}}
 \ControlFlowTok{if}\NormalTok{ (pos }\OperatorTok{==}\StringTok{ "top"} \OperatorTok{||}\StringTok{ }\NormalTok{pos }\OperatorTok{==}\StringTok{ }\DecValTok{3}\NormalTok{)\{}
-\NormalTok{x <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{]}\OperatorTok{+}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{2}\NormalTok{]}\OperatorTok{-}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{])}\OperatorTok{/}\DecValTok{2}
-\NormalTok{y <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{]}\OperatorTok{-}\NormalTok{res[}\DecValTok{2}\NormalTok{]}\OperatorTok{*}\NormalTok{size}\OperatorTok{/}\DecValTok{2}
+\NormalTok{  x <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{]}\OperatorTok{+}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{2}\NormalTok{]}\OperatorTok{-}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{])}\OperatorTok{/}\DecValTok{2}
+\NormalTok{  y <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{]}\OperatorTok{-}\NormalTok{res[}\DecValTok{2}\NormalTok{]}\OperatorTok{*}\NormalTok{size}\OperatorTok{/}\DecValTok{2}
 \NormalTok{\}}
 \ControlFlowTok{if}\NormalTok{ (pos }\OperatorTok{==}\StringTok{ "right"} \OperatorTok{||}\StringTok{ }\NormalTok{pos }\OperatorTok{==}\StringTok{ }\DecValTok{4}\NormalTok{)\{}
-\NormalTok{x <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{2}\NormalTok{]}\OperatorTok{-}\NormalTok{res[}\DecValTok{1}\NormalTok{]}\OperatorTok{*}\NormalTok{size}\OperatorTok{/}\DecValTok{2}
-\NormalTok{y <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{]}\OperatorTok{+}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{]}\OperatorTok{-}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{])}\OperatorTok{/}\DecValTok{2}
+\NormalTok{  x <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{2}\NormalTok{]}\OperatorTok{-}\NormalTok{res[}\DecValTok{1}\NormalTok{]}\OperatorTok{*}\NormalTok{size}\OperatorTok{/}\DecValTok{2}
+\NormalTok{  y <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{]}\OperatorTok{+}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{]}\OperatorTok{-}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{])}\OperatorTok{/}\DecValTok{2}
 \NormalTok{\}}
 \ControlFlowTok{if}\NormalTok{ (pos }\OperatorTok{==}\StringTok{ "bottomleft"} \OperatorTok{||}\StringTok{ }\NormalTok{pos }\OperatorTok{==}\StringTok{ }\DecValTok{5}\NormalTok{)\{}
 \NormalTok{x <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{]}\OperatorTok{+}\NormalTok{res[}\DecValTok{1}\NormalTok{]}\OperatorTok{*}\NormalTok{size}\OperatorTok{/}\DecValTok{2}
 \NormalTok{y <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{]}\OperatorTok{+}\NormalTok{res[}\DecValTok{2}\NormalTok{]}\OperatorTok{*}\NormalTok{size}\OperatorTok{/}\DecValTok{2}
 \NormalTok{\}}
 \ControlFlowTok{if}\NormalTok{ (pos }\OperatorTok{==}\StringTok{ "topleft"} \OperatorTok{||}\StringTok{ }\NormalTok{pos }\OperatorTok{==}\StringTok{ }\DecValTok{6}\NormalTok{)\{}
-\NormalTok{x <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{]}\OperatorTok{+}\NormalTok{res[}\DecValTok{1}\NormalTok{]}\OperatorTok{*}\NormalTok{size}\OperatorTok{/}\DecValTok{2}
-\NormalTok{y <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{]}\OperatorTok{-}\NormalTok{res[}\DecValTok{2}\NormalTok{]}\OperatorTok{*}\NormalTok{size}\OperatorTok{/}\DecValTok{2}
+\NormalTok{  x <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{]}\OperatorTok{+}\NormalTok{res[}\DecValTok{1}\NormalTok{]}\OperatorTok{*}\NormalTok{size}\OperatorTok{/}\DecValTok{2}
+\NormalTok{  y <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{]}\OperatorTok{-}\NormalTok{res[}\DecValTok{2}\NormalTok{]}\OperatorTok{*}\NormalTok{size}\OperatorTok{/}\DecValTok{2}
 \NormalTok{\}}
 \ControlFlowTok{if}\NormalTok{ (pos }\OperatorTok{==}\StringTok{ "topright"} \OperatorTok{||}\StringTok{ }\NormalTok{pos }\OperatorTok{==}\StringTok{ }\DecValTok{7}\NormalTok{)\{}
-\NormalTok{x <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{2}\NormalTok{]}\OperatorTok{-}\NormalTok{res[}\DecValTok{1}\NormalTok{]}\OperatorTok{*}\NormalTok{size}\OperatorTok{/}\DecValTok{2}
-\NormalTok{y <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{]}\OperatorTok{-}\NormalTok{res[}\DecValTok{2}\NormalTok{]}\OperatorTok{*}\NormalTok{size}\OperatorTok{/}\DecValTok{2}
+\NormalTok{  x <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{2}\NormalTok{]}\OperatorTok{-}\NormalTok{res[}\DecValTok{1}\NormalTok{]}\OperatorTok{*}\NormalTok{size}\OperatorTok{/}\DecValTok{2}
+\NormalTok{  y <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{]}\OperatorTok{-}\NormalTok{res[}\DecValTok{2}\NormalTok{]}\OperatorTok{*}\NormalTok{size}\OperatorTok{/}\DecValTok{2}
 \NormalTok{\}}
 \ControlFlowTok{if}\NormalTok{ (pos }\OperatorTok{==}\StringTok{ "bottomright"} \OperatorTok{||}\StringTok{ }\NormalTok{pos }\OperatorTok{==}\StringTok{ }\DecValTok{8}\NormalTok{)\{}
-\NormalTok{x <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{2}\NormalTok{]}\OperatorTok{-}\NormalTok{res[}\DecValTok{1}\NormalTok{]}\OperatorTok{*}\NormalTok{size}\OperatorTok{/}\DecValTok{2}
-\NormalTok{y <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{]}\OperatorTok{+}\NormalTok{res[}\DecValTok{2}\NormalTok{]}\OperatorTok{*}\NormalTok{size}\OperatorTok{/}\DecValTok{2}
+\NormalTok{  x <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{2}\NormalTok{]}\OperatorTok{-}\NormalTok{res[}\DecValTok{1}\NormalTok{]}\OperatorTok{*}\NormalTok{size}\OperatorTok{/}\DecValTok{2}
+\NormalTok{  y <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{]}\OperatorTok{+}\NormalTok{res[}\DecValTok{2}\NormalTok{]}\OperatorTok{*}\NormalTok{size}\OperatorTok{/}\DecValTok{2}
 \NormalTok{\}}
 \NormalTok{\}}
 \NormalTok{xx <-}\StringTok{ }\NormalTok{res[}\DecValTok{1}\NormalTok{]}\OperatorTok{*}\NormalTok{size}\OperatorTok{/}\DecValTok{2}
@@ -1586,10 +1623,10 @@ Remarque : les parenthèses permettent d'afficher dans la console le résultat d
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{(var2 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DataTypeTok{n =} \DecValTok{20}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{))}
-\CommentTok{#>  [1] -1.30158592  1.00199023 -0.21469905 -0.67772829  0.77796330  0.93286144}
-\CommentTok{#>  [7]  0.70814503  0.09586562 -0.28800979 -0.06531592 -0.20758215 -1.66985489}
-\CommentTok{#> [13] -0.66917716  0.30468606 -0.87530490  0.25275209  0.76092100 -0.37592154}
-\CommentTok{#> [19]  1.12856708 -1.08185323}
+\CommentTok{#>  [1]  0.89689312  0.30913630  1.28111734 -1.31379564 -1.42625186  0.79876349}
+\CommentTok{#>  [7] -0.44574525 -0.03844782 -0.41255644 -0.82786204  0.40196226  1.18768404}
+\CommentTok{#> [13]  1.32915936  0.79981119  1.69035185  0.34798365 -0.72282932 -1.50359497}
+\CommentTok{#> [19]  0.38816553  0.36377291}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1697,19 +1734,19 @@ L'argument \texttt{plot} mis à la valeur \textbf{FALSE} n'affiche pas de boîte
 \KeywordTok{boxplot}\NormalTok{(var2, }\DataTypeTok{plot =} \OtherTok{FALSE}\NormalTok{)}
 \CommentTok{#> $stats}
 \CommentTok{#>            [,1]}
-\CommentTok{#> [1,] -1.6698549}
-\CommentTok{#> [2,] -0.6734527}
-\CommentTok{#> [3,] -0.1364490}
-\CommentTok{#> [4,]  0.7345330}
-\CommentTok{#> [5,]  1.1285671}
+\CommentTok{#> [1,] -1.5035950}
+\CommentTok{#> [2,] -0.5842873}
+\CommentTok{#> [3,]  0.3558783}
+\CommentTok{#> [4,]  0.8483522}
+\CommentTok{#> [5,]  1.6903518}
 \CommentTok{#> }
 \CommentTok{#> $n}
 \CommentTok{#> [1] 20}
 \CommentTok{#> }
 \CommentTok{#> $conf}
 \CommentTok{#>            [,1]}
-\CommentTok{#> [1,] -0.6338886}
-\CommentTok{#> [2,]  0.3609906}
+\CommentTok{#> [1,] -0.1502714}
+\CommentTok{#> [2,]  0.8620280}
 \CommentTok{#> }
 \CommentTok{#> $out}
 \CommentTok{#> numeric(0)}
@@ -1741,9 +1778,9 @@ Maintenant, nous allons tirer aléatoirement 1000 valeurs (avec remise donc) dan
 \begin{Highlighting}[]
 \NormalTok{echn <-}\StringTok{ }\KeywordTok{sample}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ nom, }\DataTypeTok{size =} \DecValTok{1000}\NormalTok{, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{)}
 \NormalTok{echn[}\DecValTok{1}\OperatorTok{:}\DecValTok{20}\NormalTok{]}
-\CommentTok{#>  [1] "Jaune" "Bleu"  "Bleu"  "Blanc" "Blanc" "Jaune" "Noir"  "Bleu"  "Noir" }
-\CommentTok{#> [10] "Rouge" "Noir"  "Jaune" "Noir"  "Rouge" "Rouge" "Rouge" "Jaune" "Vert" }
-\CommentTok{#> [19] "Jaune" "Rouge"}
+\CommentTok{#>  [1] "Noir"  "Noir"  "Rouge" "Bleu"  "Jaune" "Bleu"  "Bleu"  "Vert"  "Rouge"}
+\CommentTok{#> [10] "Blanc" "Bleu"  "Vert"  "Bleu"  "Noir"  "Rouge" "Noir"  "Rouge" "Noir" }
+\CommentTok{#> [19] "Noir"  "Blanc"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1754,7 +1791,7 @@ Comptons combien de fois se retrouve chaque modalité dans cette variable.
 \NormalTok{(var4 <-}\StringTok{ }\KeywordTok{table}\NormalTok{(echn))}
 \CommentTok{#> echn}
 \CommentTok{#> Blanc  Bleu Jaune  Noir Rouge  Vert }
-\CommentTok{#>   167   175   160   163   163   172}
+\CommentTok{#>   175   166   165   178   161   155}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1766,7 +1803,7 @@ Visualisons cette nouvelle variable catégorique.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-51-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-51-1} \end{center}
 
 Nous pouvons également représenter cette même variable sous forme relative. Calculons la fréquence de chaque modalité et produisons un nouveau graphe.
 
@@ -1775,7 +1812,7 @@ Nous pouvons également représenter cette même variable sous forme relative. C
 \NormalTok{(var5 <-}\StringTok{ }\NormalTok{var4}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(var4))}
 \CommentTok{#> echn}
 \CommentTok{#> Blanc  Bleu Jaune  Noir Rouge  Vert }
-\CommentTok{#> 0.167 0.175 0.160 0.163 0.163 0.172}
+\CommentTok{#> 0.175 0.166 0.165 0.178 0.161 0.155}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1798,7 +1835,7 @@ Par exemple,
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-54-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-54-1} \end{center}
 
 \hypertarget{histogramme}{%
 \subsection{Histogramme}\label{histogramme}}
@@ -1811,10 +1848,10 @@ Générons 1000 valeurs aléatoires selon une loi gaussienne.
 \begin{Highlighting}[]
 \NormalTok{var6 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DataTypeTok{n =} \DecValTok{1000}\NormalTok{)}
 \NormalTok{var6[}\DecValTok{1}\OperatorTok{:}\DecValTok{20}\NormalTok{]}
-\CommentTok{#>  [1] -0.84662648  0.88428710 -0.61045109  0.40266609  1.10209985  0.09268090}
-\CommentTok{#>  [7]  0.31801968 -0.06017932 -0.97767294 -1.07471188 -0.71395050 -1.01911101}
-\CommentTok{#> [13]  1.69670482 -0.53455813 -0.32133670 -1.43342050 -0.09313099  0.52829319}
-\CommentTok{#> [19] -1.03240366 -0.47266098}
+\CommentTok{#>  [1] -0.90998297 -0.71083254  0.83173313  0.39938518  0.67614094  1.19805087}
+\CommentTok{#>  [7] -0.25563620 -0.15618080 -2.67672559 -1.13728008 -0.29537803  0.95859818}
+\CommentTok{#> [13] -1.81219676  0.09119575  0.89121128  2.28531255  0.17138918  0.15748998}
+\CommentTok{#> [19]  2.13348921  0.20186680}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1832,16 +1869,18 @@ De la même manière que pour les boîtes à moustaches, l'argument \texttt{plot
 \begin{Highlighting}[]
 \KeywordTok{hist}\NormalTok{(var6, }\DataTypeTok{plot =} \OtherTok{FALSE}\NormalTok{)}
 \CommentTok{#> $breaks}
-\CommentTok{#> [1] -4 -3 -2 -1  0  1  2  3  4}
+\CommentTok{#>  [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0}
 \CommentTok{#> }
 \CommentTok{#> $counts}
-\CommentTok{#> [1]   5  21 144 335 335 137  20   3}
+\CommentTok{#>  [1]   1   4  16  37  96 173 190 179 150  97  36  17   4}
 \CommentTok{#> }
 \CommentTok{#> $density}
-\CommentTok{#> [1] 0.005 0.021 0.144 0.335 0.335 0.137 0.020 0.003}
+\CommentTok{#>  [1] 0.002 0.008 0.032 0.074 0.192 0.346 0.380 0.358 0.300 0.194 0.072 0.034}
+\CommentTok{#> [13] 0.008}
 \CommentTok{#> }
 \CommentTok{#> $mids}
-\CommentTok{#> [1] -3.5 -2.5 -1.5 -0.5  0.5  1.5  2.5  3.5}
+\CommentTok{#>  [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25}
+\CommentTok{#> [13]  2.75}
 \CommentTok{#> }
 \CommentTok{#> $xname}
 \CommentTok{#> [1] "var6"}
@@ -1864,7 +1903,7 @@ représenter.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-58-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-58-1} \end{center}
 
 Nous aurions également pu indiquer les bornes de chaque classe désirée (par ex.
 des classes tous les 0.25). De même, plusieurs algorithmes ont été implémentés
@@ -1890,7 +1929,7 @@ Une alternative au diagramme en bâtons est le diagramme sectoriel (camembert). 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-60-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-60-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1898,7 +1937,7 @@ Une alternative au diagramme en bâtons est le diagramme sectoriel (camembert). 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-61-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-61-1} \end{center}
 
 Dans les deux exemples précédents, nous avons défini des couleurs à l'aide de l'argument \texttt{col}. Dans le premier cas, nous avons indiqué le nom des couleurs : R implémente une palette de couleurs prédéfinies assez conséquente. Dans le second cas, nous avons utilisé la fonction \texttt{rainbow()} qui sélectionne un nombre donné de couleurs parmi les couleurs de l'arc-en-ciel. Nous y reviendrons dans le troisième chapitre.
 
@@ -3067,7 +3106,7 @@ Voici un exemple illustrant l'utilisation de l'argument \texttt{mfrow}.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-116-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-116-1} \end{center}
 
 Avec ces arguments, il est possible d'ignorer une région graphique et de passer à la suivante en utilisant la fonction \texttt{plot.new()}.
 
@@ -3083,7 +3122,7 @@ Avec ces arguments, il est possible d'ignorer une région graphique et de passer
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.9\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-117-1} \end{center}
+\begin{center}\includegraphics[width=0.9\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-117-1} \end{center}
 
 Nous avons fait le tour des possibilités offertes par ces arguments de la fonction \texttt{par()}. Regardons maintenant des fonctions plus élaborées.
 
@@ -3109,7 +3148,7 @@ premier exemple afin de faire connaissance avec cette fonction.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-118-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-118-1} \end{center}
 
 La fonction \texttt{layout.show()} permet de visualiser le partitionnement réalisé.
 L'argument \texttt{n} mentionné correspond au nombre de régions graphiques issues du
@@ -3131,7 +3170,7 @@ notre cas, le remplissage se fera par ligne. Vérifions.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-119-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-119-1} \end{center}
 
 Par contre, si on transposait la matrice, le remplissage se ferait en colonnes.
 Ici, le résultat est très similaire à ce que nous aurions obtenu avec les
@@ -3164,7 +3203,7 @@ certaines cellules de la matrice possède la même valeur.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-121-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-121-1} \end{center}
 
 Cependant, nous remarquons que les marges définies ont été modifiées pour les
 régions fusionnées. Ce qui peut être problématique dans la recherche d'un
@@ -3183,7 +3222,7 @@ cela.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-123-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-123-1} \end{center}
 
 Le premier exercice du chapitre 6 présente une utilisation avancée de la fonction \texttt{layout()} et de tous ses arguments.
 
@@ -3276,7 +3315,7 @@ Voyons un exemple avec des données fictives.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-126-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-126-1} \end{center}
 
 Mise à part l'inclusion de la commande \texttt{par(new\ =\ TRUE)}, tout se passe
 normalement. En enlevant cette ligne de code, les graphiques s'afficheraient
@@ -3354,7 +3393,7 @@ Regardons maintenant un exemple visuel.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-131-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-131-1} \end{center}
 
 Voilà, ce n'est pas plus compliqué. D'ailleurs, si on y réfléchit bien, si on ne
 modifie pas le paramètre \texttt{fig}, on se retrouverait dans le cas de figure vu dans
@@ -3394,7 +3433,7 @@ Pour terminer, regardons un dernier exemple pour bien comprendre le rôle de l'a
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-133-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-133-1} \end{center}
 
 \hypertarget{exercices}{%
 \section{Exercices}\label{exercices}}
@@ -3547,11 +3586,11 @@ Voici une solution pour réaliser les figures du précédent chapitre.
 \KeywordTok{points}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{c}\NormalTok{(.}\DecValTok{1}\NormalTok{, }\FloatTok{.1}\NormalTok{), }\DataTypeTok{y =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{40}\NormalTok{), }\DataTypeTok{col =} \StringTok{"white"}\NormalTok{, }\DataTypeTok{type =} \StringTok{"l"}\NormalTok{)}
 \KeywordTok{points}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{c}\NormalTok{(.}\DecValTok{2}\NormalTok{, }\FloatTok{.2}\NormalTok{), }\DataTypeTok{y =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{40}\NormalTok{), }\DataTypeTok{col =} \StringTok{"white"}\NormalTok{, }\DataTypeTok{type =} \StringTok{"l"}\NormalTok{)}
 \ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \KeywordTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{30}\NormalTok{))}
-\KeywordTok{points}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{.3}\NormalTok{), }\DataTypeTok{y =} \KeywordTok{c}\NormalTok{(i, i), }\DataTypeTok{type =} \StringTok{"l"}\NormalTok{, }\DataTypeTok{col =} \StringTok{"white"}\NormalTok{)}
+  \KeywordTok{points}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{.3}\NormalTok{), }\DataTypeTok{y =} \KeywordTok{c}\NormalTok{(i, i), }\DataTypeTok{type =} \StringTok{"l"}\NormalTok{, }\DataTypeTok{col =} \StringTok{"white"}\NormalTok{)}
 \ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \KeywordTok{seq}\NormalTok{(.}\DecValTok{05}\NormalTok{, }\FloatTok{.25}\NormalTok{, }\DataTypeTok{by =} \FloatTok{.1}\NormalTok{))}
-\KeywordTok{points}\NormalTok{(}\DataTypeTok{y =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{40}\NormalTok{), }\DataTypeTok{x =} \KeywordTok{c}\NormalTok{(i, i), }\DataTypeTok{type =} \StringTok{"l"}\NormalTok{, }\DataTypeTok{col =} \StringTok{"white"}\NormalTok{, }\DataTypeTok{lty =} \DecValTok{3}\NormalTok{)}
+  \KeywordTok{points}\NormalTok{(}\DataTypeTok{y =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{40}\NormalTok{), }\DataTypeTok{x =} \KeywordTok{c}\NormalTok{(i, i), }\DataTypeTok{type =} \StringTok{"l"}\NormalTok{, }\DataTypeTok{col =} \StringTok{"white"}\NormalTok{, }\DataTypeTok{lty =} \DecValTok{3}\NormalTok{)}
 \ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \KeywordTok{seq}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{35}\NormalTok{, }\DataTypeTok{by =} \DecValTok{10}\NormalTok{))\{}
-\KeywordTok{points}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{.3}\NormalTok{), }\KeywordTok{c}\NormalTok{(i, i), }\DataTypeTok{type =} \StringTok{"l"}\NormalTok{, }\DataTypeTok{col =} \StringTok{"white"}\NormalTok{, }\DataTypeTok{lty =} \DecValTok{3}\NormalTok{)}
+  \KeywordTok{points}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{.3}\NormalTok{), }\KeywordTok{c}\NormalTok{(i, i), }\DataTypeTok{type =} \StringTok{"l"}\NormalTok{, }\DataTypeTok{col =} \StringTok{"white"}\NormalTok{, }\DataTypeTok{lty =} \DecValTok{3}\NormalTok{)}
 \NormalTok{\}}
 \CommentTok{## Axe principal}
 \KeywordTok{axis}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DataTypeTok{pos =} \DecValTok{0}\NormalTok{, }\DataTypeTok{at =} \KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{.3}\NormalTok{, }\FloatTok{.1}\NormalTok{), }\DataTypeTok{col =} \KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{col.axis, }\DataTypeTok{las =} \DecValTok{1}\NormalTok{, }\DataTypeTok{labels =} \KeywordTok{format}\NormalTok{(}\KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{.3}\NormalTok{, }\FloatTok{.1}\NormalTok{)), }\DataTypeTok{font =} \DecValTok{2}\NormalTok{)}
@@ -3746,6 +3785,9 @@ Expliquer \texttt{gplot2}.
 
 Voir \url{https://www.ggplot2-exts.org/}
 
+\hypertarget{part-utiliser-graphics-1}{%
+\part{Utiliser graphics}\label{part-utiliser-graphics-1}}
+
 \hypertarget{graphiques-interactives}{%
 \section{Graphiques interactives}\label{graphiques-interactives}}
 
@@ -3768,7 +3810,7 @@ la compréhension des mécanismes d'extension de R:
 \item
   \textbf{objet}: tout ce qui existe dans R est un objet;
 \item
-  \textbf{function}: tout ce qui se passe dans R est un appelle à une fonction;
+  \textbf{function}: tout ce qui se passe dans R est un appel à une fonction;
 \item
   \textbf{interface}: les interfaces avec les autres software sont une partie de R.
 \end{enumerate}
@@ -3783,16 +3825,17 @@ pour améliorer ces compétences il faut enrichir son vocabulaire (en augmentant
 ses connaissance des fonctions et packages disponibles) et creuser la question
 du fonctionnement de R (et se confronter à des questions plus techniques).
 
-L'objectif de cette annexe est de familiariser le lecteur néophyte avec
-la syntaxe de R en utilisant des exemples de lignes de commande que nous
-commentons. Nous discutons brièvement de quelques principes fondamentaux
-du langage et nous couvrons un vocabulaire très limité (nous mentionnons un
-nombre restreint de fonctions et d'opérateurs). Cette annexe a été conçu pour
-rendre l'ouvrage autonome. Cependant, cette annexe ne peut constituer à elle
-seule une introduction au langage R. C'est pourquoi, nous vous recommandons
-vivement de consulter les trois premiers chapitres de \emph{R et espace}
-(REF+ouvrage disponible sur le site de Framabook \url{https://framabook.org/r-et-espace/}),
-et le manuel \emph{R pour les débutants} d'Emmanuel Paradis (REF+disponible sur le CRAN \url{https://cran.r-project.org/doc/contrib/Paradis-rdebuts_fr.pdf}).
+L'objectif de cette annexe est de familiariser le lecteur néophyte avec la
+syntaxe de R en utilisant des exemples de lignes de commande que nous
+commentons. Nous discutons brièvement de quelques principes fondamentaux du
+langage et nous couvrons un vocabulaire très limité (nous mentionnons un nombre
+restreint de fonctions et d'opérateurs). Cette annexe a été conçu pour rendre
+l'ouvrage autonome. Cependant, cette annexe ne peut constituer à elle seule une
+introduction au langage R. C'est pourquoi, nous vous recommandons vivement de
+consulter les trois premiers chapitres de \emph{R et espace} (REF+ouvrage disponible
+sur le site de Framabook \url{https://framabook.org/r-et-espace/}), et le manuel \emph{R
+pour les débutants} d'Emmanuel Paradis (REF+disponible sur le CRAN
+\url{https://cran.r-project.org/doc/contrib/Paradis-rdebuts_fr.pdf}).
 
 \hypertarget{premiuxe8re-commande}{%
 \subsection*{Première commande}\label{premiuxe8re-commande}}
@@ -3819,14 +3862,14 @@ a été alloué pour y inclure la variable (incluant son nom et sa valeur) et la
 variable est disponible dans la session de R.
 
 Il est important de noter dès maintenant que les noms donnés aux variables sont
-soumis à deux contraintes. Premièrement, un nom de variable doit systématiquement
-commencer par une lettre latine (minuscule ou majuscule) ou un point (``.'').
-Deuxièmement, le reste du nom peut-être formé par des lettres latines (minuscules
-ou majuscules), des chiffres, des points (``.'') et des tirets-bas (``\_''). Pour
-ne pas se perdre dans les noms de vos variables, il est préférable de rester
-concis et aussi explicite que possible. Notez que si un nom de variable est
-utilisé dans la console alors que la variable n'a pas été définie, un message
-d'erreur est retourné.
+soumis à deux contraintes. Premièrement, un nom de variable doit
+systématiquement commencer par une lettre latine (minuscule ou majuscule) ou un
+point (``.''). Deuxièmement, le reste du nom peut-être formé par des lettres
+latines (minuscules ou majuscules), des chiffres, des points (``.'') et des
+tirets-bas (``\_''). Pour ne pas se perdre dans les noms de vos variables, il est
+préférable de rester concis et aussi explicite que possible. Notez que si un nom
+de variable est utilisé dans la console alors que la variable n'a pas été
+définie, un message d'erreur est retourné.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3916,7 +3959,11 @@ R a été capable de comprendre et d'indexer en mémoire ces différents objets.
 \end{Highlighting}
 \end{Shaded}
 
-Ces objets sont en fait des vecteurs de différents types et de taille 1. Un vecteur est constitué d'un ou plusieurs éléments de même nature. Il sont construits avec la fonction \texttt{c()}. La taille des vecteurs peut être retournée avec \texttt{length()}. Noter que dans la suite, on ajoute des parenthèses à une ligne donnée pour pouvoir afficher le résulat de l'assignation :
+Ces objets sont en fait des vecteurs de différents types et de taille 1. Un
+vecteur est constitué d'un ou plusieurs éléments de même nature. Il sont
+construits avec la fonction \texttt{c()}. La taille des vecteurs peut être retournée
+avec \texttt{length()}. Noter que dans la suite, on ajoute des parenthèses à une ligne
+donnée pour pouvoir afficher le résultat de l'assignation :
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3935,7 +3982,12 @@ Ces objets sont en fait des vecteurs de différents types et de taille 1. Un vec
 \end{Highlighting}
 \end{Shaded}
 
-Un ensemble d'objet de même nature peut être contenu dans un tableau doublement indexé, c'est ce qu'on appelle une matrice. Les matrices peuvent être créées à l'aide de la fonction \texttt{matrix()}. Les tableaux peuvent même être indexés dans un nombre quelconque de dimensions grâce aux objets ``array'' créés avec la fonction \texttt{array()}. Pour appeler une des valeurs de ces tableaux, on utilise les crochets, comme nous le montrons ci-dessous :
+Un ensemble d'objet de même nature peut être contenu dans un tableau doublement
+indexé, c'est ce qu'on appelle une matrice. Les matrices peuvent être créées à
+l'aide de la fonction \texttt{matrix()}. Les tableaux peuvent même être indexés dans un
+nombre quelconque de dimensions grâce aux objets ``array'' créés avec la fonction
+\texttt{array()}. Pour appeler une des valeurs de ces tableaux, on utilise les
+crochets, comme nous le montrons ci-dessous :
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3950,7 +4002,10 @@ Un ensemble d'objet de même nature peut être contenu dans un tableau doublemen
 \end{Highlighting}
 \end{Shaded}
 
-Un dernier objet permet de rassembler des objets de nature différentes, il s'agit des listes, pour accéder à l'un de ces objets, on utilise le double crochet et si on souhaite accéder à un objet en particulier dans la liste, on ajoute un crochet.
+Un dernier objet permet de rassembler des objets de nature différentes, il
+s'agit des listes, pour accéder à l'un de ces objets, on utilise le double
+crochet et si on souhaite accéder à un objet en particulier dans la liste, on
+ajoute un crochet.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3973,7 +4028,9 @@ Un dernier objet permet de rassembler des objets de nature différentes, il s'ag
 \end{Highlighting}
 \end{Shaded}
 
-Nous avons vu les objets de bases les plus importants. Parmi les objets les plus utilisés de R, il y a les ``dataframe''. Il s'agit d'objets de type S3, construits avec l'utilisation de la fonction \texttt{data.frame()}.
+Nous avons vu les objets de bases les plus importants. Parmi les objets les plus
+utilisés de R, il y a les ``dataframe''. Il s'agit d'objets de type S3, construits
+avec l'utilisation de la fonction \texttt{data.frame()}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3986,7 +4043,10 @@ Nous avons vu les objets de bases les plus importants. Parmi les objets les plus
 \end{Highlighting}
 \end{Shaded}
 
-Ces objets sont finalement des tableaux dont les colonnes sont des vecteurs. C'est un format très pratique pour travailler sur les données. L'utilisation du \texttt{\$} vous pernet d'accéder à l'un de ces vecteurs, en utilisant le nom de la colonne :
+Ces objets sont finalement des tableaux dont les colonnes sont des vecteurs.
+C'est un format très pratique pour travailler sur les données. L'utilisation du
+\texttt{\textbackslash{}\$} vous permet d'accéder à l'un de ces vecteurs, en utilisant le nom de
+la colonne :
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3995,7 +4055,7 @@ Ces objets sont finalement des tableaux dont les colonnes sont des vecteurs. C'e
 \end{Highlighting}
 \end{Shaded}
 
-Vous pouvez également utiliser les crochets pour accéder aux différents éléments, comme dans une matrice. Un dernier détail pur savoir s'il s'agit d'un objet S3 ou S4 on utilise la fonction \texttt{is.object()}, si elle retourne ``TRUE'', alors il s'agit d'un objet S3 ou S4. Nous l'utilisons sur notre ``matrix'' et notre ``data.frame''.
+Vous pouvez également utiliser les crochets pour accéder aux différents éléments, comme dans une matrice. Un dernier détail pur savoir s'il s'agit d'un objet S3 ou S4 on utilise la fonction \texttt{is.object()}, si elle retourne \texttt{TRUE}, alors il s'agit d'un objet S3 ou S4. Nous l'utilisons sur notre \texttt{matrix} et notre \texttt{data.frame}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4006,7 +4066,7 @@ Vous pouvez également utiliser les crochets pour accéder aux différents élé
 \end{Highlighting}
 \end{Shaded}
 
-Pour ces objets conposites, une notion imprtante est la classe de l'objet c'est-à-dire l'espèce à laquelle cet objet appartient. Pour le savoir, il suffit d'utiliser la fonction \texttt{class()}.
+Pour ces objets composites, une notion importante est la classe de l'objet c'est-à-dire l'espèce à laquelle cet objet appartient. Pour le savoir, il suffit d'utiliser la fonction \texttt{class()}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4015,7 +4075,9 @@ Pour ces objets conposites, une notion imprtante est la classe de l'objet c'est-
 \end{Highlighting}
 \end{Shaded}
 
-C'est grâce à la classe que R reconnait les objets composés. En fait, il est très facile de créer un objet S3 personnalisé dans R grâce à la fonction \texttt{structure()} :
+C'est grâce à la classe que R reconnaît les objets composés. En fait, il est
+très facile de créer un objet S3 personnalisé dans R grâce à la fonction
+\texttt{structure()} :
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4044,18 +4106,22 @@ C'est grâce à la classe que R reconnait les objets composés. En fait, il est 
 \subsubsection*{Conditions}\label{conditions}}
 \addcontentsline{toc}{subsubsection}{Conditions}
 
-Lorsqu'on utilise un langage de programmation, on a souvent besoin de comparer des valeurs. Pour cela, on utilise des tests logiques. Il s'agit de comparaisons entre deux objets dont le résultat est soit ``TRUE'' (vrai) soit ``FALSE'' (faux).
+Lorsqu'on utilise un langage de programmation, on a souvent besoin de comparer
+des valeurs. Pour cela, on utilise des tests logiques. Il s'agit de comparaisons
+entre deux objets dont le résultat est soit ``TRUE'' (vrai) soit ``FALSE'' (faux).
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{var1}\OperatorTok{==}\DecValTok{85}
-\NormalTok{var1}\OperatorTok{<}\DecValTok{50}
-\NormalTok{var1}\OperatorTok{>}\DecValTok{50}
-\NormalTok{var1}\OperatorTok{!=}\DecValTok{45}
+\NormalTok{var1 }\OperatorTok{==}\StringTok{ }\DecValTok{85}
+\NormalTok{var1 }\OperatorTok{<}\StringTok{ }\DecValTok{50}
+\NormalTok{var1 }\OperatorTok{>}\StringTok{ }\DecValTok{50}
+\NormalTok{var1 }\OperatorTok{!=}\StringTok{ }\DecValTok{45}
 \end{Highlighting}
 \end{Shaded}
 
-Avec R, les tests sont élargis à différents type d'objet. Par exemple, les cpmparaisons peuvent aussi se faire sur les lettres, c'est alors une question d'ordre alphabétique :
+Avec R, les tests sont élargis à différents types d'objet. Par exemple, les
+comparaisons peuvent aussi se faire sur les lettres, c'est alors une question
+d'ordre alphabétique :
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4098,7 +4164,7 @@ La fonction \texttt{print()} permet d'afficher un objet, ici ce sont des chaîne
 \subsubsection*{Boucles}\label{boucles}}
 \addcontentsline{toc}{subsubsection}{Boucles}
 
-Lorsqu'on fait des analyses, il se peut qu'on répète plusieurs fois les mêmes opérations mais pour des données différentes, par exemple pour les différentes colonnes d'un tableux. Dans ce cas, nous utilisons des boucles. Il existe les boucles \texttt{for} et les boucles \texttt{while}. Les boucles \texttt{for} consiste en une itération de commande sur un ensemble de valeurs pré-déterminée.
+Lorsqu'on fait des analyses, il se peut qu'on répète plusieurs fois les mêmes opérations mais pour des données différentes, par exemple pour les différentes colonnes d'un tableaux. Dans ce cas, nous utilisons des boucles. Il existe les boucles \texttt{for} et les boucles \texttt{while}. Les boucles \texttt{for} consiste en une itération de commande sur un ensemble de valeurs pré-déterminée.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4125,7 +4191,7 @@ Comme nous l'avons mentionné plus tôt, R dispose d'une structure très flexibl
 \end{Highlighting}
 \end{Shaded}
 
-Au contraire des boules \texttt{for}, les boucles \texttt{while} répètent des instructions pour un ensemble de valeur qui n'est pas pré-déterminé. Les instructions sont répétées indéfniment (donc méfiance avec ces boucles) tant qu'une condition n'est pas respectée.
+Au contraire des boules \texttt{for}, les boucles \texttt{while} répètent des instructions pour un ensemble de valeur qui n'est pas pré-déterminé. Les instructions sont répétées indéfiniment (donc méfiance avec ces boucles) tant qu'une condition n'est pas respectée.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4148,7 +4214,7 @@ La manipulation et visualisation des données nécessite rarement l'utilisation 
 \subsubsection*{Les fonctions}\label{les-fonctions}}
 \addcontentsline{toc}{subsubsection}{Les fonctions}
 
-De manière générale, en informatique, une fonction est un ensemble de lignes de code dédié à la réalisation d'une tâche spécifique concrétisée par le renvoie d'une valeur (un objet dans R). Nous avons jusqu'ici déjà utiliser différentes fonctions. Le lecteur attentif a certainement remarqué que les fonctions de R présentent toutes une structure commune: elles commençent par une suite de caractères (son nom) suivie de parenthèses à l'intérieur desquelles se trouvent éventuellement un ou plusieurs arguments. Les arguments sont des objets transmis à la fonction qui seront soient ceux manipuler soit précise comment la tâche doit être effectuées. Par exemple, quand nous avons utilisé la ligne :
+De manière générale, en informatique, une fonction est un ensemble de lignes de code dédié à la réalisation d'une tâche spécifique concrétisée par le renvoie d'une valeur (un objet dans R). Nous avons jusqu'ici déjà utiliser différentes fonctions. Le lecteur attentif a certainement remarqué que les fonctions de R présentent toutes une structure commune: elles commencent par une suite de caractères (son nom) suivie de parenthèses à l'intérieur desquelles se trouvent éventuellement un ou plusieurs arguments. Les arguments sont des objets transmis à la fonction qui seront soient ceux manipuler soit précise comment la tâche doit être effectuées. Par exemple, quand nous avons utilisé la ligne :
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4209,12 +4275,20 @@ Pour R, une fonction est un bel et bien un objet dont le contenu est finalement 
 \NormalTok{typeof}
 \CommentTok{#> function (x) }
 \CommentTok{#> .Internal(typeof(x))}
-\CommentTok{#> <bytecode: 0x55f9145e0bc8>}
+\CommentTok{#> <bytecode: 0x55efe1839c40>}
 \CommentTok{#> <environment: namespace:base>}
 \end{Highlighting}
 \end{Shaded}
 
-Cette remarque vous facilitera la compréhension des messages d'erreur : lorsque R parle d'un objet de type ``closure'' il parle d'une fonction. R est un langage ou votre efficacité repose très fortement sur votre vocabulaire. Pour engranger rapidement un grand nombre de fonctions, la compilation de fonctions proposées par sur le site du CRAN est très utile. Toutes fonctions de R sont assorties d'une documentation qui vous explique, en anglais, comment l'uitliser. Pour y accéder, l'utilisateur a deux possibilités, précéder par un \texttt{?} le nom de la fonction ou utiliser la fonction \texttt{help()}, cette dernière permet des recherche plus détaillée.
+Cette remarque vous facilitera la compréhension des messages d'erreur : lorsque
+R parle d'un objet de type ``closure'' il parle d'une fonction. R est un langage
+ou votre efficacité repose très fortement sur votre vocabulaire. Pour engranger
+rapidement un grand nombre de fonctions, la compilation de fonctions proposées
+par sur le site du CRAN est très utile. Toutes fonctions de R sont assorties
+d'une documentation qui vous explique, en anglais, comment l'utiliser. Pour y
+accéder, l'utilisateur a deux possibilités, précéder par un \texttt{?} le nom de
+la fonction ou utiliser la fonction \texttt{help()}, cette dernière permet des
+recherche plus détaillée.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4223,9 +4297,9 @@ Cette remarque vous facilitera la compréhension des messages d'erreur : lorsque
 \end{Highlighting}
 \end{Shaded}
 
-Les fonctions de R sont très flexible. Avec les arguments par défaut qui permettent de ne pas utiliser l'ensemble des arguments, il y a aussi l'argument sous forme de ``\ldots{}'' qui permet de passer des arguments supplémentaires. Ces arguments sont utilisésconne argument de fonctions utilisée à l'intérieur d'une fonction donnée. C'est une utilisation très fréquent dans R.
+Les fonctions de R sont très flexible. Avec les arguments par défaut qui permettent de ne pas utiliser l'ensemble des arguments, il y a aussi l'argument sous forme de ``\ldots{}'' qui permet de passer des arguments supplémentaires. Ces arguments sont utilisés comme argument de fonctions utilisée à l'intérieur d'une fonction donnée. C'est une utilisation très fréquent dans R.
 
-En utilisant R, on est facilement amené à créer nos propres fonctions, c'est-à-dire des objets de type ``closure''. Dans l'exemple ci-dessous, nous créons la fonction \texttt{affine()} qui a trois arguments. Le premier n'a pas de valeur par défaut, l'utilsateur est obligé de le spécifier, pour les deux autres, nous avons ajouté des valeurs par défaut, l'utilisateur à le choix de les changer
+En utilisant R, on est facilement amené à créer nos propres fonctions, c'est-à-dire des objets de type ``closure''. Dans l'exemple ci-dessous, nous créons la fonction \texttt{affine()} qui a trois arguments. Le premier n'a pas de valeur par défaut, l'utilisateur est obligé de le spécifier, pour les deux autres, nous avons ajouté des valeurs par défaut, l'utilisateur à le choix de les changer
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4244,19 +4318,21 @@ Dans une fonction, il n'est pas nécessaire d'écrire tous les noms d'arguments 
 \end{Highlighting}
 \end{Shaded}
 
-L'exemple suivant montre comment profiter des arguments supplémentaires, ``\ldots{}''. Nous créons la fonction \texttt{affinen()} qui retourne la valeur de la fonction affine à la puissance n. Nous pourions ré-écrire l'ensemble des paramètre de la fonction affine mais nous pouvons aussi utiliser les ``\ldots{}'', de la sorte :
+L'exemple suivant montre comment profiter des arguments supplémentaires, ``\ldots{}''. Nous créons la fonction \texttt{affine()} qui retourne la valeur de la fonction affine à la puissance n. Nous pourrions ré-écrire l'ensemble des paramètre de la fonction affine mais nous pouvons aussi utiliser les ``\ldots{}'', de la sorte :
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{  affinen <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(..., }\DataTypeTok{pow=}\DecValTok{2}\NormalTok{)\{}
-\NormalTok{    y <-}\StringTok{ }\KeywordTok{affine}\NormalTok{(...)}
-    \KeywordTok{return}\NormalTok{(y}\OperatorTok{^}\NormalTok{pow)}
-\NormalTok{  \}}
-  \KeywordTok{affine}\NormalTok{(}\DataTypeTok{x=}\DecValTok{4}\NormalTok{,}\DataTypeTok{a=}\DecValTok{2}\NormalTok{,}\DataTypeTok{b=}\DecValTok{3}\NormalTok{,}\DataTypeTok{pow=}\DecValTok{3}\NormalTok{)}
+\NormalTok{affinen <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(..., }\DataTypeTok{pow =} \DecValTok{2}\NormalTok{)\{}
+\NormalTok{  y <-}\StringTok{ }\KeywordTok{affine}\NormalTok{(...)}
+  \KeywordTok{return}\NormalTok{(y}\OperatorTok{^}\NormalTok{pow)}
+\NormalTok{\}}
+\KeywordTok{affine}\NormalTok{(}\DataTypeTok{x =} \DecValTok{4}\NormalTok{, }\DataTypeTok{a =} \DecValTok{2}\NormalTok{, }\DataTypeTok{b =} \DecValTok{3}\NormalTok{, }\DataTypeTok{pow =} \DecValTok{3}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-Les oublis de l'orthographe exact d'une fonction sont fréquents. Pour chercher efficacement les noms de fonctions par motifs, il existe la fonction \texttt{apropos()} :
+Les oublis de l'orthographe exact d'une fonction sont fréquents. Pour chercher
+efficacement les noms de fonctions par motifs, il existe la fonction \texttt{apropos()}
+:
 
 \begin{Shaded}
 \begin{Highlighting}[]
