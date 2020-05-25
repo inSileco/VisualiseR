@@ -280,10 +280,10 @@ Créons une variable contenant une série de valeurs allant de 1 à 20.</p>
 <a class="sourceLine" id="cb41-2" data-line-number="2"><span class="co">#&gt;  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20</span></a></code></pre></div>
 <p>Remarque : les parenthèses permettent d’afficher dans la console le résultat de l’assignation. Générons une seconde variable avec 20 valeurs tirées aléatoirement selon une distribution normale de moyenne 0 et d’écart-type 1.</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1">(var2 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">20</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>))</a>
-<a class="sourceLine" id="cb42-2" data-line-number="2"><span class="co">#&gt;  [1]  0.7571036  0.5308334 -0.7004607 -1.7909072 -0.8010975 -0.0873369</span></a>
-<a class="sourceLine" id="cb42-3" data-line-number="3"><span class="co">#&gt;  [7]  0.3990337 -0.9004580  1.1328935 -1.3214636 -0.6987489  0.2835668</span></a>
-<a class="sourceLine" id="cb42-4" data-line-number="4"><span class="co">#&gt; [13]  0.8854674 -0.4947752 -0.8016454  1.4354707 -1.3809624 -0.9649123</span></a>
-<a class="sourceLine" id="cb42-5" data-line-number="5"><span class="co">#&gt; [19]  0.6988191  0.2870203</span></a></code></pre></div>
+<a class="sourceLine" id="cb42-2" data-line-number="2"><span class="co">#&gt;  [1] -0.67744823  0.64716013 -1.91930892 -0.29868860  0.74518641  0.32039798</span></a>
+<a class="sourceLine" id="cb42-3" data-line-number="3"><span class="co">#&gt;  [7] -1.51956139 -0.56655316  0.08203914 -1.41726942  1.81933728  0.80588251</span></a>
+<a class="sourceLine" id="cb42-4" data-line-number="4"><span class="co">#&gt; [13]  0.93405253  0.16001542 -1.90361481  0.50790410  1.86232825 -1.83429158</span></a>
+<a class="sourceLine" id="cb42-5" data-line-number="5"><span class="co">#&gt; [19] -2.65285868  0.52725456</span></a></code></pre></div>
 <p>Représentons maintenant le nuage de points (<em>scatterplot</em>) formés des valeurs de <strong>var1</strong> et <strong>var2</strong>.</p>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="kw">plot</span>(<span class="dt">x =</span> var1, <span class="dt">y =</span> var2)</a></code></pre></div>
 <p><img src="visualiseR_files/figure-html/unnamed-chunk-43-1.png" width=".55\linewidth" style="display: block; margin: auto;" /></p>
@@ -339,19 +339,19 @@ Cette fonction s’applique sur des vecteurs, mais aussi sur des data frames. El
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="kw">boxplot</span>(var2, <span class="dt">plot =</span> <span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb46-2" data-line-number="2"><span class="co">#&gt; $stats</span></a>
 <a class="sourceLine" id="cb46-3" data-line-number="3"><span class="co">#&gt;            [,1]</span></a>
-<a class="sourceLine" id="cb46-4" data-line-number="4"><span class="co">#&gt; [1,] -1.7909072</span></a>
-<a class="sourceLine" id="cb46-5" data-line-number="5"><span class="co">#&gt; [2,] -0.8510517</span></a>
-<a class="sourceLine" id="cb46-6" data-line-number="6"><span class="co">#&gt; [3,] -0.2910561</span></a>
-<a class="sourceLine" id="cb46-7" data-line-number="7"><span class="co">#&gt; [4,]  0.6148262</span></a>
-<a class="sourceLine" id="cb46-8" data-line-number="8"><span class="co">#&gt; [5,]  1.4354707</span></a>
+<a class="sourceLine" id="cb46-4" data-line-number="4"><span class="co">#&gt; [1,] -2.6528587</span></a>
+<a class="sourceLine" id="cb46-5" data-line-number="5"><span class="co">#&gt; [2,] -1.4684154</span></a>
+<a class="sourceLine" id="cb46-6" data-line-number="6"><span class="co">#&gt; [3,]  0.1210273</span></a>
+<a class="sourceLine" id="cb46-7" data-line-number="7"><span class="co">#&gt; [4,]  0.6961733</span></a>
+<a class="sourceLine" id="cb46-8" data-line-number="8"><span class="co">#&gt; [5,]  1.8623283</span></a>
 <a class="sourceLine" id="cb46-9" data-line-number="9"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb46-10" data-line-number="10"><span class="co">#&gt; $n</span></a>
 <a class="sourceLine" id="cb46-11" data-line-number="11"><span class="co">#&gt; [1] 20</span></a>
 <a class="sourceLine" id="cb46-12" data-line-number="12"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb46-13" data-line-number="13"><span class="co">#&gt; $conf</span></a>
 <a class="sourceLine" id="cb46-14" data-line-number="14"><span class="co">#&gt;            [,1]</span></a>
-<a class="sourceLine" id="cb46-15" data-line-number="15"><span class="co">#&gt; [1,] -0.8089489</span></a>
-<a class="sourceLine" id="cb46-16" data-line-number="16"><span class="co">#&gt; [2,]  0.2268368</span></a>
+<a class="sourceLine" id="cb46-15" data-line-number="15"><span class="co">#&gt; [1,] -0.6437192</span></a>
+<a class="sourceLine" id="cb46-16" data-line-number="16"><span class="co">#&gt; [2,]  0.8857737</span></a>
 <a class="sourceLine" id="cb46-17" data-line-number="17"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb46-18" data-line-number="18"><span class="co">#&gt; $out</span></a>
 <a class="sourceLine" id="cb46-19" data-line-number="19"><span class="co">#&gt; numeric(0)</span></a>
@@ -371,14 +371,14 @@ Créons tout d’abord un vecteur contenant six modalités (chaînes de caractè
 <p>Maintenant, nous allons tirer aléatoirement 1000 valeurs (avec remise donc) dans ce vecteur afin que chaque couleur soit présente plusieurs fois.</p>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1">echn &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dt">x =</span> nom, <span class="dt">size =</span> <span class="dv">1000</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)</a>
 <a class="sourceLine" id="cb48-2" data-line-number="2">echn[<span class="dv">1</span><span class="op">:</span><span class="dv">20</span>]</a>
-<a class="sourceLine" id="cb48-3" data-line-number="3"><span class="co">#&gt;  [1] &quot;Blanc&quot; &quot;Jaune&quot; &quot;Noir&quot;  &quot;Bleu&quot;  &quot;Noir&quot;  &quot;Vert&quot;  &quot;Vert&quot;  &quot;Jaune&quot; &quot;Noir&quot; </span></a>
-<a class="sourceLine" id="cb48-4" data-line-number="4"><span class="co">#&gt; [10] &quot;Blanc&quot; &quot;Vert&quot;  &quot;Vert&quot;  &quot;Rouge&quot; &quot;Jaune&quot; &quot;Bleu&quot;  &quot;Blanc&quot; &quot;Noir&quot;  &quot;Blanc&quot;</span></a>
-<a class="sourceLine" id="cb48-5" data-line-number="5"><span class="co">#&gt; [19] &quot;Blanc&quot; &quot;Blanc&quot;</span></a></code></pre></div>
+<a class="sourceLine" id="cb48-3" data-line-number="3"><span class="co">#&gt;  [1] &quot;Noir&quot;  &quot;Jaune&quot; &quot;Blanc&quot; &quot;Noir&quot;  &quot;Blanc&quot; &quot;Vert&quot;  &quot;Blanc&quot; &quot;Blanc&quot; &quot;Jaune&quot;</span></a>
+<a class="sourceLine" id="cb48-4" data-line-number="4"><span class="co">#&gt; [10] &quot;Vert&quot;  &quot;Blanc&quot; &quot;Bleu&quot;  &quot;Bleu&quot;  &quot;Noir&quot;  &quot;Vert&quot;  &quot;Rouge&quot; &quot;Jaune&quot; &quot;Jaune&quot;</span></a>
+<a class="sourceLine" id="cb48-5" data-line-number="5"><span class="co">#&gt; [19] &quot;Jaune&quot; &quot;Blanc&quot;</span></a></code></pre></div>
 <p>Comptons combien de fois se retrouve chaque modalité dans cette variable.</p>
 <div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1">(var4 &lt;-<span class="st"> </span><span class="kw">table</span>(echn))</a>
 <a class="sourceLine" id="cb49-2" data-line-number="2"><span class="co">#&gt; echn</span></a>
 <a class="sourceLine" id="cb49-3" data-line-number="3"><span class="co">#&gt; Blanc  Bleu Jaune  Noir Rouge  Vert </span></a>
-<a class="sourceLine" id="cb49-4" data-line-number="4"><span class="co">#&gt;   173   176   173   157   144   177</span></a></code></pre></div>
+<a class="sourceLine" id="cb49-4" data-line-number="4"><span class="co">#&gt;   155   169   172   170   167   167</span></a></code></pre></div>
 <p>Visualisons cette nouvelle variable catégorique.</p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="kw">barplot</span>(var4)</a></code></pre></div>
 <p><img src="visualiseR_files/figure-html/unnamed-chunk-50-1.png" width="60%" style="display: block; margin: auto;" /></p>
@@ -386,7 +386,7 @@ Créons tout d’abord un vecteur contenant six modalités (chaînes de caractè
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1">(var5 &lt;-<span class="st"> </span>var4<span class="op">/</span><span class="kw">sum</span>(var4))</a>
 <a class="sourceLine" id="cb51-2" data-line-number="2"><span class="co">#&gt; echn</span></a>
 <a class="sourceLine" id="cb51-3" data-line-number="3"><span class="co">#&gt; Blanc  Bleu Jaune  Noir Rouge  Vert </span></a>
-<a class="sourceLine" id="cb51-4" data-line-number="4"><span class="co">#&gt; 0.173 0.176 0.173 0.157 0.144 0.177</span></a></code></pre></div>
+<a class="sourceLine" id="cb51-4" data-line-number="4"><span class="co">#&gt; 0.155 0.169 0.172 0.170 0.167 0.167</span></a></code></pre></div>
 <p>Visuellement, rien ne changera, mis à part les valeurs portées sur l’axe des ordonnées. La fonction <code>barplot()</code> possède aussi de nombreux arguments. Nous vous invitons à consulter l’aide associée à cette fonction.</p>
 <div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1"><span class="kw">help</span>(barplot)</a></code></pre></div>
 <p>Il est possible de hachurer les rectangles plutôt que de leur associer une couleur. Pour ce faire, deux arguments doivent être spécifiés :
@@ -403,27 +403,27 @@ de distribution que suivent les valeurs (loi normale, loi de Poisson, etc.). Sou
 Générons 1000 valeurs aléatoires selon une loi gaussienne.</p>
 <div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1">var6 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">1000</span>)</a>
 <a class="sourceLine" id="cb54-2" data-line-number="2">var6[<span class="dv">1</span><span class="op">:</span><span class="dv">20</span>]</a>
-<a class="sourceLine" id="cb54-3" data-line-number="3"><span class="co">#&gt;  [1] -1.2737070684  0.3394753370  0.2089502796 -0.5774255117  0.4142389058</span></a>
-<a class="sourceLine" id="cb54-4" data-line-number="4"><span class="co">#&gt;  [6]  0.3787203808  0.4482284075 -0.1513049372 -0.0002360171 -0.2101518205</span></a>
-<a class="sourceLine" id="cb54-5" data-line-number="5"><span class="co">#&gt; [11]  1.4672180981 -1.4899917908  0.5352767936 -0.1547331949 -1.4255278909</span></a>
-<a class="sourceLine" id="cb54-6" data-line-number="6"><span class="co">#&gt; [16]  0.3422048551  2.2948833168  0.3299415742 -1.4641527593  0.0953013582</span></a></code></pre></div>
+<a class="sourceLine" id="cb54-3" data-line-number="3"><span class="co">#&gt;  [1] -1.03605519 -0.79545980  1.34185492 -0.25927684  0.62721170 -0.63500330</span></a>
+<a class="sourceLine" id="cb54-4" data-line-number="4"><span class="co">#&gt;  [7] -0.41903494  0.54317223  0.60340406  1.54613292  0.04448126  0.31609986</span></a>
+<a class="sourceLine" id="cb54-5" data-line-number="5"><span class="co">#&gt; [13]  0.31267708 -0.11676910 -1.10834269  0.29849619 -0.78520976  1.74807340</span></a>
+<a class="sourceLine" id="cb54-6" data-line-number="6"><span class="co">#&gt; [19] -0.02604938  0.73910167</span></a></code></pre></div>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1"><span class="kw">hist</span>(var6)</a></code></pre></div>
 <p><img src="visualiseR_files/figure-html/unnamed-chunk-55-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>De la même manière que pour les boîtes à moustaches, l’argument <code>plot = FALSE</code> ne trace pas l’histogramme, mais affiche dans la console les statistiques associées.</p>
 <div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1"><span class="kw">hist</span>(var6, <span class="dt">plot =</span> <span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb56-2" data-line-number="2"><span class="co">#&gt; $breaks</span></a>
-<a class="sourceLine" id="cb56-3" data-line-number="3"><span class="co">#&gt;  [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0</span></a>
+<a class="sourceLine" id="cb56-3" data-line-number="3"><span class="co">#&gt;  [1] -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5</span></a>
 <a class="sourceLine" id="cb56-4" data-line-number="4"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb56-5" data-line-number="5"><span class="co">#&gt; $counts</span></a>
-<a class="sourceLine" id="cb56-6" data-line-number="6"><span class="co">#&gt;  [1]   1   4   7   9  40  84 160 207 179 160  98  34  15   2</span></a>
+<a class="sourceLine" id="cb56-6" data-line-number="6"><span class="co">#&gt;  [1]   5  15  56 103 161 190 179 152  74  40  18   4   3</span></a>
 <a class="sourceLine" id="cb56-7" data-line-number="7"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb56-8" data-line-number="8"><span class="co">#&gt; $density</span></a>
-<a class="sourceLine" id="cb56-9" data-line-number="9"><span class="co">#&gt;  [1] 0.002 0.008 0.014 0.018 0.080 0.168 0.320 0.414 0.358 0.320 0.196 0.068</span></a>
-<a class="sourceLine" id="cb56-10" data-line-number="10"><span class="co">#&gt; [13] 0.030 0.004</span></a>
+<a class="sourceLine" id="cb56-9" data-line-number="9"><span class="co">#&gt;  [1] 0.010 0.030 0.112 0.206 0.322 0.380 0.358 0.304 0.148 0.080 0.036 0.008</span></a>
+<a class="sourceLine" id="cb56-10" data-line-number="10"><span class="co">#&gt; [13] 0.006</span></a>
 <a class="sourceLine" id="cb56-11" data-line-number="11"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb56-12" data-line-number="12"><span class="co">#&gt; $mids</span></a>
-<a class="sourceLine" id="cb56-13" data-line-number="13"><span class="co">#&gt;  [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75</span></a>
-<a class="sourceLine" id="cb56-14" data-line-number="14"><span class="co">#&gt; [13]  2.25  2.75</span></a>
+<a class="sourceLine" id="cb56-13" data-line-number="13"><span class="co">#&gt;  [1] -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25  2.75</span></a>
+<a class="sourceLine" id="cb56-14" data-line-number="14"><span class="co">#&gt; [13]  3.25</span></a>
 <a class="sourceLine" id="cb56-15" data-line-number="15"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb56-16" data-line-number="16"><span class="co">#&gt; $xname</span></a>
 <a class="sourceLine" id="cb56-17" data-line-number="17"><span class="co">#&gt; [1] &quot;var6&quot;</span></a>
