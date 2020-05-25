@@ -1,0 +1,54 @@
+# Part 1 - Introduction: Information, science, visualisation et R
+
+## Science et graphiques
+
+Dejà bien avancée
+
+## A propos de R
+
+Dejà bien avancée
+
+
+## Part 2 - Les éléments constitutifs d'un graphique
+
+Reprendre les différentes sections mais ne pas parler d'un système graphique particulier, juste les différents éléments avec des resources pour chaque e.g. pour les couleurs les polices...
+
+
+
+# Part 3 - Utiliser graphics
+
+Reprendre P2 pour graphics (on a le stock)
+
+
+# Part 4 - Utiliser grid and ggplot2
+
+Reprendre P2 pour ggplot2 (on a le stock)
+
+
+# Part 5 - How to !
+
+En repartant de 3 et 4 montrer comment faire une certaine diversité de graphiques (les plus importants) en parallèle ggplot
+S'appuyer sur https://www.r-graph-gallery.com/
+
+
+# Part 6 - Web et interactivité
+
+Ici, une **ouverture** sur l'infographie et l'interactivité sur le web!
+Faire le lien entre ce qui existe et des grosses biblio web genre plotly.
+
+
+
+# Part 7 -  Programmer des fonctions graphiques
+
+Une partie plus avancée.
+Donner des éléments de base pour graphics et ggplot2.
+Le but n'est pas du tout d'être exhaustif.
+
+
+
+
+# Annexes
+
+## Annexe 1 - courte introduction à R
+## Annexe 2 - une revue des packages existant
+## Annexe 3 - quel package pour tel graphique ?

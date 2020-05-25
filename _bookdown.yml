@@ -10,8 +10,7 @@ delete_merged_file: true
 edit: https://github.com/inSileco/VisualiseR/edit/master/%s
 rmd_files: [
   "index.Rmd", #
-  "00-introduction.Rmd", #
-
+  
   # (PART) Part I
   "01-science_grahique.Rmd",
   "02-apropos_R.Rmd",

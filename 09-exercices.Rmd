@@ -14,7 +14,7 @@ load(file = "extdata/datadem1.Rdata")
 head(dat)
 ```
 
-```{r echo = FALSE, out.width = '.9\\linewidth'}
+```{r echo = FALSE, out.width = '90%'}
 ###
 ### APERO
 ###
@@ -149,10 +149,11 @@ load(file = "extdata/datadem2.Rdata")
 head(dat)
 ```
 
-```{r echo = FALSE, out.width = '.9\\linewidth'}
+```{r histoperso, echo = FALSE, out.width = "90%"}
 ###
 ### CONCEPTION DE L'HISTOGRAMME
 ###
+print(dat)
 # Empty plot
 par(mar = c(2.5, 2.5, 3, 3), family = "serif", col.axis = "darkgray", xaxs = "i", yaxs = "i", mgp = c(0, 0.6, 0))
 plot(x = 0, type = "n", xlim = c(0, 30), ylim = c(0, 40), axes = FALSE, ann = FALSE)
@@ -207,7 +208,7 @@ load(file = "extdata/datadem3.Rdata")
 head(dat)
 ```
 
-```{r echo = FALSE, out.width = '.9\\linewidth'}
+```{r echo = FALSE, out.width = '90%'}
 ###
 ### CONCEPTION DE L'HISTOGRAMME
 ###

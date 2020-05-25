@@ -1,6 +1,9 @@
-# Annexe 1 - courte introduction à R {-}
+# (PART) Annexes {-}
 
-### Les grands principes de R
+
+# Annexe 1 - courte introduction à R
+
+## Les grands principes de R
 
 Le dernier livre de John Chambers [@chambers_extending_2016] insistent beaucoup
 sur les trois principes fondamentaux de R pour aller plus loin dans
@@ -44,7 +47,7 @@ rm(list=ls())
 ```
 
 
-## Première commande {-}
+## Première commande
 
 
 ```{r add1}
@@ -116,7 +119,7 @@ Jusqu'ici, nous avons utilisé deux variables: `var1` et `var2` qui sont donc
 affichées.
 
 
-## Pour R, tout est objet {-}
+## Pour R, tout est objet
 
 <!-- En informatique, un objet contient des informations et des mécanismes -->
 
@@ -235,7 +238,7 @@ très facile de créer un objet S3 personnalisé dans R grâce à la fonction
 
 
 
-### Conditions {-}
+### Conditions
 
 Lorsqu'on utilise un langage de programmation, on a souvent besoin de comparer
 des valeurs. Pour cela, on utilise des tests logiques. Il s'agit de comparaisons
@@ -318,7 +321,7 @@ La manipulation et visualisation des données nécessite rarement l'utilisation 
 
 
 
-### Les fonctions {-}
+### Les fonctions
 
 De manière générale, en informatique, une fonction est un ensemble de lignes de code dédié à la réalisation d'une tâche spécifique concrétisée par le renvoie d'une valeur (un objet dans R). Nous avons jusqu'ici déjà utiliser différentes fonctions. Le lecteur attentif a certainement remarqué que les fonctions de R présentent toutes une structure commune: elles commencent par une suite de caractères (son nom) suivie de parenthèses à l'intérieur desquelles se trouvent éventuellement un ou plusieurs arguments. Les arguments sont des objets transmis à la fonction qui seront soient ceux manipuler soit précise comment la tâche doit être effectuées. Par exemple, quand nous avons utilisé la ligne :
 
