@@ -58,4 +58,7 @@ Les graphiques qui font appel à des bibliothèques JS.
 
 
 
-## Interfaes
+## Interfaces
+
+
+<!-- Permettrait de d'expliquer pourquoi on décompose -->

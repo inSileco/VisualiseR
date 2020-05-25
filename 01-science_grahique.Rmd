@@ -1,4 +1,4 @@
-# (PART) Science visualisation et R {-}
+# (PART) Introduction: Information, science, visualisation et R {-}
 
 # Science et graphiques
 

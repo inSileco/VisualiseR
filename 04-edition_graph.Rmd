@@ -87,7 +87,7 @@ var3 <- sample(var1, 20, replace = FALSE)
 
 Nous allons maintenant représenter sur le même graphe **var2** en fonction de **var1**, puis dans un second temps **var3** en fonction de **var1**. Nous alloir voir trois exemples pour distinguer les deux séries de valeurs.
 
-```{r out.width = '.9\\linewidth'}
+```{r out.width = '90%'}
 par(mfrow = c(2, 2))
 plot(var1, var2, col = "blue", main = "Couleurs")
 points(var1, var3, col = "red")

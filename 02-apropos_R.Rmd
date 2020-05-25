@@ -125,7 +125,7 @@ Une manière simple et efficace pour prendre conscience de l'évolution de R de 
 |R-3.0.0     | 3 avril 2013       | optimization pour les processeurs à 64 bits|
 |R-3.5.0     | 23 avril 2018      | tous les packages sont                     |
 |R-4.0.0     | 24 avril 2020      | pour les 20 ans de R                       |
-|R-4.0.0     | 24 avril 2020      | version utilisée pour ce livre             |
+|R-4.0.1     | 24 avril 2020      | version utilisée pour ce livre             |
 : Date de sortie des différentes version sur le CRAN (voir https://cran.r-project.org/ pour une list complète).
 
 
