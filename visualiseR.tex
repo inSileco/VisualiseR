@@ -119,7 +119,7 @@
 
 \title{Visualiser vos données avec R}
 \author{Nicolas Casajus, Kevin Cazelles}
-\date{2020-05-18}
+\date{2020-05-25}
 
 \begin{document}
 \maketitle
@@ -228,9 +228,6 @@ Nicolas Casajus, Kevin Cazelles
 
 A ajouter.
 
-\hypertarget{introduction}{%
-\section{Introduction}\label{introduction}}
-
 \begin{itemize}
 \item
   Par de nombreux aspects, nous visons dans un âge des données.
@@ -257,8 +254,8 @@ A ajouter.
   \end{enumerate}
 \end{itemize}
 
-\hypertarget{part-science-visualisation-et-r}{%
-\part{Science visualisation et R}\label{part-science-visualisation-et-r}}
+\hypertarget{part-introduction-information-science-visualisation-et-r}{%
+\part{Introduction: Information, science, visualisation et R}\label{part-introduction-information-science-visualisation-et-r}}
 
 \hypertarget{science-et-graphiques}{%
 \section{Science et graphiques}\label{science-et-graphiques}}
@@ -527,7 +524,7 @@ R-2.0.0 & 4 octobre 2004 & introduit le \emph{lazy loading}\tabularnewline
 R-3.0.0 & 3 avril 2013 & optimization pour les processeurs à 64 bits\tabularnewline
 R-3.5.0 & 23 avril 2018 & tous les packages sont\tabularnewline
 R-4.0.0 & 24 avril 2020 & pour les 20 ans de R\tabularnewline
-R-4.0.0 & 24 avril 2020 & version utilisée pour ce livre\tabularnewline
+R-4.0.1 & 24 avril 2020 & version utilisée pour ce livre\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -876,8 +873,8 @@ Lorsque les graphiques sont produits que ce soit avec \emph{grid} ou \emph{graph
 
 Les graphiques qui font appel à des bibliothèques JS.
 
-\hypertarget{interfaes}{%
-\subsection{Interfaes}\label{interfaes}}
+\hypertarget{interfaces}{%
+\subsection{Interfaces}\label{interfaces}}
 
 \hypertarget{part-utiliser-graphics}{%
 \part{Utiliser graphics}\label{part-utiliser-graphics}}
@@ -895,9 +892,9 @@ Créons tout d'abord deux variables continues.
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{(x1 <-}\StringTok{ }\KeywordTok{sample}\NormalTok{(}\DataTypeTok{x =} \DecValTok{0}\OperatorTok{:}\DecValTok{10}\NormalTok{, }\DataTypeTok{size =} \DecValTok{20}\NormalTok{, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{))}
-\CommentTok{#>  [1] 2 2 4 5 4 8 5 8 0 3 3 2 7 9 1 4 7 1 3 6}
+\CommentTok{#>  [1]  8  7  3 10  0  2 10  6  3  2  9  8  7  8  2  7  7  1  5  3}
 \NormalTok{(x2 <-}\StringTok{ }\KeywordTok{sample}\NormalTok{(}\DataTypeTok{x =} \DecValTok{10}\OperatorTok{:}\DecValTok{20}\NormalTok{, }\DataTypeTok{size =} \DecValTok{20}\NormalTok{, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{))}
-\CommentTok{#>  [1] 16 17 10 18 11 16 10 17 10 20 13 12 15 11 12 20 18 10 19 18}
+\CommentTok{#>  [1] 13 15 12 18 10 19 17 15 18 15 13 13 11 14 18 14 16 15 18 12}
 \end{Highlighting}
 \end{Shaded}
 
@@ -911,7 +908,7 @@ Ces deux variables ne varient pas de la même manière. Nous allons faire deux g
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{visualiseR_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics{visualiseR_files/figure-latex/unnamed-chunk-2-1} \end{center}
 
 Par défaut, la fonction \texttt{plot()} affiche une boîte autour de la région graphique. C'est l'argument \texttt{bty} qui défini cela. Par défaut, il prend la valeur \textbf{``o''}. Pour supprimer ce cadre, on peut lui attribuer la valeur \textbf{``n''}.
 
@@ -921,7 +918,7 @@ Par défaut, la fonction \texttt{plot()} affiche une boîte autour de la région
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.55\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=.55\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
 Maintenant que nous avons fixé les axes, nous allons les supprimer. Ceci n'aura aucune incidence sur l'étendue du graphe. Pour ce faire, nous allons utiliser les arguments \texttt{xaxt} et \texttt{yaxt} qui contrôlent l'affichage des axes. L'argument \texttt{axes} permet quant à lui de supprimer à la fois les axes, mais aussi le cadre. Comparez ces graphes suivants
 
@@ -935,7 +932,7 @@ Maintenant que nous avons fixé les axes, nous allons les supprimer. Ceci n'aura
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=1\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-5-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 Poursuivons notre destruction graphique, et supprimons le nom des axes avec les arguments \texttt{xlab} et \texttt{ylab}. Par défaut, le nom des axes correspond au nom des variables. L'astuce ici consiste à leur attribuer la valeur \texttt{""}. Cependant, une alternative consisterait à utiliser l'argument \texttt{ann} qui va supprimer toute annotation dans le graphe (nom des axes, mais aussi titre et sous-titre).
 
@@ -945,7 +942,7 @@ Poursuivons notre destruction graphique, et supprimons le nom des axes avec les 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.5\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-6-1} \end{center}
+\begin{center}\includegraphics[width=.5\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
 Il ne nous reste plus qu'à supprimer les points avec l'argument \texttt{type}. Nous allons tout de même laisser le cadre afin de délimiter notre graphe.
 
@@ -955,7 +952,7 @@ Il ne nous reste plus qu'à supprimer les points avec l'argument \texttt{type}. 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.5\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-7-1} \end{center}
+\begin{center}\includegraphics[width=.5\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-6-1} \end{center}
 
 Étant donné que nous fixons les bornes des axes, et que nous supprimons l'affichage des données, nous pourrions éviter de spécifier les données en x et en y, et simplement demander de (ne pas) représenter la valeur \textbf{0} (ou autre chose). Ainsi, l'écriture précédente pourrait se résumer à ceci (sans le cadre) :
 
@@ -984,7 +981,7 @@ Par la suite, il suffira de faire appel à cette fonction pour ouvrir un nouveau
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.5\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-10-1} \end{center}
+\begin{center}\includegraphics[width=.5\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-9-1} \end{center}
 
 Remarque : la fonction \texttt{box} permet d'afficher un cadre autour de la région du plot (\texttt{"plot"}) ou de la figure (\texttt{"figure"}). Autre remarque : on pourrait utiliser cette fonction comme la fonction \texttt{plot()} et afficher, par ex. les données en indiquant \texttt{type\ =\ "p"}.
 
@@ -1016,7 +1013,7 @@ Nous allons maintenant représenter sur le même graphe \textbf{var2} en fonctio
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.9\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-12-1} \end{center}
+\begin{center}\includegraphics[width=0.9\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-11-1} \end{center}
 
 Dans ces exemples, les trois variables présentaient la même gamme de valeurs (de 1 à 20). Si vous souhaitez superposer sur un même graphe des séries de points qui n'ont pas la même étendue de valeurs, il faudra convenablement définir les bornes des axes dans la fonction \texttt{plot()} avec les arguments \texttt{xlim} et \texttt{ylim} de manière à ce que toutes les séries de points s'affichent correctement.
 Introduisons maintenant une commande intéressante sous R : la fonction \texttt{locator()}. Celle-ci permet de récupérer les coordonnées d'un (ou de plusieurs) clic(s) sur un graphique. Voici comment l'utiliser pour deux clics :
@@ -1060,7 +1057,7 @@ Sous R, plusieurs fonctions permettent de tracer une ligne. Tout dépend de l'in
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.8\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-16-1} \end{center}
+\begin{center}\includegraphics[width=.8\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-15-1} \end{center}
 
 La fonction \texttt{segments()} s'utilise à peu de choses prêt de la même manière.
 
@@ -1076,7 +1073,7 @@ La fonction \texttt{segments()} s'utilise à peu de choses prêt de la même man
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.7\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-17-1} \end{center}
+\begin{center}\includegraphics[width=.7\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-16-1} \end{center}
 
 Parlons maintenant de la fonction \texttt{abline()}. Celle-ci offre plusieurs possibilités : elle permet entre autres de tracer des lignes horizontales et verticales ainsi que des droites de régression. Mais, contrairement aux trois fonctions précédentes, qui étaient bornées aux coordonnées fournies, les droites tracées avec cette fonction s'étendront d'un bord à l'autre de la région graphique.
 
@@ -1089,7 +1086,7 @@ Parlons maintenant de la fonction \texttt{abline()}. Celle-ci offre plusieurs po
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.35\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-18-1} \end{center}
+\begin{center}\includegraphics[width=.35\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-17-1} \end{center}
 
 Finalement, mentionnons que la fonction \texttt{locator()} pourra être utilisée pour tracer des lignes de manière interactive.
 
@@ -1114,7 +1111,7 @@ Insérer une forme polygonale sur un graphe se fera à l'aide de la fonction \te
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.5\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-20-1} \end{center}
+\begin{center}\includegraphics[width=.5\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-19-1} \end{center}
 
 Nous retrouvons ici des arguments vu précédemment dans d'autres fonctions. Voyons maintenant un exemple en couleurs. Nous allons générer trois variables, dont deux correspondant à deux distributions normales.
 
@@ -1136,7 +1133,7 @@ Traçons ces distributions avec la fonction \texttt{polygon()}.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.45\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-22-1} \end{center}
+\begin{center}\includegraphics[width=.45\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-21-1} \end{center}
 
 Ici, une remarque s'impose : nous venons d'attribuer deux couleurs dans un format un peu spécial : il s'agit du format hexadécimal. Celui-ci comprend, dans sa forme minimale, six caractères précédés du symbole \emph{dièse} : les deux premiers symboles reflètent la quantité de rouge, les deux suivants celle de vert, et les deux derniers la quantité de bleu. À ceci, on peut rajouter (comme nous l'avons fait) deux autres caractères représentant le degré de transparence. Nous reviendrons sur ce point dans le chapitre suivant.
 Intéressons-nous maintenant à la fonction \texttt{rect()} qui permet de tracer un rectangle.
@@ -1148,7 +1145,7 @@ Intéressons-nous maintenant à la fonction \texttt{rect()} qui permet de tracer
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.45\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-23-1} \end{center}
+\begin{center}\includegraphics[width=.45\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-22-1} \end{center}
 
 Remarque : la fonction \texttt{locator()} peut également être utilisée avec \texttt{polygon()}, mais pas avec la fonction \texttt{rect()}.
 Mettons à profit ce que nous venons d'apprendre avec les fonctions \texttt{rect()} et \texttt{abline()} pour personnaliser la zone de plot.
@@ -1167,7 +1164,7 @@ Mettons à profit ce que nous venons d'apprendre avec les fonctions \texttt{rect
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.75\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-24-1} \end{center}
+\begin{center}\includegraphics[width=.75\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-23-1} \end{center}
 
 Ici, nous avons utilisé de nouveaux arguments. L'argument \texttt{lty} contrôle le type de ligne (\textbf{1} étant un trait plein, et \textbf{3} un trait en pointillés). L'argument \texttt{border\ =\ 0} indique que la couleur du contour du rectangle sera transparente. Enfin, l'argument \texttt{las\ =\ 1} spécifie que les valeurs portées sur les axes seront écrites horizontalement.
 Quelques précisions maintenant sur la commande \texttt{par()\textbackslash{}\$usr}. Nous avons défini nous-même l'étendue des axes x et y (0, 20). Cependant, par défaut, R laisse un peu de marge avant et après chaque axe (4\% pour être précis). Ainsi, cette commande nous permet de récupérer les dimensions exactes (après ajout de ces 4\%) de la région du plot. En attribuant la valeur \textbf{``i''} aux paramètres graphiques \texttt{xaxs} et \texttt{yaxs}, nous aurions supprimé cet ajout de 4\%. Pour preuve :
@@ -1194,7 +1191,7 @@ Bien que peu fréquent, nous pouvons aussi tracer des flèches. Ceci se fera ave
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.5\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-26-1} \end{center}
+\begin{center}\includegraphics[width=.5\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-25-1} \end{center}
 
 Nous n'en dirons pas plus sur les flèches.
 
@@ -1234,7 +1231,7 @@ Utilisons ces arguments.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-27-1} \end{center}
+\begin{center}\includegraphics[width=.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-26-1} \end{center}
 
 Nous verrons dans la section suivante qu'il est aussi possible d'ajouter des annotations dans les marges de la figure, et nous aurions pu utiliser à la place, la fonction \texttt{mtext()}.
 
@@ -1257,7 +1254,7 @@ La fonction \texttt{text()} permet d'insérer du texte dans la région du plot. 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.7\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-28-1} \end{center}
+\begin{center}\includegraphics[width=.7\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-27-1} \end{center}
 
 L'argument \texttt{font} contrôle la graisse du texte, c.-à-d. que le texte pourra être écrit normalement (\textbf{1}), en gras (\textbf{2}), en italique (\textbf{3}), etc. Ici, le texte se place exactement aux coordonnées fournies. Mais, on imagine facilement que si on superpose à la fois les points et les étiquettes, le graphique sera illisible. Heureusement, cette fonction présente l'argument \texttt{pos} qui contrôle le positionnement du texte par rapport aux coordonnées. Le tableau suivant fournit les valeurs possibles pour cet argument.
 
@@ -1275,7 +1272,7 @@ L'argument \texttt{font} contrôle la graisse du texte, c.-à-d. que le texte po
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-29-1} \end{center}
+\begin{center}\includegraphics[width=.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-28-1} \end{center}
 
 Remarque : la fonction \texttt{locator()} pourra s'appliquer ici.
 Pour rajouter du texte dans les marges, nous utiliserons la fonction \texttt{mtext()}. Cependant, cette fonction s'écrit différemment : l'argument \texttt{side} indique dans quelle marge doit être affiché le texte (\textbf{1} en bas, \textbf{2} à gauche, \textbf{3} en haut, \textbf{4} à droite). L'argument \texttt{line} permet quant à lui de positionner le texte par rapport aux limites de la région du plot. Enfin, l'argument \texttt{at} permet d'indiquer la coordonnée de placement sur l'axe en question.
@@ -1296,7 +1293,7 @@ Regardons cela avec un exemple simple.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-30-1} \end{center}
+\begin{center}\includegraphics[width=.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-29-1} \end{center}
 
 \hypertarget{ajout-dune-luxe9gende}{%
 \subsection{Ajout d'une légende}\label{ajout-dune-luxe9gende}}
@@ -1401,7 +1398,7 @@ Les informations retournées correspondent à la boîte \texttt{\textbackslash{}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-33-1} \end{center}
+\begin{center}\includegraphics[width=.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-32-1} \end{center}
 
 \hypertarget{ajout-dun-axe}{%
 \subsection{Ajout d'un axe}\label{ajout-dun-axe}}
@@ -1450,7 +1447,7 @@ Regardons comment ajouter des axes à un graphe. Dans un premier temps, nous all
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.55\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-34-1} \end{center}
+\begin{center}\includegraphics[width=.55\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-33-1} \end{center}
 
 Ici, nous avons défini une graduation secondaire dépourvue d'étiquette sur les axes avec une graduation plus fine. Nous avons également rajouté un nom aux axes avec la fonction \texttt{mtext()} puisque cette option n'est pas disponible dans la fonction \texttt{axis()}.
 
@@ -1623,10 +1620,10 @@ Remarque : les parenthèses permettent d'afficher dans la console le résultat d
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{(var2 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DataTypeTok{n =} \DecValTok{20}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{))}
-\CommentTok{#>  [1]  0.67645010 -0.11951858  1.11129611 -0.66096482 -0.13587671  0.14518106}
-\CommentTok{#>  [7] -0.14651101  0.60010398 -1.29302702  0.75920627 -0.60264743  0.88585529}
-\CommentTok{#> [13] -2.64310006 -0.42851955  0.28343086  1.17952996  0.29137920 -0.02451464}
-\CommentTok{#> [19] -0.02707525  1.26954965}
+\CommentTok{#>  [1]  0.82005083 -0.76791161  1.31681533 -0.08737631  0.34562243  0.87908635}
+\CommentTok{#>  [7]  1.40782321  1.42933765 -0.66085375 -1.41455382 -0.31344414 -0.46619249}
+\CommentTok{#> [13]  0.96705089  0.93656954 -0.11011867  1.30027085  0.04713122 -0.03171732}
+\CommentTok{#> [19]  1.51674903  0.27291571}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1638,7 +1635,7 @@ Représentons maintenant le nuage de points (\emph{scatterplot}) formés des val
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.55\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-44-1} \end{center}
+\begin{center}\includegraphics[width=.55\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-43-1} \end{center}
 
 Anticipons légèrement sur les chapitres suivants et intéressons-nous à l'argument \texttt{type} de la fonction \texttt{plot()}. Celui-ci permet de représenter les données de différentes manières : nuage de points, barres verticales, lignes, etc.
 \{ll\}
@@ -1686,7 +1683,7 @@ Nous allons également rajouter un titre à chaque graphique qui contient la val
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{visualiseR_files/figure-latex/unnamed-chunk-45-1} \end{center}
+\begin{center}\includegraphics{visualiseR_files/figure-latex/unnamed-chunk-44-1} \end{center}
 
 La fonction \texttt{plot()} offre de nombreux autres arguments qu'il est possible de modifier. C'est en partie ce que nous verrons tout au long de ce document, puisque cet enseignement met essentiellement l'accent sur cette fonction.
 
@@ -1704,7 +1701,7 @@ quantitative. Sous R, la fonction utilisée sera \texttt{boxplot()}.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.55\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-46-1} \end{center}
+\begin{center}\includegraphics[width=.55\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-45-1} \end{center}
 
 Cette fonction s'applique sur des vecteurs, mais aussi sur des data frames. Elle possède de nombreux arguments. Par exemple, le tableau suivant liste les paramètres les plus courants.
 \{ll\}
@@ -1733,26 +1730,26 @@ L'argument \texttt{plot} mis à la valeur \textbf{FALSE} n'affiche pas de boîte
 \begin{Highlighting}[]
 \KeywordTok{boxplot}\NormalTok{(var2, }\DataTypeTok{plot =} \OtherTok{FALSE}\NormalTok{)}
 \CommentTok{#> $stats}
-\CommentTok{#>             [,1]}
-\CommentTok{#> [1,] -1.29302702}
-\CommentTok{#> [2,] -0.28751528}
-\CommentTok{#> [3,]  0.06033321}
-\CommentTok{#> [4,]  0.71782818}
-\CommentTok{#> [5,]  1.26954965}
+\CommentTok{#>            [,1]}
+\CommentTok{#> [1,] -1.4145538}
+\CommentTok{#> [2,] -0.2117814}
+\CommentTok{#> [3,]  0.3092691}
+\CommentTok{#> [4,]  1.1336609}
+\CommentTok{#> [5,]  1.5167490}
 \CommentTok{#> }
 \CommentTok{#> $n}
 \CommentTok{#> [1] 20}
 \CommentTok{#> }
 \CommentTok{#> $conf}
 \CommentTok{#>            [,1]}
-\CommentTok{#> [1,] -0.2948534}
-\CommentTok{#> [2,]  0.4155198}
+\CommentTok{#> [1,] -0.1660740}
+\CommentTok{#> [2,]  0.7846121}
 \CommentTok{#> }
 \CommentTok{#> $out}
-\CommentTok{#> [1] -2.6431}
+\CommentTok{#> numeric(0)}
 \CommentTok{#> }
 \CommentTok{#> $group}
-\CommentTok{#> [1] 1}
+\CommentTok{#> numeric(0)}
 \CommentTok{#> }
 \CommentTok{#> $names}
 \CommentTok{#> [1] "1"}
@@ -1778,9 +1775,9 @@ Maintenant, nous allons tirer aléatoirement 1000 valeurs (avec remise donc) dan
 \begin{Highlighting}[]
 \NormalTok{echn <-}\StringTok{ }\KeywordTok{sample}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ nom, }\DataTypeTok{size =} \DecValTok{1000}\NormalTok{, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{)}
 \NormalTok{echn[}\DecValTok{1}\OperatorTok{:}\DecValTok{20}\NormalTok{]}
-\CommentTok{#>  [1] "Noir"  "Vert"  "Rouge" "Jaune" "Noir"  "Rouge" "Rouge" "Blanc" "Blanc"}
-\CommentTok{#> [10] "Bleu"  "Jaune" "Rouge" "Noir"  "Jaune" "Jaune" "Blanc" "Vert"  "Bleu" }
-\CommentTok{#> [19] "Rouge" "Blanc"}
+\CommentTok{#>  [1] "Blanc" "Blanc" "Blanc" "Bleu"  "Noir"  "Blanc" "Vert"  "Blanc" "Jaune"}
+\CommentTok{#> [10] "Jaune" "Noir"  "Rouge" "Vert"  "Vert"  "Bleu"  "Rouge" "Bleu"  "Blanc"}
+\CommentTok{#> [19] "Bleu"  "Noir"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1791,7 +1788,7 @@ Comptons combien de fois se retrouve chaque modalité dans cette variable.
 \NormalTok{(var4 <-}\StringTok{ }\KeywordTok{table}\NormalTok{(echn))}
 \CommentTok{#> echn}
 \CommentTok{#> Blanc  Bleu Jaune  Noir Rouge  Vert }
-\CommentTok{#>   178   174   166   162   161   159}
+\CommentTok{#>   148   171   182   172   162   165}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1803,7 +1800,7 @@ Visualisons cette nouvelle variable catégorique.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-51-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-50-1} \end{center}
 
 Nous pouvons également représenter cette même variable sous forme relative. Calculons la fréquence de chaque modalité et produisons un nouveau graphe.
 
@@ -1812,7 +1809,7 @@ Nous pouvons également représenter cette même variable sous forme relative. C
 \NormalTok{(var5 <-}\StringTok{ }\NormalTok{var4}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(var4))}
 \CommentTok{#> echn}
 \CommentTok{#> Blanc  Bleu Jaune  Noir Rouge  Vert }
-\CommentTok{#> 0.178 0.174 0.166 0.162 0.161 0.159}
+\CommentTok{#> 0.148 0.171 0.182 0.172 0.162 0.165}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1835,7 +1832,7 @@ Par exemple,
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-54-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-53-1} \end{center}
 
 \hypertarget{histogramme}{%
 \subsection{Histogramme}\label{histogramme}}
@@ -1848,10 +1845,10 @@ Générons 1000 valeurs aléatoires selon une loi gaussienne.
 \begin{Highlighting}[]
 \NormalTok{var6 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DataTypeTok{n =} \DecValTok{1000}\NormalTok{)}
 \NormalTok{var6[}\DecValTok{1}\OperatorTok{:}\DecValTok{20}\NormalTok{]}
-\CommentTok{#>  [1] -0.4808039  0.0349922 -1.1338567 -0.4069632 -0.4413105  0.4414648}
-\CommentTok{#>  [7]  0.1103638 -2.6025217  0.3235587  0.1311666  1.4426892  1.3508994}
-\CommentTok{#> [13] -0.4681334  0.1350724  0.3204269 -0.6642407 -1.1788432 -1.0011340}
-\CommentTok{#> [19]  1.0498603  1.0800170}
+\CommentTok{#>  [1]  1.43207229 -0.79265794  0.15049655  1.86885870 -0.83142393  0.72746613}
+\CommentTok{#>  [7]  0.59385442 -1.38653502 -0.43424045  0.26145900  0.77300033  0.49141526}
+\CommentTok{#> [13]  1.91205160 -1.61402320  1.19820284  0.31872490 -0.00878036  0.76405587}
+\CommentTok{#> [19] -1.62180814 -0.19096495}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1861,7 +1858,7 @@ Générons 1000 valeurs aléatoires selon une loi gaussienne.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{visualiseR_files/figure-latex/unnamed-chunk-56-1} \end{center}
+\begin{center}\includegraphics{visualiseR_files/figure-latex/unnamed-chunk-55-1} \end{center}
 
 De la même manière que pour les boîtes à moustaches, l'argument \texttt{plot\ =\ FALSE} ne trace pas l'histogramme, mais affiche dans la console les statistiques associées.
 
@@ -1869,19 +1866,19 @@ De la même manière que pour les boîtes à moustaches, l'argument \texttt{plot
 \begin{Highlighting}[]
 \KeywordTok{hist}\NormalTok{(var6, }\DataTypeTok{plot =} \OtherTok{FALSE}\NormalTok{)}
 \CommentTok{#> $breaks}
-\CommentTok{#>  [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5}
-\CommentTok{#> [16]  4.0}
+\CommentTok{#>  [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0}
+\CommentTok{#> [16]  3.5}
 \CommentTok{#> }
 \CommentTok{#> $counts}
-\CommentTok{#>  [1]   1  11  16  28 101 156 193 191 147  88  41  19   7   0   1}
+\CommentTok{#>  [1]   1   2   4  21  40  77 133 192 204 161 104  35  19   5   2}
 \CommentTok{#> }
 \CommentTok{#> $density}
-\CommentTok{#>  [1] 0.002 0.022 0.032 0.056 0.202 0.312 0.386 0.382 0.294 0.176 0.082 0.038}
-\CommentTok{#> [13] 0.014 0.000 0.002}
+\CommentTok{#>  [1] 0.002 0.004 0.008 0.042 0.080 0.154 0.266 0.384 0.408 0.322 0.208 0.070}
+\CommentTok{#> [13] 0.038 0.010 0.004}
 \CommentTok{#> }
 \CommentTok{#> $mids}
-\CommentTok{#>  [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25}
-\CommentTok{#> [13]  2.75  3.25  3.75}
+\CommentTok{#>  [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75}
+\CommentTok{#> [13]  2.25  2.75  3.25}
 \CommentTok{#> }
 \CommentTok{#> $xname}
 \CommentTok{#> [1] "var6"}
@@ -1904,7 +1901,7 @@ représenter.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-58-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-57-1} \end{center}
 
 Nous aurions également pu indiquer les bornes de chaque classe désirée (par ex.
 des classes tous les 0.25). De même, plusieurs algorithmes ont été implémentés
@@ -1930,7 +1927,7 @@ Une alternative au diagramme en bâtons est le diagramme sectoriel (camembert). 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-60-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-59-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1938,7 +1935,7 @@ Une alternative au diagramme en bâtons est le diagramme sectoriel (camembert). 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-61-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-60-1} \end{center}
 
 Dans les deux exemples précédents, nous avons défini des couleurs à l'aide de l'argument \texttt{col}. Dans le premier cas, nous avons indiqué le nom des couleurs : R implémente une palette de couleurs prédéfinies assez conséquente. Dans le second cas, nous avons utilisé la fonction \texttt{rainbow()} qui sélectionne un nombre donné de couleurs parmi les couleurs de l'arc-en-ciel. Nous y reviendrons dans le troisième chapitre.
 
@@ -1976,7 +1973,7 @@ Pour terminer ce chapitre, introduisons une fonction qui pourrait vous être uti
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=1\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-63-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-62-1} \end{center}
 
 Ici, des éclaircissements s'imposent. Premièrement, nous avons modifié un autre paramètre graphique : \texttt{mgp}. Celui permet de contrôler le positionnement du nom des axes, des étiquettes des axes et des axes eux-mêmes. Ces positionnements sont relatifs à la région du plot. Nous y reviendrons plus loin.
 La fonction \texttt{expression()} permet quant à elle d'utiliser l'écriture mathématique dans des graphiques. Consultez l'aide de cette fonction ainsi que celle de la fonction \texttt{plotmath()} pour en savoir plus.
@@ -1999,7 +1996,7 @@ La fonction \texttt{expression()} permet quant à elle d'utiliser l'écriture ma
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=1\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-64-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-63-1} \end{center}
 
 \hypertarget{paramuxe8tres-graphiques}{%
 \section{Paramètres graphiques}\label{paramuxe8tres-graphiques}}
@@ -2082,7 +2079,7 @@ trois polices principales de caractères sont disponibles :
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-67-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-66-1} \end{center}
 
 Sous R, le style et la graisse sont regroupés sous le même argument : \texttt{font}. Mais, celui-ci est plus précis que \texttt{family} (qui s'applique sur tous les éléments textuels) dans le sens où il se décline en \texttt{font.axis}, \texttt{font.lab}, \texttt{font.main} et \texttt{font.sub}. Regardons les différents styles disponibles.
 
@@ -2100,7 +2097,7 @@ Sous R, le style et la graisse sont regroupés sous le même argument : \texttt{
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-68-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-67-1} \end{center}
 
 Dans les fonctions \texttt{text()} et \texttt{mtext()}, seul l'argument \texttt{font} est disponible.
 De plus, tous ces paramètres auraient pu être modifiés dans le \texttt{par()} avant de
@@ -2214,7 +2211,7 @@ couleurs dans l'arc-en-ciel.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.5\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-71-1} \end{center}
+\begin{center}\includegraphics[width=0.5\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-70-1} \end{center}
 
 Attention, certains symboles sont caractérisés par deux couleurs : le contour et
 le fond. L'argument \texttt{col} contrôlera la couleur de contour alors que l'argument
@@ -2224,7 +2221,7 @@ qui contrôle le type de symbole. Notons que la valeur \textbf{1} sera différen
 la valeur \textbf{`1'}, la première affichant le premier symbole alors que le second
 affichera la valeur 1.
 
-\begin{center}\includegraphics[width=0.8\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-72-1} \end{center}
+\begin{center}\includegraphics[width=0.8\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-71-1} \end{center}
 
 Finalement, mentionnons qu'il est possible d'insérer des symboles \texttt{Hershey} via la fonction \texttt{text()}.
 
@@ -2237,14 +2234,14 @@ Finalement, mentionnons qu'il est possible d'insérer des symboles \texttt{Hersh
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.5\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-74-1} \end{center}
+\begin{center}\includegraphics[width=0.5\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-73-1} \end{center}
 
 \hypertarget{types-de-lignes}{%
 \subsection{Types de lignes}\label{types-de-lignes}}
 
 Les lignes, tout comme les bordures de polygones et les axes, possèdent trois caractéristiques sur lesquelles on peut jouer : le type de ligne (\texttt{lty}), son épaisseur (\texttt{lwd}) et sa couleur (\texttt{col}). La figure suivante illustre ces différentes caractéristiques (inutile de détailler la couleur).
 
-\begin{center}\includegraphics[width=0.8\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-75-1} \end{center}
+\begin{center}\includegraphics[width=0.8\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-74-1} \end{center}
 
 \hypertarget{modification-des-axes}{%
 \subsection{Modification des axes}\label{modification-des-axes}}
@@ -2269,7 +2266,7 @@ Un autre argument peut être intéressant. Il s'agit de \texttt{mgp}. Celui-ci p
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.5\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-76-1} \end{center}
+\begin{center}\includegraphics[width=0.5\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-75-1} \end{center}
 
 Le tableau suivant liste les paramètres graphiques se rapportant aux axes qu'il est intéressant de connaître.
 
@@ -2364,7 +2361,7 @@ Pour terminer, regardons un exemple faisant appel à certains de ces paramètres
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.8\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-78-1} \end{center}
+\begin{center}\includegraphics[width=0.8\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-77-1} \end{center}
 
 \hypertarget{ajustement-des-marges}{%
 \subsection{Ajustement des marges}\label{ajustement-des-marges}}
@@ -2384,7 +2381,7 @@ Les marges sont également une notion importante d'un graphique. Plusieurs param
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.5\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-80-1} \end{center}
+\begin{center}\includegraphics[width=0.5\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-79-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2405,7 +2402,7 @@ Les marges sont également une notion importante d'un graphique. Plusieurs param
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-82-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-81-1} \end{center}
 
 L'espace compris entre les bordures verte et bleue correspond à la marge
 extérieure à la région graphique (\emph{outer margin}). Elle est contrôlée par le
@@ -2452,7 +2449,7 @@ Il n'existe pas de règle absolue concernant ce paramètre : la conception graph
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-86-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-85-1} \end{center}
 
 \hypertarget{les-couleurs-sous-r}{%
 \subsection{Les couleurs sous R}\label{les-couleurs-sous-r}}
@@ -2727,7 +2724,7 @@ Et en image.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{visualiseR_files/figure-latex/unnamed-chunk-96-1} \end{center}
+\begin{center}\includegraphics{visualiseR_files/figure-latex/unnamed-chunk-95-1} \end{center}
 
 Pour terminer ce chapitre, nous vous présentons une fonction que nous avons implémentée et qui pourrait vous être très utile. Celle-ci va vous permettre de retourner le code hexadécimal de couleurs que vous aurez sélectionnées en cliquant sur une palette. Vous aurez le choix des palettes, et vous pourrez récupérer les codes hexadécimaux directement dans la console R.
 Voici le c\oe\{\}ur de la fonction \texttt{pickcolor()}.
@@ -2794,7 +2791,7 @@ Cette fonction possède deux arguments :
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.8\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-99-1} \end{center}
+\begin{center}\includegraphics[width=0.8\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-98-1} \end{center}
 
 Après avoir cliquer neuf fois sur cette palette, les neuf codes hexadécimaux sont retournés dans la console et la figure suivante s'affiche.
 
@@ -2817,7 +2814,7 @@ Utilisons cette palette de couleurs avec notre fonction interactive.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.8\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-102-1} \end{center}
+\begin{center}\includegraphics[width=0.8\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-101-1} \end{center}
 
 Ceci clôture notre chapitre sur les paramètres graphiques. Les deux chapitres suivants sont un peu plus avancés mais ils vont vous permettre d'automatiser vos productions graphiques et de créer des compositions aussi esthétiques que sous \emph{Adobe Illustrator}. Ou presque\ldots{}
 
@@ -3107,7 +3104,7 @@ Voici un exemple illustrant l'utilisation de l'argument \texttt{mfrow}.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-116-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-115-1} \end{center}
 
 Avec ces arguments, il est possible d'ignorer une région graphique et de passer à la suivante en utilisant la fonction \texttt{plot.new()}.
 
@@ -3123,7 +3120,7 @@ Avec ces arguments, il est possible d'ignorer une région graphique et de passer
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.9\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-117-1} \end{center}
+\begin{center}\includegraphics[width=0.9\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-116-1} \end{center}
 
 Nous avons fait le tour des possibilités offertes par ces arguments de la fonction \texttt{par()}. Regardons maintenant des fonctions plus élaborées.
 
@@ -3149,7 +3146,7 @@ premier exemple afin de faire connaissance avec cette fonction.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-118-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-117-1} \end{center}
 
 La fonction \texttt{layout.show()} permet de visualiser le partitionnement réalisé.
 L'argument \texttt{n} mentionné correspond au nombre de régions graphiques issues du
@@ -3171,7 +3168,7 @@ notre cas, le remplissage se fera par ligne. Vérifions.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-119-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-118-1} \end{center}
 
 Par contre, si on transposait la matrice, le remplissage se ferait en colonnes.
 Ici, le résultat est très similaire à ce que nous aurions obtenu avec les
@@ -3204,7 +3201,7 @@ certaines cellules de la matrice possède la même valeur.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-121-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-120-1} \end{center}
 
 Cependant, nous remarquons que les marges définies ont été modifiées pour les
 régions fusionnées. Ce qui peut être problématique dans la recherche d'un
@@ -3223,7 +3220,7 @@ cela.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-123-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-122-1} \end{center}
 
 Le premier exercice du chapitre 6 présente une utilisation avancée de la fonction \texttt{layout()} et de tous ses arguments.
 
@@ -3316,7 +3313,7 @@ Voyons un exemple avec des données fictives.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-126-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-125-1} \end{center}
 
 Mise à part l'inclusion de la commande \texttt{par(new\ =\ TRUE)}, tout se passe
 normalement. En enlevant cette ligne de code, les graphiques s'afficheraient
@@ -3394,7 +3391,7 @@ Regardons maintenant un exemple visuel.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-131-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-130-1} \end{center}
 
 Voilà, ce n'est pas plus compliqué. D'ailleurs, si on y réfléchit bien, si on ne
 modifie pas le paramètre \texttt{fig}, on se retrouverait dans le cas de figure vu dans
@@ -3434,7 +3431,7 @@ Pour terminer, regardons un dernier exemple pour bien comprendre le rôle de l'a
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-133-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-132-1} \end{center}
 
 \hypertarget{exercices}{%
 \section{Exercices}\label{exercices}}
@@ -3461,7 +3458,7 @@ Importez-les données dans R (attention à vous placer dans le répertoire conte
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.9\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-134-1} \end{center}
+\begin{center}\includegraphics[width=0.9\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-133-1} \end{center}
 
 Bien, maintenant vous avez tout en main pour commencer. Amusez-vous bien !
 
@@ -3479,7 +3476,25 @@ Passons au second exercice. La figure \ref{fig:exo2} est le résultat auquel vou
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.9\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-135-1} \end{center}
+\begin{verbatim}
+#>   [1]  9.781518  7.184751  8.259131 13.876945  9.997379 10.249272  7.299025
+#>   [8] 10.735914  8.420486 10.872088  6.761081 12.530139 10.884754  9.946954
+#>  [15] 11.101079 10.494889  9.888783  9.589758  5.925776  9.778568 10.225900
+#>  [22] 11.587108 10.009173 12.051724  7.722230 11.454904 11.854087 11.910869
+#>  [29]  9.251083 12.835731  9.452269 14.411649 13.437938  9.088290 10.253580
+#>  [36] 13.747201 12.103405 11.120710 10.043610 16.177815 11.089644  9.981470
+#>  [43] 10.036436 10.549234 10.325106  6.444985 22.599578  8.517608  9.223351
+#>  [50]  7.578713 13.386280 11.424965  8.025711 13.317310 12.047308 12.390695
+#>  [57]  9.265855 16.308774 13.106606 16.121713 13.171458 12.947003 13.959850
+#>  [64] 11.061156 13.721263  5.114320 14.283962 11.055771 10.562838 11.674281
+#>  [71] 11.956814  8.916664 12.779225  9.361479 13.129533 12.697070 12.764243
+#>  [78] 16.979889  6.568732 11.775326 11.711368 11.620558 13.797541 12.078944
+#>  [85]  6.302730 13.862998  9.245998 14.233888 15.531675 15.464003 10.882594
+#>  [92]  8.608246 14.618442 10.010140 16.589068  9.799191 18.122529 10.736502
+#>  [99]  9.176751  9.678307
+\end{verbatim}
+
+\begin{center}\includegraphics[width=0.9\linewidth]{visualiseR_files/figure-latex/histoperso-1} \end{center}
 
 \hypertarget{inclusion-en-muxe9daillon}{%
 \subsection{Inclusion en médaillon}\label{inclusion-en-muxe9daillon}}
@@ -3495,7 +3510,7 @@ Ce dernier exercice va vous amener à créer une figure dans laquelle un graphe 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=.9\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-136-1} \end{center}
+\begin{center}\includegraphics[width=0.9\linewidth]{visualiseR_files/figure-latex/unnamed-chunk-134-1} \end{center}
 
 \hypertarget{solutions-des-exercices}{%
 \section{Solutions des exercices}\label{solutions-des-exercices}}
@@ -3794,12 +3809,14 @@ Voir \url{https://www.ggplot2-exts.org/}
 
 Dans cette partie nous aborderons les graphiques interactives via des bibliothèques web.
 
+\hypertarget{part-annexes}{%
+\part{Annexes}\label{part-annexes}}
+
 \hypertarget{annexe-1---courte-introduction-uxe0-r}{%
-\section*{Annexe 1 - courte introduction à R}\label{annexe-1---courte-introduction-uxe0-r}}
-\addcontentsline{toc}{section}{Annexe 1 - courte introduction à R}
+\section{Annexe 1 - courte introduction à R}\label{annexe-1---courte-introduction-uxe0-r}}
 
 \hypertarget{les-grands-principes-de-r}{%
-\subsubsection{Les grands principes de R}\label{les-grands-principes-de-r}}
+\subsection{Les grands principes de R}\label{les-grands-principes-de-r}}
 
 Le dernier livre de John Chambers \citep{chambers_extending_2016} insistent beaucoup
 sur les trois principes fondamentaux de R pour aller plus loin dans
@@ -3839,8 +3856,7 @@ pour les débutants} d'Emmanuel Paradis (REF+disponible sur le CRAN
 \url{https://cran.r-project.org/doc/contrib/Paradis-rdebuts_fr.pdf}).
 
 \hypertarget{premiuxe8re-commande}{%
-\subsection*{Première commande}\label{premiuxe8re-commande}}
-\addcontentsline{toc}{subsection}{Première commande}
+\subsection{Première commande}\label{premiuxe8re-commande}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3925,8 +3941,7 @@ Jusqu'ici, nous avons utilisé deux variables: \texttt{var1} et \texttt{var2} qu
 affichées.
 
 \hypertarget{pour-r-tout-est-objet}{%
-\subsection*{Pour R, tout est objet}\label{pour-r-tout-est-objet}}
-\addcontentsline{toc}{subsection}{Pour R, tout est objet}
+\subsection{Pour R, tout est objet}\label{pour-r-tout-est-objet}}
 
 La portion structurée de mémoire vers lequel renvoie un nom de variable est un
 objet. Pour R, tout est objet, depuis les nombres jusqu'aux fonctions. Pour faire simple, nous pouvons diviser les objets et deux grandes catégories. D'un côté, nous avons les objets de base (p.~ex. les vecteurs), de l'autre côté, il y a les objets composés (de type S3 ou S4). Pour se donner une image, les premiers sont les briques élémentaires de R avec lesquelles les seconds (S3 ou S4) sont bâties. Comme nous l'avons énoncé plus haut, les objets S4 étant les plus formels que les S3. Cette distinction technique permet de bien comprendre comment R fonctionne et de mieux comprendre certains messages d'erreur. Nous assignons maintenant différents objets de base à différentes variables tout en excluant les fonctions dont nous parlons plus bas :
@@ -4104,8 +4119,7 @@ très facile de créer un objet S3 personnalisé dans R grâce à la fonction
 \end{Shaded}
 
 \hypertarget{conditions}{%
-\subsubsection*{Conditions}\label{conditions}}
-\addcontentsline{toc}{subsubsection}{Conditions}
+\subsubsection{Conditions}\label{conditions}}
 
 Lorsqu'on utilise un langage de programmation, on a souvent besoin de comparer
 des valeurs. Pour cela, on utilise des tests logiques. Il s'agit de comparaisons
@@ -4212,8 +4226,7 @@ Au contraire des boules \texttt{for}, les boucles \texttt{while} répètent des 
 La manipulation et visualisation des données nécessite rarement l'utilisation des boucles \texttt{while}, les boucles \texttt{for} sont quant à elles fréquemment utilisées.
 
 \hypertarget{les-fonctions}{%
-\subsubsection*{Les fonctions}\label{les-fonctions}}
-\addcontentsline{toc}{subsubsection}{Les fonctions}
+\subsubsection{Les fonctions}\label{les-fonctions}}
 
 De manière générale, en informatique, une fonction est un ensemble de lignes de code dédié à la réalisation d'une tâche spécifique concrétisée par le renvoie d'une valeur (un objet dans R). Nous avons jusqu'ici déjà utiliser différentes fonctions. Le lecteur attentif a certainement remarqué que les fonctions de R présentent toutes une structure commune: elles commencent par une suite de caractères (son nom) suivie de parenthèses à l'intérieur desquelles se trouvent éventuellement un ou plusieurs arguments. Les arguments sont des objets transmis à la fonction qui seront soient ceux manipuler soit précise comment la tâche doit être effectuées. Par exemple, quand nous avons utilisé la ligne :
 
@@ -4276,7 +4289,7 @@ Pour R, une fonction est un bel et bien un objet dont le contenu est finalement 
 \NormalTok{typeof}
 \CommentTok{#> function (x) }
 \CommentTok{#> .Internal(typeof(x))}
-\CommentTok{#> <bytecode: 0x559242ad48c8>}
+\CommentTok{#> <bytecode: 0x564f21b7e7d0>}
 \CommentTok{#> <environment: namespace:base>}
 \end{Highlighting}
 \end{Shaded}
